@@ -1,0 +1,19 @@
+@import 'global-vars';
+@import 'global-mixin';
+
+.flex-hold-5, .flex-hold-3 {
+  &.margins-wide {
+    margin-top: 33px;
+    align-items: center;
+    justify-content: center;
+    .flex-hold-child {
+      position: relative;
+      -webkit-box-flex: 1;
+      width: calc(25% - 27px);
+      margin: 0 36px 36px 0;
+    }
+    .flex-hold-child:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}

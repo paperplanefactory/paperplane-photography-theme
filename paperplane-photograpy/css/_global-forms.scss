@@ -1,0 +1,159 @@
+@import 'global-vars';
+@import 'global-mixin';
+
+// forms
+.form-hold {
+	position: relative;
+	display: block;
+	width: 100%;
+	label {
+		font-size: $h6-size-desktop;
+		line-height: $h6-lineheight-desktop;
+		font-weight: $font-weight-1;
+		margin-bottom: 5px;
+	}
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	input[type=tel] {
+		position: relative;
+		background-color: transparent;
+		width: calc(100% - 22px);
+		height: 40px;
+		margin: 10px 0 0 0;
+		padding: 5px 10px;
+		font-family: $font-main;
+		font-size: $h6-size-desktop;
+		line-height: $h6-lineheight-desktop;
+		font-weight: $font-weight-1;
+		margin-bottom: 15px;
+		border: solid 1px;
+	}
+	textarea {
+		position: relative;
+		background-color: transparent;
+		width: calc(100% - 22px);
+		height: 250px;
+		margin: 10px 0 0 0;
+		padding: 10px;
+		font-family: $font-main;
+		font-size: $h6-size-desktop;
+		line-height: $h6-lineheight-desktop;
+		font-weight: $font-weight-1;
+		margin-bottom: 15px;
+		resize: none;
+		border: solid 1px;
+	}
+	select {
+		position: relative;
+		background-color: transparent;
+		width: 100%;
+		height: 40px;
+		margin: 10px 0 0 0;
+		padding: 0 2% 0 2%;
+		font-family: $font-main;
+		font-size: $h4-size-desktop;
+		line-height: 18px;
+		margin-bottom: 15px;
+		font-weight: $font-weight-1;
+		border: solid 1px;
+	}
+	input[type=submit] {
+		position: relative;
+		display: block;
+		margin: 20px 0 0 0;
+		font-family: $font-main;
+		font-size: $paragraph-size-desktop;
+		font-weight: $font-weight-2;
+		text-align: left;
+		border: none;
+		padding: 15px 35px;
+		cursor: pointer;
+		-webkit-transition: .3s ease-in-out;
+	  transition: .3s ease-in-out;
+		white-space: normal;
+		border: solid 1px;
+		text-transform: uppercase;
+	}
+	input[type=submit]:disabled {
+		opacity: .5;
+	}
+	input[type=text]:focus,
+	input[type=email]:focus,
+	input[type=number]:focus,
+	textarea:focus,
+	input[type=tel]:focus {
+		border: solid 1px;
+	}
+	select:active {
+		border: solid 1px;
+	}
+	input[type=text]:focus,
+	input[type=email]:focus,
+	input[type=number]:focus,
+	textarea:focus,
+	input[type=tel]:focus {
+		border-color: $color-6 !important;
+	}
+	select:active {
+		border-color: $color-6 !important;
+	}
+
+	.capt {
+		margin: 20px 0 0 0;
+	}
+	.wpcf7-not-valid-tip,
+	.wpcf7-validation-errors,
+	.wpcf7-mail-sent-ng {
+		display: block !important;
+		z-index: 99 !important;
+		width: 96% !important;
+		border:none !important;
+		font-family: $font-main !important;
+		font-size: $paragraph-size-desktop !important;
+		line-height: 130% !important;
+		font-weight: $font-weight-2 !important;
+		padding: 2% !important;
+		left: 0 !important;
+		background-color: $color-7 !important;
+		color: $color-5 !important;
+	}
+
+}
+
+.wpcf7-validation-errors {
+	display: block !important;
+	z-index: 99 !important;
+	width: 96% !important;
+	border:none !important;
+	font-family: $font-main !important;
+	font-size: $paragraph-size-desktop !important;
+	line-height: 130% !important;
+	font-weight: $font-weight-2 !important;
+	padding: 2% !important;
+	left: 0 !important;
+	background-color: $color-7 !important;
+	color: $color-5 !important;
+}
+.wpcf7-mail-sent-ok {
+	display: block !important;
+	z-index:99 !important;
+	width:96% !important;
+	border:none !important;
+	font-family: $font-main !important;
+	font-size: $paragraph-size-desktop !important;
+	line-height: 130% !important;
+	font-weight: $font-weight-2 !important;
+	padding:2% !important;
+	left:0 !important;
+	background-color: $color-6 !important;
+	color: $color-5-dark !important;
+}
+.wpcf7-list-item {
+	margin: 0 !important;
+	font-weight:$font-weight-1;
+	font-size: $cta1-size-desktop;
+	line-height: $cta1-lineheight-desktop;
+	margin-bottom: $cta1-marginbottom-desktop;
+	word-wrap:break-word;
+}

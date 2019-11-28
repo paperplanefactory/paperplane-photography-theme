@@ -1,0 +1,227 @@
+var paperPlaneLazyLoad = new LazyLoad({
+	elements_selector: ".lazy",
+	class_loading: "lazy-loading",
+	class_loaded: "lazy-loaded",
+	callback_reveal: (el) => {
+		if ( el.complete && el.naturalWidth !== 0 ) {
+			el.classList.remove('lazy-loading');
+			el.classList.add('lazy-loaded');
+		}
+	}
+});
+
+const swup = new Swup({
+	containers: [".swupped"],
+	animateHistoryBrowsing: true,
+  plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
+	cache: true,
+	skipPopStateHandling: function skipPopStateHandling(event) {
+		return !(event.state && event.state.source === 'swup');
+	}
+});
+
+// run once
+init();
+// this event runs for every page view after initial load
+swup.on('contentReplaced', init);
+swup.on('willReplaceContent', unload);
+swup.on('animationInStart', animationIn);
+
+function init() {
+	paperPlaneLazyLoad.update();
+	refreshPrevNext();
+	approveDelight();
+	wrapPostMedia();
+	blockArrowKeys = true;
+	//console.log(blockArrowKeys);
+}
+
+function unload() {
+	window.scrollTo(0, 0);
+	blockArrowKeys = false;
+	//console.log(blockArrowKeys);
+}
+
+function animationIn() {
+	closeOverlay();
+}
+
+
+document.addEventListener('swup:contentReplaced', event => {
+	initInfiniteScroll();
+	if( $( 'div.wpcf7 > form' ).length ) {
+		var $form = $('div.wpcf7 > form');
+		wpcf7.initForm( $form );
+		if ( wpcf7.cached ) {
+			wpcf7.refill( $form );
+		}
+	}
+
+});
+
+// infinite scroll
+function initInfiniteScroll() {
+	if (jQuery(".nav-next a")[0]){
+		// inifinite scroll
+		jQuery('.grid-infinite').infiniteScroll({
+			// options
+			path: '.nav-next a',
+			append: '.grid-item-infinite',
+			status: '#infscr-loading',
+			history: false,
+		});
+
+		jQuery('.grid-infinite').on( 'append.infiniteScroll', function( event, response, path, items ) {
+		paperPlaneLazyLoad.update();
+		});
+		window.setInterval(function(){
+			 if ( jQuery('.infinite-scroll-last').is(":visible") ) {
+				 jQuery('#infscr-loading').fadeOut(300);
+			 }
+		 }, 2000);
+	}
+}
+initInfiniteScroll();
+
+function handleOverlay() {
+	$('.hambuger-element').toggleClass('open');
+	if ($( '.hambuger-element' ).hasClass('open') ) {
+		$('#header-overlay').focus();
+		$('#head-overlay').removeClass('blurred');
+		$(this).attr('aria-expanded', true);
+	}
+	else {
+		$('#header').focus();
+		$('#head-overlay').addClass('blurred');
+		$(this).attr('aria-expanded', false);
+	}
+	$('#head-overlay').toggleClass('overlay-in');
+	$('#search-box').fadeOut(300);
+}
+
+function closeOverlay() {
+	$('.hambuger-element').removeClass('open');
+	$('#header').focus();
+	$(this).attr('aria-expanded', false);
+	$('#head-overlay').removeClass('overlay-in');
+}
+
+function hideNavi() {
+	$('body').toggleClass('delighted');
+}
+
+function approveDelight() {
+	if( $('#delight-approved').length ) {
+	}
+	else {
+		$('body').removeClass('delighted');
+	}
+}
+
+function setBrightness() {
+	if ( $('body').hasClass('clear-theme') ) {
+		$('body').removeClass('clear-theme').addClass('dark-theme');
+	}
+	else {
+		$('body').removeClass('dark-theme').addClass('clear-theme');
+	}
+}
+
+function wrapPostMedia() {
+	// Wrappo i video player in una div per dimensionarli responsive
+	$('.content-styled iframe').wrap('<div class="video_frame"></div>');
+	// Controllo se l'immagine ha la didascalia e se manca la wrappo per allinearla
+	if(! $('img.alignnone').closest('.wp-caption').length ) {
+		$('img.alignnone').wrap('<div class="wp-caption alignnone"></div>');
+	}
+	if(! $('img.aligncenter').closest('.wp-caption').length ) {
+		$('img.aligncenter').wrap('<div class="wp-caption aligncenter"></div>');
+	}
+	if( $('img.alignleft') ) {
+		$('img.alignleft').wrap('<div class="wp-caption alignleft"></div>');
+	}
+	if( $('img.alignright') ) {
+		$('img.alignright').wrap('<div class="wp-caption alignright"></div>');
+	}
+}
+
+function refreshPrevNext() {
+	prevLink = $('.navi-click-left a').attr('href');
+	nextLink = $('.navi-click-right a').attr('href');
+}
+
+function nextNaviAction() {
+	if( typeof nextLink != 'undefined' && blockArrowKeys == true ) {
+		nextLinkData = swup.cache.getPage(nextLink);
+		swup.loadPage({
+			url: nextLink, // route of request (defaults to current url)
+			method: 'GET', // method of request (defaults to "GET")
+			data: nextLinkData, // data passed into XMLHttpRequest send method
+		});
+	}
+}
+
+function prevNaviAction() {
+	if( typeof prevLink != 'undefined' && blockArrowKeys == true ) {
+		prevLinkData = swup.cache.getPage(prevLink);
+		swup.loadPage({
+			url: prevLink, // route of request (defaults to current url)
+			method: 'GET', // method of request (defaults to "GET")
+			data: prevLinkData, // data passed into XMLHttpRequest send method
+		});
+	}
+}
+
+// clicks
+
+// hide-navi call
+$(document).on('click', '.highlight:not(.initialized)', function (e) {
+	hideNavi();
+});
+// theme switch
+$(document).on('click', '.bright-switch a:not(.initialized)', function (e) {
+	setBrightness();
+});
+// hamburger
+$('.ham-activator').click(function(){
+	handleOverlay();
+});
+
+$(document).on('click', '.thumb-list:not(.initialized)', function (e) {
+	$('.thumbs-gallery').slideToggle(300);
+	paperPlaneLazyLoad.update();
+});
+
+
+
+$(document).on('swipeleft', '.absl_swipe:not(.initialized)', function (e) {
+	nextNaviAction();
+});
+
+$(document).on('swiperight', '.absl_swipe:not(.initialized)', function (e) {
+	prevNaviAction();
+});
+
+$(document).on('touchstart', '.absl_swipe:not(.initialized)', function (e) {
+	$('.absl_swipe').addClass('swipe-info');
+});
+
+$(document).on('touchend', '.absl_swipe:not(.initialized)', function (e) {
+	$('.absl_swipe').removeClass('swipe-info');
+});
+
+
+
+
+$(document).keydown(function(e) {
+	switch(e.which) {
+			case 37: // left
+			prevNaviAction();
+			break;
+			case 39: // right
+			nextNaviAction();
+			break;
+			default: return; // exit this handler for other keys
+	}
+	e.preventDefault(); // prevent the default action (scroll / move caret)
+});
