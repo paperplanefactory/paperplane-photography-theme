@@ -6,5 +6,6 @@ The main objectives of this theme are:
 * allow photographers maximum editorial control;
 * web performance
 * indexing also on a site based mainly on images  
+
 You can browse the site in dark or clear mode and even toggle all unnecessary navigation information when viewing a photo.<br/>
 The navigation between the images is managed using the native system that WordPress uses to manage the attachments to a post.
