@@ -27,6 +27,10 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache").<br/>
 CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7")
 
+### Cool stuff used in this theme
+* [Swup](https://swup.js.org/ "Swup");
+* [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
+
 ### Why this plugin is not on [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
 And I'm so lazy that I don't even want to sell this theme and then have to provide support.<br />
