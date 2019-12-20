@@ -1,5 +1,4 @@
 # Paperplane photography theme
-
 ![alt text](https://github.com/paperplanefactory/paperplane-photography-theme/tree/master/paperplane-photograpy/screenshot.png)
 
 ## A WordPress theme for photographers.
