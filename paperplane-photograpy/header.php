@@ -15,11 +15,11 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#DCDCDC">
 <!-- Windows Phone -->
-<meta name="msapplication-navbutton-color" content="#FFFFFF">
+<meta name="msapplication-navbutton-color" content="#DCDCDC">
 <!-- iOS Safari -->
-<meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+<meta name="apple-mobile-web-app-status-bar-style" content="#DCDCDC">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -59,7 +59,7 @@ if( empty( $theme_color_scheme ) ) {
  ?>
 </head>
 
-<body class="<?php echo $theme_color_scheme; ?>">
+<body class="">
 <div id="preheader"></div>
 <header id="header" class="bg-5">
   <div class="wrapper-padded">
@@ -89,14 +89,46 @@ if( empty( $theme_color_scheme ) ) {
             <?php endif; ?>
             <?php if ( $evidenziatore_foto === 'si' ) : ?>
               <li>
-                <span class="highlight all-pointer-events pointered"><i class="fas fa-eye"></i></span>
+                <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="fas fa-eye"></i></span>
               </li>
             <?php endif; ?>
             <?php if ( $elenco_foto === 'si' ) : ?>
               <li>
-                <span class="list thumb-list delight-area pointered" title="view images list"><i class="fas fa-list"></i></i></span>
+                <span class="list thumb-list delight-area pointered" title="view images list"><i class="fas fa-list"></i></span>
               </li>
             <?php endif; ?>
+            <?php
+            if ( is_singular( 'post' ) ) {
+              $picture_id = get_post_thumbnail_id();
+            }
+            elseif ( is_attachment() ) {
+              $picture_id = get_the_ID();
+            }
+            $abilitare_la_vendita = get_field( 'abilitare_la_vendita', $picture_id );
+            if ( $abilitare_la_vendita === 'si' ) :
+
+
+              ?>
+              <li>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="delight-area pay-picture">
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <input type="hidden" name="business" value="<?php the_field( 'indirizzo_email_paypal', 'option' ); ?>">
+                  <input type="hidden" name="lc" value="US">
+                  <input type="hidden" name="item_name" value="<?php the_permalink(); ?>">
+                  <input type="hidden" name="item_number" value="<?php $picture_id; ?>">
+                  <input type="hidden" name="amount" value="<?php the_field( 'prezzo', $picture_id ); ?>">
+                  <input type="hidden" name="currency_code" value="<?php the_field( 'tipo_di_valuta', 'option' ); ?>">
+                  <input type="hidden" name="button_subtype" value="services">
+                  <input type="hidden" name="no_note" value="0">
+                  <input type="hidden" name="tax_rate" value="0">
+                  <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
+                  <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                  <button type="submit" title="Buy this item"><i class="fas fa-credit-card"></i></button>
+                </form>
+              </li>
+            <?php endif; ?>
+
+
           </ul>
         <?php endif; ?>
         <?php if ( is_singular( 'news' ) ) : ?>
@@ -143,3 +175,4 @@ if( empty( $theme_color_scheme ) ) {
 </div>
 
 <div class="swupped">
+  <div class="mouse-trap">

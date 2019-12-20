@@ -206,20 +206,6 @@ if ( $elenco_foto === 'si' ) {
         echo $k . ' / ' . $total_attachments;
       }
       ?>
-      <span class="only-mobile">
-        <?php if ( $contatore_foto === 'si' ) {
-          echo ' - ';
-        }
-        ?>
-        swipe right or left
-      </span>
-      <span class="only-desktop">
-        <?php if ( $contatore_foto === 'si' ) {
-          echo ' - ';
-        }
-        ?>
-        use keyboard arrows to navigate
-      </span>
     </div>
 
     <div class="wrapper-padded-more-650 delight-area">

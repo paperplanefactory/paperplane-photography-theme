@@ -1,3 +1,12 @@
+navColorPattern = window.localStorage.getItem('colorScheme');
+if ( navColorPattern == null ){
+    navColorPattern = 'clear';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#FFFFFF');
+}
+setInitialBrightness();
+
 var paperPlaneLazyLoad = new LazyLoad({
 	elements_selector: ".lazy",
 	class_loading: "lazy-loading",
@@ -49,6 +58,11 @@ function animationIn() {
 
 document.addEventListener('swup:contentReplaced', event => {
 	initInfiniteScroll();
+  $( ".mouse-trap" ).mouseover(function() {
+    console.log('ff');
+    closeOverlay();
+  });
+  setInitialBrightness();
 	if( $( 'div.wpcf7 > form' ).length ) {
 		var $form = $('div.wpcf7 > form');
 		wpcf7.initForm( $form );
@@ -87,12 +101,18 @@ function handleOverlay() {
 	$('.hambuger-element').toggleClass('open');
 	if ($( '.hambuger-element' ).hasClass('open') ) {
 		$('#header-overlay').focus();
-		$('#head-overlay').removeClass('blurred');
+		$('#head-overlay').removeClass('blurred').delay(700).queue(function(next){
+      $(this).delay(1500).addClass('ok-autoclose');
+      next();
+    });
 		$(this).attr('aria-expanded', true);
 	}
 	else {
 		$('#header').focus();
-		$('#head-overlay').addClass('blurred');
+		$('#head-overlay').addClass('blurred').delay(1).queue(function(next){
+      $(this).removeClass('ok-autoclose');
+      next();
+    });
 		$(this).attr('aria-expanded', false);
 	}
 	$('#head-overlay').toggleClass('overlay-in');
@@ -100,10 +120,12 @@ function handleOverlay() {
 }
 
 function closeOverlay() {
-	$('.hambuger-element').removeClass('open');
-	$('#header').focus();
-	$(this).attr('aria-expanded', false);
-	$('#head-overlay').removeClass('overlay-in');
+  if ($('#head-overlay').hasClass('ok-autoclose')) {
+    $('.hambuger-element').removeClass('open');
+  	$('#header').focus();
+  	$(this).attr('aria-expanded', false);
+  	$('#head-overlay').removeClass('overlay-in ok-autoclose');
+  }
 }
 
 function hideNavi() {
@@ -120,10 +142,36 @@ function approveDelight() {
 
 function setBrightness() {
 	if ( $('body').hasClass('clear-theme') ) {
+		navColorPattern = 'dark';
+		localStorage.setItem("colorScheme", navColorPattern	);
 		$('body').removeClass('clear-theme').addClass('dark-theme');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#303030');
+    document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#303030');
+    document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#303030');
 	}
 	else {
+		navColorPattern = 'clear';
+		localStorage.setItem("colorScheme", navColorPattern	);
 		$('body').removeClass('dark-theme').addClass('clear-theme');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#FFFFFF');
+	}
+	console.log(window.localStorage.getItem('colorScheme'));
+}
+
+function setInitialBrightness() {
+	if ( navColorPattern === 'dark' ) {
+		$('body').removeClass('clear-theme').addClass('dark-theme');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#303030');
+    document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#303030');
+    document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#303030');
+	}
+	else if ( navColorPattern === 'clear' ) {
+		$('body').removeClass('dark-theme').addClass('clear-theme');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#FFFFFF');
+    document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#FFFFFF');
 	}
 }
 
@@ -173,6 +221,12 @@ function prevNaviAction() {
 }
 
 // clicks
+
+// close overlay on mouse leave
+$( ".mouse-trap" ).mouseover(function() {
+  console.log('ff');
+  closeOverlay();
+});
 
 // hide-navi call
 $(document).on('click', '.highlight:not(.initialized)', function (e) {

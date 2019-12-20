@@ -89,6 +89,16 @@
 	padding: 20px 0 0 0;
 }
 
+.pay-picture {
+	button {
+		border: none;
+		background-color: transparent;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+	}
+}
+
 // infinite load
 
 .last-message {

@@ -18,6 +18,7 @@
     </div>
   </div>
 </div>
+</div>
 </div><!-- swup closing tag -->
 <script>
 var SWIPE_THRESHOLD = 60, // default value
