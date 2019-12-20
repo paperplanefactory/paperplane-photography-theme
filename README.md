@@ -30,6 +30,8 @@ CSS rules perfectly define appearence of forms created with [Contact Form 7](htt
 ### Cool stuff used in this theme
 * [Swup](https://swup.js.org/ "Swup");
 * [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
+* [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
+* [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
 
 ### Why this plugin is not on [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
