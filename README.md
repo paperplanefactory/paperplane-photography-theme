@@ -1,6 +1,6 @@
 # Paperplane photography theme
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/paperplanefactory/paperplane-photography-theme/tree/master/paperplane-photograpy/screenshot.png)
 
 ## A WordPress theme for photographers.
 This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways.<br/>
