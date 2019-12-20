@@ -8,9 +8,15 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * web performance;
 * indexing also on a site based mainly on images;
 
-Features:
+### Features:
 * dark or clear mode navigation;
 * toggle all unnecessary navigation information when viewing a photo;
 * sell single picture trough PayPal;
 * homepage layout adjustable to show one single random picture or a list of works;
 * navigation between images is managed using the native system that WordPress uses to manage the attachments to a post;
+
+### How to set it up:
+* create a page and set "Home" as template;
+* in WordPress "Settings > Reading" options set it as home page;
+* go to "Theme settings" and set "Theme version" (useful for forcing cache clearing);
+* go to "Site settings" and set both "Typographic" and "Image gallery" options;
