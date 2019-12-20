@@ -22,5 +22,5 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
 
 ### Useful plugin to install
-Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache"). Remember to use also Photon for images.
+Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache"). Remember to use also Photon for images.<br/>
 CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7")
