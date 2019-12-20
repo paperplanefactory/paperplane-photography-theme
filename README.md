@@ -8,7 +8,7 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * display images on all devices without being cropped;
 * allow photographers maximum editorial control;
 * web performance;
-* indexing also on a site based mainly on images;
+* indexing also if site is based mainly on images;
 
 ### :sunglasses: Features:
 * dark or clear mode navigation;
