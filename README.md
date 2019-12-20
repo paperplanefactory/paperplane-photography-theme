@@ -18,5 +18,9 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 ### How to set it up:
 * create a page and set "Home" as template;
 * in WordPress "Settings > Reading" options set it as home page;
-* go to "Theme settings" and set "Theme version" (useful for forcing cache clearing);
+* go to "Theme settings" set "Theme version" (useful for forcing cache clearing) and links you want to appear in footer;
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
+
+### Useful plugin to install
+Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache"). Remember to use also Photon for images.
+CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7")
