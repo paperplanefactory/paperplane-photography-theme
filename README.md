@@ -1,5 +1,5 @@
 # Paperplane photography theme
-![Paperplane photography theme](http://paperdev.paperplanefactory.com/images/screenshot.png)
+![Paperplane photography theme](https://www.paperplanefactory.com/ppuploads/repository-open-graph-template.jpg)
 
 ## A WordPress theme for photographers.
 This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways.<br/>
