@@ -15,7 +15,9 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * toggle all unnecessary navigation information when viewing a photo;
 * sell single picture trough PayPal;
 * homepage layout adjustable to show one single random picture or a list of works;
-* navigation between images is managed using the native system that WordPress uses to manage the attachments to a post;
+* gallery navigation is managed using the native system that WordPress uses to manage the attachments to a post;
+* gallery navigation works with keyboard arrows and on mobile devices with swipe gestures;
+* every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject")
 
 ### :exclamation: How to set it up:
 * create a page and set "Home" as template;
@@ -23,6 +25,15 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * in WordPress "Settings > Reading" options set it as home page;
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
+
+### :exclamation: How to set up a gallery:
+Galleries use WordPress posts. To create a gallery:
+* create a new post;
+* upload to the post all images you want to add to the gallery;
+* eventually re-order images using WordPress media panel;
+* publish post;
+
+Don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically.
 
 ### :star: Useful plugin to install
 Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache").<br/>
