@@ -13,4 +13,4 @@ Features:
 * toggle all unnecessary navigation information when viewing a photo;
 * sell single picture trough PayPal;
 * homepage layout adjustable to show one single random picture or a list of works;
-The navigation between the images is managed using the native system that WordPress uses to manage the attachments to a post.
+* navigation between images is managed using the native system that WordPress uses to manage the attachments to a post;
