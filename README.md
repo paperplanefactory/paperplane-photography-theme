@@ -1,4 +1,7 @@
 # Paperplane photography theme
+
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 ## A WordPress theme for photographers.
 This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways.<br/>
 If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.json" to import all required fields.<br/>
