@@ -44,6 +44,30 @@ global $module_count;
 <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/ms-icon-144x144.png">
+<style>
+body {
+  font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
+}
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=tel],
+textarea,
+select,
+input[type=submit],
+.wpcf7-not-valid-tip,
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng,
+.wpcf7-mail-sent-ok,
+.wp-caption.alignnone .wp-caption-text,
+.wp-caption.aligncenter .wp-caption-text,
+.wp-caption.alignleft .wp-caption-text,
+.wp-caption.alignright .wp-caption-text,
+.wp-caption-text {
+  font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
+}
+
+</style>
 <?php
 global $contatore_foto;
 $contatore_foto = get_field( 'contatore_foto', 'options' );
@@ -51,11 +75,6 @@ global $elenco_foto;
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
 $torna_elenco = get_field( 'torna_elenco', 'options' );
-
-$theme_color_scheme = get_field( 'theme_color_scheme', 'options' );
-if( empty( $theme_color_scheme ) ) {
-  $theme_color_scheme = 'clear-theme';
-}
  ?>
 </head>
 

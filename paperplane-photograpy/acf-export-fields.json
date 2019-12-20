@@ -1,11 +1,11 @@
 [
     {
         "key": "group_5dfcb608b2aa8",
-        "title": "Informazioni per la vendita",
+        "title": "Sales information",
         "fields": [
             {
                 "key": "field_5dfcb67029f82",
-                "label": "Abilitare la vendita di questa immagine?",
+                "label": "Enable the sale of this image?",
                 "name": "abilitare_la_vendita",
                 "type": "select",
                 "instructions": "",
@@ -30,10 +30,10 @@
             },
             {
                 "key": "field_5dfcb66929f81",
-                "label": "Prezzo",
+                "label": "Price",
                 "name": "prezzo",
                 "type": "text",
-                "instructions": "Scrivere solo la cifra e usare il punto come separatore - es. 12.00",
+                "instructions": "Use dot as separator - eg 12.00",
                 "required": 1,
                 "conditional_logic": [
                     [
@@ -75,272 +75,12 @@
         "description": ""
     },
     {
-        "key": "group_5c8d103b4a24d",
-        "title": "Gestione elementi galleria",
-        "fields": [
-            {
-                "key": "field_5da036e782baf",
-                "label": "Colore del tema iniziale",
-                "name": "theme_color_scheme",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "clear-theme": "Chiaro",
-                    "dark-theme": "Scuro"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5c8d104e4f119",
-                "label": "Mostrare contatore foto?",
-                "name": "contatore_foto",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "si": "Sì",
-                    "no": "No"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5c8d11e066065",
-                "label": "Mostrare elenco miniature foto?",
-                "name": "elenco_foto",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "si": "Sì",
-                    "no": "No"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5c8d125405962",
-                "label": "Mostrare evidenziatore foto?",
-                "name": "evidenziatore_foto",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "si": "Sì",
-                    "no": "No"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5c8d126805963",
-                "label": "Mostrare torna all'elenco?",
-                "name": "torna_elenco",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "si": "Sì",
-                    "no": "No"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5dfcbda6df694",
-                "label": "Desideri vendere le tue foto?",
-                "name": "vendere_foto",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "no": "No",
-                    "si": "Sì"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5dfcbbfaadd14",
-                "label": "Indirizzo email per pagamenti Paypal",
-                "name": "indirizzo_email_paypal",
-                "type": "text",
-                "instructions": "",
-                "required": 1,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5dfcbda6df694",
-                            "operator": "==",
-                            "value": "si"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
-                "key": "field_5dfcbcd2df692",
-                "label": "Tipo di valuta",
-                "name": "tipo_di_valuta",
-                "type": "select",
-                "instructions": "",
-                "required": 1,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5dfcbda6df694",
-                            "operator": "==",
-                            "value": "si"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "USD": "Dollari",
-                    "EUR": "Euro"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "return_format": "value",
-                "ajax": 0,
-                "placeholder": ""
-            },
-            {
-                "key": "field_5dfcbd6ddf693",
-                "label": "Costi di spedizione",
-                "name": "costi_di_spedizione",
-                "type": "text",
-                "instructions": "Scrivere solo la cifra e usare il punto come separatore - es. 12.00",
-                "required": 1,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5dfcbda6df694",
-                            "operator": "==",
-                            "value": "si"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options-gestione-gallery"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": true,
-        "description": ""
-    },
-    {
         "key": "group_5c8cebea7e06b",
-        "title": "Impostazioni homepage",
+        "title": "Homepage settings",
         "fields": [
             {
                 "key": "field_5c8cec14679ef",
-                "label": "Scegli cosa mostrare",
+                "label": "Choose what to show",
                 "name": "scegli_cosa_mostrare",
                 "type": "select",
                 "instructions": "",
@@ -352,8 +92,8 @@
                     "id": ""
                 },
                 "choices": {
-                    "one-random": "Una foto random di un progetto random",
-                    "grid": "Elenco dei lavori"
+                    "one-random": "A random photo of a random project",
+                    "grid": "List of works"
                 },
                 "default_value": [],
                 "allow_null": 0,
@@ -365,7 +105,7 @@
             },
             {
                 "key": "field_5c8cec57679f0",
-                "label": "Scegli la categoria",
+                "label": "Choose the category",
                 "name": "scegli_categoria",
                 "type": "taxonomy",
                 "instructions": "",
@@ -387,7 +127,7 @@
             },
             {
                 "key": "field_5c8cf1c72fd7c",
-                "label": "Mostrare il titolo?",
+                "label": "Show the title?",
                 "name": "mostrare_titolo",
                 "type": "select",
                 "instructions": "",
@@ -501,40 +241,232 @@
         "description": ""
     },
     {
-        "key": "group_5be00f6662d58",
-        "title": "Compra il libro",
+        "key": "group_5c8d103b4a24d",
+        "title": "Gallery options",
         "fields": [
             {
-                "key": "field_58344725a2a7d",
-                "label": "URL pagina vendita libro",
-                "name": "url_shop",
-                "type": "text",
+                "key": "field_5c8d104e4f119",
+                "label": "Display images counter?",
+                "name": "contatore_foto",
+                "type": "select",
                 "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "required": 0,
+                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
                     "id": ""
                 },
-                "0": false,
+                "choices": {
+                    "si": "Sì",
+                    "no": "No"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5c8d11e066065",
+                "label": "Show photo thumbnail list?",
+                "name": "elenco_foto",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "si": "Sì",
+                    "no": "No"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5c8d125405962",
+                "label": "Show photo highlighter?",
+                "name": "evidenziatore_foto",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "si": "Sì",
+                    "no": "No"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5c8d126805963",
+                "label": "Show back to the list?",
+                "name": "torna_elenco",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "si": "Sì",
+                    "no": "No"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5dfcbda6df694",
+                "label": "Do you want to sell your photos?",
+                "name": "vendere_foto",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "si": "Sì"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5dfcbbfaadd14",
+                "label": "Email address for Paypal payments",
+                "name": "indirizzo_email_paypal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5dfcbda6df694",
+                            "operator": "==",
+                            "value": "si"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
                 "default_value": "",
-                "maxlength": "",
                 "placeholder": "",
                 "prepend": "",
-                "append": ""
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5dfcbcd2df692",
+                "label": "Type of currency",
+                "name": "tipo_di_valuta",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5dfcbda6df694",
+                            "operator": "==",
+                            "value": "si"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "USD": "Dollari",
+                    "EUR": "Euro"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5dfcbd6ddf693",
+                "label": "Shipping cost",
+                "name": "costi_di_spedizione",
+                "type": "text",
+                "instructions": "Use dot as separator - eg 12.00",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5dfcbda6df694",
+                            "operator": "==",
+                            "value": "si"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
             }
         ],
         "location": [
             [
                 {
-                    "param": "post_type",
+                    "param": "options_page",
                     "operator": "==",
-                    "value": "post"
+                    "value": "acf-options-image-gallery-options"
                 }
             ]
         ],
-        "menu_order": 0,
+        "menu_order": 1,
         "position": "normal",
         "style": "default",
         "label_placement": "top",
@@ -544,40 +476,58 @@
         "description": ""
     },
     {
-        "key": "group_5be00f669c8cb",
-        "title": "Informazioni aggiuntive",
+        "key": "group_5dfccae53e4bc",
+        "title": "Typography options",
         "fields": [
             {
-                "key": "field_5840835da5a78",
-                "label": "Scrivi qui le informazioni aggiuntive",
-                "name": "informazioni_aggiuntive",
+                "key": "field_5dfccba411af3",
+                "label": "Link Google font",
+                "name": "link_google_font",
                 "type": "text",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "You can choose any font from <a href=\"https:\/\/fonts.google.com\/\" target=\"_blank\">Google Fonts<\/a>.<br \/>\r\nYou must strictly use only one cont with two weights.<br \/>",
+                "required": 1,
+                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
                     "id": ""
                 },
-                "0": false,
-                "default_value": "",
-                "maxlength": "",
+                "default_value": "https:\/\/fonts.googleapis.com\/css?family=Roboto:400,400i,700,700i&display=swap",
                 "placeholder": "",
                 "prepend": "",
-                "append": ""
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5dfccaecba915",
+                "label": "Font selector",
+                "name": "selettore_font",
+                "type": "text",
+                "instructions": "See the part \"Specify in CSS - Use the following CSS rules to specify these families: \" when getting font from Google Fonts.<br \/>\r\nCopy only the selector instead of the entire line:<br \/>\r\n<span style=\"text-decoration: line-through;\">font-family:<\/span> 'Roboto', sans-serif<span style=\"text-decoration: line-through;\">;<\/span>",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "'Roboto', sans-serif",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
             }
         ],
         "location": [
             [
                 {
-                    "param": "post_type",
+                    "param": "options_page",
                     "operator": "==",
-                    "value": "post"
+                    "value": "acf-options-typographic-options"
                 }
             ]
         ],
-        "menu_order": 0,
+        "menu_order": 2,
         "position": "normal",
         "style": "default",
         "label_placement": "top",

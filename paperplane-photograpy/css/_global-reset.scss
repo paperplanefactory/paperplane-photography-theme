@@ -7,7 +7,6 @@ html, body, div, span, applet, object, iframe, blockquote, pre, a, abbr, acronym
 	vertical-align: baseline;
 }
 body {
-	font-family: $font-main;
 	line-height: 1;
 	@include define-basic-transition(all, 0.3s);
 }

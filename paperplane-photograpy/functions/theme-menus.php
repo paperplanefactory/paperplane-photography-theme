@@ -22,16 +22,22 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect' 	=> false
 	));
   $parent = acf_add_options_page(array(
-    'page_title' 	=> 'Impostazioni sito',
-		'menu_title'	=> 'Impostazioni sito',
+    'page_title' 	=> 'Site settings',
+		'menu_title'	=> 'Site settings',
 		'capability'	=> 'edit_posts',
 		//'menu_slug' 	=> 'impostazioni-sito',
 		//'redirect'		=> false
 	));
+  // tipografia
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Typographic options',
+		'menu_title' 	=> 'Typographic options',
+		'parent_slug' 	=> $parent['menu_slug'],
+	));
   // gallery
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Gestione gallery',
-		'menu_title' 	=> 'Gestione gallery',
+		'page_title' 	=> 'Image gallery options',
+		'menu_title' 	=> 'Image gallery options',
 		'parent_slug' 	=> $parent['menu_slug'],
 	));
 }
