@@ -29,4 +29,5 @@ CSS rules perfectly define appearence of forms created with [Contact Form 7](htt
 
 ### Why this plugin is not on [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
-And I'm so lazy that I don't even want to sell this theme and then have to provide support<br /> :heart_eyes:
+And I'm so lazy that I don't even want to sell this theme and then have to provide support.<br />
+:heart_eyes:
