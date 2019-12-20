@@ -26,4 +26,4 @@ Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/w
 CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7")
 
 ### Why this plugin is not on [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
-I'm lazy, so instead of creating a page to manage theme options in an Orthodox way, I preferred to use the Advanced version of Advanced Custom Fields. :)
+I'm lazy, so instead of creating a page to manage theme options in an Orthodox way, I preferred to use the Advanced version of Advanced Custom Fields. :heart_eyes:
