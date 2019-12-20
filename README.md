@@ -25,6 +25,7 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * in WordPress "Settings > Reading" options set it as home page;
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
+* two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts. To create a gallery:
