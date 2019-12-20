@@ -1,6 +1,6 @@
 # Paperplane photography theme
 ## A WordPress theme for photographers.
-This theme needs [Advanced Custom Fields](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields") installed but can be adapted to manage options in others ways. You can use "acf-export-fields.json" to import all required fields.<br/>
+This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways. You can use "acf-export-fields.json" to import all required fields.<br/>
 The main objectives of this theme are:
 * to allow the visualization of images without being cut on all devices;
 * allow photographers maximum editorial control;
