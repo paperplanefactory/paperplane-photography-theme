@@ -57,6 +57,7 @@ Don't insert pictures in content, use "the_content" to describe your project ins
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
 
 ### :zap: Lighthouse report
+Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
 ![Lighthouse report](https://www.paperplanefactory.com/ppuploads/static/github/lighthouse.png)
 
 ### :smiling_imp: Why this plugin is not on [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
