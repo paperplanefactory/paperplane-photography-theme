@@ -11,7 +11,7 @@ Required set of fields is already included through functions.php.<br/>
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
 * web performance;
-* indexing also if site is based mainly on images;
+* SEO friendly also if site is based mainly on images;
 
 ### :sunglasses: Features:
 * dark or clear mode navigation;
@@ -21,7 +21,8 @@ Required set of fields is already included through functions.php.<br/>
 * gallery navigation is managed using the native system that WordPress uses to manage the attachments to a post;
 * gallery navigation works with keyboard arrows and on mobile devices with swipe gestures;
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
-* set custom logo for home button or just leave site title as text link; 
+* set custom logo for home button or just leave site title as text link;
+* optional custom post types for news and books;
 
 ### :exclamation: How to set it up:
 * create a page and set "Home" as template;
@@ -30,6 +31,8 @@ Required set of fields is already included through functions.php.<br/>
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
+* if you need a news section there's a "News" custom post type for it. To add a news listing page create a new page and assign "News" as template. News published within 90 days are automatically listed in homepage;
+* if you need a books section there's a "Books" custom post type for it. To add a books listing page create a new page and assign "Books" as template;
 
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts and post attachments. To create a gallery:
