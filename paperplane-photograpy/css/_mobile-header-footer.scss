@@ -53,7 +53,6 @@
     position: relative;
     -webkit-box-flex: 1;
     width: $logo-mob-width;
-    height: 100%;
     font-weight: $font-weight-2;
     font-size: $logo-size-smartphone;
     line-height: $logo-lineheight-smartphone;
@@ -66,6 +65,9 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: 0 50%;
+    }
+    &.pictured {
+      height: 100%;
     }
   }
   .menu {

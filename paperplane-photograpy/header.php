@@ -85,7 +85,7 @@ $custom_logo = get_field( 'custom_logo', 'options' );
   <div class="wrapper-padded">
     <div id="header-structure">
       <?php if ( $custom_logo != '' ) : ?>
-        <div class="logo delight-area">
+        <div class="logo pictured delight-area">
           <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
           <div class="imaged" style="background-image: url(<?php echo $custom_logo; ?>)"></div>
         </div>
