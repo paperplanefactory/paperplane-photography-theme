@@ -28,7 +28,7 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 
 ### :exclamation: How to set up a gallery:
-Galleries use WordPress posts. To create a gallery:
+Galleries use WordPress posts and post attachments. To create a gallery:
 * create a new post;
 * upload to the post all images you want to add to the gallery;
 * eventually re-order images using WordPress media panel;
