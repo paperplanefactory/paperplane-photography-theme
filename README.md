@@ -1,5 +1,5 @@
 # Paperplane photography theme
-![Paperplane photography theme](https://www.paperplanefactory.com/ppuploads/repository-open-graph-template.jpg)
+![Paperplane photography theme](https://www.paperplanefactory.com/ppuploads/static/github/repository-open-graph-template.jpg)
 
 ## A WordPress theme for photographers
 This theme is designed to enhance pictures. UX and UI elements are designed to have the least possible impact on the observation of images.
@@ -48,7 +48,7 @@ Don't insert pictures in content, use "the_content" to describe your project ins
 ### :electric_plug: Useful plugins to install
 * [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache") to improve loading time;
 * [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7"): CSS rules perfectly define appearence of forms created with CF7. In CF7 editor just wrap your form into a DIV with class "form-hold";
-* [WebP Express](https://wordpress.org/plugins/webp-express/ "WebP Express") is a must have plugin if your hosting provider supports WebP image conversion tools.
+* [WebP Express](https://wordpress.org/plugins/webp-express/ "WebP Express") is a must have plugin if your hosting provider supports WebP image conversion tools;
 
 ### :sparkling_heart: Cool stuff used in this theme
 * [Swup](https://swup.js.org/ "Swup");
