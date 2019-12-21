@@ -25,7 +25,7 @@ Required set of fields is already included through functions.php.<br/>
 * optional custom post types for news and books;
 
 ### :exclamation: How to set it up:
-* :hankey: before activating this theme be sure to have activated Advanced Custom Fields Pro!!
+* :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and acive!
 * create a page and set "Home" as template;
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
