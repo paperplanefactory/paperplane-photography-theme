@@ -33,6 +33,7 @@ Required set of fields is already included through functions.php.<br/>
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 * if you need a news section there's a "News" custom post type for it. To add a news listing page create a new page and assign "News" as template. News published within 90 days are automatically listed in homepage;
 * if you need a books section there's a "Books" custom post type for it. To add a books listing page create a new page and assign "Books" as template;
+* if you want to sell an image you must first configure the basic information for PayPal and then, from the editor of the single image in the media library, enable the sale and set the price;
 
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts and post attachments. To create a gallery:
