@@ -1,12 +1,4 @@
 <?php
-// disabilito il ridimensionamento minimo di medium e large
-function add_image_insert_override($sizes){
-    unset( $sizes['medium']);
-    unset( $sizes['large']);
-    return $sizes;
-}
-add_filter('intermediate_image_sizes_advanced', 'add_image_insert_override' );
-
 // custom image size for featured images
 add_theme_support( 'post-thumbnails' );
 add_image_size( '5k_image', 4096, 99999);
@@ -31,8 +23,6 @@ add_action('admin_init', 'wpb_imagelink_setup', 10);
 // limito il numero di scelte per le immagini "in content"
 add_filter('image_size_names_choose', 'my_image_sizes');
 function my_image_sizes($sizes) {
-unset( $sizes['medium']);
-unset( $sizes['large']);
 $addsizes = array(
 "content_picture" => __( "Content picture")
 );

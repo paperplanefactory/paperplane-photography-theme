@@ -18,7 +18,7 @@ include_once "functions/theme-txts.php";
 include_once "functions/theme-messages.php";
 // custom menus
 include_once "functions/theme-menus.php";
-// slides
-//include_once "functions/theme-slides.php";
-// gestione tassonomie
-include_once "functions/theme-taxonomies.php";
+// ACF theme options fields
+include_once "functions/theme-acf-options-fields.php";
+// custom post types
+include_once "functions/theme-cpts.php";
