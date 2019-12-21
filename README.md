@@ -2,6 +2,9 @@
 ![Paperplane photography theme](https://www.paperplanefactory.com/ppuploads/repository-open-graph-template.jpg)
 
 ## A WordPress theme for photographers.
+This theme is designed to enhance pictures. UX and UI elements are designed to have the least possible impact on the observation of images.
+
+
 This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways.<br/>
 If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.json" file to import all required fields.<br/>
 ### :v: The main objectives of this theme are:
