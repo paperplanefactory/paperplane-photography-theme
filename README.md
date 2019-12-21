@@ -6,7 +6,7 @@ This theme is designed to enhance pictures. UX and UI elements are designed to h
 
 
 Paperplane photography theme requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") to be installed.<br/>
-Required set of fields is already included trough functions.php.<br/>
+Required set of fields is already included through functions.php.<br/>
 ### :v: The main objectives of this theme are:
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
