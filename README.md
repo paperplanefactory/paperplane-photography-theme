@@ -6,7 +6,7 @@ This theme is designed to enhance pictures. UX and UI elements are designed to h
 
 
 This theme needs [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") installed but can be adapted to manage options in others ways.<br/>
-If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.json" file to import all required fields.<br/>
+Required set of fields is already included trought functions.php.<br/>
 ### :v: The main objectives of this theme are:
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
@@ -20,7 +20,8 @@ If you want to use Advanced Custom Fields Pro you can use "acf-export-fields.jso
 * homepage layout adjustable to show one single random picture or a list of works;
 * gallery navigation is managed using the native system that WordPress uses to manage the attachments to a post;
 * gallery navigation works with keyboard arrows and on mobile devices with swipe gestures;
-* every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject")
+* every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
+* set custom logo for home button or just leave site title as text link; 
 
 ### :exclamation: How to set it up:
 * create a page and set "Home" as template;
