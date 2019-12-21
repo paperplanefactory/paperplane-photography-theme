@@ -535,6 +535,31 @@ Copy only the selector instead of the entire line:<br />
 			'append' => '',
 			'maxlength' => '',
 		),
+		array(
+			'key' => 'field_5dfdf32d19506',
+			'label' => 'Custom logo',
+			'name' => 'custom_logo',
+			'type' => 'image',
+			'instructions' => 'If no logo is uploaded default site title will be used as "home" link.<br />
+Use a .png image under 200Kb.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'full',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '0.2',
+			'mime_types' => 'png',
+		),
 	),
 	'location' => array(
 		array(

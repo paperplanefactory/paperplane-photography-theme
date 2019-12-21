@@ -34,38 +34,6 @@
 	-webkit-appearance: none !important;
 }
 
-@mixin define-vertical-radient($top, $bottom){
-	background: $top; /* Old browsers */
-  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-}
-
-@mixin define-horizontal-radient($top, $bottom){
-	background: $top; /* Old browsers */
-  background: -moz-linear-gradient(left,  $top 0%, $bottom 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  $top 0%,$bottom 100%); /* IE10+ */
-  background: linear-gradient(to right,  $top 0%,$bottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
-}
-
-@mixin define-diagonal-radient($top, $bottom){
-	background: $top; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  $top 0%, $bottom 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  $top 0%,$bottom 100%); /* IE10+ */
-  background: linear-gradient(135deg,  $top 0%,$bottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
 
 @mixin define-border-radius($radius) {
   -webkit-border-radius: $radius;

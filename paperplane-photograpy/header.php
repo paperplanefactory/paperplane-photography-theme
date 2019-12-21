@@ -75,6 +75,7 @@ global $elenco_foto;
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
 $torna_elenco = get_field( 'torna_elenco', 'options' );
+$custom_logo = get_field( 'custom_logo', 'options' );
  ?>
 </head>
 
@@ -83,11 +84,18 @@ $torna_elenco = get_field( 'torna_elenco', 'options' );
 <header id="header" class="bg-5">
   <div class="wrapper-padded">
     <div id="header-structure">
-      <div class="logo delight-area">
-        <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>">
-          <?php echo get_bloginfo( 'name' ); ?>
-        </a>
-      </div>
+      <?php if ( $custom_logo != '' ) : ?>
+        <div class="logo delight-area">
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+          <div class="imaged" style="background-image: url(<?php echo $custom_logo; ?>)"></div>
+        </div>
+      <?php else : ?>
+        <div class="logo delight-area">
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>">
+            <?php echo get_bloginfo( 'name' ); ?>
+          </a>
+        </div>
+      <?php endif; ?>
       <nav class="swupped menu">
         <?php if ( is_singular( 'post' ) || is_attachment() ) : ?>
           <ul class="navi-info swupped-link">
@@ -125,8 +133,6 @@ $torna_elenco = get_field( 'torna_elenco', 'options' );
             }
             $abilitare_la_vendita = get_field( 'abilitare_la_vendita', $picture_id );
             if ( $abilitare_la_vendita === 'si' ) :
-
-
               ?>
               <li>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="delight-area pay-picture">

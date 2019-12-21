@@ -52,9 +52,26 @@
     position: relative;
     -webkit-box-flex: 1;
     width: $logo-width;
+    height: 100%;
     font-weight: $font-weight-2;
     font-size: $logo-size-desktop;
     line-height: $logo-lineheight-desktop;
+    .imaged {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 20px);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      @include define-basic-transition(opacity, 0.3s);
+    }
+    &:hover {
+      .imaged {
+        opacity: 0.5;
+      }
+    }
   }
   .menu {
     position: relative;
