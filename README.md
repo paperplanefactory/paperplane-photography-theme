@@ -38,7 +38,7 @@ Don't insert pictures in content, use "the_content" to describe your project ins
 
 ### :star: Useful plugin to install
 Improve loading times with [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache").<br/>
-CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7")
+CSS rules perfectly define appearence of forms created with [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7"). In CF7 editor just wrap your form into a DIV with class "form-hold".
 
 ### :sparkling_heart: Cool stuff used in this theme
 * [Swup](https://swup.js.org/ "Swup");
