@@ -48,6 +48,9 @@ global $module_count;
 body {
   font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
 }
+a {
+  color: #191919;
+}
 input[type=text],
 input[type=email],
 input[type=number],
