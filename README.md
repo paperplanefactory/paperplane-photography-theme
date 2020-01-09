@@ -35,7 +35,7 @@ Required set of fields is already included through functions.php.<br/>
 * if you need a news section there's a "News" custom post type for it. To add a news listing page create a new page and assign "News" as template. News published within 90 days are automatically listed in homepage;
 * if you need a books section there's a "Books" custom post type for it. To add a books listing page create a new page and assign "Books" as template;
 * if you want to sell an image you must first configure the basic information for PayPal and then, from the editor of the single image in the media library, enable the sale and set the price;
-* if you want to use custom favicons please refer to [Favicon & App Icon Generator](https://www.favicon-generator.org/ "Favicon & App Icon Generator"). Generate your set of favicons and replace them into "images/favicons" folder.
+* if you want to use custom favicons please refer to [Favicon & App Icon Generator](https://www.favicon-generator.org/ "Favicon & App Icon Generator"). Generate your set of favicons and replace them into "images/favicons" folder;
 
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts and post attachments. To create a gallery:
