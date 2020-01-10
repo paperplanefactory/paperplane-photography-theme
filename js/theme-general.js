@@ -42,7 +42,7 @@ function init() {
 	approveDelight();
 	wrapPostMedia();
 	blockArrowKeys = true;
-	//console.log(blockArrowKeys);
+	//console.(blockArrowKeys);
 }
 
 function unload() {
@@ -59,7 +59,6 @@ function animationIn() {
 document.addEventListener('swup:contentReplaced', event => {
 	initInfiniteScroll();
   $( ".mouse-trap" ).mouseover(function() {
-    console.log('ff');
     closeOverlay();
   });
   setInitialBrightness();
@@ -224,7 +223,6 @@ function prevNaviAction() {
 
 // close overlay on mouse leave
 $( ".mouse-trap" ).mouseover(function() {
-  console.log('ff');
   closeOverlay();
 });
 

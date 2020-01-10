@@ -1,25 +1,22 @@
 <div class="flex-hold-child grid-item-infinite">
-  <?php
-$thumb_id = get_post_thumbnail_id();
-$attachment_title = get_the_title($thumb_id);
-$attachment_alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true);
-$thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'grid_large_image', true);
-$thumb_url_desktop_3 = wp_get_attachment_image_src($thumb_id, 'tablet_image', true);
-$thumb_url_mobile = wp_get_attachment_image_src($thumb_id, 'mobile_image', true);
-$thumb_url_micro = wp_get_attachment_image_src($thumb_id, 'micro', true);
-if ( $thumb_id != '' ) :
- ?>
- <a href="<?php the_permalink(); ?>">
-   <div class="no-the-100">
-     <picture>
-        <source media="(max-width: 1024px)" data-srcset="<?php echo $thumb_url_mobile[0]; ?>">
-          <source media="(max-width: 1920px)" data-srcset="<?php echo $thumb_url_desktop[0]; ?>">
-        <source media="(min-width: 1921px)" data-srcset="<?php echo $thumb_url_desktop_3[0]; ?>">
-        <img src="<?php echo $thumb_url_micro[0]; ?>" data-src="<?php echo $thumb_url_desktop_3[0]; ?>" title="<?php echo $attachment_title; ?>" alt="<?php echo $attachment_alt; ?>" class="lazy" />
-      </picture>
-   </div>
-  </a>
-<?php endif; ?>
+<a href="<?php the_permalink(); ?>">
+ <div class="no-the-100">
+   <?php
+   $image_data = array(
+       'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+       'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+       'size_fallback' => 'grid_large_image'
+   );
+   $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+       'retina' => 'grid_large_image',
+       'desktop' => 'tablet_image',
+       'mobile' => 'mobile_image',
+       'micro' => 'micro'
+   );
+   print_theme_single_image( $image_data, $image_sizes );
+   ?>
+ </div>
+</a>
 <div class="flex-hold-title">
   <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
   <div>
