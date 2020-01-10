@@ -26,6 +26,7 @@ Required set of fields is already included through functions.php.<br/>
 
 ### :exclamation: How to set it up:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
+* best option: install theme using [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater") in order to see available updates in the future;
 * create a page and set "Home" as template;
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
@@ -43,13 +44,16 @@ Galleries use WordPress posts and post attachments. To create a gallery:
 * upload to the post all images you want to add to the gallery;
 * eventually re-order images using WordPress media panel;
 * publish post;
+* you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to show a video will disable the gallery's functionality for that post;
 
 Don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically.
 
 ### :electric_plug: Useful plugins to install:
+These plugins are suggested based on my experience and are therefore a simple tip.
 * [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache") to improve loading time;
 * [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7"): CSS rules perfectly define appearence of forms created with CF7. In CF7 editor just wrap your form into a DIV with class "form-hold";
 * [WebP Express](https://wordpress.org/plugins/webp-express/ "WebP Express") is a must have plugin if your hosting provider supports WebP image conversion tools;
+* [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/ "Yoast SEO") to boost SEO;
 
 ### :sparkling_heart: Cool stuff used in this theme:
 * [Swup](https://swup.js.org/ "Swup");
