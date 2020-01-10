@@ -26,6 +26,7 @@ Required set of fields is already included through functions.php.<br/>
 
 ### :exclamation: How to set it up:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
+* best option: install theme using [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater") in order to see available updates in the future;
 * create a page and set "Home" as template;
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
