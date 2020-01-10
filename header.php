@@ -49,7 +49,7 @@ $favicons_folder = get_stylesheet_directory_uri().'/images/favicons/';
 body {
   font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
 }
-a {
+a:link, a:visited, a:hover, a:active {
   color: #191919;
 }
 input[type=text],
