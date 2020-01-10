@@ -1,0 +1,62 @@
+{
+    "key": "group_5dfccae53e4bc",
+    "title": "Typography options",
+    "fields": [
+        {
+            "key": "field_5dfccba411af3",
+            "label": "Link Google font",
+            "name": "link_google_font",
+            "type": "text",
+            "instructions": "You can choose any font from <a href=\"https:\/\/fonts.google.com\/\" target=\"_blank\">Google Fonts<\/a>.<br \/>\r\nYou must strictly use only one cont with two weights.<br \/>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/fonts.googleapis.com\/css?family=Roboto:400,400i,700,700i&display=swap",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5dfccaecba915",
+            "label": "Font selector",
+            "name": "selettore_font",
+            "type": "text",
+            "instructions": "See the part \"Specify in CSS - Use the following CSS rules to specify these families: \" when getting font from Google Fonts.<br \/>\r\nCopy only the selector instead of the entire line:<br \/>\r\n<span style=\"text-decoration: line-through;\">font-family:<\/span> 'Roboto', sans-serif<span style=\"text-decoration: line-through;\">;<\/span>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "'Roboto', sans-serif",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-typographic-options"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1578654207
+}

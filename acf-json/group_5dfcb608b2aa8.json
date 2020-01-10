@@ -1,0 +1,76 @@
+{
+    "key": "group_5dfcb608b2aa8",
+    "title": "Sales information",
+    "fields": [
+        {
+            "key": "field_5dfcb67029f82",
+            "label": "Enable the sale of this image?",
+            "name": "abilitare_la_vendita",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "si": "Sì"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5dfcb66929f81",
+            "label": "Price",
+            "name": "prezzo",
+            "type": "text",
+            "instructions": "Use dot as separator - eg 12.00",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5dfcb67029f82",
+                        "operator": "==",
+                        "value": "si"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1578654202
+}

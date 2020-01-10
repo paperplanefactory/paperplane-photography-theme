@@ -26,7 +26,6 @@ $args_topworks = array(
   )
 );
 $my_topworks = get_posts( $args_topworks );
-
 ?>
 <div class="photo-frame">
   <div class="photo-hold">
@@ -37,37 +36,49 @@ $my_topworks = get_posts( $args_topworks );
       <div class="sk-cube3 sk-cube"></div>
     </div>
     <?php foreach ( $my_topworks as $post ) : setup_postdata ($post );
-    $args = array(
-      'post_type' => 'attachment',
-      'numberposts' => 1,
-      'post_status' => null,
-      'post_parent' => $post->ID,
-      'orderby' => 'rand',
-      );
-      $attachments = get_posts( $args );
-      if ( $attachments ) {
-        foreach ( $attachments as $attachment ) {
-          $attachment_title = get_the_title($attachment->ID);
-          $attachment_alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true);
-          $thumb_url_5k = wp_get_attachment_image_src($attachment->ID, '5k_image', true);
-          $thumb_url_desktop = wp_get_attachment_image_src($attachment->ID, 'full_desk', true);
-          $thumb_url_tablet = wp_get_attachment_image_src($attachment->ID, 'tablet_image', true);
-          $thumb_url_mobile = wp_get_attachment_image_src($attachment->ID, 'mobile_image', true);
-          $thumb_url_micro = wp_get_attachment_image_src($attachment->ID, 'micro', true);
+    if ( get_field( 'video_embed' ) ) {
+      $iframe = get_field('video_embed');
+      $iframe = preg_replace('~<iframe[^>]*\K(?=src)~i','data-',$iframe);
+      $iframe = str_replace( '<iframe ', '<iframe class="lazy" ', $iframe );
+      echo '<div class="embed-container">';
+      echo $iframe;
+      echo '</div>';
+    }
+    else {
+      $args = array(
+        'post_type' => 'attachment',
+        'numberposts' => 1,
+        'post_status' => null,
+        'post_parent' => $post->ID,
+        'orderby' => 'rand',
+        );
+        $attachments = get_posts( $args );
+        if ( $attachments ) {
+          foreach ( $attachments as $attachment ) {
+            $thumb_url_desktop = wp_get_attachment_image_src($attachment->ID, 'full_desk', true);
 
-          ?>
-          <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
-          <div class="lazy only-explorer" data-src="<?php echo $thumb_url_desktop[0]; ?>"></div>
-          <picture>
-            <source media="(max-width: 767px)" data-srcset="<?php echo $thumb_url_mobile[0]; ?>">
-              <source media="(max-width: 1024px)" data-srcset="<?php echo $thumb_url_tablet[0]; ?>">
-                <source media="(max-width: 1920px)" data-srcset="<?php echo $thumb_url_desktop[0]; ?>">
-                  <source media="(min-width: 1921px)" data-srcset="<?php echo $thumb_url_5k[0]; ?>">
-                    <img src="<?php echo $thumb_url_micro[0]; ?>" data-src="<?php echo $thumb_url_desktop[0]; ?>" title="<?php echo $attachment_title; ?>" alt="<?php echo $attachment_alt; ?>" class="lazy no-explorer" />
-          </picture>
-        <?php
+            ?>
+            <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
+            <div class="lazy only-explorer" data-src="<?php echo $thumb_url_desktop[0]; ?>"></div>
+            <?php
+            $image_data = array(
+                'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+                'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+                'size_fallback' => 'full_desk'
+            );
+            $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+                'retina' => '5k_image',
+                'desktop' => 'full_desk',
+                'mobile' => 'mobile_image',
+                'micro' => 'micro'
+            );
+            print_theme_single_image( $image_data, $image_sizes );
+            ?>
+          <?php
+        }
       }
     }
+
     ?>
   </div>
 </div>

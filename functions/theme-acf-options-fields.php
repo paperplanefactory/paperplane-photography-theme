@@ -580,4 +580,44 @@ Use a .png image under 200Kb.',
 	'description' => '',
 ));
 
+acf_add_local_field_group(array(
+	'key' => 'group_5e184bd50fb9f',
+	'title' => 'Video',
+	'fields' => array(
+		array(
+			'key' => 'field_5e184be3be11f',
+			'label' => 'Video embed',
+			'name' => 'video_embed',
+			'type' => 'oembed',
+			'instructions' => 'If a video is set gallery navigation will be disabled and this post will be a single-content item with embedded video and description if set in the content.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'width' => '',
+			'height' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
 endif;
