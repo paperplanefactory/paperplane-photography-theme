@@ -11,7 +11,7 @@ Required set of fields is already included through functions.php.<br/>
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
 * web performance;
-* SEO friendly also if site is based mainly on images - [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject") schema.org ImageObject is added to each gallery image;
+* SEO friendly also if site is based mainly on images;
 
 ### :sunglasses: Features:
 * dark or clear mode navigation;
