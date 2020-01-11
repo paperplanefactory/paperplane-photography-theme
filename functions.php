@@ -51,6 +51,6 @@ include_once "includes/theme-messages.php";
 // custom menus
 include_once "includes/theme-menus.php";
 // ACF theme options fields
-//include_once "includes/theme-acf-options-fields.php";
+include_once "includes/theme-acf-options-fields.php";
 // custom post types
 include_once "includes/theme-cpts.php";

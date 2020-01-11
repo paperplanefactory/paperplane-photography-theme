@@ -2,83 +2,6 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_5dfcb608b2aa8',
-	'title' => 'Sales information',
-	'fields' => array(
-		array(
-			'key' => 'field_5dfcb67029f82',
-			'label' => 'Enable the sale of this image?',
-			'name' => 'abilitare_la_vendita',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array(
-				'no' => 'No',
-				'si' => 'Sì',
-			),
-			'default_value' => array(
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
-		),
-		array(
-			'key' => 'field_5dfcb66929f81',
-			'label' => 'Price',
-			'name' => 'prezzo',
-			'type' => 'text',
-			'instructions' => 'Use dot as separator - eg 12.00',
-			'required' => 1,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_5dfcb67029f82',
-						'operator' => '==',
-						'value' => 'si',
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'attachment',
-				'operator' => '==',
-				'value' => 'image',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'acf_after_title',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-));
-
-acf_add_local_field_group(array(
 	'key' => 'group_5c8cebea7e06b',
 	'title' => 'Homepage settings',
 	'fields' => array(
@@ -184,6 +107,7 @@ acf_add_local_field_group(array(
 	),
 	'active' => true,
 	'description' => '',
+	'modified' => 1578654202,
 ));
 
 acf_add_local_field_group(array(
@@ -246,6 +170,126 @@ acf_add_local_field_group(array(
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
+	'modified' => 1578654204,
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5dfcb608b2aa8',
+	'title' => 'Sales information',
+	'fields' => array(
+		array(
+			'key' => 'field_5dfcb67029f82',
+			'label' => 'Enable the sale of this image?',
+			'name' => 'abilitare_la_vendita',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'no' => 'No',
+				'si' => 'Sì',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5dfcb66929f81',
+			'label' => 'Price',
+			'name' => 'prezzo',
+			'type' => 'text',
+			'instructions' => 'Use dot as separator - eg 12.00',
+			'required' => 1,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5dfcb67029f82',
+						'operator' => '==',
+						'value' => 'si',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'attachment',
+				'operator' => '==',
+				'value' => 'image',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'modified' => 1578654202,
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5e184bd50fb9f',
+	'title' => 'Video',
+	'fields' => array(
+		array(
+			'key' => 'field_5e184be3be11f',
+			'label' => 'Video embed',
+			'name' => 'video_embed',
+			'type' => 'oembed',
+			'instructions' => 'If a video is set gallery navigation will be disabled and this post will be a single-content item with embedded video and description if set in the content.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'width' => '',
+			'height' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'modified' => 1578654198,
 ));
 
 acf_add_local_field_group(array(
@@ -266,7 +310,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'si' => 'Sì',
+				'si' => 'Yes',
 				'no' => 'No',
 			),
 			'default_value' => array(
@@ -292,7 +336,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'si' => 'Sì',
+				'si' => 'Yes',
 				'no' => 'No',
 			),
 			'default_value' => array(
@@ -318,7 +362,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'si' => 'Sì',
+				'si' => 'Yes',
 				'no' => 'No',
 			),
 			'default_value' => array(
@@ -344,7 +388,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
-				'si' => 'Sì',
+				'si' => 'Yes',
 				'no' => 'No',
 			),
 			'default_value' => array(
@@ -355,6 +399,61 @@ acf_add_local_field_group(array(
 			'return_format' => 'value',
 			'ajax' => 0,
 			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5e19ce734476b',
+			'label' => 'Show play/pause button?',
+			'name' => 'show_play_pause_button',
+			'type' => 'select',
+			'instructions' => 'Enabling play/pause will let	visitors use galleries as slideshows.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'no' => 'No',
+				'si' => 'Yes',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5e19cf004476c',
+			'label' => 'Set image duration',
+			'name' => 'set_image_duration',
+			'type' => 'number',
+			'instructions' => 'Set time (in milliseconds) of each slide duration.',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5e19ce734476b',
+						'operator' => '==',
+						'value' => 'si',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 3000,
+			'placeholder' => 3000,
+			'prepend' => '',
+			'append' => '',
+			'min' => 1000,
+			'max' => '',
+			'step' => 1000,
 		),
 		array(
 			'key' => 'field_5dfcbda6df694',
@@ -371,7 +470,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'no' => 'No',
-				'si' => 'Sì',
+				'si' => 'Yes',
 			),
 			'default_value' => array(
 			),
@@ -516,7 +615,7 @@ You must strictly use only one cont with two weights.<br />',
 		),
 		array(
 			'key' => 'field_5dfccaecba915',
-			'label' => 'Selettore font',
+			'label' => 'Font selector',
 			'name' => 'selettore_font',
 			'type' => 'text',
 			'instructions' => 'See the part "Specify in CSS - Use the following CSS rules to specify these families: " when getting font from Google Fonts.<br />
@@ -534,31 +633,6 @@ Copy only the selector instead of the entire line:<br />
 			'prepend' => '',
 			'append' => '',
 			'maxlength' => '',
-		),
-		array(
-			'key' => 'field_5dfdf32d19506',
-			'label' => 'Custom logo',
-			'name' => 'custom_logo',
-			'type' => 'image',
-			'instructions' => 'If no logo is uploaded default site title will be used as "home" link.<br />
-Use a .png image under 200Kb.',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'url',
-			'preview_size' => 'full',
-			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '0.2',
-			'mime_types' => 'png',
 		),
 	),
 	'location' => array(
@@ -578,46 +652,7 @@ Use a .png image under 200Kb.',
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
-));
-
-acf_add_local_field_group(array(
-	'key' => 'group_5e184bd50fb9f',
-	'title' => 'Video',
-	'fields' => array(
-		array(
-			'key' => 'field_5e184be3be11f',
-			'label' => 'Video embed',
-			'name' => 'video_embed',
-			'type' => 'oembed',
-			'instructions' => 'If a video is set gallery navigation will be disabled and this post will be a single-content item with embedded video and description if set in the content.',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'width' => '',
-			'height' => '',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
+	'modified' => 1578654207,
 ));
 
 endif;
