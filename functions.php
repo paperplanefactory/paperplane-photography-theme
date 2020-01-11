@@ -37,20 +37,20 @@ if( class_exists('acf') ) {
   $theme_version = get_field( 'theme_version', 'option' );
 }
 // CSS loading management
-include_once "functions/theme-stylesloader.php";
+include_once "includes/theme-stylesloader.php";
 // scrips loading management
-include_once "functions/theme-scriptsloader.php";
+include_once "includes/theme-scriptsloader.php";
 // images loading
-include_once "functions/theme-images.php";
+include_once "includes/theme-images.php";
 // lazy load
-include_once "functions/theme-lazyload.php";
+include_once "includes/theme-lazyload.php";
 // gestione trim testi
-include_once "functions/theme-txts.php";
+include_once "includes/theme-txts.php";
 // WordPress admin stuff
-include_once "functions/theme-messages.php";
+include_once "includes/theme-messages.php";
 // custom menus
-include_once "functions/theme-menus.php";
+include_once "includes/theme-menus.php";
 // ACF theme options fields
-include_once "functions/theme-acf-options-fields.php";
+//include_once "includes/theme-acf-options-fields.php";
 // custom post types
-include_once "functions/theme-cpts.php";
+include_once "includes/theme-cpts.php";

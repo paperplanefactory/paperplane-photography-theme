@@ -1,37 +1,39 @@
+// compileExpanded: style-expanded.css, compileCompressed: ../../style.min.css
 // imports
-@import 'css/global-vars';
-@import 'css/global-mixin';
-@import 'css/global-reset';
-@import 'css/global-defaults';
-@import 'css/global-typography';
-@import 'css/global-effects';
-@import 'css/global-colors-clear';
-@import 'css/global-colors-dark';
+@import 'global-vars';
+@import 'global-mixin';
+@import 'global-reset';
+@import 'global-defaults';
+@import 'icon-font';
+@import 'global-typography';
+@import 'global-effects';
+@import 'global-colors-clear';
+@import 'global-colors-dark';
 // comportamento immagini in the_content(); - rimuovere il commento se le immagini non hanno differenze tra desktop e mobile
-//@import 'css/global-images';
+//@import 'global-images';
 // imports mobile
 @media screen and (min-width: $break-mobile-start) and  (max-width: $break-tablet-end) {
-  @import 'css/mobile-header-footer';
-  @import 'css/mobile-structure';
+  @import 'mobile-header-footer';
+  @import 'mobile-structure';
 }
 
 // imports desktop
 @media screen and (min-width: $break-desktop-start) {
-  @import 'css/desktop-header-footer';
-  @import 'css/desktop-structure';
+  @import 'desktop-header-footer';
+  @import 'desktop-structure';
 
 }
 
 // imports desktop
 @media screen and (min-width: $break-desktop-start) and  (max-width: $break-desktop-end) {
-  @import 'css/desktop-grid-exc';
+  @import 'desktop-grid-exc';
 }
 
 @media screen and (min-width: $break-fullhd) {
-  @import 'css/fullhd-grid-exc';
+  @import 'fullhd-grid-exc';
 }
-@import 'css/global-images';
-@import 'css/global-forms';
+@import 'global-images';
+@import 'global-forms';
 // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
 
 

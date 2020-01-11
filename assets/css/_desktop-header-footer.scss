@@ -8,6 +8,7 @@
   display: block;
   width: 100vw;
   height: $header-height;
+  @include define-basic-transition(all, 0.3s);
 }
 
 #header {

@@ -29,6 +29,7 @@ $module_count = 0;
 global $module_count;
 $favicons_folder = get_stylesheet_directory_uri().'/images/favicons/';
 ?>
+
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $favicons_folder; ?>apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo $favicons_folder; ?>apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $favicons_folder; ?>apple-icon-72x72.png">
@@ -78,11 +79,15 @@ $contatore_foto = get_field( 'contatore_foto', 'options' );
 global $elenco_foto;
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
+$show_play_pause_button = get_field( 'show_play_pause_button', 'options' );
+if ( $show_play_pause_button === 'si' ) {
+  $play_pause_timer = get_field( 'set_image_duration', 'options' );
+}
 $torna_elenco = get_field( 'torna_elenco', 'options' );
 $custom_logo = get_field( 'custom_logo', 'options' );
  ?>
+<script type="text/javascript">var play_pause_timer = "<?php echo $play_pause_timer ?>";</script>
 </head>
-
 <body class="">
 <div id="preheader"></div>
 <header id="header" class="bg-5">
@@ -115,17 +120,22 @@ $custom_logo = get_field( 'custom_logo', 'options' );
                 }
                 $first_category = $category[0];
                 $first_category_url = get_category_link( $first_category ); ?>
-                <a href="<?php echo $first_category_url; ?>" title="back to list"><i class="fas fa-step-backward delight-area"></i></a>
+                <a href="<?php echo $first_category_url; ?>" title="back to list"><i class="icon-fas-fa-step-backward delight-area"></i></a>
               </li>
             <?php endif; ?>
             <?php if ( $evidenziatore_foto === 'si' ) : ?>
               <li>
-                <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="fas fa-eye"></i></span>
+                <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="icon-fas-fa-eye"></i></span>
+              </li>
+            <?php endif; ?>
+            <?php if ( $show_play_pause_button === 'si' ) : ?>
+              <li>
+                <span class="play-pause delight-area pointered" title="play/pause gallery" player-attribute="pause"><i class="play-pauser icon-fas-fa-play"></i></span>
               </li>
             <?php endif; ?>
             <?php if ( $elenco_foto === 'si' ) : ?>
               <li>
-                <span class="list thumb-list delight-area pointered" title="view images list"><i class="fas fa-list"></i></span>
+                <span class="list thumb-list delight-area pointered" title="view images list"><i class="icon-fas-fa-list"></i></span>
               </li>
             <?php endif; ?>
             <?php
@@ -152,7 +162,7 @@ $custom_logo = get_field( 'custom_logo', 'options' );
                   <input type="hidden" name="tax_rate" value="0">
                   <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
                   <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                  <button type="submit" title="Buy this item"><i class="fas fa-credit-card"></i></button>
+                  <button type="submit" title="Buy this item"><i class="icon-fas-fa-credit-card"></i></button>
                 </form>
               </li>
             <?php endif; ?>
@@ -163,14 +173,14 @@ $custom_logo = get_field( 'custom_logo', 'options' );
         <?php if ( is_singular( 'news' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="/news-archive/" class="delight-area" title="back to list"><i class="fas fa-step-backward"></i></a>
+              <a href="/news-archive/" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
             </li>
           </ul>
         <?php endif; ?>
         <?php if ( is_singular( 'book' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="/books-page/" class="delight-area" title="back to list"><i class="fas fa-step-backward"></i></a>
+              <a href="/books-page/" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
             </li>
           </ul>
         <?php endif; ?>

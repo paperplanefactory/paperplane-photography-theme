@@ -1,3 +1,4 @@
+localStorage.setItem('playOrPause', 'pause'	);
 navColorPattern = window.localStorage.getItem('colorScheme');
 if ( navColorPattern == null ){
     navColorPattern = 'clear';
@@ -41,6 +42,7 @@ function init() {
 	refreshPrevNext();
 	approveDelight();
 	wrapPostMedia();
+  autoNaviGallery();
 	blockArrowKeys = true;
 	//console.(blockArrowKeys);
 }
@@ -218,6 +220,22 @@ function prevNaviAction() {
 		});
 	}
 }
+var timerSlider;
+function autoNaviGallery() {
+  console.log(play_pause_timer);
+  playOrPause = window.localStorage.getItem('playOrPause');
+  window.clearTimeout(timerSlider);
+  console.log(playOrPause);
+  if (playOrPause === 'pause') {
+    $('.play-pauser').removeClass('icon-fas-fa-pause').addClass('icon-fas-fa-play');
+  }
+  if (playOrPause === 'play') {
+    timerSlider = window.setTimeout(function(){
+      nextNaviAction();
+    }, play_pause_timer);
+    $('.play-pauser').removeClass('icon-fas-fa-play').addClass('icon-fas-fa-pause');
+  }
+}
 
 // clicks
 
@@ -244,7 +262,18 @@ $(document).on('click', '.thumb-list:not(.initialized)', function (e) {
 	paperPlaneLazyLoad.update();
 });
 
-
+$(document).on('click', '.play-pause:not(.initialized)', function (e) {
+  playOrPause = window.localStorage.getItem('playOrPause');
+  if (playOrPause === 'pause') {
+    localStorage.setItem('playOrPause', 'play');
+    $('.play-pauser').removeClass('icon-fas-fa-play').addClass('icon-fas-fa-pause');
+  }
+  if (playOrPause === 'play') {
+    localStorage.setItem('playOrPause', 'pause');
+    $('.play-pauser').removeClass('icon-fas-fa-pause').addClass('icon-fas-fa-play');
+  }
+	autoNaviGallery();
+});
 
 $(document).on('swipeleft', '.absl_swipe:not(.initialized)', function (e) {
 	nextNaviAction();
@@ -261,9 +290,6 @@ $(document).on('touchstart', '.absl_swipe:not(.initialized)', function (e) {
 $(document).on('touchend', '.absl_swipe:not(.initialized)', function (e) {
 	$('.absl_swipe').removeClass('swipe-info');
 });
-
-
-
 
 $(document).keydown(function(e) {
 	switch(e.which) {
