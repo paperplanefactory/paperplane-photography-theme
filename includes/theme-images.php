@@ -1,8 +1,8 @@
 <?php
 // custom image size for featured images
 add_theme_support( 'post-thumbnails' );
-add_image_size( '5k_image', 4096, 99999);
-add_image_size( 'full_desk', 1920, 9999);
+add_image_size( '5k_image', 99999, 2160);
+add_image_size( 'full_desk', 99999, 1080);
 add_image_size( 'content_picture', 768, 9999);
 add_image_size( 'tablet_image', 1024, 9999);
 add_image_size( 'mobile_image', 768, 9999);
