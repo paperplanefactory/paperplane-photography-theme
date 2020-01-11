@@ -42,7 +42,8 @@ function init() {
 	refreshPrevNext();
 	approveDelight();
 	wrapPostMedia();
-  autoNaviGallery();
+  myMutant();
+  //autoNaviGallery();
 	blockArrowKeys = true;
 	//console.(blockArrowKeys);
 }
@@ -158,7 +159,7 @@ function setBrightness() {
     document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content',  '#FFFFFF');
     document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content',  '#FFFFFF');
 	}
-	console.log(window.localStorage.getItem('colorScheme'));
+	//console.log(window.localStorage.getItem('colorScheme'));
 }
 
 function setInitialBrightness() {
@@ -222,10 +223,10 @@ function prevNaviAction() {
 }
 var timerSlider;
 function autoNaviGallery() {
-  console.log(play_pause_timer);
+  //console.log(play_pause_timer);
   playOrPause = window.localStorage.getItem('playOrPause');
   window.clearTimeout(timerSlider);
-  console.log(playOrPause);
+  //console.log(playOrPause);
   if (playOrPause === 'pause') {
     $('.play-pauser').removeClass('icon-fas-fa-pause').addClass('icon-fas-fa-play');
   }
@@ -237,6 +238,29 @@ function autoNaviGallery() {
   }
 }
 
+function myMutant() {
+  //console.log('fd');
+  var $div = $(".autoplay-loaded");
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === "class") {
+        var attributeValue = $(mutation.target).prop(mutation.attributeName);
+        //console.log("Class attribute changed to:", attributeValue);
+        if ( $(".autoplay-loaded").hasClass('lazy-loaded') ) {
+          //console.log('now go!');
+          autoNaviGallery();
+        }
+        else {
+          //console.log('wait!');
+        }
+      }
+    });
+  });
+  observer.observe($div[0], {
+    attributes: true
+  });
+}
+myMutant();
 // clicks
 
 // close overlay on mouse leave

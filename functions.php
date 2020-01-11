@@ -1,5 +1,5 @@
 <?php
-add_action( 'after_switch_theme', 'check_theme_dependencies', 10, 2 );
+//add_action( 'after_switch_theme', 'check_theme_dependencies', 10, 2 );
 function check_theme_dependencies( $oldtheme_name, $oldtheme ) {
   include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
   if ( !is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
