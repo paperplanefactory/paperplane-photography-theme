@@ -13,7 +13,7 @@ wp_add_dashboard_widget('custom_help_widget', 'Info about this WordPress theme',
 }
 function custom_dashboard_help() {
 echo '<a href="https://www.paperplanefactory.com"><img src="' . get_template_directory_uri() . '/assets/images/admin-images/logo-paper.jpg" width="200" /></a><h2>Welcome to your site dashboard!</h2><p>Your site - <strong>' . get_bloginfo('name') . '</strong> - is based on <a href="https://wordpress.org/">WordPress</a> and uses a theme designed and written by <a href="https://www.paperplanefactory.com">Paper Plane Factory.</a><br />
-<strong>Need more info? Read <a href="https://github.com/paperplanefactory/paperplane-photography-theme/blob/master/README.md">documentation</a> on GitHub!!</strong></p>';
+<strong>For more info please read <a href="https://github.com/paperplanefactory/paperplane-photography-theme/blob/master/README.md">documentation</a> on GitHub.</strong></p>';
 }
 
 // rimuovo emoji
