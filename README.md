@@ -24,7 +24,7 @@ Required set of fields is already included through functions.php.<br/>
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
 
-### :exclamation: How to set it up:
+### :exclamation: How to set up theme:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
 * best option: install theme using [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater") in order to see available updates in the future;
 * create a page and set "Home" as template;
@@ -33,10 +33,17 @@ Required set of fields is already included through functions.php.<br/>
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Typographic" and "Image gallery" options;
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
+* to activate clear/dark mode toggle just add a link to your menu with these settings:
+  * URL: #
+  * Navigation label: `<i class="icon-fas-fa-adjust"></i>`
+  * Title attribute: Switch clear/dark mode
+  * CSS Classes: `bright-switch`
+  * Description: Turn website from light background color/dark texts to dark background color/light texts and vice versa.
 * if you need a news section there's a "News" custom post type for it. To add a news listing page create a new page and assign "News" as template. News published within 90 days are automatically listed in homepage;
 * if you need a books section there's a "Books" custom post type for it. To add a books listing page create a new page and assign "Books" as template;
 * if you want to sell an image you must first configure the basic information for PayPal and then, from the editor of the single image in the media library, enable the sale and set the price;
-* if you want to use custom favicons please refer to [Favicon & App Icon Generator](https://www.favicon-generator.org/ "Favicon & App Icon Generator"). Generate your set of favicons and replace them into "images/favicons" folder;
+* if you want to use custom favicons please refer to [Favicon & App Icon Generator](https://www.favicon-generator.org/ "Favicon & App Icon Generator"). Generate your set of favicons and replace them into "assets/images/favicons" folder;
+* if you want to enable visitors to use galleries as slideshow with autoplay you can do so by setting to yes "Show play/pause button?" in Site settings > Image gallery options;
 
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts and post attachments. To create a gallery:
