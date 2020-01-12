@@ -27,7 +27,7 @@
 // stabilisco il device
 $module_count = 0;
 global $module_count;
-$favicons_folder = get_stylesheet_directory_uri().'/images/favicons/';
+$favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
 ?>
 
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $favicons_folder; ?>apple-icon-57x57.png">

@@ -1,15 +1,20 @@
 <?php
-//add_action( 'after_switch_theme', 'check_theme_dependencies', 10, 2 );
+add_action( 'after_switch_theme', 'check_theme_dependencies', 10, 2 );
 function check_theme_dependencies( $oldtheme_name, $oldtheme ) {
   include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-  if ( !is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
-    // Update default admin notice: Theme not activated.
-    add_filter( 'gettext', 'update_activation_admin_notice', 10, 3 );
-    // Custom styling for default admin notice.
-    add_action( 'admin_head', 'error_activation_admin_notice' );
-    // Switch back to previous theme.
-    switch_theme( $oldtheme->stylesheet );
-    return false;
+  function my_activation_settings($theme) {
+    if ( 'Paperplane Photography Theme' != $theme ) {
+      if ( !is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
+        // Update default admin notice: Theme not activated.
+        add_filter( 'gettext', 'update_activation_admin_notice', 10, 3 );
+        // Custom styling for default admin notice.
+        add_action( 'admin_head', 'error_activation_admin_notice' );
+        // Switch back to previous theme.
+        switch_theme( $oldtheme->stylesheet );
+        return false;
+      }
+    }
+    return;
   }
 }
 
