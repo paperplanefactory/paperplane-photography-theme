@@ -706,6 +706,10 @@ p {
   word-wrap: break-word;
 }
 
+.content-styled a {
+  text-decoration: underline;
+}
+
 .content-styled strong {
   font-weight: 600;
 }

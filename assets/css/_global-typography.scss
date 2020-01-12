@@ -108,6 +108,9 @@ p {
 
 .content-styled {
 word-wrap:break-word;
+a {
+  text-decoration: underline;
+}
 strong {
   font-weight: $font-weight-2;
 }

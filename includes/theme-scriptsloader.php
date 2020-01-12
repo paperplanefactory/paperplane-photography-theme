@@ -1,5 +1,4 @@
 <?php
-
 // Async load
 function theme_async_scripts( $url ) {
   if ( strpos( $url, '#asyncload' ) === false )
@@ -10,7 +9,6 @@ function theme_async_scripts( $url ) {
   return str_replace( '#asyncload', '', $url )."' async='async";
 }
 add_filter( 'clean_url', 'theme_async_scripts', 11, 1 );
-
 // Defer load
 function theme_defer_scripts( $url ) {
   if ( strpos( $url, '#deferload' ) === false )
@@ -21,8 +19,6 @@ function theme_defer_scripts( $url ) {
   return str_replace( '#deferload', '', $url )."' defer='defer";
 }
 add_filter( 'clean_url', 'theme_defer_scripts', 11, 1 );
-
-
 // All scripts
 add_action( 'wp_enqueue_scripts', 'all_scripts' );
 function all_scripts(){
