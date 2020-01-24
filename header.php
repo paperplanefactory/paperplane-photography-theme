@@ -81,12 +81,20 @@ $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
 $show_play_pause_button = get_field( 'show_play_pause_button', 'options' );
 if ( $show_play_pause_button === 'si' ) {
+  $show_play_pause_button_localstorage = 'pause';
   $play_pause_timer = get_field( 'set_image_duration', 'options' );
+}
+else {
+  $show_play_pause_button_localstorage = 'notnow';
+  $play_pause_timer = 3000;
 }
 $torna_elenco = get_field( 'torna_elenco', 'options' );
 $custom_logo = get_field( 'custom_logo', 'options' );
  ?>
-<script type="text/javascript">var play_pause_timer = "<?php echo $play_pause_timer ?>";</script>
+<script type="text/javascript">
+var show_play_pause_button_localstorage = "<?php echo $show_play_pause_button_localstorage ?>";
+var play_pause_timer = "<?php echo $play_pause_timer ?>";
+</script>
 </head>
 <body class="">
 <div id="preheader"></div>

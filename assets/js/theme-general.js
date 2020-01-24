@@ -1,4 +1,4 @@
-localStorage.setItem('playOrPause', 'pause'	);
+localStorage.setItem('playOrPause', show_play_pause_button_localstorage	);
 navColorPattern = window.localStorage.getItem('colorScheme');
 if ( navColorPattern == null ){
     navColorPattern = 'clear';
