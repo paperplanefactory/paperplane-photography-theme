@@ -23,7 +23,8 @@ var paperPlaneLazyLoad = new LazyLoad({
 const swup = new Swup({
 	containers: [".swupped"],
 	animateHistoryBrowsing: true,
-  plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
+  //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
+  plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
 	cache: true,
 	skipPopStateHandling: function skipPopStateHandling(event) {
 		return !(event.state && event.state.source === 'swup');
@@ -42,7 +43,10 @@ function init() {
 	refreshPrevNext();
 	approveDelight();
 	wrapPostMedia();
+  playOrPause = window.localStorage.getItem('playOrPause');
   myMutant();
+
+
   //autoNaviGallery();
 	blockArrowKeys = true;
 	//console.(blockArrowKeys);
@@ -238,29 +242,37 @@ function autoNaviGallery() {
   }
 }
 
+
 function myMutant() {
   //console.log('fd');
-  var $div = $(".autoplay-loaded");
-  var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.attributeName === "class") {
-        var attributeValue = $(mutation.target).prop(mutation.attributeName);
-        //console.log("Class attribute changed to:", attributeValue);
-        if ( $(".autoplay-loaded").hasClass('lazy-loaded') ) {
-          //console.log('now go!');
-          autoNaviGallery();
+  if ($(".autoplay-loaded")[0]){
+    var $div = $(".autoplay-loaded");
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === "class") {
+          var attributeValue = $(mutation.target).prop(mutation.attributeName);
+          //console.log("Class attribute changed to:", attributeValue);
+          if ( $(".autoplay-loaded").hasClass('lazy-loaded') ) {
+            //console.log('now go!');
+            autoNaviGallery();
+          }
+          else {
+            //console.log('wait!');
+          }
         }
-        else {
-          //console.log('wait!');
-        }
-      }
+      });
     });
-  });
-  observer.observe($div[0], {
-    attributes: true
-  });
+    observer.observe($div[0], {
+      attributes: true
+    });
+  }
+
 }
+
 myMutant();
+
+
+
 // clicks
 
 // close overlay on mouse leave

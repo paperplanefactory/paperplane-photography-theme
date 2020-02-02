@@ -36,8 +36,8 @@ function all_scripts(){
   wp_enqueue_script( 'js-swup' );
   wp_register_script( 'js-swup-head', get_stylesheet_directory_uri() . '/assets/js/libs/SwupHeadPlugin.min.js#deferload', '', $theme_version, true);;
   wp_enqueue_script( 'js-swup-head' );
-  wp_register_script( 'js-swup-ga', get_stylesheet_directory_uri() . '/assets/js/libs/SwupGaPlugin.min.js#deferload', '', $theme_version, true);;
-  wp_enqueue_script( 'js-swup-ga' );
+  //wp_register_script( 'js-swup-ga', get_stylesheet_directory_uri() . '/assets/js/libs/SwupGaPlugin.min.js#deferload', '', $theme_version, true);;
+  //wp_enqueue_script( 'js-swup-ga' );
   wp_register_script( 'js-swup-preload', get_stylesheet_directory_uri() . '/assets/js/libs/SwupPreloadPlugin.min.js#deferload', '', $theme_version, true);;
   wp_enqueue_script( 'js-swup-preload' );
   // Infinite Scroll

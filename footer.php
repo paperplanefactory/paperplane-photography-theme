@@ -2,6 +2,7 @@
 // Paperplane _blankTheme - template per footer.
 //wp_reset_query();
 ?>
+</div><!-- body-shaper closing tag -->
 <footer id="footer" class="delight-area bg-5 txt-1 menu">
   <div class="wrapper">
     <div class="wrapper-padded">

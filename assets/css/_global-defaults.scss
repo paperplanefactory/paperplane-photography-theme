@@ -51,6 +51,16 @@
 	}
 }
 
+.books-listing-cover {
+	position: relative;
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+.body-shaper {
+	min-height: 100vh;
+}
+
 .min-height-footers {
 	min-height: 90vh;
 }

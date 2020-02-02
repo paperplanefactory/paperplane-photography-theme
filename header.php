@@ -223,3 +223,4 @@ var play_pause_timer = "<?php echo $play_pause_timer ?>";
 
 <div class="swupped">
   <div class="mouse-trap">
+    <div class="body-shaper">

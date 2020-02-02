@@ -204,7 +204,7 @@ if ( $elenco_foto === 'si' ) {
 
 <div class="wrapper delight-area">
   <div class="wrapper-padded">
-    <div class="photo-navi bg-5 txt-2 navi-text aligncenter">
+    <div class="photo-navi txt-2 navi-text aligncenter">
       <?php
       global $contatore_foto;
       if ( $contatore_foto === 'si' ) {
