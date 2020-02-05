@@ -1,3 +1,4 @@
+// main: style.scss
 @mixin flex-wrap {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -5,78 +6,64 @@
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
-
 @mixin define-flex-per-row($row_items) {
 	-webkit-box-flex: 1;
 	-ms-flex: 0 0 $row_items;
 	flex: 0 0 $row_items;
 }
-
 @mixin flex-verticalize {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 }
-
 @mixin flex-end {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 }
-
 @mixin reset-button {
 	padding: 0;
-  margin: 0;
-  cursor: pointer;
-  border: none !important;
-  background-color: transparent !important;
+	margin: 0;
+	cursor: pointer;
+	border: none !important;
+	background-color: transparent !important;
 	line-height: normal;
 	-webkit-appearance: none !important;
 }
-
-
 @mixin define-border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
-
 @mixin define-linx-colors($link, $visit, $hover, $active) {
-  color: $link;
-  &:visited {
-    color: $visit;
-  }
-  &:hover {
-    color: $hover;
-  }
-  &:active {
-    color: $active;
-  }
-}
+	color: $link;
 
+	&:visited {
+		color: $visit;
+	}
+
+	&:hover {
+		color: $hover;
+	}
+
+	&:active {
+		color: $active;
+	}
+}
 @mixin define-paddings($top, $right, $bottom, $left) {
-	padding-top: $top;
-	padding-right: $right;
-	padding-bottom: $bottom;
-	padding-left: $left;
+	padding: $top $right $bottom $left;
 }
-
 @mixin define-margins($top, $right, $bottom, $left) {
-	margin-top: $top;
-	margin-right: $right;
-	margin-bottom: $bottom;
-	margin-left: $left;
+	margin: $top $right $bottom $left;
 }
-
 @mixin define-lazy-blur($blur_me) {
 	filter: blur($blur_me);
-  -webkit-filter: blur($blur_me);
-  -moz-filter: blur($blur_me);
-  -o-filter: blur($blur_me);
-  -ms-filter: blur($blur_me);
+	-webkit-filter: blur($blur_me);
+	-moz-filter: blur($blur_me);
+	-o-filter: blur($blur_me);
+	-ms-filter: blur($blur_me);
 }
-
 @mixin define-basic-transition($effet_affected, $effect_duration) {
 	-webkit-transition: $effet_affected $effect_duration ease-in-out;
 	-moz-transition: $effet_affected $effect_duration ease-in-out;
@@ -84,29 +71,24 @@
 	-ms-transition: $effet_affected $effect_duration ease-in-out;
 	transition: $effet_affected $effect_duration ease-in-out;
 }
-
 @mixin define-transform($transforms) {
 	-webkit-transform: $transforms;
 	-moz-transform: $transforms;
 	-ms-transform: $transforms;
 	transform: $transforms;
 }
-
 // Rotate
 @mixin define-rotate ($deg) {
 	@include define-transform(rotate(#{$deg}deg));
 }
-
 // Scale
 @mixin define-scale($scale) {
 	@include define-transform(scale($scale));
 }
-
 // Translate
 @mixin define-translate ($x, $y) {
 	@include define-transform(translate($x, $y));
 }
-
 // Skew
 @mixin define-skew ($x, $y) {
 	@include define-transform(skew(#{$x}deg, #{$y}deg));

@@ -1,3 +1,4 @@
+// main: style.scss
 @import 'global-vars';
 @import 'global-mixin';
 
@@ -7,18 +8,25 @@ body.dark-theme {
 }
 
 .dark-theme {
-	div, footer, header, nav, ul, li, textarea, input[type] {
+	div,
+	footer,
+	header,
+	input[type],
+	li,
+	nav,
+	textarea,
+	ul {
 		border-color: $color-4-dark !important;
 	}
 
 	::-moz-selection {
 		background: $color-1-dark;
-		color:  $color-5-dark;
+		color: $color-5-dark;
 	}
 
 	::selection {
 		background: $color-1-dark;
-		color:  $color-5-dark;
+		color: $color-5-dark;
 	}
 
 	::-moz-selection {
@@ -39,15 +47,14 @@ body.dark-theme {
 		color: $color-1-dark;
 	}
 
-	::-moz-placeholder  {
+	::-moz-placeholder {
 		color: $color-1-dark;
 	}
-
 	// banner cookies
-
 	#paperplane-cookie-notice {
 		background-color: $color-5-dark !important;
 		color: $color-3-dark !important;
+
 		a {
 			background-color: $color-3-dark;
 			color: $color-5-dark !important;
@@ -58,87 +65,80 @@ body.dark-theme {
 		background-color: $color-1-dark;
 		color: $color-5-dark;
 	}
-
 	// hamburger
-
 	.open_head .hambuger-element span {
 		background-color: $color-1-dark !important;
 	}
 
 	.hambuger-element span {
-	  background: $color-1-dark;
+		background: $color-1-dark;
 	}
 
 	.hambuger-element:hover span {
 		background: $color-3-dark;
 	}
-
 	// txt colors
-
 	.txt-1 {
-	  color: $color-1-dark;
+		color: $color-1-dark;
 	}
 
 	.txt-2 {
-	  color: $color-1-dark;
+		color: $color-1-dark;
 	}
 
 	.txt-3 {
-	  color: $color-3-dark;
+		color: $color-3-dark;
 	}
 
 	.txt-4 {
-	  color: $color-4-dark;
+		color: $color-4-dark;
 	}
 
 	.txt-5 {
-	  color: $color-5-dark;
+		color: $color-5-dark;
 	}
 
 	.content-styled {
 		ul li:before {
-		  color: $color-1-dark;
+			color: $color-1-dark;
 		}
 	}
 
 	ol > li:before {
 		color: $color-1-dark;
 	}
-
-
 	// bg colors
-
 	.bg-1 {
-	  background-color: $color-1-dark;
+		background-color: $color-1-dark;
 	}
 
 	.bg-2 {
-	  background-color: $color-1-dark;
+		background-color: $color-1-dark;
 	}
 
 	.bg-3 {
-	  background-color: $color-3-dark;
+		background-color: $color-3-dark;
 	}
 
 	.bg-4 {
-	  background-color: $color-4-dark;
+		background-color: $color-4-dark;
 	}
 
 	.bg-5 {
-	  background-color: $color-5-dark;
+		background-color: $color-5-dark;
 	}
-
 	// link behaviour and colors
-
 	a:link,
 	a:visited {
 		color: $color-1-dark;
 	}
+
 	a:hover {
 		color: $color-3-dark;
 	}
 
-	.current-menu-item, .current-page-ancestor {
+	.current-menu-item,
+	.current-page-ancestor {
 		a {
 			color: $color-3-dark !important;
 		}
@@ -146,60 +146,66 @@ body.dark-theme {
 
 	.navi-info {
 		color: $color-3-dark;
+
 		a:link,
 		a:visited {
 			color: $color-3-dark;
 		}
+
 		a:hover {
 			color: $color-2-dark;
 		}
 	}
 
-	.highlight:hover, .list:hover {
+	.highlight:hover,
+	.list:hover {
 		color: $color-1-dark;
 	}
 
 	.txt-4 {
-		&:link, &:visited {
+		&:link,
+		&:visited {
 			color: $color-2-dark;
 		}
+
 		&:hover {
 			color: $color-1-dark;
 		}
 	}
-
 	// structure elements
-
 	.flex-hold-title {
-	  background-color: rgba(25, 25, 25, 0.85);
+		background-color: rgba(25, 25, 25, 0.85);
 	}
 
 	.sk-folding-cube .sk-cube:before {
-	  background-color: $color-1-dark;
+		background-color: $color-1-dark;
 	}
-
 	// forms
-
 	.form-hold {
 		label {
 			color: $color-1-dark;
 		}
-		input[type=text],
+
 		input[type=email],
 		input[type=number],
-		input[type=tel] {
+		input[type=tel],
+		input[type=text] {
 			color: $color-1-dark;
 		}
+
 		textarea {
 			color: $color-1-dark;
 		}
+
 		select {
 			color: $color-4-dark;
 		}
+
 		input[type=submit] {
 			color: $color-5-dark;
 			background-color: $color-1-dark;
 		}
+
 		input[type=submit]:hover {
 			color: $color-1-dark;
 			background-color: $color-4-dark;

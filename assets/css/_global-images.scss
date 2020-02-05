@@ -1,8 +1,10 @@
+// main: style.scss
 @import 'global-vars';
 @import 'global-mixin';
-.wp-caption.alignnone,
+
 .wp-caption.aligncenter,
 .wp-caption.alignleft,
+.wp-caption.alignnone,
 .wp-caption.alignright {
 	position: relative;
 	width: 100% !important;
@@ -10,9 +12,9 @@
 	margin-bottom: 15px;
 }
 
-.wp-caption.alignnone img,
 .wp-caption.aligncenter img,
 .wp-caption.alignleft img,
+.wp-caption.alignnone img,
 .wp-caption.alignright img {
 	width: 100% !important;
 	height: auto !important;
@@ -20,16 +22,16 @@
 	margin: 0;
 }
 
-.wp-caption.alignnone .wp-caption-text,
+.wp-caption-text,
 .wp-caption.aligncenter .wp-caption-text,
 .wp-caption.alignleft .wp-caption-text,
-.wp-caption.alignright .wp-caption-text,
-.wp-caption-text {
+.wp-caption.alignnone .wp-caption-text,
+.wp-caption.alignright .wp-caption-text {
 	padding: 10px;
-  font-weight:$font-weight-1;
-  font-size: $cta1-size-desktop;
-  line-height: $cta1-lineheight-desktop;
-  word-wrap:break-word;
+	font-weight: $font-weight-1;
+	font-size: $cta1-size-desktop;
+	line-height: $cta1-lineheight-desktop;
+	word-wrap: break-word;
 	font-style: italic;
 	background-color: $color-5;
 }

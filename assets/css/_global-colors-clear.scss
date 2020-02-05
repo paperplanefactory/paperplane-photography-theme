@@ -1,3 +1,4 @@
+// main: style.scss
 @import 'global-vars';
 @import 'global-mixin';
 
@@ -7,20 +8,28 @@ body.clear-theme {
 }
 
 .clear-theme {
-	div, footer, header, nav, ul, li {
+	div,
+	footer,
+	header,
+	li,
+	nav,
+	ul {
 		border-color: $color-4 !important;
 	}
-	textarea, input[type] {
+
+	input[type],
+	textarea {
 		border-color: $color-3 !important;
 	}
+
 	::-moz-selection {
 		background: $color-1;
-		color:  $color-5;
+		color: $color-5;
 	}
 
 	::selection {
 		background: $color-1;
-		color:  $color-5;
+		color: $color-5;
 	}
 
 	::-moz-selection {
@@ -41,15 +50,14 @@ body.clear-theme {
 		color: $color-1;
 	}
 
-	::-moz-placeholder  {
+	::-moz-placeholder {
 		color: $color-1;
 	}
-
 	// banner cookies
-
 	#paperplane-cookie-notice {
 		background-color: $color-5 !important;
 		color: $color-2 !important;
+
 		a {
 			background-color: $color-2;
 			color: $color-5 !important;
@@ -60,87 +68,80 @@ body.clear-theme {
 		background-color: $color-1;
 		color: $color-5;
 	}
-
 	// hamburger
-
 	.open_head .hambuger-element span {
 		background-color: $color-1 !important;
 	}
 
 	.hambuger-element span {
-	  background: $color-1;
+		background: $color-1;
 	}
 
 	.hambuger-element:hover span {
 		background: $color-3;
 	}
-
 	// txt colors
-
 	.txt-1 {
-	  color: $color-1;
+		color: $color-1;
 	}
 
 	.txt-2 {
-	  color: $color-1;
+		color: $color-1;
 	}
 
 	.txt-3 {
-	  color: $color-3;
+		color: $color-3;
 	}
 
 	.txt-4 {
-	  color: $color-4;
+		color: $color-4;
 	}
 
 	.txt-5 {
-	  color: $color-5;
+		color: $color-5;
 	}
 
 	.content-styled {
 		ul li:before {
-		  color: $color-1;
+			color: $color-1;
 		}
 	}
 
 	ol > li:before {
 		color: $color-1;
 	}
-
-
 	// bg colors
-
 	.bg-1 {
-	  background-color: $color-1;
+		background-color: $color-1;
 	}
 
 	.bg-2 {
-	  background-color: $color-1;
+		background-color: $color-1;
 	}
 
 	.bg-3 {
-	  background-color: $color-3;
+		background-color: $color-3;
 	}
 
 	.bg-4 {
-	  background-color: $color-4;
+		background-color: $color-4;
 	}
 
 	.bg-5 {
-	  background-color: $color-5;
+		background-color: $color-5;
 	}
-
 	// link behaviour and colors
-
 	a:link,
 	a:visited {
 		color: $color-1;
 	}
+
 	a:hover {
 		color: $color-3;
 	}
 
-	.current-menu-item, .current-page-ancestor {
+	.current-menu-item,
+	.current-page-ancestor {
 		a {
 			color: $color-3 !important;
 		}
@@ -148,23 +149,28 @@ body.clear-theme {
 
 	.navi-info {
 		color: $color-3;
+
 		a:link,
 		a:visited {
 			color: $color-3;
 		}
+
 		a:hover {
 			color: $color-2;
 		}
 	}
 
-	.highlight:hover, .list:hover {
+	.highlight:hover,
+	.list:hover {
 		color: $color-1;
 	}
 
 	.txt-4 {
-		&:link, &:visited {
+		&:link,
+		&:visited {
 			color: $color-2;
 		}
+
 		&:hover {
 			color: $color-1;
 		}
@@ -175,39 +181,40 @@ body.clear-theme {
 			color: $color-6;
 		}
 	}
-
 	// structure elements
-
 	.flex-hold-title {
-	  background-color: rgba(255, 255, 255, 0.85);
+		background-color: rgba(255, 255, 255, 0.85);
 	}
 
 	.sk-folding-cube .sk-cube:before {
-	  background-color: $color-1;
+		background-color: $color-1;
 	}
-
 	// forms
-
 	.form-hold {
 		label {
 			color: $color-1;
 		}
-		input[type=text],
+
 		input[type=email],
 		input[type=number],
-		input[type=tel] {
+		input[type=tel],
+		input[type=text] {
 			color: $color-1;
 		}
+
 		textarea {
 			color: $color-1;
 		}
+
 		select {
 			color: $color-4;
 		}
+
 		input[type=submit] {
 			color: $color-5;
 			background-color: $color-1;
 		}
+
 		input[type=submit]:hover {
 			color: $color-1;
 			background-color: $color-4;

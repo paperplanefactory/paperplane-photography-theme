@@ -1,8 +1,7 @@
+// main: style.scss
 @import 'global-vars';
 @import 'global-mixin';
-
 // header
-
 #preheader {
   position: relative;
   display: block;
@@ -35,11 +34,11 @@
 }
 
 .scroll-opportunity {
-	position: relative;
-	display: block;
-	width: calc(100% + 18px);
-	height: calc(100vh - #{$header-height});
-	overflow-y: scroll;
+  position: relative;
+  display: block;
+  width: calc(100% + 18px);
+  height: calc(100vh - #{$header-height});
+  overflow-y: scroll;
   overflow-x: visible;
 }
 
@@ -49,6 +48,7 @@
   height: $header-height;
   @include flex-wrap;
   @include flex-verticalize;
+
   .logo {
     position: relative;
     -webkit-box-flex: 1;
@@ -56,6 +56,7 @@
     font-weight: $font-weight-2;
     font-size: $logo-size-desktop;
     line-height: $logo-lineheight-desktop;
+
     .imaged {
       position: absolute;
       top: 10px;
@@ -67,37 +68,46 @@
       background-position: 0 50%;
       @include define-basic-transition(opacity, 0.3s);
     }
+
     &.pictured {
       height: 100%;
     }
+
     &:hover {
       .imaged {
         opacity: 0.5;
       }
     }
   }
+
   .menu {
     position: relative;
     -webkit-box-flex: 1;
     width: calc(100% - #{$logo-width} - #{$hamburger-width});
     text-align: right;
+
     ul {
       padding-right: 15px;
       margin-right: 15px;
       border-right: solid 1px;
       display: inline-block;
+
       li {
         display: inline-block;
         margin-right: 15px;
+
         &:last-child {
           margin-right: 0;
         }
       }
-      .current_page_item, .current-page-ancestor {
+
+      .current-page-ancestor,
+      .current_page_item {
         font-weight: $font-weight-2;
       }
     }
   }
+
   .hamburger {
     position: relative;
     -webkit-box-flex: 1;
@@ -110,23 +120,28 @@
   display: block;
   width: 12px;
   height: 12px;
+
   span {
     position: absolute;
     line-height: 0;
     width: 4px;
     height: 4px;
+
     &:nth-child(1) {
       top: 2px;
       left: -1px;
     }
+
     &:nth-child(2) {
       top: 2px;
       right: 1px;
     }
+
     &:nth-child(3) {
       bottom: -2px;
       left: -1px;
     }
+
     &:nth-child(4) {
       bottom: -2px;
       right: 1px;
@@ -136,6 +151,7 @@
 
 .menu-overlay {
   position: relative;
+
   ul {
     li {
       display: block;
@@ -143,6 +159,7 @@
       margin-bottom: 15px;
       padding-bottom: 15px;
       padding-right: 45px;
+
       &:last-child {
         margin-bottom: 0;
       }

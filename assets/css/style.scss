@@ -8,35 +8,27 @@
 @import 'global-typography';
 @import 'global-effects';
 @import 'global-colors-clear';
-@import 'global-colors-dark';
-// comportamento immagini in the_content(); - rimuovere il commento se le immagini non hanno differenze tra desktop e mobile
+@import 'global-colors-dark'; // comportamento immagini in the_content(); - rimuovere il commento se le immagini non hanno differenze tra desktop e mobile
 //@import 'global-images';
 // imports mobile
-@media screen and (min-width: $break-mobile-start) and  (max-width: $break-tablet-end) {
+@media screen and (min-width: $break-mobile-start) and (max-width: $break-tablet-end) {
   @import 'mobile-header-footer';
   @import 'mobile-structure';
 }
-
 // imports desktop
 @media screen and (min-width: $break-desktop-start) {
   @import 'desktop-header-footer';
   @import 'desktop-structure';
-
 }
-
 // imports desktop
-@media screen and (min-width: $break-desktop-start) and  (max-width: $break-desktop-end) {
+@media screen and (min-width: $break-desktop-start) and (max-width: $break-desktop-end) {
   @import 'desktop-grid-exc';
 }
-
 @media screen and (min-width: $break-fullhd) {
   @import 'fullhd-grid-exc';
 }
 @import 'global-images';
-@import 'global-forms';
-// rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
-
-
+@import 'global-forms'; // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
 // UTILITIES
 // Generatore gradiente CSS: http://www.colorzilla.com/gradient-editor/
 // Generatore Text Shadow CSS: https://css3gen.com/text-shadow/

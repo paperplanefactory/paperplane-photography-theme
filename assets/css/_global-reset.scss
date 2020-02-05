@@ -1,43 +1,125 @@
+// main: style.scss
 @import 'global-vars';
 @import 'global-mixin';
-html, body, div, span, applet, object, iframe, blockquote, pre, a, abbr, acronym, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+
+a,
+abbr,
+acronym,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
 }
+
 body {
 	line-height: 1;
 	@include define-basic-transition(all, 0.3s);
 }
+
 *:focus {
-    outline: 0;
+	outline: 0;
 }
+
 ol,
 ul {
 	list-style: none;
 }
+
 blockquote,
 q {
 	quotes: none;
 }
-blockquote:before,
+
 blockquote:after,
-q:before,
-q:after {
+blockquote:before,
+q:after,
+q:before {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 caption,
-th,
-td {
+td,
+th {
 	font-weight: normal;
 	text-align: left;
 }
+
 h1,
 h2,
 h3,
@@ -48,11 +130,13 @@ h6 {
 	margin: 0;
 	padding: 0;
 }
-html {
-}
+
+html {}
+
 a:focus {
 	outline: thin dotted;
 }
+
 article,
 aside,
 details,
@@ -65,28 +149,33 @@ nav,
 section {
 	display: block;
 }
+
 audio,
 canvas,
 video {
 	display: inline-block;
 }
+
 audio:not([controls]) {
 	display: none;
 }
+
 del {
 	color: #333;
 }
+
 ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
+
 hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin: 24px;
-	margin-bottom: 1.714285714rem;
+	margin: 24px 24px 1.714285714rem;
 }
+
 sub,
 sup {
 	font-size: 75%;
@@ -94,15 +183,19 @@ sup {
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	top: -0.5em;
 }
+
 sub {
 	bottom: -0.25em;
 }
+
 small {
 	font-size: smaller;
 }
+
 img {
 	margin: 0;
 	padding: 0;
@@ -110,19 +203,19 @@ img {
 	vertical-align: middle;
 	-ms-interpolation-mode: bicubic;
 }
-
 /* Clearing floats */
 .clear:after,
-.wrapper:after,
-.format-status .entry-header:after {
+.format-status .entry-header:after,
+.wrapper:after {
 	clear: both;
 }
-.clear:before,
+
 .clear:after,
-.wrapper:before,
-.wrapper:after,
+.clear:before,
+.format-status .entry-header:after,
 .format-status .entry-header:before,
-.format-status .entry-header:after {
+.wrapper:after,
+.wrapper:before {
 	display: table;
 	content: "";
 }
@@ -136,11 +229,11 @@ html {
 }
 
 a {
-	text-decoration:none;
-	border:none;
-	outline:none !important;
-	-webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+	text-decoration: none;
+	border: none;
+	outline: none !important;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
 }

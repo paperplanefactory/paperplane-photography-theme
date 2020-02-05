@@ -160,7 +160,7 @@ if ( $elenco_foto === 'si' ) {
       <div class="photo-navi bg-5 txt-2 navi-text aligncenter">
         <?php
         global $contatore_foto;
-        if ( $contatore_foto === 'si' ) {
+        if ( $contatore_foto === 'si' && $count > 1 ) {
           if ( $count > 0 )  { echo '1 / ' .$count;
           }
         }
