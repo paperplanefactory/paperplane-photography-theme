@@ -207,7 +207,7 @@ if ( $elenco_foto === 'si' ) {
     <div class="photo-navi txt-2 navi-text aligncenter">
       <?php
       global $contatore_foto;
-      if ( $contatore_foto === 'si' && total_attachments > 1 ) {
+      if ( $contatore_foto === 'si' && $total_attachments > 1 ) {
         echo $k . ' / ' . $total_attachments;
       }
       ?>
