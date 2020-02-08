@@ -1,7 +1,6 @@
 // main: style.scss
 @import 'global-vars';
-@import 'global-mixin';
-// index
+@import 'global-mixin'; // index
 // comportamenti predefiniti - selezione testo - placeholder - allineamento testi - immagini - etc
 // infinite load
 // banner cookies
@@ -12,6 +11,7 @@
 // comma separated links
 // responsive iframes / videos
 // comportamenti predefiniti
+
 .grecaptcha-badge {
 	visibility: collapse !important;
 }
@@ -99,6 +99,10 @@
 	padding: 20px 0 0;
 }
 
+.picture-info {
+	margin-bottom: 20px;
+}
+
 .pay-picture {
 	button {
 		border: none;
@@ -128,29 +132,6 @@
 	}
 }
 // infinite load
-.last-message {
-	position: relative;
-	display: block;
-	width: 100%;
-	text-align: center;
-	padding: 20px;
-}
-
-.bottom-message {
-	position: fixed;
-	z-index: 9999;
-	bottom: 0;
-	left: 0;
-	display: none;
-	width: 100%;
-	text-align: center;
-	padding: 20px;
-}
-
-.centil-infinite-scroll,
-.centil-post-header {
-	display: none;
-}
 
 .navigation {
 	display: none;
@@ -179,6 +160,7 @@
 	display: none !important;
 }
 // banner cookies
+
 #paperplane-cookie-notice {
 	position: fixed;
 	z-index: 9999;
@@ -225,6 +207,7 @@
 	}
 }
 // hamburger
+
 .hambuger-element {
 	width: 25px;
 	height: 16px;
@@ -281,6 +264,7 @@
 	left: 50%;
 }
 // link behaviour and colors
+
 a.absl:link {
 	position: absolute;
 	z-index: 100;
@@ -291,6 +275,7 @@ a.absl:link {
 	height: 100%;
 }
 // comma separated links
+
 .category-list {
 	//margin-bottom: 24px;
 	a:link {
@@ -314,6 +299,7 @@ a.absl:link {
 	}
 }
 // structure
+
 #header {
 	position: fixed;
 	z-index: 9998;
@@ -372,6 +358,7 @@ a.absl:link {
 	cursor: pointer;
 }
 // responsive iframes / videos
+
 .video_frame {
 	position: relative;
 	padding-bottom: 56.25%;

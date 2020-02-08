@@ -1,7 +1,31 @@
 {
     "key": "group_5dfccae53e4bc",
-    "title": "Typography options",
+    "title": "Set color & typo options",
     "fields": [
+        {
+            "key": "field_5e3e9aeeca63e",
+            "label": "Custom logo",
+            "name": "custom_logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
         {
             "key": "field_5dfccba411af3",
             "label": "Link Google font",
@@ -22,11 +46,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5dfccaecba915",
-            "label": "Font selector",
-            "name": "selettore_font",
-            "type": "text",
-            "instructions": "See the part \"Specify in CSS - Use the following CSS rules to specify these families: \" when getting font from Google Fonts.<br \/>\r\nCopy only the selector instead of the entire line:<br \/>\r\n<span style=\"text-decoration: line-through;\">font-family:<\/span> 'Roboto', sans-serif<span style=\"text-decoration: line-through;\">;<\/span>",
+            "key": "field_5e3e80f9fffdb",
+            "label": "Assign fonts",
+            "name": "assign_fonts",
+            "type": "repeater",
+            "instructions": "Add font family selector for the fonts you choose to use on the site.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,11 +58,57 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "'Roboto', sans-serif",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add font family",
+            "sub_fields": [
+                {
+                    "key": "field_5e3e815ffffdc",
+                    "label": "Font family",
+                    "name": "font_family",
+                    "type": "text",
+                    "instructions": "Exaample: 'Noto Serif KR', serif;",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5e3eba3178f54",
+            "label": "Initial color scheme",
+            "name": "start_color_scheme",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "clear": "Clear mode",
+                "dark": "Dark mode"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -46,7 +116,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-typographic-options"
+                "value": "acf-options-color-typo-options"
             }
         ]
     ],
@@ -58,5 +128,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1578763280
+    "modified": 1581172229
 }

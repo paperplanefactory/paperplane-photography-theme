@@ -11,6 +11,8 @@ $thumb_id = get_post_thumbnail_id();
 
 
 $picturecaption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
+$attachment_alt = get_post_meta($thumb_id,'_wp_attachment_image_alt', true);
+$attachment_description = get_post(get_post_thumbnail_id())->post_content; //Long description
 $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'full_desk', true);
 
 $next_post_url = get_permalink( get_adjacent_post(true,'',false)->ID );
@@ -75,7 +77,7 @@ $args_last = array(
   'order' => 'DESC',
   'numberposts' => -1,
   'post_status' => null,
-  'title'	=> trim( strip_tags( $attachment->post_title ) )
+  //'title'	=> trim( strip_tags( $attachment->post_title ) )
 );
 
 $attachments_last = get_posts( $args_last );
@@ -153,11 +155,11 @@ if ( $elenco_foto === 'si' ) {
 <div class="wrapper delight-area">
   <div class="wrapper-padded">
     <?php if ( get_field( 'video_embed' ) ) : ?>
-      <div class="photo-navi txt-2 navi-text aligncenter">
+      <div class="photo-navi navi-text aligncenter">
 
       </div>
     <?php else : ?>
-      <div class="photo-navi bg-5 txt-2 navi-text aligncenter">
+      <div class="photo-navi navi-text aligncenter">
         <?php
         global $contatore_foto;
         if ( $contatore_foto === 'si' && $count > 1 ) {
@@ -169,12 +171,21 @@ if ( $elenco_foto === 'si' ) {
     <?php endif; ?>
     <div class="wrapper-padded-more-650 delight-area">
       <div class="content-styled aligncenter">
-        <h1><?php the_title(); ?></h1>
-        <!--
-        <?php if ( $attachment_alt != '' ) : ?>
-          <h2><?php echo $attachment_alt; ?></h2>
+        <?php if ( $attachment_alt != '' || $attachment_description != '' ) : ?>
+          <div class="picture-info lined">
+            <?php if ( $attachment_alt != '' ) : ?>
+              <h6><?php echo $attachment_alt; ?></h6>
+            <?php endif; ?>
+            <?php if ( $attachment_description != '' ) : ?>
+              <div class="content-styled">
+                <p>
+                  <?php echo $attachment_description; ?>
+                </p>
+              </div>
+            <?php endif; ?>
+          </div>
         <?php endif; ?>
-        -->
+        <h1><?php the_title(); ?></h1>
         <?php the_content(); ?>
       </div>
     </div>

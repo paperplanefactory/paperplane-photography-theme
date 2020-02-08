@@ -5,6 +5,10 @@
 body.dark-theme {
 	color: $color-1-dark;
 	background-color: $color-5-dark;
+
+	&:before {
+		color: $color-1-dark;
+	}
 }
 
 .dark-theme {

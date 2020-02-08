@@ -107,7 +107,6 @@ acf_add_local_field_group(array(
 	),
 	'active' => true,
 	'description' => '',
-	'modified' => 1578654202,
 ));
 
 acf_add_local_field_group(array(
@@ -170,7 +169,6 @@ acf_add_local_field_group(array(
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
-	'modified' => 1578654204,
 ));
 
 acf_add_local_field_group(array(
@@ -248,7 +246,6 @@ acf_add_local_field_group(array(
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
-	'modified' => 1578654202,
 ));
 
 acf_add_local_field_group(array(
@@ -289,7 +286,6 @@ acf_add_local_field_group(array(
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
-	'modified' => 1578654198,
 ));
 
 acf_add_local_field_group(array(
@@ -594,6 +590,30 @@ acf_add_local_field_group(array(
 	'title' => 'Typography options',
 	'fields' => array(
 		array(
+			'key' => 'field_5e3e9aeeca63e',
+			'label' => 'Custom logo',
+			'name' => 'custom_logo',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'full',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
 			'key' => 'field_5dfccba411af3',
 			'label' => 'Link Google font',
 			'name' => 'link_google_font',
@@ -614,13 +634,11 @@ You must strictly use only one cont with two weights.<br />',
 			'maxlength' => '',
 		),
 		array(
-			'key' => 'field_5dfccaecba915',
-			'label' => 'Font selector',
-			'name' => 'selettore_font',
-			'type' => 'text',
-			'instructions' => 'See the part "Specify in CSS - Use the following CSS rules to specify these families: " when getting font from Google Fonts.<br />
-Copy only the selector instead of the entire line:<br />
-<span style="text-decoration: line-through;">font-family:</span> \'Roboto\', sans-serif<span style="text-decoration: line-through;">;</span>',
+			'key' => 'field_5e3e80f9fffdb',
+			'label' => 'Assign fonts',
+			'name' => 'assign_fonts',
+			'type' => 'repeater',
+			'instructions' => 'Add font family selector for the fonts you choose to use on the site.',
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -628,11 +646,32 @@ Copy only the selector instead of the entire line:<br />
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '\'Roboto\', sans-serif',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'block',
+			'button_label' => 'Add font family',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5e3e815ffffdc',
+					'label' => 'Font family',
+					'name' => 'font_family',
+					'type' => 'text',
+					'instructions' => 'Exaample: \'Noto Serif KR\', serif;',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+			),
 		),
 	),
 	'location' => array(
@@ -652,7 +691,6 @@ Copy only the selector instead of the entire line:<br />
 	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
-	'modified' => 1578654207,
 ));
 
 endif;

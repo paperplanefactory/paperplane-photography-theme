@@ -1,7 +1,7 @@
 // main: style.scss
 @import 'global-vars';
-@import 'global-mixin';
-// wrappers and more
+@import 'global-mixin'; // wrappers and more
+
 .only-desktop {
   display: none;
 }
@@ -33,6 +33,7 @@
   padding: 0 10px;
 }
 // paddings- margins
+
 .plain-page {
   @include define-margins(30px, 0, 0, 0);
 }
@@ -123,6 +124,7 @@
   padding: 20px 0 15px;
 }
 // flex boxes
+
 .flex-hold {
   position: relative;
   width: 100%;
@@ -164,6 +166,7 @@
   background-position: 50% 50%;
 }
 // social list
+
 .inline-socials {
   width: auto;
   margin: 0;

@@ -329,6 +329,10 @@ a {
   padding: 20px 0 0;
 }
 
+.picture-info {
+  margin-bottom: 20px;
+}
+
 .pay-picture button {
   border: none;
   background-color: transparent;
@@ -354,30 +358,6 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.last-message {
-  position: relative;
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-}
-
-.bottom-message {
-  position: fixed;
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-}
-
-.centil-infinite-scroll,
-.centil-post-header {
-  display: none;
 }
 
 .navigation {
@@ -1124,6 +1104,10 @@ body.clear-theme {
   background-color: #FFFFFF;
 }
 
+body.clear-theme:before {
+  color: #303030;
+}
+
 .clear-theme div,
 .clear-theme footer,
 .clear-theme header,
@@ -1329,6 +1313,10 @@ body.clear-theme {
 body.dark-theme {
   color: #FFFFFF;
   background-color: #191919;
+}
+
+body.dark-theme:before {
+  color: #FFFFFF;
 }
 
 .dark-theme div,
@@ -1837,6 +1825,7 @@ body.dark-theme {
 @media screen and (min-width: 1024px) {
   #preheader {
     position: relative;
+    z-index: -1;
     display: block;
     width: 100vw;
     height: 65px;
@@ -1848,6 +1837,11 @@ body.dark-theme {
   }
   #header {
     height: 65px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   #head-overlay {
     top: calc(65px + 1px);
@@ -2051,12 +2045,37 @@ body.dark-theme {
     -o-object-position: 50% 50%;
     object-position: 50% 50%;
   }
+  .eye {
+    font-size: 14px;
+    position: fixed;
+    z-index: 9999;
+    right: 10px;
+    top: 10px;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .eye i {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .delighted .eye {
+    pointer-events: all;
+    opacity: 1;
+  }
   .delighted #preheader {
     height: 0;
   }
   .delighted #header {
-    background-color: transparent !important;
-    border-bottom: none;
+    opacity: 0;
+    top: -200px;
   }
   .delighted .photo-frame {
     position: relative;
@@ -2076,6 +2095,12 @@ body.dark-theme {
     object-fit: contain;
     -o-object-position: 50% 50%;
     object-position: 50% 50%;
+  }
+  .delighted .navi-click-left a {
+    cursor: url(assets/images/prev-icon-a.png), auto !important;
+  }
+  .delighted .navi-click-right a {
+    cursor: url(assets/images/next-icon-a.png), auto !important;
   }
 }
 
@@ -2123,29 +2148,12 @@ body.dark-theme {
   .navi-click-left a {
     cursor: url(assets/images/prev-icon.png), auto !important;
   }
-  .navi-click-left a:after {
-    content: "‹";
-    font-size: 20px;
-    left: 0;
-  }
-  .navi-click-left a:hover:after {
-    background-color: #FFFFFF;
-  }
   .navi-click-right {
     right: 0;
     top: 0;
   }
   .navi-click-right a {
     cursor: url(assets/images/next-icon.png), auto !important;
-  }
-  .navi-click-right a:after {
-    content: "›";
-    font-size: 20px;
-    right: 0;
-    text-align: right;
-  }
-  .navi-click-right a:hover:after {
-    background-color: #FFFFFF;
   }
   .absl_swipe {
     display: none;

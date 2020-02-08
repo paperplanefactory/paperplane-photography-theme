@@ -30,8 +30,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
   // tipografia
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Typographic options',
-		'menu_title' 	=> 'Typographic options',
+		'page_title' 	=> 'Color & Typo options',
+		'menu_title' 	=> 'Color & Typo options',
 		'parent_slug' 	=> $parent['menu_slug'],
 	));
   // gallery

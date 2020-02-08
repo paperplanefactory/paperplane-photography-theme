@@ -28,6 +28,28 @@
 $module_count = 0;
 global $module_count;
 $favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
+// get font family / families
+$font_families = array();
+if( have_rows( 'assign_fonts', 'option' ) ) : while ( have_rows( 'assign_fonts', 'option' ) ) : the_row();
+$font_families[] = get_sub_field('font_family');
+endwhile; endif;
+global $contatore_foto;
+$contatore_foto = get_field( 'contatore_foto', 'options' );
+global $elenco_foto;
+$elenco_foto = get_field( 'elenco_foto', 'options' );
+$evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
+$show_play_pause_button = get_field( 'show_play_pause_button', 'options' );
+if ( $show_play_pause_button === 'si' ) {
+  $show_play_pause_button_localstorage = 'pause';
+  $play_pause_timer = get_field( 'set_image_duration', 'options' );
+}
+else {
+  $show_play_pause_button_localstorage = 'notnow';
+  $play_pause_timer = 3000;
+}
+$torna_elenco = get_field( 'torna_elenco', 'options' );
+$custom_logo = get_field( 'custom_logo', 'options' );
+$start_color_scheme = get_field( 'start_color_scheme', 'options' );
 ?>
 
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $favicons_folder; ?>apple-icon-57x57.png">
@@ -48,7 +70,7 @@ $favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
 <style>
 body {
-  font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
+  font-family: <?php echo $font_families[0]; ?>;
 }
 a:link, a:visited, a:hover, a:active {
   color: #191919;
@@ -69,34 +91,20 @@ input[type=submit],
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignright .wp-caption-text,
 .wp-caption-text {
-  font-family: <?php the_field( 'selettore_font', 'option' ); ?>;
+  font-family: <?php echo $font_families[0]; ?>;
 }
 
 </style>
-<?php
-global $contatore_foto;
-$contatore_foto = get_field( 'contatore_foto', 'options' );
-global $elenco_foto;
-$elenco_foto = get_field( 'elenco_foto', 'options' );
-$evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
-$show_play_pause_button = get_field( 'show_play_pause_button', 'options' );
-if ( $show_play_pause_button === 'si' ) {
-  $show_play_pause_button_localstorage = 'pause';
-  $play_pause_timer = get_field( 'set_image_duration', 'options' );
-}
-else {
-  $show_play_pause_button_localstorage = 'notnow';
-  $play_pause_timer = 3000;
-}
-$torna_elenco = get_field( 'torna_elenco', 'options' );
-$custom_logo = get_field( 'custom_logo', 'options' );
- ?>
 <script type="text/javascript">
 var show_play_pause_button_localstorage = "<?php echo $show_play_pause_button_localstorage ?>";
 var play_pause_timer = "<?php echo $play_pause_timer ?>";
+var start_color_scheme = "<?php echo $start_color_scheme ?>";
 </script>
 </head>
 <body class="">
+  <div class="eye de-highlight only-desktop">
+    <i class="icon-fas-fa-eye"></i>
+  </div>
 <div id="preheader"></div>
 <header id="header" class="bg-5">
   <div class="wrapper-padded">
@@ -114,6 +122,9 @@ var play_pause_timer = "<?php echo $play_pause_timer ?>";
         </div>
       <?php endif; ?>
       <nav class="swupped menu">
+        <?php if ( has_nav_menu( 'header-menu' ) ) {
+          wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'ul', 'menu_class' => 'top-menu delight-area' ) );
+        } ?>
         <?php if ( is_singular( 'post' ) || is_attachment() ) : ?>
           <ul class="navi-info swupped-link">
             <?php if ( $torna_elenco === 'si' ) : ?>
@@ -192,9 +203,6 @@ var play_pause_timer = "<?php echo $play_pause_timer ?>";
             </li>
           </ul>
         <?php endif; ?>
-        <?php if ( has_nav_menu( 'header-menu' ) ) {
-          wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'ul', 'menu_class' => 'top-menu delight-area' ) );
-        } ?>
       </nav>
       <div class="hamburger delight-area">
         <div type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation" class="hambuger-element ham-activator">

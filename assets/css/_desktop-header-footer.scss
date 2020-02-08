@@ -1,9 +1,10 @@
 // main: style.scss
 @import 'global-vars';
-@import 'global-mixin';
-// header
+@import 'global-mixin'; // header
+
 #preheader {
   position: relative;
+  z-index: -1;
   display: block;
   width: 100vw;
   height: $header-height;
@@ -12,6 +13,7 @@
 
 #header {
   height: $header-height;
+  @include define-basic-transition(all, 0.3s);
 }
 
 #head-overlay {

@@ -148,6 +148,7 @@ $attachment_id = get_the_ID();
 $picturecaption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
 $attachment_title = get_the_title($attachment_id);
 $attachment_alt = get_post_meta($attachment_id,'_wp_attachment_image_alt', true);
+$attachment_description = get_post(get_post_thumbnail_id())->post_content; //Long description
 $thumb_url_5k = wp_get_attachment_image_src($attachment_id, '5k_image', true);
 $thumb_url_desktop = wp_get_attachment_image_src($attachment_id, 'full_desk', true);
 $thumb_url_tablet = wp_get_attachment_image_src($attachment_id, 'tablet_image', true);
@@ -204,7 +205,7 @@ if ( $elenco_foto === 'si' ) {
 
 <div class="wrapper delight-area">
   <div class="wrapper-padded">
-    <div class="photo-navi txt-2 navi-text aligncenter">
+    <div class="photo-navi navi-text aligncenter">
       <?php
       global $contatore_foto;
       if ( $contatore_foto === 'si' && $total_attachments > 1 ) {
@@ -215,12 +216,22 @@ if ( $elenco_foto === 'si' ) {
 
     <div class="wrapper-padded-more-650 delight-area">
       <div class="content-styled aligncenter">
-        <h1><?php echo $original_title; ?></h1>
-        <!--
-        <?php if ( $attachment_alt != '' ) : ?>
-          <h2><?php echo $attachment_alt; ?></h2>
+        <?php if ( $attachment_alt != '' || $attachment_description != '' ) : ?>
+          <div class="picture-info lined">
+            <?php if ( $attachment_alt != '' ) : ?>
+              <h6><?php echo $attachment_alt; ?></h6>
+            <?php endif; ?>
+            <?php if ( $attachment_description != '' ) : ?>
+              <div class="content-styled">
+                <p>
+                  <?php echo $attachment_description; ?>
+                </p>
+              </div>
+            <?php endif; ?>
+          </div>
         <?php endif; ?>
-        -->
+
+        <h1><?php echo $original_title; ?></h1>
         <?php foreach ($original_post as $post) : setup_postdata($post); ?>
           <?php the_content(); ?>
         <?php endforeach; wp_reset_query(); ?>
@@ -230,4 +241,5 @@ if ( $elenco_foto === 'si' ) {
 </div>
 
 <?php endwhile; ?>
+
 <?php get_footer(); ?>
