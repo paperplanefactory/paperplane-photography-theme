@@ -31,7 +31,7 @@ Required set of fields is already included through functions.php.<br/>
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
-* go to "Site settings" and set both "Typographic" and "Image gallery" options;
+* go to "Site settings" and set both "Color & Typo options" and "Image gallery" options;
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 * to activate clear/dark mode toggle just add a link to your menu with these settings:
   * URL: #
@@ -51,7 +51,7 @@ Galleries use WordPress posts and post attachments. To create a gallery:
 * upload to the post all images you want to add to the gallery;
 * eventually re-order images using WordPress media panel;
 * publish post;
-* you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to show a video will disable the gallery's functionality for that post;
+* you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);
 
 Don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically.
 
@@ -67,6 +67,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
 * [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
+* Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
