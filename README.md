@@ -31,7 +31,7 @@ Required set of fields is already included through functions.php.<br/>
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
 * go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
-* go to "Site settings" and set both "Typographic" and "Image gallery" options;
+* go to "Site settings" and set both "Color & Typo options" and "Image gallery" options;
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 * to activate clear/dark mode toggle just add a link to your menu with these settings:
   * URL: #
