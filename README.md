@@ -51,7 +51,7 @@ Galleries use WordPress posts and post attachments. To create a gallery:
 * upload to the post all images you want to add to the gallery;
 * eventually re-order images using WordPress media panel;
 * publish post;
-* you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to show a video will disable the gallery's functionality for that post;
+* you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);
 
 Don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically.
 
