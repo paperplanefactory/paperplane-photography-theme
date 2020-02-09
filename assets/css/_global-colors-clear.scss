@@ -6,8 +6,10 @@ body.clear-theme {
 	color: $color-1;
 	background-color: $color-5;
 
-	&:before {
-		color: $color-1;
+	.eye {
+		i {
+			background-color: $color-5;
+		}
 	}
 }
 

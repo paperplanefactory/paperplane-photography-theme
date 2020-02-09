@@ -111,7 +111,7 @@ if ( $elenco_foto === 'si' ) {
 ?>
 
 
-<div id="delight-approved" class="photo-frame">
+<div id="delight-approved" class="photo-frame" data-picture-id="<?php echo $thumb_id; ?>">
   <div class="photo-hold">
     <div class="sk-folding-cube">
       <div class="sk-cube1 sk-cube"></div>

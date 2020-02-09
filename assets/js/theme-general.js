@@ -47,8 +47,7 @@ function init() {
   wrapPostMedia();
   playOrPause = localStorage.getItem('playOrPause');
   myMutant();
-
-
+  highlightCurrentThumb();
   //autoNaviGallery();
   blockArrowKeys = true;
   //console.(blockArrowKeys);
@@ -268,7 +267,18 @@ function myMutant() {
 
 myMutant();
 
+function showThumbsBox() {
+  $('.thumbs-gallery').slideToggle(300);
+  paperPlaneLazyLoad.update();
+}
 
+function highlightCurrentThumb() {
+  current_thumb_id = $('.photo-frame').attr("data-picture-id");
+  console.log(current_thumb_id);
+  $('.current_thumb_' + current_thumb_id).addClass('current_thumb_hilight');
+}
+
+highlightCurrentThumb();
 
 // clicks
 
@@ -280,14 +290,9 @@ $(".mouse-trap").mouseover(function() {
 // hide-navi call
 $(document).on('click', '.highlight:not(.initialized)', function(e) {
   hideNavi();
+  $('.thumbs-gallery').slideUp(300);
 });
-$('.eye').hover(
-  function() {
-    $('body').removeClass('delighted');
-  });
-$(document).mousemove(function(event) {
-  //$('body').removeClass('delighted');
-});
+
 // theme switch
 $(document).on('click', '.bright-switch a:not(.initialized)', function(e) {
   setBrightness();
@@ -298,8 +303,7 @@ $('.ham-activator').click(function() {
 });
 
 $(document).on('click', '.thumb-list:not(.initialized)', function(e) {
-  $('.thumbs-gallery').slideToggle(300);
-  paperPlaneLazyLoad.update();
+  showThumbsBox();
 });
 
 $(document).on('click', '.play-pause:not(.initialized)', function(e) {

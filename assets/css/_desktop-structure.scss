@@ -77,10 +77,10 @@
 .eye {
   font-size: 14px;
   position: fixed;
-  z-index: 9999;
-  right: 10px;
+  z-index: 9997;
+  right: 25px;
   top: 10px;
-  width: 60px;
+  width: 40px;
   height: 80px;
   pointer-events: none;
   opacity: 0;
@@ -90,6 +90,8 @@
     position: absolute;
     top: 0;
     right: 0;
+    padding: 3px;
+    @include define-border-radius(3px);
   }
 }
 
@@ -105,7 +107,7 @@
 
   #header {
     opacity: 0;
-    top: -200px;
+    pointer-events: none;
   }
 
   .photo-frame {

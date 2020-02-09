@@ -103,7 +103,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
 </head>
 <body class="">
   <div class="eye de-highlight only-desktop">
-    <i class="icon-fas-fa-eye"></i>
+    <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="icon-fas-fa-eye"></i></span>
   </div>
 <div id="preheader"></div>
 <header id="header" class="bg-5">

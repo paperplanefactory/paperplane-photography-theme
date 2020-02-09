@@ -46,11 +46,6 @@
         }
         echo "</div>";
         ?>
-        <script>
-        $(document).ready(function() {
-          $('.current_thumb_<?php echo $mycurrent; ?>').addClass('current_thumb_hilight');
-          });
-        </script>
       </div>
 
     </div>

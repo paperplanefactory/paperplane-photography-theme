@@ -22,16 +22,6 @@ if ( $parent != 0 ) {
   $current_post_url = get_permalink();
   endforeach;
   wp_reset_query();
-  if ( $parent_family != 'post' ) {
-    wp_redirect($current_post_url, 301);
-    remove_action('template_redirect', 'wp_old_slug_redirect');
-    exit;
-  }
-}
-else {
-  wp_redirect('https://www.allegramartin.it/', 301);
-  remove_action('template_redirect', 'wp_old_slug_redirect');
-  exit;
 }
 
 //function to get next or previous keys in an array
@@ -174,7 +164,7 @@ if ( $elenco_foto === 'si' ) {
   include( locate_template ( 'template-parts/gallery-thumbs.php' ) );
 }
 ?>
-<div id="delight-approved" class="photo-frame">
+<div id="delight-approved" class="photo-frame" data-picture-id="<?php echo get_the_ID(); ?>">
   <div class="photo-hold">
     <div class="sk-folding-cube">
       <div class="sk-cube1 sk-cube"></div>

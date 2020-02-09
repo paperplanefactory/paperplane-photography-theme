@@ -327,7 +327,7 @@ a {
 }
 
 .current_thumb_hilight {
-  opacity: 0.35;
+  opacity: 0.15;
 }
 
 .topline {
@@ -1110,8 +1110,8 @@ body.clear-theme {
   background-color: #FFFFFF;
 }
 
-body.clear-theme:before {
-  color: #303030;
+body.clear-theme .eye i {
+  background-color: #FFFFFF;
 }
 
 .clear-theme div,
@@ -1321,8 +1321,8 @@ body.dark-theme {
   background-color: #191919;
 }
 
-body.dark-theme:before {
-  color: #FFFFFF;
+body.dark-theme .eye i {
+  background-color: #191919;
 }
 
 .dark-theme div,
@@ -2054,10 +2054,10 @@ body.dark-theme:before {
   .eye {
     font-size: 14px;
     position: fixed;
-    z-index: 9999;
-    right: 10px;
+    z-index: 9997;
+    right: 25px;
     top: 10px;
-    width: 60px;
+    width: 40px;
     height: 80px;
     pointer-events: none;
     opacity: 0;
@@ -2071,6 +2071,11 @@ body.dark-theme:before {
     position: absolute;
     top: 0;
     right: 0;
+    padding: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
   }
   .delighted .eye {
     pointer-events: all;
@@ -2081,7 +2086,7 @@ body.dark-theme:before {
   }
   .delighted #header {
     opacity: 0;
-    top: -200px;
+    pointer-events: none;
   }
   .delighted .photo-frame {
     position: relative;
