@@ -67,7 +67,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
 * [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
-* Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome"); free pack
+* Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
