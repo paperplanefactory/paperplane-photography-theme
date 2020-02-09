@@ -53,7 +53,7 @@ include_once "includes/theme-lazyload.php";
 include_once "includes/theme-messages.php";
 // custom menus
 include_once "includes/theme-menus.php";
-// ACF theme options fields
-include_once "includes/theme-acf-options-fields.php";
 // custom post types
 include_once "includes/theme-cpts.php";
+// taxonomies listing
+include_once "includes/theme-taxonomies-listing.php";

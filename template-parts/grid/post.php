@@ -21,6 +21,13 @@
   <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
   <div>
     <h2 class="as-h4"><?php the_title(); ?></h2>
+    <?php
+    if ( $show_cats === 'yes' ) {
+      echo '<div class="category-list">';
+        if (function_exists('call_categories')) { call_categories(); }
+      echo '</div>';
+    }
+    ?>
   </div>
 </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 /**
 *  Paperplane Photography Theme
- * Template Name: Books
+ * Template Name: Portfolio
 */
 get_header();
 ?>
@@ -21,8 +21,8 @@ get_header();
 <?php
 $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args_posts_paginati = array(
-  'post_type' => 'book',
-  'posts_per_page' => 15,
+  'post_type' => 'post',
+  'posts_per_page' => 20,
   'paged' => $page
 );
 query_posts( $args_posts_paginati );
@@ -30,17 +30,14 @@ query_posts( $args_posts_paginati );
 
  <div class="wrapper">
    <div class="wrapper-padded">
-     <div class="wrapper-padded-more-650">
-       <div class="news-grid grid-infinite">
-          <?php
-          if (have_posts()) : while (have_posts()) : the_post();
-          include( locate_template ( 'template-parts/grid/news.php' ) );
-          endwhile; endif; wp_reset_postdata();
-          ?>
-        </div>
-        <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
-     </div>
-
+     <div class="flex-hold flex-hold-3 margins-wide verticalize grid-infinite">
+        <?php
+        if (have_posts()) : while (have_posts()) : the_post();
+        include( locate_template ( 'template-parts/grid/post.php' ) );
+        endwhile; endif; wp_reset_postdata();
+        ?>
+      </div>
+      <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
     </div>
   </div>
 

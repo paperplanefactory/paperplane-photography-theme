@@ -5,7 +5,7 @@ function register_theme_menus() {
     array(
       'header-menu' => __( 'Header Menu' ),
       'header-overlay-menu' => __( 'Header Overlay Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
+      'header-overlay-menu-mobile' => __( 'Header Overlay Menu Mobile' )
     )
   );
 }
@@ -38,6 +38,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Image gallery options',
 		'menu_title' 	=> 'Image gallery options',
+		'parent_slug' 	=> $parent['menu_slug'],
+	));
+  // archivi
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Archives',
+		'menu_title' 	=> 'Archives',
 		'parent_slug' 	=> $parent['menu_slug'],
 	));
 }

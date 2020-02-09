@@ -1,6 +1,6 @@
 <?php
 /**
-*  Paperplane _blankTheme - template predefinito per pagine.
+*  Paperplane Photography Theme - template predefinito per pagine.
 */
 get_header();
 ?>

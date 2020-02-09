@@ -17,9 +17,15 @@
 }
 
 .captcha-image {
+	display: block;
+	width: 100%;
 	border: none !important;
 	margin-top: 20px;
 	text-align: left !important;
+
+	.cf7ic_instructions {
+		display: block !important;
+	}
 }
 
 .stripe {
@@ -283,7 +289,19 @@ a.absl:link {
 // comma separated links
 
 .category-list {
-	//margin-bottom: 24px;
+	position: relative;
+	padding-top: 10px;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 42px;
+		height: 1px;
+		margin-left: -21px;
+	}
+
 	a:link {
 		&:after {
 			content: ", ";

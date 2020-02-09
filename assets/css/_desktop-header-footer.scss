@@ -165,6 +165,21 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      ul {
+        li {
+          display: block;
+          border-bottom: none;
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding-bottom: 0;
+          padding-right: 0;
+
+          &:after {
+            content: " -";
+          }
+        }
+      }
     }
   }
 }

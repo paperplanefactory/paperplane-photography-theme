@@ -165,21 +165,18 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-// social list
-
-.inline-socials {
-  width: auto;
-  margin: 0;
-
-  li {
-    text-align: center !important;
-    display: inline-block;
-    margin: 0 10px 0 0;
-    overflow: hidden;
-  }
-}
 
 .loading-transition-effect {
   top: calc(#{$header-mob-height} + 1px);
   height: calc(100vh - #{$header-mob-height});
+}
+
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignnone,
+.wp-caption.alignright {
+  position: relative;
+  width: 100% !important;
+  display: block;
+  margin-bottom: 15px;
 }

@@ -34,8 +34,10 @@ if( have_rows( 'assign_fonts', 'option' ) ) : while ( have_rows( 'assign_fonts',
 $font_families[] = get_sub_field('font_family');
 endwhile; endif;
 global $contatore_foto;
-$contatore_foto = get_field( 'contatore_foto', 'options' );
+global $show_abstract;
 global $elenco_foto;
+global $show_cats;
+$contatore_foto = get_field( 'contatore_foto', 'options' );
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
 $show_play_pause_button = get_field( 'show_play_pause_button', 'options' );
@@ -49,7 +51,10 @@ else {
 }
 $torna_elenco = get_field( 'torna_elenco', 'options' );
 $custom_logo = get_field( 'custom_logo', 'options' );
+$custom_logo_dark = get_field( 'custom_logo_dark', 'options' );
 $start_color_scheme = get_field( 'start_color_scheme', 'options' );
+$show_abstract = get_field( 'show_abstract', 'options' );
+$show_cats = get_field( 'show_cats', 'options' );
 ?>
 
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $favicons_folder; ?>apple-icon-57x57.png">
@@ -112,7 +117,8 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
       <?php if ( $custom_logo != '' ) : ?>
         <div class="logo pictured delight-area">
           <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
-          <div class="imaged" style="background-image: url(<?php echo $custom_logo; ?>)"></div>
+          <div class="imaged logo-clear" style="background-image: url(<?php echo $custom_logo; ?>)"></div>
+          <div class="imaged logo-dark" style="background-image: url(<?php echo $custom_logo_dark; ?>)"></div>
         </div>
       <?php else : ?>
         <div class="logo delight-area">
@@ -192,14 +198,14 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
         <?php if ( is_singular( 'news' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="/news-archive/" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
+              <a href="<?php the_field( 'news_archive', 'option' ) ?>" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
             </li>
           </ul>
         <?php endif; ?>
         <?php if ( is_singular( 'book' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="/books-page/" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
+              <a href="<?php the_field( 'books_archive', 'option' ) ?>" class="delight-area" title="back to list"><i class="icon-fas-fa-step-backward"></i></a>
             </li>
           </ul>
         <?php endif; ?>
@@ -221,9 +227,16 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
   <div class="scroll-opportunity">
     <div class="overlay-content">
       <nav class="swupped menu-overlay">
-        <?php if ( has_nav_menu( 'header-overlay-menu' ) ) {
-          wp_nav_menu( array( 'theme_location' => 'header-overlay-menu', 'container' => 'ul', 'menu_class' => 'voices' ) );
-        } ?>
+        <div class="only-desktop">
+          <?php if ( has_nav_menu( 'header-overlay-menu' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-overlay-menu', 'container' => 'ul', 'menu_class' => 'voices' ) );
+          } ?>
+        </div>
+        <div class="only-mobile">
+          <?php if ( has_nav_menu( 'header-overlay-menu-mobile' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-overlay-menu-mobile', 'container' => 'ul', 'menu_class' => 'voices' ) );
+          } ?>
+        </div>
       </nav>
     </div>
   </div>

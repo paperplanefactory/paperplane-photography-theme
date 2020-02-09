@@ -25,6 +25,10 @@ body.dark-theme {
 		border-color: $color-4-dark !important;
 	}
 
+	.logo-clear {
+		display: none;
+	}
+
 	::-moz-selection {
 		background: $color-1-dark;
 		color: $color-5-dark;
@@ -132,6 +136,12 @@ body.dark-theme {
 
 	.bg-5 {
 		background-color: $color-5-dark;
+	}
+
+	.category-list {
+		&:before {
+			background-color: $color-1-dark;
+		}
 	}
 	// link behaviour and colors
 	a:link,

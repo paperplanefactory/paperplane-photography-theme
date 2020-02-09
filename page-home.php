@@ -1,6 +1,6 @@
 <?php
 /**
-*  Paperplane _blankTheme
+*  Paperplane Photography Theme
  * Template Name: Home
 */
 get_header();
@@ -130,10 +130,10 @@ $my_topworks = get_posts( $args_topworks );
         );
         query_posts( $args_topworks );
         if (have_posts()) : while (have_posts()) : the_post();
-        get_template_part( 'template-parts/grid/post' );
+        include( locate_template ( 'template-parts/grid/post.php' ) );
       endwhile; endif; wp_reset_postdata(); ?>
       </div>
-      <?php get_template_part( 'template-parts/grid/infinite-message' ); ?>
+      <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
     </div>
   </div>
 
@@ -162,8 +162,8 @@ if ( $my_news_month ) : ?>
       <div class="news-grid grid-infinite">
       <?php
       foreach ( $my_news_month as $post ) {
-        setup_postdata ($post );
-        get_template_part( 'template-parts/grid/news' );
+        setup_postdata ( $post );
+        include( locate_template ( 'template-parts/grid/news.php' ) );
       }
       ?>
     </div>

@@ -274,7 +274,7 @@ function showThumbsBox() {
 
 function highlightCurrentThumb() {
   current_thumb_id = $('.photo-frame').attr("data-picture-id");
-  console.log(current_thumb_id);
+  //console.log(current_thumb_id);
   $('.current_thumb_' + current_thumb_id).addClass('current_thumb_hilight');
 }
 

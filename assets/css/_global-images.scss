@@ -3,9 +3,7 @@
 @import 'global-mixin';
 
 .wp-caption.aligncenter,
-.wp-caption.alignleft,
-.wp-caption.alignnone,
-.wp-caption.alignright {
+.wp-caption.alignnone {
 	position: relative;
 	width: 100% !important;
 	display: block;

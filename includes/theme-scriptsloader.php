@@ -34,11 +34,11 @@ function all_scripts(){
   // documentazione: https://github.com/swup/swup
   wp_register_script( 'js-swup', get_template_directory_uri() . '/assets/js/libs/swup.min.js#deferload', '', $theme_version, false);
   wp_enqueue_script( 'js-swup' );
-  wp_register_script( 'js-swup-head', get_template_directory_uri() . '/assets/js/libs/SwupHeadPlugin.min.js#deferload', '', $theme_version, true);;
+  wp_register_script( 'js-swup-head', get_template_directory_uri() . '/assets/js/libs/SwupHeadPlugin.min.js#deferload', '', $theme_version, false);
   wp_enqueue_script( 'js-swup-head' );
-  //wp_register_script( 'js-swup-ga', get_template_directory_uri() . '/assets/js/libs/SwupGaPlugin.min.js#deferload', '', $theme_version, true);;
+  //wp_register_script( 'js-swup-ga', get_template_directory_uri() . '/assets/js/libs/SwupGaPlugin.min.js#deferload', '', $theme_version, true);
   //wp_enqueue_script( 'js-swup-ga' );
-  wp_register_script( 'js-swup-preload', get_template_directory_uri() . '/assets/js/libs/SwupPreloadPlugin.min.js#deferload', '', $theme_version, true);;
+  wp_register_script( 'js-swup-preload', get_template_directory_uri() . '/assets/js/libs/SwupPreloadPlugin.min.js#deferload', '', $theme_version, false);
   wp_enqueue_script( 'js-swup-preload' );
   // Infinite Scroll
   // documentazione: https://infinite-scroll.com/

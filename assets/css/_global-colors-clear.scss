@@ -23,6 +23,10 @@ body.clear-theme {
 		border-color: $color-4 !important;
 	}
 
+	.logo-dark {
+		display: none;
+	}
+
 	input[type],
 	textarea {
 		border-color: $color-3 !important;
@@ -105,6 +109,12 @@ body.clear-theme {
 
 	.txt-5 {
 		color: $color-5;
+	}
+
+	.category-list {
+		&:before {
+			background-color: $color-1;
+		}
 	}
 
 	.content-styled {
