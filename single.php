@@ -171,18 +171,13 @@ if ( $elenco_foto === 'si' ) {
     <?php endif; ?>
     <div class="wrapper-padded-more-650 delight-area">
       <div class="content-styled aligncenter">
-        <?php if ( $attachment_alt != '' || $attachment_description != '' ) : ?>
+        <?php if ( $attachment_description != '' ) : ?>
           <div class="picture-info lined">
-            <?php if ( $attachment_alt != '' ) : ?>
-              <h6><?php echo $attachment_alt; ?></h6>
-            <?php endif; ?>
-            <?php if ( $attachment_description != '' ) : ?>
-              <div class="content-styled">
-                <p>
-                  <?php echo $attachment_description; ?>
-                </p>
-              </div>
-            <?php endif; ?>
+            <div class="content-styled">
+              <p>
+                <?php echo $attachment_description; ?>
+              </p>
+            </div>
           </div>
         <?php endif; ?>
         <h1><?php the_title(); ?></h1>
