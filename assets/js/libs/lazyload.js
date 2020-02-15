@@ -1,18 +1,55 @@
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+}
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() {
+  _extends = Object.assign || function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+  return _typeof(obj);
+}
 
-(function (global, factory) {
+(function(global, factory) {
   (typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : global.LazyLoad = factory();
-})(this, function () {
+})(this, function() {
   'use strict';
 
   var runningOnBrowser = typeof window !== "undefined";
@@ -131,13 +168,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   };
 
   var purgeProcessedElements = function purgeProcessedElements(elements) {
-    return elements.filter(function (element) {
+    return elements.filter(function(element) {
       return !getWasProcessedData(element);
     });
   };
 
   var purgeOneElement = function purgeOneElement(elements, elementToPurge) {
-    return elements.filter(function (element) {
+    return elements.filter(function(element) {
       return element !== elementToPurge;
     });
   };
@@ -199,7 +236,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     if (parent && parent.tagName === "PICTURE") {
       var sourceTags = getSourceTags(parent);
-      sourceTags.forEach(function (sourceTag) {
+      sourceTags.forEach(function(sourceTag) {
         setImageAttributes(sourceTag, settings);
       });
     }
@@ -213,7 +250,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   var setSourcesVideo = function setSourcesVideo(element, settings) {
     var sourceTags = getSourceTags(element);
-    sourceTags.forEach(function (sourceTag) {
+    sourceTags.forEach(function(sourceTag) {
       setAttributeIfValue(sourceTag, "src", getData(sourceTag, settings.data_src));
     });
     setAttributeIfValue(element, "src", getData(element, settings.data_src));
@@ -374,7 +411,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       return; // do nothing if timeout already set
     }
 
-    timeoutId = setTimeout(function () {
+    timeoutId = setTimeout(function() {
       revealAndUnobserve(element, instance);
       cancelDelayLoad(element);
     }, loadDelay);
@@ -415,8 +452,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       return false;
     }
 
-    instance._observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    instance._observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         return isIntersecting(entry) ? onEnter(entry.target, entry, instance) : onExit(entry.target, entry, instance);
       });
     }, getObserverSettings(instance._settings));
@@ -430,7 +467,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   };
 
   var loadAllNative = function loadAllNative(instance) {
-    instance._elements.forEach(function (element) {
+    instance._elements.forEach(function(element) {
       if (nativeLazyTags.indexOf(element.tagName) === -1) {
         return;
       }
@@ -456,7 +493,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var settings = instance._settings;
     var errorElements = settings.container.querySelectorAll("." + settings.class_error);
 
-    _toConsumableArray(errorElements).forEach(function (element) {
+    _toConsumableArray(errorElements).forEach(function(element) {
       removeClass(element, settings.class_error);
       resetWasProcessedData(element);
     });
@@ -469,7 +506,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       return;
     }
 
-    window.addEventListener("online", function (event) {
+    window.addEventListener("online", function(event) {
       retryLazyLoad(instance);
     });
   };
@@ -499,7 +536,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         this._elements = getElements(elements, settings);
       }
 
-      this._elements.forEach(function (element) {
+      this._elements.forEach(function(element) {
         _this._observer.observe(element);
       });
     },
@@ -507,7 +544,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       var _this2 = this;
 
       if (this._observer) {
-        this._elements.forEach(function (element) {
+        this._elements.forEach(function(element) {
           _this2._observer.unobserve(element);
         });
 
@@ -523,7 +560,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     loadAll: function loadAll() {
       var _this3 = this;
 
-      this._elements.forEach(function (element) {
+      this._elements.forEach(function(element) {
         revealAndUnobserve(element, _this3);
       });
     }

@@ -176,10 +176,7 @@
 #paperplane-cookie-notice {
 	position: fixed;
 	z-index: 9999;
-	display: block;
-	//visibility: hidden;
-	display: none;
-	width: calc(100vw - 44px);
+	width: calc(100% - 26px);
 	bottom: 10px;
 	left: 10px;
 	font-family: $font-main !important;
@@ -187,6 +184,15 @@
 	font-size: $cta1-size-desktop !important;
 	line-height: $cta1-lineheight-desktop !important;
 	border: solid 3px !important;
+	color: #F1F1F1;
+	transition: opacity 1s;
+	pointer-events: none;
+	opacity: 0;
+
+	&.shown {
+		pointer-events: all;
+		opacity: 1;
+	}
 
 	.paperplane-cookie-notice-container {
 		position: relative;
