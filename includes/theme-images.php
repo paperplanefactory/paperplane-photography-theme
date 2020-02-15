@@ -90,7 +90,7 @@ function print_theme_single_image( $image_data, $image_sizes ) {
         $html_image_output .= '<source media="(max-width: 767px)" data-srcset="'.$sharped_images[2].'">';
         $html_image_output .= '<source media="(max-width: 1920px)" data-srcset="'.$sharped_images[1].'">';
           $html_image_output .= '<source media="(min-width: 1921px)" data-srcset="'.$sharped_images[0].'">';
-        $html_image_output .= '<img data-src="'.$sharped_images[1].'" src="'.$sharped_images[3].'" title="'.$attachment_title.'" alt="'.$attachment_alt.'" class="autoplay-loaded lazy" />';
+        $html_image_output .= '<img data-src="'.$sharped_images[1].'" src="'.$sharped_images[3].'" title="'.$attachment_title.'" alt="'.$attachment_alt.'" class="autoplay-loaded lazy no-explorer" />';
         $html_image_output .= '</picture>';
         echo $html_image_output;
       }

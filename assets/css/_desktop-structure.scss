@@ -145,12 +145,17 @@
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .lazy {
+    opacity: 1 !important;
+  }
+
   .no-explorer {
     display: none;
   }
 
   .only-explorer {
     position: absolute;
+    z-index: 9991;
     left: 0;
     top: 0;
     display: block;

@@ -22,63 +22,69 @@ var paperPlaneLazyLoad = new LazyLoad({
   }
 });
 
-const swup = new Swup({
-  containers: [".swupped"],
-  animateHistoryBrowsing: true,
-  //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
-  plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
-  cache: true,
-  skipPopStateHandling: function skipPopStateHandling(event) {
-    return !(event.state && event.state.source === 'swup');
-  }
-});
+if (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i)) {
 
-// run once
-init();
-// this event runs for every page view after initial load
-swup.on('contentReplaced', init);
-swup.on('willReplaceContent', unload);
-swup.on('animationInStart', animationIn);
-
-function init() {
-  paperPlaneLazyLoad.update();
-  refreshPrevNext();
-  approveDelight();
-  wrapPostMedia();
-  playOrPause = localStorage.getItem('playOrPause');
-  myMutant();
-  highlightCurrentThumb();
-  //autoNaviGallery();
-  blockArrowKeys = true;
-  //console.(blockArrowKeys);
-}
-
-function unload() {
-  scrollTo(0, 0);
-  blockArrowKeys = false;
-  //console.log(blockArrowKeys);
-}
-
-function animationIn() {
-  closeOverlay();
-}
-
-
-document.addEventListener('swup:contentReplaced', event => {
-  initInfiniteScroll();
-  $(".mouse-trap").mouseover(function() {
-    closeOverlay();
-  });
-  setInitialBrightness();
-  if ($('div.wpcf7 > form').length) {
-    var $form = $('div.wpcf7 > form');
-    wpcf7.initForm($form);
-    if (wpcf7.cached) {
-      wpcf7.refill($form);
+} else {
+  const swup = new Swup({
+    containers: [".swupped"],
+    animateHistoryBrowsing: true,
+    //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
+    plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
+    cache: true,
+    skipPopStateHandling: function skipPopStateHandling(event) {
+      return !(event.state && event.state.source === 'swup');
     }
+  });
+
+  // run once
+  init();
+  // this event runs for every page view after initial load
+  swup.on('contentReplaced', init);
+  swup.on('willReplaceContent', unload);
+  swup.on('animationInStart', animationIn);
+
+  function init() {
+    paperPlaneLazyLoad.update();
+    refreshPrevNext();
+    approveDelight();
+    wrapPostMedia();
+    playOrPause = localStorage.getItem('playOrPause');
+    myMutant();
+    highlightCurrentThumb();
+    //autoNaviGallery();
+    blockArrowKeys = true;
+    //console.(blockArrowKeys);
   }
 
-});
+  function unload() {
+    scrollTo(0, 0);
+    blockArrowKeys = false;
+    //console.log(blockArrowKeys);
+  }
+
+  function animationIn() {
+    closeOverlay();
+  }
+
+
+  document.addEventListener('swup:contentReplaced', event => {
+    initInfiniteScroll();
+    $(".mouse-trap").mouseover(function() {
+      closeOverlay();
+    });
+    setInitialBrightness();
+    if ($('div.wpcf7 > form').length) {
+      var $form = $('div.wpcf7 > form');
+      wpcf7.initForm($form);
+      if (wpcf7.cached) {
+        wpcf7.refill($form);
+      }
+    }
+
+  });
+}
+
+
 
 // infinite scroll
 function initInfiniteScroll() {
