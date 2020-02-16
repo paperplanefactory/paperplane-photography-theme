@@ -22,69 +22,6 @@ var paperPlaneLazyLoad = new LazyLoad({
   }
 });
 
-
-const options = {
-  containers: [".swupped"],
-  cache: true,
-  animateHistoryBrowsing: true,
-  //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
-  plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
-  skipPopStateHandling: function skipPopStateHandling(event) {
-    return !(event.state && event.state.source === 'swup');
-  }
-};
-
-
-
-const swup = new Swup(options);
-
-// run once
-init();
-// this event runs for every page view after initial load
-swup.on('contentReplaced', init);
-swup.on('willReplaceContent', unload);
-swup.on('animationInStart', animationIn);
-
-function init() {
-  paperPlaneLazyLoad.update();
-  refreshPrevNext();
-  approveDelight();
-  wrapPostMedia();
-  playOrPause = localStorage.getItem('playOrPause');
-  myMutant();
-  highlightCurrentThumb();
-  //autoNaviGallery();
-  blockArrowKeys = true;
-  //console.(blockArrowKeys);
-}
-
-function unload() {
-  scrollTo(0, 0);
-  blockArrowKeys = false;
-  //console.log(blockArrowKeys);
-}
-
-function animationIn() {
-  closeOverlay();
-}
-
-
-document.addEventListener('swup:contentReplaced', event => {
-  initInfiniteScroll();
-  $(".mouse-trap").mouseover(function() {
-    closeOverlay();
-  });
-  setInitialBrightness();
-  if ($('div.wpcf7 > form').length) {
-    var $form = $('div.wpcf7 > form');
-    wpcf7.initForm($form);
-    if (wpcf7.cached) {
-      wpcf7.refill($form);
-    }
-  }
-
-});
-
 // infinite scroll
 function initInfiniteScroll() {
   if (jQuery(".nav-next a")[0]) {
