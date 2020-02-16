@@ -49,7 +49,7 @@ function all_scripts(){
   wp_register_script( 'vanilla-lazyload', get_template_directory_uri() . '/assets/js/libs/lazyload.min.js#deferload', '', '12.3.0', false);
   wp_enqueue_script( 'vanilla-lazyload' );
 	// Comportamenti ricorrenti
-	wp_register_script( 'theme-general', get_template_directory_uri() . '/assets/js/theme-general.min.js#deferload', '', $theme_version, true);
+	wp_register_script( 'theme-general', get_template_directory_uri() . '/assets/js/theme-general.js#deferload', '', $theme_version, true);
 	wp_enqueue_script( 'theme-general' );
   // tocca
   wp_register_script( 'theme-tocca', get_template_directory_uri() . '/assets/js/libs/tocca.min.js#asyncload', '', $theme_version, true);

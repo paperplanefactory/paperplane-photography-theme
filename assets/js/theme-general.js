@@ -22,67 +22,70 @@ var paperPlaneLazyLoad = new LazyLoad({
   }
 });
 
-if (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i)) {
 
-} else {
-  const swup = new Swup({
-    containers: [".swupped"],
-    animateHistoryBrowsing: true,
-    //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
-    plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
-    cache: true,
-    skipPopStateHandling: function skipPopStateHandling(event) {
-      return !(event.state && event.state.source === 'swup');
-    }
-  });
-
-  // run once
-  init();
-  // this event runs for every page view after initial load
-  swup.on('contentReplaced', init);
-  swup.on('willReplaceContent', unload);
-  swup.on('animationInStart', animationIn);
-
-  function init() {
-    paperPlaneLazyLoad.update();
-    refreshPrevNext();
-    approveDelight();
-    wrapPostMedia();
-    playOrPause = localStorage.getItem('playOrPause');
-    myMutant();
-    highlightCurrentThumb();
-    //autoNaviGallery();
-    blockArrowKeys = true;
-    //console.(blockArrowKeys);
+const options = {
+  containers: [".swupped"],
+  cache: true,
+  animateHistoryBrowsing: true,
+  support: false,
+  //plugins: [new SwupHeadPlugin(), new SwupGaPlugin(), new SwupPreloadPlugin()],
+  plugins: [new SwupHeadPlugin(), new SwupPreloadPlugin()],
+  skipPopStateHandling: function skipPopStateHandling(event) {
+    return !(event.state && event.state.source === 'swup');
   }
-
-  function unload() {
-    scrollTo(0, 0);
-    blockArrowKeys = false;
-    //console.log(blockArrowKeys);
-  }
-
-  function animationIn() {
-    closeOverlay();
-  }
+};
 
 
-  document.addEventListener('swup:contentReplaced', event => {
-    initInfiniteScroll();
-    $(".mouse-trap").mouseover(function() {
-      closeOverlay();
-    });
-    setInitialBrightness();
-    if ($('div.wpcf7 > form').length) {
-      var $form = $('div.wpcf7 > form');
-      wpcf7.initForm($form);
-      if (wpcf7.cached) {
-        wpcf7.refill($form);
-      }
-    }
 
-  });
+const swup = new Swup(options);
+
+// run once
+init();
+// this event runs for every page view after initial load
+swup.on('contentReplaced', init);
+swup.on('willReplaceContent', unload);
+swup.on('animationInStart', animationIn);
+
+function init() {
+  paperPlaneLazyLoad.update();
+  refreshPrevNext();
+  approveDelight();
+  wrapPostMedia();
+  playOrPause = localStorage.getItem('playOrPause');
+  myMutant();
+  highlightCurrentThumb();
+  //autoNaviGallery();
+  blockArrowKeys = true;
+  //console.(blockArrowKeys);
 }
+
+function unload() {
+  scrollTo(0, 0);
+  blockArrowKeys = false;
+  //console.log(blockArrowKeys);
+}
+
+function animationIn() {
+  closeOverlay();
+}
+
+
+document.addEventListener('swup:contentReplaced', event => {
+  initInfiniteScroll();
+  $(".mouse-trap").mouseover(function() {
+    closeOverlay();
+  });
+  setInitialBrightness();
+  if ($('div.wpcf7 > form').length) {
+    var $form = $('div.wpcf7 > form');
+    wpcf7.initForm($form);
+    if (wpcf7.cached) {
+      wpcf7.refill($form);
+    }
+  }
+
+});
+
 
 
 
@@ -204,11 +207,14 @@ function wrapPostMedia() {
 function refreshPrevNext() {
   prevLink = $('.navi-click-left a').attr('href');
   nextLink = $('.navi-click-right a').attr('href');
+  prevLinkData = swup.preloadPage(prevLink);
+  nextLinkData = swup.preloadPage(nextLink);
+  //prevLinkData = swup.cache.getPage(prevLink);
+  //nextLinkData = swup.cache.getPage(nextLink);
 }
 
 function nextNaviAction() {
   if (typeof nextLink != 'undefined' && blockArrowKeys == true) {
-    nextLinkData = swup.cache.getPage(nextLink);
     swup.loadPage({
       url: nextLink, // route of request (defaults to current url)
       method: 'GET', // method of request (defaults to "GET")
@@ -219,7 +225,7 @@ function nextNaviAction() {
 
 function prevNaviAction() {
   if (typeof prevLink != 'undefined' && blockArrowKeys == true) {
-    prevLinkData = swup.cache.getPage(prevLink);
+
     swup.loadPage({
       url: prevLink, // route of request (defaults to current url)
       method: 'GET', // method of request (defaults to "GET")

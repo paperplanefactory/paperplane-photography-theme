@@ -62,7 +62,7 @@ function prev_att_link( $att_post=null ) {
     }
     $ppid = previous_attachment_ID( $att_post );
     if($ppid != false){
-        return '<a href="' . get_attachment_link( $ppid ) . '" class="previous-attachment-link" aria-label="Previous image"></a>';
+        return '<a href="' . get_attachment_link( $ppid ) . '" class="previous-attachment-link data-swup-preload" aria-label="Previous image"></a>';
     } else {
         //there is no previous link
         return false;
@@ -96,7 +96,7 @@ function next_att_link( $att_post=null ){
     }
     $ppid = next_attachment_ID( $att_post );
     if( $ppid != false ) {
-      return '<a href="' . get_attachment_link($ppid) . '" class="next-attachment-link" aria-label="Next image"></a>';
+      return '<a href="' . get_attachment_link($ppid) . '" class="next-attachment-link data-swup-preload" aria-label="Next image"></a>';
     }
     else {
       return false;

@@ -144,8 +144,8 @@ if ( $elenco_foto === 'si' ) {
       print_theme_single_image( $image_data, $image_sizes );
       if ( $count > 1 ) {
         echo '<div class="absl_swipe"></div>';
-        echo '<div class="navi-click navi-click-left delight-area"><a href="'.$img_link_source_last.'" aria-label="Previous image"></a></div>';
-        echo '<div class="navi-click navi-click-right delight-area"><a href="'.$next_url.'" aria-label="Next image"></a></div>';
+        echo '<div class="navi-click navi-click-left delight-area data-swup-preload"><a href="'.$img_link_source_last.'" aria-label="Previous image"></a></div>';
+        echo '<div class="navi-click navi-click-right delight-area data-swup-preload"><a href="'.$next_url.'" aria-label="Next image"></a></div>';
       }
     }
     ?>
