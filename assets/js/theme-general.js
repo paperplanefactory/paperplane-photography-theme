@@ -201,16 +201,16 @@ function wrapPostMedia() {
 }
 
 function refreshPrevNext() {
-  prevLink = $('.navi-click-left a').attr('href');
-  nextLink = $('.navi-click-right a').attr('href');
-  prevLinkData = swup.preloadPage(prevLink);
-  nextLinkData = swup.preloadPage(nextLink);
-  //prevLinkData = swup.cache.getPage(prevLink);
-  //nextLinkData = swup.cache.getPage(nextLink);
+  if (jQuery(".navi-click-left a")[0] || jQuery(".navi-click-right a")[0]) {
+    prevLink = $('.navi-click-left a').attr('href');
+    nextLink = $('.navi-click-right a').attr('href');
+    prevLinkData = swup.preloadPage(prevLink);
+    nextLinkData = swup.preloadPage(nextLink);
+  }
 }
 
 function nextNaviAction() {
-  if (typeof nextLink != 'undefined' && blockArrowKeys == true) {
+  if (jQuery(".navi-click-left a")[0] || jQuery(".navi-click-right a")[0]) {
     swup.loadPage({
       url: nextLink, // route of request (defaults to current url)
       method: 'GET', // method of request (defaults to "GET")
@@ -220,8 +220,7 @@ function nextNaviAction() {
 }
 
 function prevNaviAction() {
-  if (typeof prevLink != 'undefined' && blockArrowKeys == true) {
-
+  if (jQuery(".navi-click-left a")[0] || jQuery(".navi-click-right a")[0]) {
     swup.loadPage({
       url: prevLink, // route of request (defaults to current url)
       method: 'GET', // method of request (defaults to "GET")
