@@ -1,0 +1,54 @@
+// main: style.scss
+@import 'global-vars';
+@import 'global-mixin';
+
+.no-explorer {
+  display: none;
+}
+
+.explorer-exception {
+  .no-explorer {
+    display: block;
+  }
+}
+
+.only-explorer {
+  position: absolute !important;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.navi-click {
+  z-index: 100;
+}
+
+.blurred {
+  @include define-lazy-blur(0);
+}
+
+.lazy {
+  position: relative;
+  @include define-basic-transition(all, 0.3s);
+  opacity: 1;
+}
+
+.lazy-bg.lazy {
+  position: relative;
+  opacity: 1;
+}
+
+.lazy-loading {
+  @include define-lazy-blur(0);
+}
+
+.lazy-loaded {
+  @include define-lazy-blur(0);
+  opacity: 1;
+}

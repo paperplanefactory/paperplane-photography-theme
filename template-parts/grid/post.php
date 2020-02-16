@@ -1,4 +1,4 @@
-<div class="flex-hold-child grid-item-infinite">
+<div class="flex-hold-child grid-item-infinite explorer-exception">
 <a href="<?php the_permalink(); ?>">
  <div class="no-the-100">
    <?php

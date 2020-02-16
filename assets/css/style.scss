@@ -27,6 +27,9 @@
 @media screen and (min-width: $break-fullhd) {
   @import 'fullhd-grid-exc';
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @import 'global-explorer';
+}
 @import 'global-images';
 @import 'global-forms'; // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
 // UTILITIES
