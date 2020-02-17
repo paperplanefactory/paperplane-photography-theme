@@ -177,9 +177,8 @@
 	position: fixed;
 	z-index: 9999;
 	display: block;
-	//visibility: hidden;
 	display: none;
-	width: calc(100vw - 44px);
+	width: calc(100% - 26px);
 	bottom: 10px;
 	left: 10px;
 	font-family: $font-main !important;
