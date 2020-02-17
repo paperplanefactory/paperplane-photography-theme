@@ -23,7 +23,7 @@ Required set of fields is already included through functions.php.<br/>
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
-* don't ask me why but I made this theme compatible with Microsoft Internet Exporer :hankey:
+* don't ask me why but I made this theme compatible with Microsoft Internet Explorer :hankey:
 
 ### :exclamation: How to set up theme:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
