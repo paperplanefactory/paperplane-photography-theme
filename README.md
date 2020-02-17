@@ -23,6 +23,7 @@ Required set of fields is already included through functions.php.<br/>
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
+* don't ask me why but I made this theme compatible with Microsoft Internet Exporer :hankey:;
 
 ### :exclamation: How to set up theme:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
@@ -57,7 +58,7 @@ Don't insert pictures in content, use "the_content" to describe your project ins
 
 ### :electric_plug: Useful plugins to install:
 These plugins are suggested based on my experience and are therefore a simple tip.
-* [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache") to improve loading time - avoid scripts combining option if you want to keep Internet Explorer(:hankey:) compatibility;
+* [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache") to improve loading time - avoid scripts combining option if you want to keep Microsoft Internet Explorer :hankey: compatibility;
 * [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7"): CSS rules perfectly define appearence of forms created with CF7. In CF7 editor just wrap your form into a DIV with class "form-hold";
 * [WebP Express](https://wordpress.org/plugins/webp-express/ "WebP Express") is a must have plugin if your hosting provider supports WebP image conversion tools;
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/ "Yoast SEO") to boost SEO;
