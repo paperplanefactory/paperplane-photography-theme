@@ -22,11 +22,11 @@
     </div>
     <h2 class="as-h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
   <?php else : ?>
-    <h2 class="as-h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <h2 class="as-h4"><a href="<?php the_permalink(); ?>" class="data-swup-preload"><?php the_title(); ?></a></h2>
     <div class="cta-1"><?php the_time( get_option( 'date_format' ) ); ?></div>
     <?php if ( $show_abstract === 'yes' ) : ?>
       <?php the_excerpt(); ?>
-      <h6><a href="<?php the_permalink(); ?>">Read more</a></h6>
+      <h6><a href="<?php the_permalink(); ?>" class="data-swup-preload">Read more</a></h6>
     <?php endif; ?>
   <?php endif; ?>
 </div>

@@ -18,7 +18,7 @@
  </div>
 </a>
 <div class="flex-hold-title">
-  <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
+  <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" aria-label="View project: <?php the_title(); ?>"></a>
   <div>
     <h2 class="as-h4"><?php the_title(); ?></h2>
     <?php

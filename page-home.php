@@ -58,7 +58,7 @@ $my_topworks = get_posts( $args_topworks );
             $thumb_url_desktop = wp_get_attachment_image_src($attachment->ID, 'full_desk', true);
 
             ?>
-            <a href="<?php the_permalink(); ?>" class="absl" aria-label="View project: <?php the_title(); ?>"></a>
+            <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" aria-label="View project: <?php the_title(); ?>"></a>
             <div class="lazy only-explorer" data-src="<?php echo $thumb_url_desktop[0]; ?>"></div>
             <?php
             $image_data = array(
@@ -91,7 +91,7 @@ $my_topworks = get_posts( $args_topworks );
     <div class="wrapper-padded-more-840">
       <div class="content-styled">
         <?php if ( $mostrare_titolo === 'si' ) : ?>
-          <h1 class="aligncenter"><a href="<?php the_permalink(); ?>" class="l333"><?php the_title(); ?></a></h1>
+          <h1 class="aligncenter"><a href="<?php the_permalink(); ?>" class="data-swup-preload"><?php the_title(); ?></a></h1>
         <?php endif; ?>
       </div>
     </div>
