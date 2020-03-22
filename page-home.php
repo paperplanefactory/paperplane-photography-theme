@@ -159,11 +159,11 @@ if ( $my_news_month ) : ?>
   <div class="wrapper-padded">
     <div class="wrapper-padded-more-650">
       <h6 class="aligncenter">Latest News</h6>
-      <div class="news-grid grid-infinite">
+      <div class="news-grid">
       <?php
       foreach ( $my_news_month as $post ) {
         setup_postdata ( $post );
-        include( locate_template ( 'template-parts/grid/news.php' ) );
+        include( locate_template ( 'template-parts/grid/news-no-infinite.php' ) );
       }
       ?>
     </div>
