@@ -12,7 +12,7 @@ function redirect_if_not_post_attachment() {
 
 // custom image size for featured images
 add_theme_support( 'post-thumbnails' );
-add_image_size( '5k_image', 99999, 2047);
+add_image_size( '5k_image', 2048, 2048);
 add_image_size( 'full_desk', 99999, 1080);
 add_image_size( 'content_picture', 768, 9999);
 add_image_size( 'tablet_image', 1024, 9999);
