@@ -410,13 +410,11 @@ a {
   line-height: 18px;
   border: solid 3px;
   transition: opacity 1s;
-  pointer-events: none;
-  opacity: 0;
 }
 
-#paperplane-cookie-notice.shown {
-  pointer-events: all;
-  opacity: 1;
+#paperplane-cookie-notice .paperplane-message-cookie-accepted,
+#paperplane-cookie-notice .paperplane-message-cookie-refused {
+  display: none;
 }
 
 #paperplane-cookie-notice .paperplane-cookie-notice-container {
