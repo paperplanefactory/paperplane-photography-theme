@@ -3,7 +3,7 @@
 @import 'global-mixin';
 
 .blurred {
-	@include define-lazy-blur(20px);
+	@include define-lazy-blur(5px);
 }
 
 .lazy {
@@ -18,7 +18,7 @@
 }
 
 .lazy-loading {
-	@include define-lazy-blur(20px);
+	@include define-lazy-blur(5px);
 }
 
 .lazy-loaded {
