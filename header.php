@@ -28,11 +28,6 @@
 $module_count = 0;
 global $module_count;
 $favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
-// get font family / families
-$font_families = array();
-if( have_rows( 'assign_fonts', 'option' ) ) : while ( have_rows( 'assign_fonts', 'option' ) ) : the_row();
-$font_families[] = get_sub_field('font_family');
-endwhile; endif;
 global $contatore_foto;
 global $show_abstract;
 global $elenco_foto;
@@ -75,10 +70,31 @@ $show_cats = get_field( 'show_cats', 'options' );
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
 <style>
 body {
-  font-family: <?php echo $font_families[0]; ?>;
+  font-family: <?php the_field( 'body_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'body_font_weight', 'options' ); ?>;
 }
-a:link, a:visited, a:hover, a:active {
-  color: #191919;
+h1, h2, h3, h4, h5, h6, .as-h4 {
+  font-family: <?php the_field( 'titles_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'titles_font_weight', 'options' ); ?>;
+}
+p, .content-styled ul, .content-styled ol {
+  font-family: <?php the_field( 'paragraphs_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'paragraphs_font_weight', 'options' ); ?>;
+}
+.menu-overlay,
+.menu-overlay p,
+.menu,
+.menu p {
+  font-family: <?php the_field( 'menu_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'menu_font_weight', 'options' ); ?>;
+}
+.navi-text {
+  font-family: <?php the_field( 'navitext_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'navitext_font_weight', 'options' ); ?>;
+}
+.cta-1 {
+  font-family: <?php the_field( 'cta_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'cta_font_weight', 'options' ); ?>;
 }
 input[type=text],
 input[type=email],
@@ -96,8 +112,13 @@ input[type=submit],
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignright .wp-caption-text,
 .wp-caption-text {
-  font-family: <?php echo $font_families[0]; ?>;
+  font-family: <?php the_field( 'inputs_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'inputs_font_weight', 'options' ); ?>;
 }
+a:link, a:visited, a:hover, a:active {
+  color: #191919;
+}
+
 
 </style>
 <script type="text/javascript">
@@ -123,7 +144,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
       <?php else : ?>
         <div class="logo delight-area">
           <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>">
-            <?php echo get_bloginfo( 'name' ); ?>
+            <?php the_field( 'header_custom_text', 'options' ); ?>
           </a>
         </div>
       <?php endif; ?>

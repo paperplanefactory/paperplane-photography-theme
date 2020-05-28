@@ -36,7 +36,7 @@ function array_navigate($array, $key){
 
 function previous_attachment_ID( $att_post ) {
   //get the attachments which share the same post parent
-  $images =& get_children( array(
+  $images = get_children( array(
     'post_parent' => $att_post->post_parent,
     'post_type' => 'attachment',
     'post_mime_type' => 'image',
@@ -71,7 +71,7 @@ function prev_att_link( $att_post=null ) {
 
 function next_attachment_ID( $att_post ) {
   //get the attachments which share the same post parent
-  $images =& get_children( array(
+  $images = get_children( array(
     'post_parent' => $att_post->post_parent,
     'post_type' => 'attachment',
     'post_mime_type' => 'image',
@@ -110,7 +110,7 @@ $attachments = array_values( get_children( array(
    'post_mime_type' => 'image',
    'order' => 'ASC',
    'orderby' => 'menu_order ID',
-   'exclude' => $thumb_ID )
+ )
    ) );
    foreach ( $attachments as $k => $attachment ) :
      if ( $attachment->ID == $post->ID )

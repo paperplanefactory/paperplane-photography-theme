@@ -3,6 +3,23 @@
     "title": "Set color & typo options",
     "fields": [
         {
+            "key": "field_5ecfb83bffa88",
+            "label": "Header logo \/ text",
+            "name": "",
+            "type": "accordion",
+            "instructions": "If no logo is set header will display a custom text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5e3e9aeeca63e",
             "label": "Custom logo (for clear color scheme)",
             "name": "custom_logo",
@@ -51,11 +68,58 @@
             "mime_types": ""
         },
         {
+            "key": "field_5ecfb89effa89",
+            "label": "Custom text",
+            "name": "header_custom_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e3e9aeeca63e",
+                        "operator": "==empty"
+                    },
+                    {
+                        "field": "field_5e4017303f315",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfb90f1f868",
+            "label": "Typography",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5dfccba411af3",
             "label": "Link Google font",
             "name": "link_google_font",
             "type": "text",
-            "instructions": "You can choose any font from <a href=\"https:\/\/fonts.google.com\/\" target=\"_blank\">Google Fonts<\/a>.<br \/>\r\nYou must strictly use only one cont with two weights.<br \/>",
+            "instructions": "You can choose any font from <a href=\"https:\/\/fonts.google.com\/\" target=\"_blank\">Google Fonts<\/a>.<br \/>",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -70,11 +134,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5e3e80f9fffdb",
-            "label": "Assign fonts",
-            "name": "assign_fonts",
-            "type": "repeater",
-            "instructions": "Add font family selector for the fonts you choose to use on the site.",
+            "key": "field_5ecfb92a1f869",
+            "label": "Body font-family",
+            "name": "body_font_family",
+            "type": "text",
+            "instructions": "Specify font family for body - Example: 'Noto Serif KR', serif",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -82,32 +146,275 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add font family",
-            "sub_fields": [
-                {
-                    "key": "field_5e3e815ffffdc",
-                    "label": "Font family",
-                    "name": "font_family",
-                    "type": "text",
-                    "instructions": "Exaample: 'Noto Serif KR', serif;",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfb9a81f86b",
+            "label": "Body font-weight",
+            "name": "body_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for body - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfb96e1f86a",
+            "label": "Titles font-family",
+            "name": "titles_font_family",
+            "type": "text",
+            "instructions": "Specify font family for titles (H1, H2, H3, H4, H5, H6) - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfb9d31f86c",
+            "label": "Titles font-weight",
+            "name": "titles_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for titles (H1, H2, H3, H4, H5, H6) - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfba681f86f",
+            "label": "Paragraphs font-family",
+            "name": "paragraphs_font_family",
+            "type": "text",
+            "instructions": "Specify font family for paragraphs - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfba6c1f870",
+            "label": "Paragraphs font-weight",
+            "name": "paragraphs_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for paragraphs - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfba0a1f86d",
+            "label": "Inputs font-family",
+            "name": "inputs_font_family",
+            "type": "text",
+            "instructions": "Specify font family for input fields - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfba0e1f86e",
+            "label": "Inputs font-weight",
+            "name": "inputs_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for inputs - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbc49dc268",
+            "label": "Menu font-family",
+            "name": "menu_font_family",
+            "type": "text",
+            "instructions": "Specify font family for menu - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbc4fdc269",
+            "label": "Menu font-weight",
+            "name": "menu_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for menu - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbe0fd71c5",
+            "label": "Navi text font-family",
+            "name": "navitext_font_family",
+            "type": "text",
+            "instructions": "Specify font family for navigation text - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbe14d71c6",
+            "label": "Navi text font-weight",
+            "name": "navitext_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for navigation text - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbef8a0c0c",
+            "label": "CTA font-family",
+            "name": "cta_font_family",
+            "type": "text",
+            "instructions": "Specify font family for CTA - Example: 'Noto Serif KR', serif;",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbefca0c0d",
+            "label": "CTA font-weight",
+            "name": "cta_font_weight",
+            "type": "text",
+            "instructions": "Specify font weight for CTA - Example: 800",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecfbdb0169c5",
+            "label": "Other options",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
         },
         {
             "key": "field_5e3eba3178f54",
@@ -140,7 +447,7 @@
             "name": "credits_and_more",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -171,5 +478,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581263077
+    "modified": 1590673356
 }

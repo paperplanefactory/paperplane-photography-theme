@@ -709,7 +709,6 @@ a.absl:link {
 }
 
 h1 {
-  font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 23px;
@@ -725,7 +724,6 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 23px;
@@ -734,13 +732,11 @@ h2 {
 
 .menu-overlay,
 .menu-overlay p {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
 }
 
 h3 {
-  font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 23px;
@@ -749,7 +745,6 @@ h3 {
 
 h4,
 h5 {
-  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 19px;
@@ -757,7 +752,6 @@ h5 {
 }
 
 .as-h4 {
-  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
@@ -768,13 +762,11 @@ h5 {
 
 .menu,
 .menu p {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
 }
 
 h6 {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 17px;
@@ -782,13 +774,11 @@ h6 {
 }
 
 .navi-text {
-  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
 }
 
 p {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   margin: 0 0 22px;
@@ -797,7 +787,6 @@ p {
 }
 
 .cta-1 {
-  font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   margin-bottom: 10px;
@@ -821,7 +810,6 @@ p {
 }
 
 .content-styled ul {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 22px;
@@ -844,7 +832,6 @@ p {
 }
 
 .content-styled ol {
-  font-weight: 600;
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 22px;

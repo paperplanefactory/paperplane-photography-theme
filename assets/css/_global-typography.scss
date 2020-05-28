@@ -3,7 +3,6 @@
 @import 'global-mixin';
 
 h1 {
-  font-weight: $font-weight-2;
   font-size: $h1-size-desktop;
   line-height: $h1-lineheight-desktop;
   margin-bottom: $h1-marginbottom-desktop;
@@ -19,7 +18,6 @@ h1 {
 }
 
 h2 {
-  font-weight: $font-weight-2;
   font-size: $h2-size-desktop;
   line-height: $h2-lineheight-desktop;
   margin-bottom: $h2-marginbottom-desktop;
@@ -28,13 +26,11 @@ h2 {
 
 .menu-overlay,
 .menu-overlay p {
-  font-weight: $font-weight-1;
   font-size: $h6-size-desktop;
   line-height: $h6-lineheight-desktop;
 }
 
 h3 {
-  font-weight: $font-weight-2;
   font-size: $h3-size-desktop;
   line-height: $h3-lineheight-desktop;
   margin-bottom: $h3-marginbottom-desktop;
@@ -43,7 +39,6 @@ h3 {
 
 h4,
 h5 {
-  font-weight: $font-weight-2;
   font-size: $h4-size-desktop;
   line-height: $h4-lineheight-desktop;
   margin-bottom: $h4-marginbottom-desktop;
@@ -51,7 +46,6 @@ h5 {
 }
 
 .as-h4 {
-  font-weight: $font-weight-2;
   font-size: $h4-size-desktop;
   line-height: $h4-lineheight-desktop;
 }
@@ -62,13 +56,11 @@ h5 {
 
 .menu,
 .menu p {
-  font-weight: $font-weight-1;
   font-size: $h6-size-desktop;
   line-height: $h6-lineheight-desktop;
 }
 
 h6 {
-  font-weight: $font-weight-1;
   font-size: $h6-size-desktop;
   line-height: $h6-lineheight-desktop;
   margin-bottom: $h6-marginbottom-desktop;
@@ -76,13 +68,11 @@ h6 {
 }
 
 .navi-text {
-  font-weight: $font-weight-1;
   font-size: $h6-size-desktop;
   line-height: 18px;
 }
 
 p {
-  font-weight: $font-weight-1;
   font-size: $paragraph-size-desktop;
   line-height: $paragraph-lineheight-desktop;
   margin: 0 0 $paragraph-marginbottom-desktop;
@@ -91,7 +81,6 @@ p {
 }
 
 .cta-1 {
-  font-weight: $font-weight-1;
   font-size: $cta1-size-desktop;
   line-height: $cta1-lineheight-desktop;
   margin-bottom: $cta1-marginbottom-desktop;
@@ -114,7 +103,6 @@ p {
   }
 
   ul {
-    font-weight: $font-weight-1;
     font-size: $paragraph-size-desktop;
     line-height: $paragraph-lineheight-desktop;
     margin-bottom: $paragraph-marginbottom-desktop;
@@ -137,7 +125,6 @@ p {
   }
 
   ol {
-    font-weight: $font-weight-2;
     font-size: $paragraph-size-desktop;
     line-height: $paragraph-lineheight-desktop;
     margin-bottom: $paragraph-marginbottom-desktop;
