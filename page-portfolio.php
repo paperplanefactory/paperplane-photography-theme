@@ -30,7 +30,7 @@ query_posts( $args_posts_paginati );
 
  <div class="wrapper">
    <div class="wrapper-padded">
-     <div class="flex-hold flex-hold-3 margins-wide verticalize grid-infinite">
+     <div class="flex-hold <?php the_field( 'items_per_row', 'options' ); ?> margins-wide verticalize grid-infinite">
         <?php
         if (have_posts()) : while (have_posts()) : the_post();
         include( locate_template ( 'template-parts/grid/post.php' ) );
