@@ -1824,10 +1824,12 @@ body.dark-theme .eye i {
     text-align: center !important;
     margin: 10px 0 0;
   }
+  .flex-hold-2.margins-wide,
   .flex-hold-3.margins-wide,
   .flex-hold-5.margins-wide {
     margin-top: 33px;
   }
+  .flex-hold-2.margins-wide .flex-hold-child,
   .flex-hold-3.margins-wide .flex-hold-child,
   .flex-hold-5.margins-wide .flex-hold-child {
     position: relative;
@@ -2295,6 +2297,20 @@ body.dark-theme .eye i {
     margin: 0 33px 33px 0;
   }
   .flex-hold-3.margins-wide .flex-hold-child:nth-child(3n) {
+    margin-right: 0;
+  }
+  .flex-hold-2.margins-wide {
+    margin-top: 34px;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-hold-2.margins-wide .flex-hold-child {
+    position: relative;
+    -webkit-box-flex: 1;
+    width: calc(50% - 17px);
+    margin: 0 34px 34px 0;
+  }
+  .flex-hold-2.margins-wide .flex-hold-child:nth-child(2n) {
     margin-right: 0;
   }
 }

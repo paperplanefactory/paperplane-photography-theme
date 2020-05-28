@@ -39,3 +39,22 @@
     }
   }
 }
+
+.flex-hold-2 {
+  &.margins-wide {
+    margin-top: 34px;
+    align-items: center;
+    justify-content: center;
+
+    .flex-hold-child {
+      position: relative;
+      -webkit-box-flex: 1;
+      width: calc(50% - 17px);
+      margin: 0 34px 34px 0;
+    }
+
+    .flex-hold-child:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}

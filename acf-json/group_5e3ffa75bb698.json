@@ -93,6 +93,31 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5ecfa7cd534c4",
+            "label": "Items per row",
+            "name": "items_per_row",
+            "type": "select",
+            "instructions": "Select how many items per row should be displayed. On wide screens (like 4K or retina) 4 items per row will be shown to aovid image quality issues.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "flex-hold-3": "3",
+                "flex-hold-2": "2"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -112,5 +137,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581284680
+    "modified": 1590667458
 }

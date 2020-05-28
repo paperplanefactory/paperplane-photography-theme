@@ -101,7 +101,7 @@ $my_topworks = get_posts( $args_topworks );
 <?php else : ?>
   <div class="wrapper">
     <div class="wrapper-padded">
-      <div class="flex-hold flex-hold-3 margins-wide verticalize grid-infinite">
+      <div class="flex-hold <?php the_field( 'items_per_row', 'options' ); ?> margins-wide verticalize grid-infinite">
         <?php
         if ( get_query_var('paged') ) {
 
