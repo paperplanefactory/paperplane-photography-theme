@@ -149,7 +149,7 @@ $thumb_url_micro = wp_get_attachment_image_src($attachment_id, 'micro', true);
 {
   "@context": "http://schema.org",
   "@type": "ImageObject",
-  "author": "Allegra Martin",
+  "author": "<?php echo get_bloginfo( 'name' ); ?>",
   "contentUrl": "<?php echo $thumb_url_desktop[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
   "description": "<?php echo $attachment_alt; ?>",
