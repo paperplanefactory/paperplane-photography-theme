@@ -184,10 +184,12 @@
 	line-height: 18px;
 	border: solid 3px;
 	transition: opacity 1s;
+	pointer-events: none;
+	opacity: 0;
 
-	.paperplane-message-cookie-accepted,
-	.paperplane-message-cookie-refused {
-		display: none;
+	&.shown {
+		pointer-events: all;
+		opacity: 1;
 	}
 
 	.paperplane-cookie-notice-container {

@@ -8,8 +8,8 @@
        'size_fallback' => 'grid_large_image'
    );
    $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-       'retina' => 'grid_large_image',
-       'desktop' => 'tablet_image',
+       'retina' => 'tablet_image',
+       'desktop' => 'mobile_image',
        'mobile' => 'mobile_image',
        'micro' => 'micro'
    );
