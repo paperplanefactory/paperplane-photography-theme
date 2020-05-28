@@ -408,8 +408,9 @@ a {
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
-  border: solid 3px;
   transition: opacity 1s;
+  pointer-events: none;
+  opacity: 0;
 }
 
 #paperplane-cookie-notice.shown {
