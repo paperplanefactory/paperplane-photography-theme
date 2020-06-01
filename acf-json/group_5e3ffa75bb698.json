@@ -118,6 +118,31 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5ed4d95e3fc8d",
+            "label": "Grid style",
+            "name": "image_grid",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no-crop-picture": "Pictures not cropped (maintain proportions)",
+                "crop-picture": "Pictures cropped"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -137,5 +162,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590667458
+    "modified": 1591007649
 }

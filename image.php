@@ -139,11 +139,7 @@ $picturecaption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
 $attachment_title = get_the_title($attachment_id);
 $attachment_alt = get_post_meta($attachment_id,'_wp_attachment_image_alt', true);
 $attachment_description = get_post(get_post_thumbnail_id())->post_content; //Long description
-$thumb_url_5k = wp_get_attachment_image_src($attachment_id, '5k_image', true);
 $thumb_url_desktop = wp_get_attachment_image_src($attachment_id, 'full_desk', true);
-$thumb_url_tablet = wp_get_attachment_image_src($attachment_id, 'tablet_image', true);
-$thumb_url_mobile = wp_get_attachment_image_src($attachment_id, 'mobile_image', true);
-$thumb_url_micro = wp_get_attachment_image_src($attachment_id, 'micro', true);
 ?>
 <script type="application/ld+json">
 {
@@ -177,13 +173,14 @@ if ( $elenco_foto === 'si' ) {
     $image_data = array(
         'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
         'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-        'size_fallback' => 'full_desk'
+        'size_fallback' => 'full'
     );
     $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-        'retina' => '5k_image',
-        'desktop' => 'full_desk',
-        'mobile' => 'mobile_image',
-        'micro' => 'micro'
+      'desktop_retina' => 'single_image_retina',
+      'desktop' => 'single_image',
+      'mobile' => 'single_image',
+      'mobile_retina' => 'single_image_retina',
+      'micro' => 'micro'
     );
     print_theme_single_image( $image_data, $image_sizes );
     ?>

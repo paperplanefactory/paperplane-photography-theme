@@ -2299,6 +2299,15 @@ body.dark-theme .eye i {
   .flex-hold-2.margins-wide .flex-hold-child:nth-child(2n) {
     margin-right: 0;
   }
+  #grid[data-columns]::before {
+    content: '3 .column.size-1of3';
+  }
+  #grid .column {
+    float: left;
+  }
+  #grid .size-1of3 {
+    width: 33.333%;
+  }
 }
 
 @media screen and (min-width: 1920px) {

@@ -12,16 +12,26 @@ function redirect_if_not_post_attachment() {
 
 // custom image size for featured images
 add_theme_support( 'post-thumbnails' );
-add_image_size( '5k_image', 2048, 2048);
-add_image_size( 'full_desk', 99999, 1080);
+
 add_image_size( 'content_picture', 768, 9999);
-add_image_size( 'tablet_image', 1024, 9999);
-add_image_size( 'mobile_image', 768, 9999);
-add_image_size( 'grid_image', 388, 9999);
-add_image_size( 'grid_large_image', 768, 9999);
 add_image_size( 'thumb_gallery', 120, 120, true);
 add_image_size( 'micro', 10, 9999);
+add_image_size( 'micro_crop', 10, 10, true);
 
+add_image_size( 'full_desk', 1920, 9999);
+// single piture view image sizes
+add_image_size( 'single_image', 9999, 1080, false);
+add_image_size( 'single_image_retina', 99999, 2048, false);
+// grid image sizes - no crop
+add_image_size( 'grid_image_nocrop', 640, 9999);
+add_image_size( 'grid_image_retina_nocrop', 1280, 9999);
+add_image_size( 'grid_image_mobile_nocrop', 420, 9999);
+add_image_size( 'grid_image_mobile_retina_nocrop', 840, 9999);
+// grid image sizes - crop
+add_image_size( 'grid_image_crop', 640, 640, true);
+add_image_size( 'grid_image_retina_crop', 1280, 1280, true);
+add_image_size( 'grid_image_mobile_crop', 420, 420, true);
+add_image_size( 'grid_image_mobile_retina_crop', 840, 840, true);
 
 function wpb_imagelink_setup() {
     $image_set = get_option( 'image_default_link_type' );
@@ -87,10 +97,9 @@ function print_theme_single_image( $image_data, $image_sizes ) {
         // this is simple HTML - remember to use lazyload (https://github.com/verlok/lazyload) for better performance
         $html_image_output = '';
         $html_image_output .= '<picture>';
-        $html_image_output .= '<source media="(max-width: 767px)" data-srcset="'.$sharped_images[2].'">';
-        $html_image_output .= '<source media="(max-width: 1920px)" data-srcset="'.$sharped_images[1].'">';
-          $html_image_output .= '<source media="(min-width: 1921px)" data-srcset="'.$sharped_images[0].'">';
-        $html_image_output .= '<img data-src="'.$sharped_images[1].'" src="'.$sharped_images[3].'" title="'.$attachment_title.'" alt="'.$attachment_alt.'" class="autoplay-loaded lazy no-explorer" />';
+        $html_image_output .= '<source media="(max-width: 1024px)" data-srcset="'.$sharped_images[2].', '.$sharped_images[3].' 2x">';
+        $html_image_output .= '<source media="(min-width: 1025px)" data-srcset="'.$sharped_images[1].', '.$sharped_images[0].' 2x">';
+        $html_image_output .= '<img data-src="'.$sharped_images[1].'" src="'.$sharped_images[4].'" title="'.$attachment_title.'" alt="'.$attachment_alt.'" class="autoplay-loaded lazy no-explorer" />';
         $html_image_output .= '</picture>';
         echo $html_image_output;
       }
