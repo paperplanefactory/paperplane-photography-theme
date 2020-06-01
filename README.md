@@ -24,8 +24,7 @@ Required set of fields is already included through functions.php.<br/>
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
-* archive pages grid can be setup to show 2 or 3 items per row;
-* archive pages grid cen be set to show image with original proportions or cropped;
+* archive pages grid can be setup to show 2 or 3 items per row and images with original proportions or cropped;
 * don't ask me why but I made this theme compatible with Microsoft Internet Explorer :hankey:
 
 ### :exclamation: How to set up theme:
