@@ -24,7 +24,7 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
-* archive pages grid can be setup to use [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp "https://www.w3schools.com/css/css3_flexbox.asp Flexbox") or Masonry grid;https://www.w3schools.com/css/css3_flexbox.asp
+* archive pages grid can be setup to use [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp "https://www.w3schools.com/css/css3_flexbox.asp Flexbox") or [Masonry grid](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry grid");
 * archive pages grid can be setup to show 2 or 3 items per row and images with original proportions or cropped;
 * don't ask me why but I made this theme compatible with Microsoft Internet Explorer :hankey:
 
