@@ -72,6 +72,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
 * [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
+* [Masonry](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry");
 * Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
 
 ### :zap: Lighthouse report
