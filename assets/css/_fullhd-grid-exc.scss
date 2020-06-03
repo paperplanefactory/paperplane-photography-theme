@@ -21,3 +21,15 @@
     }
   }
 }
+
+.masonry-grid {
+  &.masonry-three,
+  &.masonry-two {
+    .flex-hold-child,
+    .grid-sizer {
+      position: relative;
+      width: calc(25% - 20px);
+      padding: 10px;
+    }
+  }
+}

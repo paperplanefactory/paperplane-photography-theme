@@ -65,7 +65,7 @@
     .grid-sizer {
       position: relative;
       width: calc(33.333333% - 20px);
-      margin: 10px;
+      padding: 10px;
     }
   }
 
@@ -74,7 +74,7 @@
     .grid-sizer {
       position: relative;
       width: calc(50% - 20px);
-      margin: 10px;
+      padding: 10px;
     }
   }
 }
