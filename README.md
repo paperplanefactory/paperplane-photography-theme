@@ -62,6 +62,7 @@ Don't insert pictures in content, use "the_content" to describe your project ins
 
 ### :electric_plug: Useful plugins to install:
 These plugins are suggested based on my experience and are therefore a simple tip.
+* [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater") to install theme and keep it updated directly from GitHub repo.
 * [WP Fastest Cache](https://it.wordpress.org/plugins/wp-fastest-cache/ "WP Fastest Cache") to improve loading time - avoid scripts combining option if you want to keep Microsoft Internet Explorer :hankey: compatibility;
 * [Contact Form 7](https://it.wordpress.org/plugins/contact-form-7/ "Contact Form 7"): CSS rules perfectly define appearence of forms created with CF7. In CF7 editor just wrap your form into a DIV with class "form-hold";
 * [WebP Express](https://wordpress.org/plugins/webp-express/ "WebP Express") is a must have plugin if your hosting provider supports WebP image conversion tools;
@@ -72,12 +73,13 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [LazyLoad](https://github.com/verlok/lazyload "LazyLoad");
 * [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
+* [Masonry](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry");
 * Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
 ![Lighthouse report](https://www.paperplanefactory.com/ppuploads/static/github/lighthouse.png)
 
-### :smiling_imp: Why this plugin is not on WordPress [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
+### :smiling_imp: Why this theme is not on WordPress [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme's options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
 And yes, I'm so lazy that I don't even want to sell this theme and then have to provide support.<br />
