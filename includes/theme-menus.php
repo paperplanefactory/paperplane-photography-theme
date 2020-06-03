@@ -58,3 +58,13 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 
 	return $meta_caps;
 }
+
+function clear_option_pages_cache() {
+	$screen = get_current_screen();
+	if ( ( strpos($screen->id, 'acf-options-archives') == true ) || (strpos($screen->id, 'acf-options-color-typo-options') == true) || (strpos($screen->id, 'acf-options-image-gallery-options') == true) ) {
+    if ( function_exists( 'wpfc_clear_all_cache' ) ) {
+    wpfc_clear_all_cache(true);
+  }
+	}
+}
+add_action('acf/save_post', 'clear_option_pages_cache', 20);

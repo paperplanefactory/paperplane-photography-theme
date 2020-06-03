@@ -33,14 +33,16 @@ var paperPlaneLazyLoad = new LazyLoad({
     if (el.complete && el.naturalWidth !== 0) {
       el.classList.remove('lazy-loading');
       el.classList.add('lazy-loaded');
-      var container = document.querySelector('.masonry-grid');
-      var msnry = new Masonry(container, {
-        // set itemSelector so .grid-sizer is not used in layout
-        itemSelector: '.flex-hold-child',
-        // use element for option
-        columnWidth: '.grid-sizer',
-        percentPosition: true
-      });
+      if (jQuery(".masonry-grid")[0]) {
+        var container = document.querySelector('.masonry-grid');
+        var msnry = new Masonry(container, {
+          // set itemSelector so .grid-sizer is not used in layout
+          itemSelector: '.flex-hold-child',
+          // use element for option
+          columnWidth: '.grid-sizer',
+          percentPosition: true
+        });
+      }
     }
   }
 });
