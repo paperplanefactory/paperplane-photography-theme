@@ -102,38 +102,93 @@ $my_topworks = get_posts( $args_topworks );
 <?php else : ?>
   <div class="wrapper">
     <div class="wrapper-padded">
-      <div class="flex-hold <?php the_field( 'items_per_row', 'options' ); ?> margins-wide verticalize grid-infinite">
-        <?php
-        if ( get_query_var('paged') ) {
-
-        	$paged = get_query_var('paged');
-
-        } elseif ( get_query_var('page') ) {
-
-        	$paged = get_query_var('page');
-
-        } else {
-
-        	$paged = 1;
-
+      <?php
+      $boxes_grid = get_field( 'boxes_grid', 'options' );
+      $items_per_row = get_field( 'items_per_row', 'options' );
+      if ( $boxes_grid === 'grid-flexbox' ) :
+        if ( $items_per_row === 'three-items' ) {
+          $grid_blocks = 'flex-hold-3';
         }
-        $args_topworks = array(
-          'post_type' => 'post',
-          //'posts_per_page' => 9,
-          'paged' => $paged,
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'category',
-              'field' => 'term_id',
-              'terms' => $scegli_categoria
-            )
-          )
-        );
-        query_posts( $args_topworks );
-        if (have_posts()) : while (have_posts()) : the_post();
-        include( locate_template ( 'template-parts/grid/post.php' ) );
-      endwhile; endif; wp_reset_postdata(); ?>
-      </div>
+        if ( $items_per_row === 'two-items' ) {
+          $grid_blocks = 'flex-hold-2';
+        }
+       ?>
+       <div class="flex-hold <?php echo $grid_blocks; ?> margins-wide verticalize grid-infinite">
+         <?php
+         if ( get_query_var('paged') ) {
+
+         	$paged = get_query_var('paged');
+
+         } elseif ( get_query_var('page') ) {
+
+         	$paged = get_query_var('page');
+
+         } else {
+
+         	$paged = 1;
+
+         }
+         $args_topworks = array(
+           'post_type' => 'post',
+           //'posts_per_page' => 9,
+           'paged' => $paged,
+           'tax_query' => array(
+             array(
+               'taxonomy' => 'category',
+               'field' => 'term_id',
+               'terms' => $scegli_categoria
+             )
+           )
+         );
+         query_posts( $args_topworks );
+         if (have_posts()) : while (have_posts()) : the_post();
+         include( locate_template ( 'template-parts/grid/post.php' ) );
+       endwhile; endif; wp_reset_postdata(); ?>
+       </div>
+     <?php
+     else :
+       if ( $items_per_row === 'three-items' ) {
+         $grid_blocks = 'masonry-three';
+       }
+       if ( $items_per_row === 'two-items' ) {
+         $grid_blocks = 'masonry-two';
+       }
+       ?>
+       <div class="masonry-grid <?php echo $grid_blocks; ?> grid-infinite">
+         <div class="grid-sizer"></div>
+         <?php
+         if ( get_query_var('paged') ) {
+
+         	$paged = get_query_var('paged');
+
+         } elseif ( get_query_var('page') ) {
+
+         	$paged = get_query_var('page');
+
+         } else {
+
+         	$paged = 1;
+
+         }
+         $args_topworks = array(
+           'post_type' => 'post',
+           //'posts_per_page' => 9,
+           'paged' => $paged,
+           'tax_query' => array(
+             array(
+               'taxonomy' => 'category',
+               'field' => 'term_id',
+               'terms' => $scegli_categoria
+             )
+           )
+         );
+         query_posts( $args_topworks );
+         if (have_posts()) : while (have_posts()) : the_post();
+         include( locate_template ( 'template-parts/grid/post.php' ) );
+       endwhile; endif; wp_reset_postdata(); ?>
+       </div>
+     <?php endif; ?>
+
       <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
     </div>
   </div>

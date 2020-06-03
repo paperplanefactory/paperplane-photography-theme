@@ -136,6 +136,18 @@
   }
 }
 
+.masonry-grid {
+  &.masonry-three,
+  &.masonry-two {
+    .flex-hold-child,
+    .grid-sizer {
+      position: relative;
+      width: calc(100% - 20px);
+      margin: 10px;
+    }
+  }
+}
+
 .gallery-thumb-box {
   margin: 20px 0;
 }

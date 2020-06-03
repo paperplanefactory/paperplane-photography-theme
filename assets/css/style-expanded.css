@@ -1823,6 +1823,13 @@ body.dark-theme .eye i {
     width: 100%;
     margin: 0 0 33px;
   }
+  .masonry-grid.masonry-three .flex-hold-child,
+  .masonry-grid.masonry-three .grid-sizer, .masonry-grid.masonry-two .flex-hold-child,
+  .masonry-grid.masonry-two .grid-sizer {
+    position: relative;
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
   .gallery-thumb-box {
     margin: 20px 0;
   }
@@ -2299,14 +2306,17 @@ body.dark-theme .eye i {
   .flex-hold-2.margins-wide .flex-hold-child:nth-child(2n) {
     margin-right: 0;
   }
-  #grid[data-columns]::before {
-    content: '3 .column.size-1of3';
+  .masonry-grid.masonry-three .flex-hold-child,
+  .masonry-grid.masonry-three .grid-sizer {
+    position: relative;
+    width: calc(33.333333% - 20px);
+    margin: 10px;
   }
-  #grid .column {
-    float: left;
-  }
-  #grid .size-1of3 {
-    width: 33.333%;
+  .masonry-grid.masonry-two .flex-hold-child,
+  .masonry-grid.masonry-two .grid-sizer {
+    position: relative;
+    width: calc(50% - 20px);
+    margin: 10px;
   }
 }
 

@@ -95,6 +95,31 @@
             "placeholder": ""
         },
         {
+            "key": "field_5ed77060b0b73",
+            "label": "Grid boxes style",
+            "name": "boxes_grid",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid-flexbox": "Default grid (flex box)",
+                "grid-masonry": "Masonry grid (fitting stones in a wall)"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5ecfa7cd534c4",
             "label": "Items per row",
             "name": "items_per_row",
@@ -108,8 +133,8 @@
                 "id": ""
             },
             "choices": {
-                "flex-hold-3": "3",
-                "flex-hold-2": "2"
+                "three-items": "3",
+                "two-items": "2"
             },
             "default_value": false,
             "allow_null": 0,
@@ -121,7 +146,7 @@
         },
         {
             "key": "field_5ed4d95e3fc8d",
-            "label": "Grid style",
+            "label": "Grid images style",
             "name": "image_grid",
             "type": "select",
             "instructions": "",
@@ -162,5 +187,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1591007649
+    "modified": 1591177755
 }
