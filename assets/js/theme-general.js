@@ -75,7 +75,7 @@ function init() {
   refreshPrevNext();
   approveDelight();
   wrapPostMedia();
-  masonrySetup();
+  //masonrySetup();
   playOrPause = localStorage.getItem('playOrPause');
   myMutant();
   highlightCurrentThumb();
@@ -101,6 +101,7 @@ document.addEventListener('swup:contentReplaced', event => {
     closeOverlay();
   });
   setInitialBrightness();
+  masonrySetup();
   if ($('div.wpcf7 > form').length) {
     var $form = $('div.wpcf7 > form');
     wpcf7.initForm($form);
@@ -125,10 +126,12 @@ function initInfiniteScroll() {
 
     jQuery('.grid-infinite').on('append.infiniteScroll', function(event, response, path, items) {
       paperPlaneLazyLoad.update();
+      masonrySetup();
     });
     window.setInterval(function() {
       if (jQuery('.infinite-scroll-last').is(":visible")) {
         jQuery('#infscr-loading').fadeOut(300);
+        masonrySetup();
       }
     }, 2000);
   }
