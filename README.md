@@ -34,8 +34,9 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 * create a page and set "Home" as template;
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
-* go to "Theme settings" to set links you want to appear in footer. "Theme version" option can be useful for forcing cache clearing;
+* "Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Color & Typo options" and "Image gallery" options;
+* in "Color & Typo options" page you can include one or more Google Fonts and you can specify font-familiy and font-weight for headings, paragraphs and more.
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
 * to activate clear/dark mode toggle just add a link to your menu with these settings:
   * URL: #
