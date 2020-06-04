@@ -96,6 +96,7 @@ p, .content-styled ul, .content-styled ol {
   font-family: <?php the_field( 'cta_font_family', 'options' ); ?>;
   font-weight: <?php the_field( 'cta_font_weight', 'options' ); ?>;
 }
+label,
 input[type=text],
 input[type=email],
 input[type=number],
