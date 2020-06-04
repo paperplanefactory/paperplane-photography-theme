@@ -52,7 +52,7 @@ function all_scripts(){
   // docs: https://masonry.desandro.com/
   $load_masonry = get_field( 'boxes_grid', 'options' );
   if ( $load_masonry === 'grid-masonry' ) {
-    wp_register_script( 'theme-masonry', get_template_directory_uri() . '/assets/js/libs/masonry.pkgd.js#deferload', '', $theme_version, true);
+    wp_register_script( 'theme-masonry', get_template_directory_uri() . '/assets/js/libs/masonry.pkgd.js#deferload', '', $theme_version, false);
     wp_enqueue_script( 'theme-masonry' );
   }
 	// Recurring behaviors
