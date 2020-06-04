@@ -22,16 +22,22 @@ add_image_size( 'full_desk', 1920, 9999);
 // single piture view image sizes
 add_image_size( 'single_image', 9999, 1080, false);
 add_image_size( 'single_image_retina', 99999, 2048, false);
-// grid image sizes - no crop
+// grid image sizes - no crop 3 cols
 add_image_size( 'grid_image_nocrop', 640, 9999);
 add_image_size( 'grid_image_retina_nocrop', 1280, 9999);
 add_image_size( 'grid_image_mobile_nocrop', 420, 9999);
 add_image_size( 'grid_image_mobile_retina_nocrop', 840, 9999);
-// grid image sizes - crop
+// grid image sizes - crop 3 cols
 add_image_size( 'grid_image_crop', 640, 640, true);
 add_image_size( 'grid_image_retina_crop', 1280, 1280, true);
 add_image_size( 'grid_image_mobile_crop', 420, 420, true);
 add_image_size( 'grid_image_mobile_retina_crop', 840, 840, true);
+// grid image sizes - no crop 2 cols
+add_image_size( 'grid_image_nocrop_2cols', 960, 9999);
+add_image_size( 'grid_image_retina_nocrop_2cols', 1920, 9999);
+// grid image sizes - crop 2 cols
+add_image_size( 'grid_image_crop_2cols', 960, 960, true);
+add_image_size( 'grid_image_retina_crop_2cols', 1920, 1920, true);
 
 function wpb_imagelink_setup() {
     $image_set = get_option( 'image_default_link_type' );
