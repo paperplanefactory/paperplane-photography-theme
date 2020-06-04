@@ -63,6 +63,7 @@ swup.on('animationInStart', animationIn);
 
 function init() {
   paperPlaneLazyLoad.update();
+  masonrySetup();
   refreshPrevNext();
   approveDelight();
   wrapPostMedia();
