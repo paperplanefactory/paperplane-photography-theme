@@ -18,10 +18,10 @@ function masonrySetup() {
       itemSelector: '.flex-hold-child',
       // use element for option
       columnWidth: '.grid-sizer',
-      percentPosition: true
+      percentPosition: true,
+      transitionDuration: '0.2s'
     });
   }
-
 }
 masonrySetup();
 
@@ -33,16 +33,7 @@ var paperPlaneLazyLoad = new LazyLoad({
     if (el.complete && el.naturalWidth !== 0) {
       el.classList.remove('lazy-loading');
       el.classList.add('lazy-loaded');
-      if (jQuery(".masonry-grid")[0]) {
-        var container = document.querySelector('.masonry-grid');
-        var msnry = new Masonry(container, {
-          // set itemSelector so .grid-sizer is not used in layout
-          itemSelector: '.flex-hold-child',
-          // use element for option
-          columnWidth: '.grid-sizer',
-          percentPosition: true
-        });
-      }
+      masonrySetup();
     }
   }
 });
