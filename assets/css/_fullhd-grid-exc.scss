@@ -23,13 +23,18 @@
 }
 
 .masonry-grid {
+  position: relative;
+  width: calc(100% + 34px);
+  left: -17px;
+  margin-top: 14px;
+
   &.masonry-three,
   &.masonry-two {
     .flex-hold-child,
     .grid-sizer {
       position: relative;
-      width: calc(25% - 20px);
-      padding: 10px;
+      width: calc(25% - 34px);
+      padding: 17px;
     }
   }
 }

@@ -60,12 +60,17 @@
 }
 
 .masonry-grid {
+  position: relative;
+  width: calc(100% + 34px);
+  left: -17px;
+  margin-top: 14px;
+
   &.masonry-three {
     .flex-hold-child,
     .grid-sizer {
       position: relative;
-      width: calc(33.333333% - 20px);
-      padding: 10px;
+      width: calc(33.333333% - 34px);
+      padding: 17px;
     }
   }
 
@@ -73,8 +78,8 @@
     .flex-hold-child,
     .grid-sizer {
       position: relative;
-      width: calc(50% - 20px);
-      padding: 10px;
+      width: calc(50% - 34px);
+      padding: 17px;
     }
   }
 }

@@ -2306,17 +2306,23 @@ body.dark-theme .eye i {
   .flex-hold-2.margins-wide .flex-hold-child:nth-child(2n) {
     margin-right: 0;
   }
+  .masonry-grid {
+    position: relative;
+    width: calc(100% + 34px);
+    left: -17px;
+    margin-top: 14px;
+  }
   .masonry-grid.masonry-three .flex-hold-child,
   .masonry-grid.masonry-three .grid-sizer {
     position: relative;
-    width: calc(33.333333% - 20px);
-    padding: 10px;
+    width: calc(33.333333% - 34px);
+    padding: 17px;
   }
   .masonry-grid.masonry-two .flex-hold-child,
   .masonry-grid.masonry-two .grid-sizer {
     position: relative;
-    width: calc(50% - 20px);
-    padding: 10px;
+    width: calc(50% - 34px);
+    padding: 17px;
   }
 }
 
@@ -2338,12 +2344,18 @@ body.dark-theme .eye i {
   .flex-hold-5.margins-wide .flex-hold-child:nth-child(4n) {
     margin-right: 0;
   }
+  .masonry-grid {
+    position: relative;
+    width: calc(100% + 34px);
+    left: -17px;
+    margin-top: 14px;
+  }
   .masonry-grid.masonry-three .flex-hold-child,
   .masonry-grid.masonry-three .grid-sizer, .masonry-grid.masonry-two .flex-hold-child,
   .masonry-grid.masonry-two .grid-sizer {
     position: relative;
-    width: calc(25% - 20px);
-    padding: 10px;
+    width: calc(25% - 34px);
+    padding: 17px;
   }
 }
 
