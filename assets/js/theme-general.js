@@ -29,13 +29,11 @@ var paperPlaneLazyLoad = new LazyLoad({
   elements_selector: ".lazy",
   class_loading: "lazy-loading",
   class_loaded: "lazy-loaded",
-  callback_reveal: (el) => {
-    if (el.complete && el.naturalWidth !== 0) {
-      el.classList.remove('lazy-loading');
-      el.classList.add('lazy-loaded');
-      masonrySetup();
-    }
-  }
+  callback_loaded: (el) => {
+    masonrySetup();
+    el.classList.remove('lazy-loading');
+    el.classList.add('lazy-loaded');
+  },
 });
 
 
