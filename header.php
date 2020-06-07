@@ -70,14 +70,14 @@ $show_cats = get_field( 'show_cats', 'options' );
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $favicons_folder; ?>favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo $favicons_folder; ?>favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $favicons_folder; ?>favicon-16x16.png">
-<link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/pwa/manifest.json">
+<link rel="manifest" href="<?php echo get_home_url(); ?>/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
 
 <script type="text/javascript">
 // If service workers are supported, and one isn't already registered
 if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
-  navigator.serviceWorker.register('/wp-content/themes/paperplane-photography-theme/assets/pwa/sw.js');
+  navigator.serviceWorker.register('/sw.js');
   console.log("sw.js loaded...");
 }
 </script>
