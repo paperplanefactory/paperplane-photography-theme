@@ -459,6 +459,31 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_5edcf2dea1256",
+            "label": "Favicons path",
+            "name": "favicons_path",
+            "type": "select",
+            "instructions": "This theme uses a set of icons and not just one favicon in order to make it available on oll devices.<br \/>\r\nIf you want to use custom icons icons follow these steps:<br \/>\r\n- start from a png sized at least 200x200 pixel<br \/>\r\n- upload image to https:\/\/www.favicon-generator.org\/ to generate the icons set and download the zip file with all icons<br \/>\r\n- via SFTP upload zip file contents on your server: in the same folder where WordPress is installed create a folder named \"favicons\"<br \/><br \/>\r\n\r\nThe complete set of icons must include these files:<br \/>\r\n- apple-icon-57x57.png<br \/>\r\n- apple-icon-60x60.png<br \/>\r\n- apple-icon-72x72.png<br \/>\r\n- apple-icon-76x76.png<br \/>\r\n- apple-icon-114x114.png<br \/>\r\n- apple-icon-120x120.png<br \/>\r\n- apple-icon-144x144.png<br \/>\r\n- apple-icon-152x152.png<br \/>\r\n- apple-icon-180x180.png<br \/>\r\n- android-icon-192x192.png<br \/>\r\n- favicon-32x32.png<br \/>\r\n- favicon-96x96.png<br \/>\r\n- favicon-16x16.png<br \/>\r\n- manifest.json<br \/>\r\n- ms-icon-144x144.png",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default-path": "Use theme default icons",
+                "custom-path": "Use custom icons"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -478,5 +503,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590673356
+    "modified": 1591539072
 }

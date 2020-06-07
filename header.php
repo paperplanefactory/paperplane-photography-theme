@@ -24,10 +24,15 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head();
-// stabilisco il device
-$module_count = 0;
-global $module_count;
-$favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
+// check if using default or custom favicon
+$favicons_path = get_field( 'favicons_path', 'options' );
+if ( $favicons_path === 'default-path' ) {
+  $favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
+}
+else {
+  $favicons_folder = get_home_url().'/favicons/';
+}
+//$favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
 global $contatore_foto;
 global $show_abstract;
 global $elenco_foto;
@@ -65,9 +70,17 @@ $show_cats = get_field( 'show_cats', 'options' );
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $favicons_folder; ?>favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo $favicons_folder; ?>favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $favicons_folder; ?>favicon-16x16.png">
-<link rel="manifest" href="<?php echo $favicons_folder; ?>manifest.json">
+<link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/pwa/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
+
+<script type="text/javascript">
+// If service workers are supported, and one isn't already registered
+if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+  navigator.serviceWorker.register('/wp-content/themes/paperplane-photography-theme/assets/pwa/sw.js');
+  console.log("sw.js loaded...");
+}
+</script>
 <style>
 body {
   font-family: <?php the_field( 'body_font_family', 'options' ); ?>;

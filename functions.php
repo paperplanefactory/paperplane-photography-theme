@@ -55,5 +55,7 @@ include_once "includes/theme-messages.php";
 include_once "includes/theme-menus.php";
 // custom post types
 include_once "includes/theme-cpts.php";
+// PWA
+include_once "includes/theme-pwa.php";
 // taxonomies listing
 include_once "includes/theme-taxonomies-listing.php";

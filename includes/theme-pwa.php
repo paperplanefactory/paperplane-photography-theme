@@ -1,0 +1,55 @@
+<?php
+// check if using default or custom favicon
+$favicons_path = get_field( 'favicons_path', 'options' );
+if ( $favicons_path === 'default-path' ) {
+  $favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
+}
+else {
+  $favicons_folder = get_home_url().'/favicons/';
+}
+$manifest_data = array(
+  'short_name' => get_bloginfo( 'name' ),
+	'name' => get_bloginfo( 'name' ),
+  'icons' => array(
+    array(
+      'src' => $favicons_folder.'android-icon-48x48.png',
+      'type' => 'image\/png',
+      'sizes' => '48x48'
+    ),
+    array(
+      'src' => $favicons_folder.'android-icon-96x96.png',
+      'type' => 'image\/png',
+      'sizes' => '96x96'
+    ),
+    array(
+      'src' => $favicons_folder.'android-icon-144x144.png',
+      'type' => 'image\/png',
+      'sizes' => '144x144',
+    ),
+    array(
+      'src' => $favicons_folder.'android-icon-192x192.png',
+      'type' => 'image\/png',
+      'sizes' => '192x192',
+    ),
+    array(
+      'src' => $favicons_folder.'android-icon-512x512.png',
+      'type' => 'image\/png',
+      'sizes' => '512x512',
+    ),
+  ),
+  'start_url' => get_home_url().'/?utm_source=pwa-homescreen',
+  'display' => 'fullscreen',
+  'lang' => 'en-EN',
+  'background_color' => '#303030',
+  'theme_color' => '#303030',
+  'orientation' => 'portrait-primary'
+);
+
+$manifest_data = stripslashes( json_encode( $manifest_data ) );
+
+$file = '/../assets/pwa/manifest.json';
+// Open the file to get existing content
+//$current = file_get_contents($file);
+// Append a new person to the file
+// Write the contents back to the file
+file_put_contents( __DIR__ . $file, $manifest_data );
