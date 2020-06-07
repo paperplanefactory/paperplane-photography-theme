@@ -20,7 +20,7 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 * sell single picture trough PayPal;
 * homepage layout adjustable to show one single random picture or a list of works;
 * gallery navigation is managed using the native system that WordPress uses to manage the attachments to a post;
-* gallery navigation works with keyboard arrows and on mobile devices with swipe gestures;
+* gallery navigation works with keyboard arrows on desktop and with swipe gestures on mobile devices;
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
@@ -34,7 +34,7 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 * create a page and set "Home" as template;
 * configure requested options;
 * in WordPress "Settings > Reading" options set it as home page;
-* "Theme version" option can be useful for forcing cache clearing;
+* "Theme Settings > Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Color & Typo options" and "Image gallery" options. **Be sure to setup all options in order for the theme to work**;
 * in "Color & Typo options" page you can include one or more Google Fonts and you can specify font-familiy and font-weight for headings, paragraphs and more.
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
@@ -53,12 +53,10 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 ### :exclamation: How to set up a gallery:
 Galleries use WordPress posts and post attachments. To create a gallery:
 * create a new post;
-* upload to the post all images you want to add to the gallery;
+* upload to the post all images you want to add to the gallery - don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically;
 * eventually re-order images using WordPress media panel: the image set as "Featured Image" should also be the first when you order imeges trough WordPress media library -> Uploaded to this post;
 * publish post;
 * you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);
-
-Don't insert pictures in content, use "the_content" to describe your project instead: navigation trough images is generated automatically.
 
 ### :electric_plug: Useful plugins to install:
 These plugins are suggested based on my experience and are therefore a simple tip.
