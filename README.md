@@ -58,7 +58,7 @@ Galleries use WordPress posts and post attachments. To create a gallery:
 * publish post;
 * you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);
 
-### :exclamation: How to sell pictures trouch PayPal:
+### :exclamation: How to sell pictures trough PayPal:
 * In "Site settings > Image gallery options" set "Do you want to sell your photos?" option to "Yes" and then confgure the required fields;
 * In Media Library select the picture you want to sell: set "Enable the sale of this image?" to "Yes" and then choose the price;
 * Done! When viewing the picture on front end a button with a credit card icon will appear in top bar menu;
