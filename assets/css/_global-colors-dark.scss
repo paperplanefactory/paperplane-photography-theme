@@ -188,6 +188,12 @@ body.dark-theme {
 			color: $color-1-dark;
 		}
 	}
+
+	.pay-picture {
+		button {
+			color: $color-6;
+		}
+	}
 	// structure elements
 	.flex-hold-title {
 		background-color: rgba(25, 25, 25, 0.85);

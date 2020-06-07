@@ -1513,6 +1513,10 @@ body.dark-theme .eye i {
   color: #FFFFFF;
 }
 
+.dark-theme .pay-picture button {
+  color: #64D31C;
+}
+
 .dark-theme .flex-hold-title {
   background-color: rgba(25, 25, 25, 0.85);
 }

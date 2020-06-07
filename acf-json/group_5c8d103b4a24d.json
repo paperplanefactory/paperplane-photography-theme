@@ -230,10 +230,10 @@
                 "id": ""
             },
             "choices": {
-                "USD": "Dollari",
+                "USD": "U.S. Dollar",
                 "EUR": "Euro"
             },
-            "default_value": [],
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -284,7 +284,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1581172143
+    "modified": 1591513910
 }

@@ -211,7 +211,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
                   <input type="hidden" name="tax_rate" value="0">
                   <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
                   <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                  <button type="submit" title="Buy this item"><i class="icon-fas-fa-credit-card"></i></button>
+                  <button type="submit" title="Buy this picture" aria-label="Buy this picture"><i class="icon-fas-fa-credit-card"></i></button>
                 </form>
               </li>
             <?php endif; ?>
