@@ -16,7 +16,7 @@ echo '<a href="https://www.paperplanefactory.com"><img src="' . get_template_dir
 <strong>For more info please read <a href="https://github.com/paperplanefactory/paperplane-photography-theme/blob/master/README.md">documentation</a> on GitHub.</strong></p>';
 }
 
-// rimuovo emoji
+// remove emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );

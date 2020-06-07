@@ -22,7 +22,7 @@ add_filter( 'clean_url', 'theme_defer_scripts', 11, 1 );
 // All scripts
 add_action( 'wp_enqueue_scripts', 'all_scripts' );
 function all_scripts(){
-  // versione del tema
+  // theme version
 	global $theme_version;
   // smart jquery inclusion
   if (!is_admin()) {

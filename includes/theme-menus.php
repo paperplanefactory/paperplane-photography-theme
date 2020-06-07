@@ -1,5 +1,5 @@
 <?php
-// registro la gestione dei menu, esempio header e footer
+// register menus used by theme
 function register_theme_menus() {
   register_nav_menus(
     array(
@@ -11,7 +11,7 @@ function register_theme_menus() {
 }
 add_action( 'init', 'register_theme_menus' );
 
-// necessita di ACF PRO - aggiunge un pannello per gestire ulteriori impostazioni del tema
+// setup options pages - ACF PRO required
 if( function_exists('acf_add_options_page') ) {
   // gestione tema per admin
   $option_page = acf_add_options_page(array(
@@ -59,6 +59,7 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 	return $meta_caps;
 }
 
+// WP Fastest Cache cleared also when saving an options page
 function clear_option_pages_cache() {
 	$screen = get_current_screen();
 	if ( ( strpos($screen->id, 'acf-options-archives') == true ) || (strpos($screen->id, 'acf-options-color-typo-options') == true) || (strpos($screen->id, 'acf-options-image-gallery-options') == true) ) {

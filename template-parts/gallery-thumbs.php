@@ -29,7 +29,6 @@
           ) );
         }
 
-        // link alla prima immagine
         echo "<div class='gallery-thumb-box'>";
         foreach ( $attachments as $attachment_id => $attachment ) {
           $post_thumb_url = wp_get_attachment_image_src($attachment_id,'micro');

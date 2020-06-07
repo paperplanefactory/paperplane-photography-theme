@@ -1,4 +1,6 @@
 <?php
+// checks if requested URL is an attachment of a post - if not it redirects to home page
+// useful to avoid news and books attachments view
 add_action('template_redirect', 'redirect_if_not_post_attachment');
 function redirect_if_not_post_attachment() {
   global $post;
@@ -10,7 +12,8 @@ function redirect_if_not_post_attachment() {
   }
 }
 
-// custom image size for featured images
+// custom image size for images
+// many sizes to fit standard and 4K displays
 add_theme_support( 'post-thumbnails' );
 
 add_image_size( 'content_picture', 768, 9999);
@@ -47,7 +50,7 @@ function wpb_imagelink_setup() {
 }
 add_action('admin_init', 'wpb_imagelink_setup', 10);
 
-// limito il numero di scelte per le immagini "in content"
+// allowing only one size when inserting images into content
 add_filter('image_size_names_choose', 'my_image_sizes');
 function my_image_sizes($sizes) {
 $addsizes = array(
@@ -57,7 +60,7 @@ $newsizes = array_merge($sizes, $addsizes);
 return $newsizes;
 }
 
-
+// function useto to print images all around the pages
 function print_theme_single_image( $image_data, $image_sizes ) {
   if( count( $image_data ) > 0 ) {
     $image_data_select = $image_data['image_type']; // post_thumbnail, acf_field or acf_sub_field

@@ -1,13 +1,13 @@
 <?php
 if ( !is_admin() ) {
 	// load common css
-	//Disable Gutenberg style in Front
+	// Disable Gutenberg style in Front
 	function wps_deregister_styles() {
 		wp_dequeue_style( 'wp-block-library' );
 	}
 	add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 	function paperplane_photograpy_theme_css() {
-		// versione del tema
+		// theme version
 		global $theme_version;
 		$font_loader = get_field( 'link_google_font', 'option' );
 		// stili comuni
