@@ -52,7 +52,7 @@ function set_pwa_data() {
   file_put_contents( __DIR__ . $file, $manifest_data );
 
 
-  copy( __DIR__ . '/../assets//pwa/sw.js', __DIR__ . '/../../../../sw.js');
+  copy( __DIR__ . '/../assets//pwa/sw.min.js', __DIR__ . '/../../../../sw.min.js');
 }
 
 add_action('acf/save_post', 'set_pwa_data', 20);
