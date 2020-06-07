@@ -27,7 +27,7 @@ Required set of fields is already included through ACF-JSON folder.<br/>
 * archive pages grid can be setup to use [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp "https://www.w3schools.com/css/css3_flexbox.asp Flexbox") or [Masonry grid](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry grid");
 * archive pages grid can be setup to show 2 or 3 items per row and images with original proportions or cropped;
 * don't ask me why but I made this theme compatible with Microsoft Internet Explorer :hankey:
-* this theme is Retina and HiDPI ready. In order to work you need to upload pictures with height of at least 2048 pixels. If uploaded pictures are smaller it will work anyway but low density images will be shown. With a focus on performance and image quality on any device the price to pay is that every uploaded image is optimized by WordPress "add_image_size" in 19 versions. Be aware of that because you'll need disk space on your server - but I'm sure photographers already know disk space issues :smirk:
+* this theme is Retina and HiDPI ready. In order to work you need to upload pictures with height of at least 2048 pixels. If uploaded pictures are smaller it will work anyway but low density images will be shown. With a focus on performance and image quality on any device the price to pay is that every uploaded image is optimized by WordPress "add_image_size" in 19 versions. Be aware of that because you'll need disk space on your server - but I'm sure photographers are familiar with disk space issues :smirk:
 
 ### :exclamation: How to set up theme:
 * :hankey: before activating this theme check if Advanced Custom Fields Pro is installed and active!
