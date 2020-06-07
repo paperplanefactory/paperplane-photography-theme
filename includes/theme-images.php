@@ -60,7 +60,7 @@ $newsizes = array_merge($sizes, $addsizes);
 return $newsizes;
 }
 
-// function useto to print images all around the pages
+// function used to print images all around the pages
 function print_theme_single_image( $image_data, $image_sizes ) {
   if( count( $image_data ) > 0 ) {
     $image_data_select = $image_data['image_type']; // post_thumbnail, acf_field or acf_sub_field
