@@ -81,7 +81,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
 
 ### :zap: Lighthouse report
-Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
+Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. You can do even better by converting images into WebP format.
 ![Lighthouse report](https://www.paperplanefactory.com/ppuploads/static/github/am-lighthouse.png)
 
 ### :smiling_imp: Why this theme is not on WordPress [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
