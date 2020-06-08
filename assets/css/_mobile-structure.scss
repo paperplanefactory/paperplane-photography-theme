@@ -137,6 +137,9 @@
 }
 
 .masonry-grid {
+  position: relative;
+  margin-top: 10px;
+
   &.masonry-three,
   &.masonry-two {
     .flex-hold-child,

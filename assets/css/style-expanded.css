@@ -1827,6 +1827,10 @@ body.dark-theme .eye i {
     width: 100%;
     margin: 0 0 33px;
   }
+  .masonry-grid {
+    position: relative;
+    margin-top: 10px;
+  }
   .masonry-grid.masonry-three .flex-hold-child,
   .masonry-grid.masonry-three .grid-sizer, .masonry-grid.masonry-two .flex-hold-child,
   .masonry-grid.masonry-two .grid-sizer {
