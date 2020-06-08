@@ -56,7 +56,8 @@ $start_color_scheme = get_field( 'start_color_scheme', 'options' );
 $show_abstract = get_field( 'show_abstract', 'options' );
 $show_cats = get_field( 'show_cats', 'options' );
 ?>
-
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $favicons_folder; ?>apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo $favicons_folder; ?>apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $favicons_folder; ?>apple-icon-72x72.png">
@@ -70,17 +71,17 @@ $show_cats = get_field( 'show_cats', 'options' );
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $favicons_folder; ?>favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo $favicons_folder; ?>favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $favicons_folder; ?>favicon-16x16.png">
-<link rel="manifest" href="<?php echo get_home_url(); ?>/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
+<?php if ( get_field('enable_pwa', 'options' ) === 'yes' ) : ?>
+  <link rel="manifest" href="<?php echo get_home_url(); ?>/manifest.json">
+  <script type="text/javascript">
+  // If service workers are supported, and one isn't already registered
+  if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+    navigator.serviceWorker.register('/sw.js');
+    console.log("sw.js loaded...");
+  }
+  </script>
+<?php endif; ?>
 
-<script type="text/javascript">
-// If service workers are supported, and one isn't already registered
-if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
-  navigator.serviceWorker.register('/sw.js');
-  console.log("sw.js loaded...");
-}
-</script>
 <style>
 body {
   font-family: <?php the_field( 'body_font_family', 'options' ); ?>;

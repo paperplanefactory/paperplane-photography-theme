@@ -484,6 +484,31 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5eddd09ae1389",
+            "label": "Enable PWA",
+            "name": "enable_pwa",
+            "type": "select",
+            "instructions": "A progressive web application (PWA) is a type of application software delivered through the web, built using common web technologies including HTML, CSS and JavaScript. You can enable PWA and in some OS\/browsers this site will be available as app.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -503,5 +528,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1591539072
+    "modified": 1591595293
 }
