@@ -82,7 +82,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. To do even better convert images into WebP format.
-![Lighthouse report](https://www.paperplanefactory.com/ppuploads/static/github/lighthouse.png)
+![Lighthouse report](https://www.paperplanefactory.com/ppuploads/static/github/am-lighthouse.png)
 
 ### :smiling_imp: Why this theme is not on WordPress [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme's options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
