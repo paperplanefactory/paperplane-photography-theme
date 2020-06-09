@@ -59,6 +59,7 @@ Galleries use WordPress posts and post attachments. To create a gallery:
 * eventually re-order images using WordPress media panel: the image set as "Featured Image" should also be the first when you order imeges trough WordPress media library -> Uploaded to this post;
 * publish post;
 * you can also use posts to display videos. To do so, use the custom field "Video embed". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);
+* tip: file title or file name will define the URL when viewing a single image. To have nice URLs try to name your files nicely like "picture-title.jpg" so that the URL will be like "your-site.xyz/project-name/picture-title.jpg"
 
 ### :exclamation: How to sell pictures trough PayPal:
 * in "Site settings > Image gallery options" set "Do you want to sell your photos?" option to "Yes" and then confgure the required fields;
