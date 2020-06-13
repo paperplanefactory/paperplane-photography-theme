@@ -129,7 +129,7 @@ if ( $elenco_foto === 'si' ) {
       echo '</div>';
     }
     else {
-      echo '<div class="lazy-bg lazy only-explorer" data-src="'.$thumb_url_desktop[0].'"></div>';
+      echo '<div class="only-explorer" style="background-image: url('.$thumb_url_desktop[0].')"></div>';
       $image_data = array(
           'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
           'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
