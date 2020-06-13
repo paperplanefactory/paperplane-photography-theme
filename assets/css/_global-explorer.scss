@@ -36,19 +36,20 @@
 .lazy {
   position: relative;
   @include define-basic-transition(all, 0.3s);
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .lazy-bg.lazy {
   position: relative;
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .lazy-loading {
   @include define-lazy-blur(0);
+  opacity: 1 !important;
 }
 
 .lazy-loaded {
   @include define-lazy-blur(0);
-  opacity: 1;
+  opacity: 1 !important;
 }
