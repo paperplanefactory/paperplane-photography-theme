@@ -89,3 +89,5 @@ Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighth
 ### :smiling_imp: Why this theme is not on WordPress [Theme Directory](https://wordpress.org/themes/ "Theme Directory")?
 I'm lazy, so instead of creating a page to manage theme's options in a traditional way, I preferred to use [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/ "Advanced Custom Fields Pro").<br />
 And yes, I'm so lazy that I don't even want to sell this theme and then have to provide support.<br />
+
+### :exclamation: Import CPT with [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/ "Custom Post Type UI")?
