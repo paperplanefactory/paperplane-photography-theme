@@ -8,7 +8,7 @@ This theme is designed to enhance pictures. UX and UI elements are designed to h
 
 Paperplane photography theme requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") to be installed.<br/>
 Required set of fields is already included through ACF-JSON folder.<br/>
-Snippet for requred CPT is available [here](#cpt-import-data-for-custom-post-type-ui "here")<br/>
+Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-type-ui "here")<br/>
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
 * web performance;
