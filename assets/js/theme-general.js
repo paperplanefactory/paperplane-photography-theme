@@ -310,6 +310,7 @@ $(".mouse-trap").mouseover(function() {
 // hide-navi call
 $(document).on('click', '.highlight:not(.initialized)', function(e) {
   hideNavi();
+  closeOverlay();
   $('.thumbs-gallery').slideUp(300);
 });
 
