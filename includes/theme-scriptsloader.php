@@ -27,7 +27,7 @@ function all_scripts(){
   // smart jquery inclusion
   if (!is_admin()) {
   	wp_deregister_script('jquery');
-  	wp_register_script('jquery', get_template_directory_uri() . '/assets/js/libs/jquery-3.4.1.min.js', '', '3.4.1', false);
+  	wp_register_script('jquery', get_template_directory_uri() . '/assets/js/libs/jquery-3.6.0.min.js', '', '3.6.0', false);
   	wp_enqueue_script('jquery');
   }
   // Swup
