@@ -64,6 +64,7 @@ function init() {
   refreshPrevNext();
   approveDelight();
   wrapPostMedia();
+  masonrySetup();
   playOrPause = localStorage.getItem('playOrPause');
   myMutant();
   highlightCurrentThumb();
