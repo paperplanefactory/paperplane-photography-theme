@@ -15,7 +15,8 @@ Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-ty
 * SEO friendly also if site is based mainly on images;
 
 ### :sunglasses: Features:
-* dark or clear mode navigation;
+* clear or dark navigation mode;
+* options to set a custom colors scheme that overrides clear navigation mode;
 * toggle all unnecessary navigation information when viewing a photo;
 * sell single picture trough PayPal;
 * homepage layout adjustable to show one single random picture or a list of works;
