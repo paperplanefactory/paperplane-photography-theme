@@ -24,7 +24,7 @@
             "label": "Custom logo (for clear color scheme)",
             "name": "custom_logo",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload a logo for clear color scheme. A black or dark grey logo is the best option.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -48,7 +48,7 @@
             "label": "Custom logo (for dark color scheme)",
             "name": "custom_logo_dark",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload a logo for dark color scheme. A white or light grey logo is the best option.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -72,7 +72,7 @@
             "label": "Custom text",
             "name": "header_custom_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "Used instead of custom logo.",
             "required": 1,
             "conditional_logic": [
                 [
@@ -417,31 +417,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_5e3eba3178f54",
-            "label": "Initial color scheme",
-            "name": "start_color_scheme",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "clear": "Clear mode",
-                "dark": "Dark mode"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_5e4028cd10427",
             "label": "Footer texts",
             "name": "credits_and_more",
@@ -509,6 +484,182 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_609643444a348",
+            "label": "Color options",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e3eba3178f54",
+            "label": "Initial colors scheme",
+            "name": "start_color_scheme",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "clear": "Clear mode",
+                "dark": "Dark mode"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_609643be4a349",
+            "label": "Custom colors",
+            "name": "custom_colors",
+            "type": "true_false",
+            "instructions": "Setting custom colors will override clear color scheme. Pick 5 custom colors. Colors from 1 to 3 are used for backgrounds and borders. Colors number 4 and 5 are used for texts.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6096444b4a34a",
+            "label": "Color 1",
+            "name": "custom_color_1",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609643be4a349",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_609644b64a34b",
+            "label": "Color 2",
+            "name": "custom_color_2",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609643be4a349",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#F9F9F9"
+        },
+        {
+            "key": "field_609644c24a34c",
+            "label": "Color 3",
+            "name": "custom_color_3",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609643be4a349",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#AFAFAF"
+        },
+        {
+            "key": "field_609644ce4a34d",
+            "label": "Color 4",
+            "name": "custom_color_4",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609643be4a349",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#4D4D4D"
+        },
+        {
+            "key": "field_609644df4a34e",
+            "label": "Color 5",
+            "name": "custom_color_5",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609643be4a349",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#303030"
         }
     ],
     "location": [
@@ -526,7 +677,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591595293
+    "modified": 1620467740
 }
