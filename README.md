@@ -1,7 +1,7 @@
 # PaperPlane photography theme
 ![Paperplane photography theme](https://www.paperplanefactory.com/ppuploads/static/github/repository-open-graph-template.jpg)
 
-## A WordPress theme for photographers
+## A WordPress theme for photographers and illustrators
 This theme is designed to enhance pictures. UX and UI elements are designed to have the least possible impact on the observation of images. You can see it in action on
 * [Allegra Martin website](https://www.allegramartin.it/ "Allegra Martin website");
 * [Andrea Segliani website](https://www.80mm.it/ "Andrea Segliani website");
