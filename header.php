@@ -360,6 +360,7 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
   background-color: <?php the_field( 'custom_color_2', 'options' ); ?>;
 }
+
 <?php else : ?>
 body.clear-theme {
   color: #303030;

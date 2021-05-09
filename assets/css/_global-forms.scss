@@ -1,7 +1,7 @@
 // main: style.scss
 @import 'global-vars';
-@import 'global-mixin';
-// forms
+@import 'global-mixin'; // forms
+
 .form-hold {
 	position: relative;
 	display: block;
@@ -126,6 +126,7 @@
 	}
 }
 
+.wpcf7 form.invalid .wpcf7-response-output,
 .wpcf7-validation-errors {
 	display: block !important;
 	z-index: 99 !important;
@@ -140,6 +141,7 @@
 	color: $color-5 !important;
 }
 
+.wpcf7 form.sent .wpcf7-response-output,
 .wpcf7-mail-sent-ok {
 	display: block !important;
 	z-index: 99 !important;

@@ -4,12 +4,15 @@
 add_action('template_redirect', 'redirect_if_not_post_attachment');
 function redirect_if_not_post_attachment() {
   global $post;
-  $parent = get_post_field( 'post_parent', $post->ID);
-  $parent_family = get_post_type( $parent );
-  if ( $parent_family != 'post' && is_attachment() ) {
-    wp_redirect( home_url(), 301 );
-    exit;
+  if ( $post ) {
+    $parent = get_post_field( 'post_parent', $post->ID);
+    $parent_family = get_post_type( $parent );
+    if ( $parent_family != 'post' && is_attachment() ) {
+      wp_redirect( home_url(), 301 );
+      exit;
+    }
   }
+
 }
 
 // custom image size for images
