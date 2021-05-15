@@ -106,7 +106,12 @@ function initInfiniteScroll() {
       path: '.nav-next a',
       append: '.grid-item-infinite',
       status: '#infscr-loading',
+      prefill: true,
+      loadOnScroll: false,
       history: false,
+      button: '.view-more-button-js',
+      scrollThreshold: false,
+      checkLastPage: true
     });
 
     jQuery('.grid-infinite').on('append.infiniteScroll', function(event, response, path, items) {

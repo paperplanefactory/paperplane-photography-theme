@@ -1,11 +1,18 @@
 <?php
 get_header();
+$category_query_info = get_queried_object();
+$found_posts =  $category_query_info->count;
 ?>
 <div class="wrapper">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more-650">
       <div class="content-styled plain-page aligncenter">
         <h1><?php single_term_title(); ?></h1>
+        <?php
+        if ( term_description() ) {
+          echo term_description();
+        }
+        ?>
       </div>
     </div>
   </div>
@@ -50,4 +57,11 @@ get_header();
     <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
   </div>
 </div>
+<?php if ( $found_posts > $posts_per_page ) : ?>
+  <div class="wrapper aligncenter">
+    <div class="view-more-button view-more-button-js">
+      <?php _e( 'View more', 'paperplane-photography-theme' );?>
+    </div>
+  </div>
+<?php endif; ?>
 <?php get_footer(); ?>

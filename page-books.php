@@ -22,10 +22,11 @@ get_header();
 $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args_posts_paginati = array(
   'post_type' => 'book',
-  'posts_per_page' => 15,
+  //'posts_per_page' => 15,
   'paged' => $page
 );
 query_posts( $args_posts_paginati );
+$found_posts = $wp_query->found_posts;
  ?>
 
  <div class="wrapper">
@@ -43,5 +44,11 @@ query_posts( $args_posts_paginati );
 
     </div>
   </div>
-
+  <?php if ( $found_posts > $posts_per_page ) : ?>
+    <div class="wrapper aligncenter">
+      <div class="view-more-button view-more-button-js">
+        <?php _e( 'View more', 'paperplane-photography-theme' );?>
+      </div>
+    </div>
+  <?php endif; ?>
 <?php get_footer(); ?>

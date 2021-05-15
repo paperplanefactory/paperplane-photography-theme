@@ -246,17 +246,23 @@ if ( $my_news_month ) : ?>
            )
          );
          query_posts( $args_topworks );
+         $found_posts = $wp_query->found_posts;
          if (have_posts()) : while (have_posts()) : the_post();
          include( locate_template ( 'template-parts/grid/post.php' ) );
        endwhile; endif; wp_reset_postdata(); ?>
        </div>
      <?php endif; ?>
-
       <?php include( locate_template ( 'template-parts/grid/infinite-message.php' ) ); ?>
+
     </div>
   </div>
-
-
+  <?php if ( $found_posts > $posts_per_page ) : ?>
+    <div class="wrapper aligncenter">
+      <div class="view-more-button view-more-button-js">
+        <?php _e( 'View more', 'paperplane-photography-theme' );?>
+      </div>
+    </div>
+  <?php endif; ?>
 
 <?php endif; ?>
 

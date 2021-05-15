@@ -171,6 +171,24 @@
 #infscr-loading img {
 	display: none !important;
 }
+
+.view-more-button {
+	position: relative;
+	display: inline-block;
+	margin: 40px 0 0;
+	font-size: $paragraph-size-desktop;
+	font-weight: $font-weight-2;
+	text-align: left;
+	border: none;
+	padding: 15px 35px;
+	cursor: pointer;
+	-webkit-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	white-space: normal;
+	border: solid 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
 // banner cookies
 
 #paperplane-cookie-notice {

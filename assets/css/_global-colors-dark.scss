@@ -233,4 +233,15 @@ body.dark-theme {
 			background-color: $color-4-dark;
 		}
 	}
+
+	.view-more-button {
+		color: $color-5-dark;
+		background-color: $color-3-dark;
+		border-color: $color-5-dark;
+
+		&:hover {
+			color: $color-3-dark;
+			background-color: $color-5-dark;
+		}
+	}
 }

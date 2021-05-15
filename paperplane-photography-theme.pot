@@ -1,0 +1,83 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Paperplane Photography Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-15 13:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.1\n"
+"X-Domain: paperplane-photography-theme"
+
+#: 404.php:12
+msgid "404 - Page non found"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"A light and flexible starter theme from Paperplane, handcrafted for "
+"photographers."
+msgstr ""
+
+#: header.php:652 header.php:705 header.php:712
+msgid "back to list"
+msgstr ""
+
+#. Name of the template
+msgid "Books"
+msgstr ""
+
+#: header.php:694
+msgid "Buy this picture"
+msgstr ""
+
+#: header.php:657
+msgid "highlight this picture"
+msgstr ""
+
+#. Name of the template
+msgid "Home"
+msgstr ""
+
+#. URI of the theme
+msgid "http://www.paperplanefactory.com"
+msgstr ""
+
+#: header.php:718
+msgid "Navigation"
+msgstr ""
+
+#. Name of the template
+msgid "News"
+msgstr ""
+
+#. Author of the theme
+msgid "Paperplane Factory"
+msgstr ""
+
+#. Name of the theme
+msgid "Paperplane Photography Theme"
+msgstr ""
+
+#: header.php:662
+msgid "play/pause gallery"
+msgstr ""
+
+#. Name of the template
+msgid "Portfolio"
+msgstr ""
+
+#: header.php:667
+msgid "view images list"
+msgstr ""
+
+#: archive.php:63 page-books.php:50 page-news.php:51 page-home.php:262
+msgid "View more"
+msgstr ""

@@ -399,6 +399,24 @@ a {
   display: none !important;
 }
 
+.view-more-button {
+  position: relative;
+  display: inline-block;
+  margin: 40px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  padding: 15px 35px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  white-space: normal;
+  border: solid 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 #paperplane-cookie-notice {
   position: fixed;
   z-index: 9999;
@@ -1333,6 +1351,17 @@ body.dark-theme .eye i {
 .dark-theme .form-hold input[type=submit]:hover {
   color: #FFFFFF;
   background-color: #2D2D2D;
+}
+
+.dark-theme .view-more-button {
+  color: #191919;
+  background-color: #AFAFAF;
+  border-color: #191919;
+}
+
+.dark-theme .view-more-button:hover {
+  color: #AFAFAF;
+  background-color: #191919;
 }
 
 @media screen and (min-width: 1px) and (max-width: 1023px) {
