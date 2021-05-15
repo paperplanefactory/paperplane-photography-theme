@@ -40,7 +40,7 @@ Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-ty
 * "Theme Settings > Theme version" option can be useful for forcing cache clearing;
 * go to "Site settings" and set both "Color & Typo options" and "Image gallery" options. **Be sure to setup all options in order for the theme to work**;
 * in "Color & Typo options" page you can include one or more Google Fonts and you can specify font-familiy and font-weight for headings, paragraphs and more.
-* two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add to many links in header menu because it's designed to be compact;
+* two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add too many links in header menu because it's designed to be compact;
 * to activate clear/dark mode toggle just add a link to your menu with these settings:
   * URL: #
   * Navigation label: `<i class="icon-fas-fa-adjust"></i>`
