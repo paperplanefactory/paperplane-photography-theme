@@ -116,6 +116,7 @@ function initInfiniteScroll() {
 
     jQuery('.grid-infinite').on('append.infiniteScroll', function(event, response, path, items) {
       paperPlaneLazyLoad.update();
+      masonrySetup();
     });
     window.setInterval(function() {
       if (jQuery('.infinite-scroll-last').is(":visible")) {

@@ -204,6 +204,7 @@ if ( $my_news_month ) : ?>
            )
          );
          query_posts( $args_topworks );
+         $found_posts = $wp_query->found_posts;
          if (have_posts()) : while (have_posts()) : the_post();
          include( locate_template ( 'template-parts/grid/post.php' ) );
        endwhile; endif; wp_reset_postdata(); ?>

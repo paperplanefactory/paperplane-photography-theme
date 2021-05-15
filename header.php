@@ -142,7 +142,12 @@ input[type=submit],
 a:link, a:visited, a:hover, a:active {
   color: #191919;
 }
-<?php if ( $custom_colors == 1 ) : ?>
+<?php
+if ( $custom_colors == 1 ) :
+  $hex = get_field( 'custom_color_1', 'options' );
+  list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+  //echo "$hex -> $r $g $b";
+  ?>
 body.clear-theme {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
   background-color: <?php the_field( 'custom_color_1', 'options' ); ?>;
@@ -326,7 +331,7 @@ body.clear-theme .eye i {
 }
 
 .clear-theme .flex-hold-title {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(<?php echo $r; ?>, <?php echo $g; ?>, <?php echo $b; ?>, 0.85);
 }
 
 .clear-theme .sk-folding-cube .sk-cube:before {
