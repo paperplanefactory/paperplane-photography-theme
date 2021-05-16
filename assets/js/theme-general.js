@@ -19,7 +19,7 @@ function masonrySetup() {
       // use element for option
       columnWidth: '.grid-sizer',
       percentPosition: true,
-      transitionDuration: '0.2s'
+      transitionDuration: '0.8s'
     });
   }
 }

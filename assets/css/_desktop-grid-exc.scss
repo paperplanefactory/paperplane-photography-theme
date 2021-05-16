@@ -69,6 +69,7 @@
     .flex-hold-child,
     .grid-sizer {
       position: relative;
+      float: left;
       width: calc(33.333333% - 34px);
       padding: 17px;
     }
@@ -78,6 +79,7 @@
     .flex-hold-child,
     .grid-sizer {
       position: relative;
+      float: left;
       width: calc(50% - 34px);
       padding: 17px;
     }

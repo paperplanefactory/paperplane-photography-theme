@@ -2133,12 +2133,14 @@ body.dark-theme .eye i {
   .masonry-grid.masonry-three .flex-hold-child,
   .masonry-grid.masonry-three .grid-sizer {
     position: relative;
+    float: left;
     width: calc(33.333333% - 34px);
     padding: 17px;
   }
   .masonry-grid.masonry-two .flex-hold-child,
   .masonry-grid.masonry-two .grid-sizer {
     position: relative;
+    float: left;
     width: calc(50% - 34px);
     padding: 17px;
   }
@@ -2172,6 +2174,7 @@ body.dark-theme .eye i {
   .masonry-grid.masonry-three .grid-sizer, .masonry-grid.masonry-two .flex-hold-child,
   .masonry-grid.masonry-two .grid-sizer {
     position: relative;
+    float: left;
     width: calc(25% - 34px);
     padding: 17px;
   }

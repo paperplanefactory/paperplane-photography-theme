@@ -33,6 +33,7 @@
     .flex-hold-child,
     .grid-sizer {
       position: relative;
+      float: left;
       width: calc(25% - 34px);
       padding: 17px;
     }
