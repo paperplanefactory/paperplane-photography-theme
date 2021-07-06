@@ -83,8 +83,8 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [Tocca.js](https://gianlucaguarini.com/Tocca.js/ "Tocca.js");
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
 * [Masonry](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry");
+* [Slick Slider](https://github.com/kenwheeler/slick/ "Slick Slider");
 * Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
-* Slick Slider [Slick Slider](https://github.com/kenwheeler/slick/ "Slick Slider");
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. You can do even better by converting images into WebP format.
