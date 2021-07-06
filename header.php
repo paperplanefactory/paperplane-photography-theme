@@ -14,12 +14,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#DCDCDC">
-<!-- Windows Phone -->
-<meta name="msapplication-navbutton-color" content="#DCDCDC">
-<!-- iOS Safari -->
-<meta name="apple-mobile-web-app-status-bar-style" content="#DCDCDC">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -33,11 +27,21 @@ if ( $favicons_path === 'default-path' ) {
 else {
   $favicons_folder = get_home_url().'/favicons/';
 }
-//$favicons_folder = get_stylesheet_directory_uri().'/assets/images/favicons/';
+
 global $contatore_foto;
 global $show_abstract;
 global $elenco_foto;
 global $show_cats;
+global $image_gallery_system;
+$show_hamburger_button_desktop = get_field( 'show_hamburger_button_desktop', 'options' );
+if ( $show_hamburger_button_desktop === 'yes' ) {
+  $show_hamburger_button_desktop_class = '';
+  $fullwidth_menu_class = '';
+}
+else {
+  $show_hamburger_button_desktop_class = 'only-mobile';
+  $fullwidth_menu_class = 'full-width-navi';
+}
 $contatore_foto = get_field( 'contatore_foto', 'options' );
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
@@ -61,6 +65,14 @@ if ( get_field( 'custom_colors', 'options' ) ) {
 }
 else {
   $custom_colors = 0;
+}
+
+$image_gallery_system = get_field( 'image_gallery_system' );
+if ( !isset( $image_gallery_system ) ) {
+  $image_gallery_system = 'one-page-one-picture';
+}
+else {
+  $image_gallery_system = get_field( 'image_gallery_system' );
 }
 ?>
 <meta name="msapplication-TileColor" content="#ffffff">
@@ -139,9 +151,10 @@ input[type=submit],
   font-family: <?php the_field( 'inputs_font_family', 'options' ); ?>;
   font-weight: <?php the_field( 'inputs_font_weight', 'options' ); ?>;
 }
-a:link, a:visited, a:hover, a:active {
+a:link, a:visited, a:hover, a:active, .video-slide .slick-next, .video-slide .prev-next {
   color: #191919;
 }
+
 <?php
 if ( $custom_colors == 1 ) :
   $hex = get_field( 'custom_color_1', 'options' );
@@ -238,6 +251,14 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
 }
 
+.clear-theme .menu ul li .sub-menu {
+  background-color: <?php the_field( 'custom_color_1', 'options' ); ?>;
+}
+
+.clear-theme .menu ul li .sub-menu li {
+  border-bottom-color: <?php the_field( 'custom_color_2', 'options' ); ?>;
+}
+
 .clear-theme .txt-2 {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
 }
@@ -300,7 +321,7 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_3', 'options' ); ?> !important;
 }
 
-.clear-theme .navi-info {
+.clear-theme .navi-info, .clear-theme .pay-picture button {
   color: <?php the_field( 'custom_color_3', 'options' ); ?>;
 }
 
@@ -318,16 +339,12 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
 }
 
-.clear-theme .txt-4:link, .clear-theme .txt-4:visited {
+.clear-theme .txt-4:link, .clear-theme .txt-4:visited, .clear-theme .video-slide .slick-next, .clear-theme .video-slide .prev-next {
   color: <?php the_field( 'custom_color_4', 'options' ); ?>;
 }
 
 .clear-theme .txt-4:hover {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
-}
-
-.clear-theme .pay-picture button {
-  color: #64D31C;
 }
 
 .clear-theme .flex-hold-title {
@@ -462,6 +479,14 @@ body.clear-theme .eye i {
 
 .clear-theme .hambuger-element:hover span {
   background: #AFAFAF;
+}
+
+.menu ul li .sub-menu {
+  background-color: #FFFFFF;
+}
+
+.menu ul li .sub-menu li {
+  border-bottom-color: #F9F9F9;
 }
 
 .clear-theme .txt-1 {
@@ -609,6 +634,20 @@ body.clear-theme .eye i {
 }
 <?php endif; ?>
 </style>
+<?php
+if ( $custom_colors == 1 ) {
+  $tile_color = get_field( 'custom_color_1', 'options' );
+}
+else {
+  $tile_color = '#FFFFFF';
+}
+?>
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#DCDCDC" class="get-custom-tile-color-js" data-custom-color="<?php echo $tile_color; ?>">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#DCDCDC">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#DCDCDC">
 <script type="text/javascript">
 var show_play_pause_button_localstorage = "<?php echo $show_play_pause_button_localstorage ?>";
 var play_pause_timer = "<?php echo $play_pause_timer ?>";
@@ -636,12 +675,44 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
           </a>
         </div>
       <?php endif; ?>
-      <nav class="swupped menu">
+      <nav class="swupped menu <?php echo $fullwidth_menu_class; ?>">
         <?php if ( has_nav_menu( 'header-menu' ) ) {
           wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'ul', 'menu_class' => 'top-menu delight-area' ) );
         } ?>
         <?php if ( is_singular( 'post' ) || is_attachment() ) : ?>
           <ul class="navi-info swupped-link">
+            <?php
+            if ( is_singular( 'post' ) ) {
+              $picture_id = get_post_thumbnail_id();
+            }
+            elseif ( is_attachment() ) {
+              $picture_id = get_the_ID();
+            }
+            $abilitare_la_vendita = get_field( 'abilitare_la_vendita', $picture_id );
+            if ( $abilitare_la_vendita === 'si' && $image_gallery_system === 'one-page-one-picture' ) {
+              $buy_button_status = 'shown';
+            }
+            else {
+              $buy_button_status = '';
+            }
+              ?>
+              <li class="buy-button <?php echo $buy_button_status; ?>">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="delight-area pay-picture">
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <input type="hidden" name="business" value="<?php the_field( 'indirizzo_email_paypal', 'option' ); ?>">
+                  <input type="hidden" name="lc" value="US">
+                  <input type="hidden" name="item_name" value="<?php the_permalink(); ?>">
+                  <input type="hidden" name="item_number" value="<?php $picture_id; ?>">
+                  <input type="hidden" name="amount" value="<?php the_field( 'prezzo', $picture_id ); ?>">
+                  <input type="hidden" name="currency_code" value="<?php the_field( 'tipo_di_valuta', 'option' ); ?>">
+                  <input type="hidden" name="button_subtype" value="services">
+                  <input type="hidden" name="no_note" value="0">
+                  <input type="hidden" name="tax_rate" value="0">
+                  <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
+                  <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                  <button type="submit" title="Buy this picture" aria-label="<?php _e( 'Buy this picture', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-credit-card"></i></button>
+                </form>
+              </li>
             <?php if ( $torna_elenco === 'si' ) : ?>
               <li>
                 <?php
@@ -672,36 +743,6 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
                 <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-list"></i></span>
               </li>
             <?php endif; ?>
-            <?php
-            if ( is_singular( 'post' ) ) {
-              $picture_id = get_post_thumbnail_id();
-            }
-            elseif ( is_attachment() ) {
-              $picture_id = get_the_ID();
-            }
-            $abilitare_la_vendita = get_field( 'abilitare_la_vendita', $picture_id );
-            if ( $abilitare_la_vendita === 'si' ) :
-              ?>
-              <li>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="delight-area pay-picture">
-                  <input type="hidden" name="cmd" value="_xclick">
-                  <input type="hidden" name="business" value="<?php the_field( 'indirizzo_email_paypal', 'option' ); ?>">
-                  <input type="hidden" name="lc" value="US">
-                  <input type="hidden" name="item_name" value="<?php the_permalink(); ?>">
-                  <input type="hidden" name="item_number" value="<?php $picture_id; ?>">
-                  <input type="hidden" name="amount" value="<?php the_field( 'prezzo', $picture_id ); ?>">
-                  <input type="hidden" name="currency_code" value="<?php the_field( 'tipo_di_valuta', 'option' ); ?>">
-                  <input type="hidden" name="button_subtype" value="services">
-                  <input type="hidden" name="no_note" value="0">
-                  <input type="hidden" name="tax_rate" value="0">
-                  <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
-                  <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                  <button type="submit" title="Buy this picture" aria-label="<?php _e( 'Buy this picture', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-credit-card"></i></button>
-                </form>
-              </li>
-            <?php endif; ?>
-
-
           </ul>
         <?php endif; ?>
         <?php if ( is_singular( 'news' ) ) : ?>
@@ -719,7 +760,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
           </ul>
         <?php endif; ?>
       </nav>
-      <div class="hamburger delight-area">
+      <div class="hamburger delight-area <?php echo $show_hamburger_button_desktop_class; ?>">
         <div type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="<?php _e( 'Navigation', 'paperplane-photography-theme' );?>" class="hambuger-element ham-activator">
           <span></span>
           <span></span>

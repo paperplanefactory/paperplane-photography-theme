@@ -77,6 +77,8 @@
     -webkit-box-flex: 1;
     width: calc(100% - #{$logo-mob-width} - #{$hamburger-mob-width});
     text-align: right;
+    overflow: auto;
+    white-space: nowrap;
 
     .top-menu {
       display: none;

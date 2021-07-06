@@ -1,5 +1,6 @@
 <?php
 function call_categories() {
+  global $post;
   $terms_activity = get_the_terms( $post->ID , 'category' );
   // Loop over each item since it's an array
   if ( $terms_activity != null ) {

@@ -157,7 +157,7 @@ $thumb_url_desktop = wp_get_attachment_image_src($attachment_id, 'full_desk', tr
 <?php
 global $elenco_foto;
 if ( $elenco_foto === 'si' ) {
-  include( locate_template ( 'template-parts/gallery-thumbs.php' ) );
+  include( locate_template ( 'template-parts/gallery-thumbs-one-page-one-picture.php' ) );
 }
 ?>
 <div id="delight-approved" class="photo-frame" data-picture-id="<?php echo get_the_ID(); ?>">
@@ -168,7 +168,6 @@ if ( $elenco_foto === 'si' ) {
       <div class="sk-cube4 sk-cube"></div>
       <div class="sk-cube3 sk-cube"></div>
     </div>
-    <div class="only-explorer" style="background-image: url(<?php echo $thumb_url_desktop[0]; ?>)"></div>
     <?php
     $image_data = array(
         'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
@@ -212,11 +211,13 @@ if ( $elenco_foto === 'si' ) {
             </div>
           </div>
         <?php endif; ?>
+        <div class="alignleft">
+          <h1><?php echo $original_title; ?></h1>
+          <?php foreach ($original_post as $post) : setup_postdata($post); ?>
+            <?php the_content(); ?>
+          <?php endforeach; wp_reset_query(); ?>
+        </div>
 
-        <h1><?php echo $original_title; ?></h1>
-        <?php foreach ($original_post as $post) : setup_postdata($post); ?>
-          <?php the_content(); ?>
-        <?php endforeach; wp_reset_query(); ?>
       </div>
     </div>
   </div>

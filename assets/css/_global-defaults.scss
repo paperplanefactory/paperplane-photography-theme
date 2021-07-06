@@ -13,19 +13,8 @@
 // comportamenti predefiniti
 
 .grecaptcha-badge {
-	visibility: collapse !important;
-}
-
-.captcha-image {
-	display: block;
-	width: 100%;
-	border: none !important;
-	margin-top: 20px;
-	text-align: left !important;
-
-	.cf7ic_instructions {
-		display: block !important;
-	}
+	opacity: 0;
+	pointer-events: none;
 }
 
 .stripe {
@@ -77,7 +66,25 @@
 }
 
 .thumbs-gallery {
-	display: none;
+	//display: none;
+	position: fixed;
+	width: 100%;
+	z-index: 90;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	height: 0;
+	overflow: hidden;
+	@include define-basic-transition(all, 0.3s);
+
+	&.shown {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: all;
+		height: auto;
+		overflow: visible;
+		@include define-basic-transition(all, 0.3s);
+	}
 }
 
 .verticalize {
@@ -362,6 +369,25 @@ a.absl:link {
 	display: block;
 	width: 100%;
 	border-bottom: 1px solid;
+}
+
+.buy-button {
+	width: 0;
+	display: none;
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+	margin-right: 0 !important;
+	@include define-basic-transition(all, 0.25s);
+
+	&.shown {
+		width: auto;
+		display: inline-block;
+		visibility: visible;
+		pointer-events: all;
+		opacity: 1;
+		margin-right: inherit !important;
+	}
 }
 
 #head-overlay {

@@ -1,4 +1,4 @@
-<div class="flex-hold-child grid-item-infinite explorer-exception">
+<div class="flex-hold-child grid-item-infinite">
 <a href="<?php the_permalink(); ?>">
  <div class="no-the-100">
    <?php if ( get_field( 'items_per_row', 'options' ) === 'three-items' ) : ?>

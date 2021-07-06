@@ -88,7 +88,9 @@ body.dark-theme {
 		background: $color-3-dark;
 	}
 	// txt colors
-	.txt-1 {
+	.txt-1,
+	.video-slide .prev-next,
+	.video-slide .slick-next {
 		color: $color-1-dark;
 	}
 
@@ -151,6 +153,20 @@ body.dark-theme {
 
 	a:hover {
 		color: $color-3-dark;
+	}
+
+	.menu {
+		ul {
+			li {
+				.sub-menu {
+					background-color: $color-5-dark;
+
+					li {
+						border-bottom-color: $color-4-dark;
+					}
+				}
+			}
+		}
 	}
 
 	.current-menu-item,

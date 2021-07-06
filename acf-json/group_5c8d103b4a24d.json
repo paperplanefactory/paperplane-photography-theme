@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_5c8d104e4f119",
-            "label": "Display images counter?",
+            "label": "Display images counter in gallery?",
             "name": "contatore_foto",
             "type": "select",
-            "instructions": "",
+            "instructions": "Activate to show images counter (e.g. 1\/10) in galleries.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -19,7 +19,7 @@
                 "si": "Yes",
                 "no": "No"
             },
-            "default_value": [],
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -183,7 +183,7 @@
         },
         {
             "key": "field_5dfcbbfaadd14",
-            "label": "Email address for Paypal payments",
+            "label": "Email address for PayPal payments",
             "name": "indirizzo_email_paypal",
             "type": "text",
             "instructions": "",
@@ -284,7 +284,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591513910
+    "modified": 1623576605
 }

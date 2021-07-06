@@ -38,10 +38,6 @@
   @include define-margins(30px, 0, 0, 0);
 }
 
-.only-explorer {
-  display: none !important;
-}
-
 .photo-frame {
   position: relative;
   width: 100%;
@@ -177,4 +173,114 @@
   width: 100% !important;
   display: block;
   margin-bottom: 15px;
+}
+
+.gallery-slider {
+  position: relative;
+  width: 100%;
+  //height: calc(100vh - #{$header-height} - 40px);
+  margin: 20px 0 0;
+
+  &.video-slide {
+    margin: 40px 0 0;
+
+    .slick-next,
+    .slick-prev {
+      top: -40px;
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+      @include define-basic-transition(all,0.3s);
+      border-bottom: solid 1px;
+    }
+
+    .slide-picture-contaniner {
+      .slide-picture {
+        embed,
+        iframe,
+        object {
+          height: calc(100vh - #{$header-mob-height} - 80px);
+        }
+      }
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    top: -80px;
+    width: 50%;
+    height: 40px;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    font-size: $paragraph-lineheight-desktop;
+    line-height: 40px;
+    font-weight: $font-weight-2;
+    text-align: center;
+    @include define-basic-transition(all,0.3s);
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slide-picture-contaniner {
+    width: 100%;
+
+    .slide-picture {
+      embed,
+      iframe,
+      img,
+      object {
+        width: 100%;
+        height: calc(100vh - #{$header-mob-height} - 40px);
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: 50% 50%;
+        object-position: 50% 50%;
+      }
+    }
+
+    .slide-picture {
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.gallery-slider-nav {
+  margin: 10px 0 5px;
+
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  .slick-slide {
+    margin: 0 10px;
+  }
+
+  &.no-current {
+    .slick-current {
+      opacity: 1;
+      @include define-basic-transition(all, 0.15s);
+    }
+  }
+
+  .slick-current {
+    opacity: 0.15;
+    @include define-basic-transition(all, 0.15s);
+  }
+
+  .slide-thumb {
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

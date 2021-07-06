@@ -417,6 +417,31 @@
             "endpoint": 0
         },
         {
+            "key": "field_60c4d2524924b",
+            "label": "Display hamburger button on desktop?",
+            "name": "show_hamburger_button_desktop",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5e4028cd10427",
             "label": "Footer texts",
             "name": "credits_and_more",
@@ -679,5 +704,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620467740
+    "modified": 1623511868
 }

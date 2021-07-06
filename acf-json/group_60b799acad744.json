@@ -1,0 +1,260 @@
+{
+    "key": "group_60b799acad744",
+    "title": "Gallery options",
+    "fields": [
+        {
+            "key": "field_60c32322054b9",
+            "label": "Image gallery system",
+            "name": "image_gallery_system",
+            "type": "select",
+            "instructions": "Slideshow is useful if you need to create a gallery with videos or mixed videos\/pictures.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one-page-one-picture": "Each image has its own dedicated URL",
+                "slider": "Slideshow"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60b799da08e23",
+            "label": "How to set up a gallery:",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60c32322054b9",
+                        "operator": "==",
+                        "value": "one-page-one-picture"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "- upload to the post all images you want to add to the gallery - the gallery is set by post attachments. Don't insert pictures in content, use the content to describe your project instead: navigation trough images is generated automatically;\r\n- eventually re-order images using WordPress media panel: the image set as \"Featured Image\" should also be the first when you order imeges trough WordPress media library -> Uploaded to this post;\r\n- publish post;\r\n- you can also use posts to display videos. To do so, use the custom field \"Video embed\". Using a post to display a video will disable the gallery's navigation for that post (only one video per post);\r\n\r\ntip: file title or file name will define the URL when viewing a single image. To have nice URLs try to name your files nicely like \"picture-title.jpg\" so that the URL will be like \"your-site.xyz\/project-name\/picture-title.jpg\"",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_60c3270620bb7",
+            "label": "Slides manager",
+            "name": "slides_manager_repeater",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60c32322054b9",
+                        "operator": "==",
+                        "value": "slider"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add slide",
+            "sub_fields": [
+                {
+                    "key": "field_60c3275a20bb9",
+                    "label": "Slide content",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_60c3272420bb8",
+                    "label": "Content type",
+                    "name": "slides_manager_repeater_content_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "picture": "Picture",
+                        "video-embed": "Video embed"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_60c3277420bba",
+                    "label": "Choose picture",
+                    "name": "slides_manager_repeater_picture",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c3272420bb8",
+                                "operator": "==",
+                                "value": "picture"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "grid_image_nocrop",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_60c327aa20bbb",
+                    "label": "Embed video",
+                    "name": "slides_manager_repeater_embed_video",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c3272420bb8",
+                                "operator": "==",
+                                "value": "video-embed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_60c32b9907301",
+                    "label": "Video description",
+                    "name": "slides_manager_repeater_embed_video_description",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c3272420bb8",
+                                "operator": "==",
+                                "value": "video-embed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60c35c656ed55",
+                    "label": "Video cover image for gallery thumbnail",
+                    "name": "slides_manager_repeater_embed_video_cover",
+                    "type": "image",
+                    "instructions": "If a video cover image is not set, an icon will be inserted automatically in its place.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c3272420bb8",
+                                "operator": "==",
+                                "value": "video-embed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumb_gallery",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623482879
+}

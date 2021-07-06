@@ -62,7 +62,6 @@ $my_topworks = get_posts( $args_topworks );
 
             ?>
             <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" aria-label="View project: <?php the_title(); ?>"></a>
-            <div class="only-explorer" style="background-image: url('<?php echo $thumb_url_desktop[0]; ?>')"></div>
             <?php
             $image_data = array(
                 'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field

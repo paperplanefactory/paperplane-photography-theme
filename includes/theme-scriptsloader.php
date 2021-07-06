@@ -55,16 +55,13 @@ function all_scripts(){
     wp_register_script( 'theme-masonry', get_template_directory_uri() . '/assets/js/libs/masonry.pkgd.js#deferload', '', $theme_version, false);
     wp_enqueue_script( 'theme-masonry' );
   }
+  // Slick Slider
+  // documentazione: https://github.com/kenwheeler/slick
+  wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/libs/slick.min.js#deferload', '', $theme_version, false);
+	wp_enqueue_script( 'slick' );
 	// Recurring behaviors
-  $ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
-  if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0') !== false && strpos($ua, 'rv:11.0') !== false)) {
-    wp_register_script( 'theme-general-explorer', get_template_directory_uri() . '/assets/js/theme-general-explorer.min.js#deferload', '', $theme_version, true);
-    wp_enqueue_script( 'theme-general-explorer' );
-  }
-	else {
-    wp_register_script( 'theme-general', get_template_directory_uri() . '/assets/js/theme-general.min.js#deferload', '', $theme_version, true);
-  	wp_enqueue_script( 'theme-general' );
-  }
+  wp_register_script( 'theme-general', get_template_directory_uri() . '/assets/js/theme-general.min.js#deferload', '', $theme_version, true);
+  wp_enqueue_script( 'theme-general' );
   // tocca
   wp_register_script( 'theme-tocca', get_template_directory_uri() . '/assets/js/libs/tocca.min.js#asyncload', '', $theme_version, true);
 	wp_enqueue_script( 'theme-tocca' );

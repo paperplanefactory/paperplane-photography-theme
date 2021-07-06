@@ -1,11 +1,12 @@
-(function (global, factory) {
+(function(global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.LazyLoad = factory());
-}(this, (function () { 'use strict';
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = global || self, global.LazyLoad = factory());
+}(this, (function() {
+  'use strict';
 
   function _extends() {
-    _extends = Object.assign || function (target) {
+    _extends = Object.assign || function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -29,7 +30,7 @@
   var isHiDpi = runningOnBrowser && window.devicePixelRatio > 1;
 
   var defaultSettings = {
-    elements_selector: ".lazy",
+    elements_selector: "IMG",
     container: isBot || runningOnBrowser ? document : null,
     threshold: 300,
     thresholds: null,
@@ -45,11 +46,9 @@
     class_loading: "loading",
     class_loaded: "loaded",
     class_error: "error",
-    class_entered: "entered",
-    class_exited: "exited",
     unobserve_completed: true,
     unobserve_entered: false,
-    cancel_on_exit: true,
+    cancel_on_exit: false,
     callback_enter: null,
     callback_exit: null,
     callback_applied: null,
@@ -78,7 +77,6 @@
         }
       });
     } catch (err) {
-      // Works in Internet Explorer (all versions)
       event = document.createEvent("CustomEvent");
       event.initCustomEvent(eventString, false, false, {
         instance: instance
@@ -87,7 +85,7 @@
 
     window.dispatchEvent(event);
   };
-  /* Auto initialization of one or more instances of lazyload, depending on the 
+  /* Auto initialization of one or more instances of lazyload, depending on the
       options passed in (plain object or an array) */
 
 
@@ -110,7 +108,6 @@
   var statusLoading = "loading";
   var statusLoaded = "loaded";
   var statusApplied = "applied";
-  var statusEntered = "entered";
   var statusError = "error";
   var statusNative = "native";
 
@@ -150,9 +147,8 @@
   var hasStatusNative = function hasStatusNative(element) {
     return getStatus(element) === statusNative;
   };
-  var statusesAfterLoading = [statusLoading, statusLoaded, statusApplied, statusError];
   var hadStartedLoading = function hadStartedLoading(element) {
-    return statusesAfterLoading.indexOf(getStatus(element)) >= 0;
+    return !hasEmptyStatus(element);
   };
 
   var safeCallback = function safeCallback(callback, arg1, arg2, arg3) {
@@ -209,7 +205,7 @@
   var resetObserver = function resetObserver(observer) {
     observer.disconnect();
   };
-  var unobserveEntered = function unobserveEntered(element, settings, instance) {
+  var unobserveIfRequired = function unobserveIfRequired(element, settings, instance) {
     if (settings.unobserve_entered) unobserve(element, instance);
   };
 
@@ -302,13 +298,13 @@
     sourceTags.forEach(fn);
   };
   var restoreOriginalAttributesImg = function restoreOriginalAttributesImg(element) {
-    forEachPictureSource(element, function (sourceTag) {
+    forEachPictureSource(element, function(sourceTag) {
       restoreOriginalImageAttributes(sourceTag);
     });
     restoreOriginalImageAttributes(element);
   };
   var setSourcesImg = function setSourcesImg(element, settings) {
-    forEachPictureSource(element, function (sourceTag) {
+    forEachPictureSource(element, function(sourceTag) {
       saveOriginalImageAttributes(sourceTag);
       setImageAttributes(sourceTag, settings);
     });
@@ -316,7 +312,7 @@
     setImageAttributes(element, settings);
   };
   var resetSourcesImg = function resetSourcesImg(element) {
-    forEachPictureSource(element, function (sourceTag) {
+    forEachPictureSource(element, function(sourceTag) {
       resetImageAttributes(sourceTag);
     });
     resetImageAttributes(element);
@@ -325,7 +321,7 @@
     setAttributeIfValue(element, "src", getData(element, settings.data_src));
   };
   var setSourcesVideo = function setSourcesVideo(element, settings) {
-    forEachVideoSource(element, function (sourceTag) {
+    forEachVideoSource(element, function(sourceTag) {
       setAttributeIfValue(sourceTag, "src", getData(sourceTag, settings.data_src));
     });
     setAttributeIfValue(element, "poster", getData(element, settings.data_poster));
@@ -373,6 +369,7 @@
   var manageApplied = function manageApplied(element, settings, instance) {
     addClass(element, settings.class_applied);
     setStatus(element, statusApplied);
+    removeDataMultiBackground(element, settings);
 
     if (settings.unobserve_completed) {
       // Unobserve now because we can't do it on load
@@ -386,6 +383,49 @@
     addClass(element, settings.class_loading);
     setStatus(element, statusLoading);
     safeCallback(settings.callback_loading, element, instance);
+  }; // REMOVE DATA ATTRIBUTES --------------
+
+  var removeDataImg = function removeDataImg(element, settings) {
+    setData(element, settings.data_src, null);
+    setData(element, settings.data_srcset, null);
+    setData(element, settings.data_sizes, null);
+    forEachPictureSource(element, function(sourceTag) {
+      setData(sourceTag, settings.data_srcset, null);
+      setData(sourceTag, settings.data_sizes, null);
+    });
+  };
+  var removeDataIframe = function removeDataIframe(element, settings) {
+    setData(element, settings.data_src, null);
+  };
+  var removeDataVideo = function removeDataVideo(element, settings) {
+    setData(element, settings.data_src, null);
+    setData(element, settings.data_poster, null);
+    forEachVideoSource(element, function(sourceTag) {
+      setData(sourceTag, settings.data_src, null);
+    });
+  };
+  var removeDataFunctions = {
+    IMG: removeDataImg,
+    IFRAME: removeDataIframe,
+    VIDEO: removeDataVideo
+  };
+  var removeDataBackground = function removeDataBackground(element, settings) {
+    setData(element, settings.data_bg, null);
+    setData(element, settings.data_bg_hidpi, null);
+  };
+  var removeDataMultiBackground = function removeDataMultiBackground(element, settings) {
+    setData(element, settings.data_bg_multi, null);
+    setData(element, settings.data_bg_multi_hidpi, null);
+  };
+  var removeDataAttributes = function removeDataAttributes(element, settings) {
+    var removeDataFunction = removeDataFunctions[element.tagName];
+
+    if (removeDataFunction) {
+      removeDataFunction(element, settings);
+      return;
+    }
+
+    removeDataBackground(element, settings);
   };
 
   var elementsWithLoadEvent = ["IMG", "IFRAME", "VIDEO"];
@@ -442,6 +482,7 @@
     doneHandler(element, settings, instance);
     addClass(element, settings.class_loaded);
     setStatus(element, statusLoaded);
+    removeDataAttributes(element, settings);
     safeCallback(settings.callback_loaded, element, instance);
     if (!goingNative) checkFinish(settings, instance);
   };
@@ -495,13 +536,13 @@
     }
   };
   var loadNative = function loadNative(element, settings, instance) {
-    element.setAttribute("loading", "lazy");
     addOneShotEventListeners(element, settings, instance);
     setSources(element, settings);
+    removeDataAttributes(element, settings);
     setStatus(element, statusNative);
   };
 
-  var cancelLoading = function cancelLoading(element, entry, settings, instance) {
+  var cancelLoadingIfRequired = function cancelLoadingIfRequired(element, entry, settings, instance) {
     if (!settings.cancel_on_exit) return;
     if (!hasStatusLoading(element)) return;
     if (element.tagName !== "IMG") return; //Works only on images
@@ -516,35 +557,30 @@
   };
 
   var onEnter = function onEnter(element, entry, settings, instance) {
-    var dontLoad = hadStartedLoading(element);
-    /* Save status 
-    before setting it, to prevent loading it again. Fixes #526. */
-
-    setStatus(element, statusEntered);
-    addClass(element, settings.class_entered);
-    removeClass(element, settings.class_exited);
-    unobserveEntered(element, settings, instance);
     safeCallback(settings.callback_enter, element, entry, instance);
-    if (dontLoad) return;
+    unobserveIfRequired(element, settings, instance);
+    if (hadStartedLoading(element)) return; //Prevent loading it again
+
     load(element, settings, instance);
   };
   var onExit = function onExit(element, entry, settings, instance) {
     if (hasEmptyStatus(element)) return; //Ignore the first pass, at landing
 
-    addClass(element, settings.class_exited);
-    cancelLoading(element, entry, settings, instance);
+    cancelLoadingIfRequired(element, entry, settings, instance);
     safeCallback(settings.callback_exit, element, entry, instance);
   };
 
-  var tagsWithNativeLazy = ["IMG", "IFRAME", "VIDEO"];
+  var tagsWithNativeLazy = ["IMG", "IFRAME"];
   var shouldUseNative = function shouldUseNative(settings) {
     return settings.use_native && "loading" in HTMLImageElement.prototype;
   };
   var loadAllNative = function loadAllNative(elements, settings, instance) {
-    elements.forEach(function (element) {
+    elements.forEach(function(element) {
       if (tagsWithNativeLazy.indexOf(element.tagName) === -1) {
         return;
       }
+
+      element.setAttribute("loading", "lazy"); //TODO: Move inside the loadNative method
 
       loadNative(element, settings, instance);
     });
@@ -563,13 +599,13 @@
   };
 
   var intersectionHandler = function intersectionHandler(entries, settings, instance) {
-    entries.forEach(function (entry) {
+    entries.forEach(function(entry) {
       return isIntersecting(entry) ? onEnter(entry.target, entry, settings, instance) : onExit(entry.target, entry, settings, instance);
     });
   };
 
   var observeElements = function observeElements(observer, elements) {
-    elements.forEach(function (element) {
+    elements.forEach(function(element) {
       observer.observe(element);
     });
   };
@@ -582,7 +618,7 @@
       return;
     }
 
-    instance._observer = new IntersectionObserver(function (entries) {
+    instance._observer = new IntersectionObserver(function(entries) {
       intersectionHandler(entries, settings, instance);
     }, getObserverSettings(settings));
   };
@@ -608,7 +644,7 @@
 
   var retryLazyLoad = function retryLazyLoad(settings, instance) {
     var errorElements = filterErrorElements(queryElements(settings));
-    errorElements.forEach(function (element) {
+    errorElements.forEach(function(element) {
       removeClass(element, settings.class_error);
       resetStatus(element);
     });
@@ -619,7 +655,7 @@
       return;
     }
 
-    window.addEventListener("online", function () {
+    window.addEventListener("online", function() {
       retryLazyLoad(settings, instance);
     });
   };
@@ -658,7 +694,7 @@
       } // Clean custom attributes on elements
 
 
-      queryElements(this._settings).forEach(function (element) {
+      queryElements(this._settings).forEach(function(element) {
         delete element.llOriginalAttrs;
       }); // Delete all internal props
 
@@ -672,19 +708,18 @@
 
       var settings = this._settings;
       var elementsToLoad = getElementsToLoad(elements, settings);
-      elementsToLoad.forEach(function (element) {
-        unobserve(element, _this);
+      elementsToLoad.forEach(function(element) {
         load(element, settings, _this);
       });
     }
   };
 
-  LazyLoad.load = function (element, customSettings) {
+  LazyLoad.load = function(element, customSettings) {
     var settings = getExtendedSettings(customSettings);
     load(element, settings);
   };
 
-  LazyLoad.resetStatus = function (element) {
+  LazyLoad.resetStatus = function(element) {
     resetStatus(element);
   }; // Automatic instances creation if required (useful for async script loading)
 
