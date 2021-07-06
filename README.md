@@ -84,7 +84,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
 * [Masonry](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry");
 * Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
-* Slick Slider [Font Awesome](https://github.com/kenwheeler/slick/ "Slick Slider");
+* Slick Slider [Slick Slider](https://github.com/kenwheeler/slick/ "Slick Slider");
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. You can do even better by converting images into WebP format.
