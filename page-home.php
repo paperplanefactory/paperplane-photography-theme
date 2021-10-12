@@ -190,18 +190,28 @@ if ( $my_news_month ) : ?>
          	$paged = 1;
 
          }
-         $args_topworks = array(
-           'post_type' => 'post',
-           //'posts_per_page' => 9,
-           'paged' => $paged,
-           'tax_query' => array(
-             array(
-               'taxonomy' => 'category',
-               'field' => 'term_id',
-               'terms' => $scegli_categoria
+         if ( $scegli_cosa_mostrare === 'grid' ) {
+           $args_topworks = array(
+             'post_type' => 'post',
+             //'posts_per_page' => 9,
+             'paged' => $paged,
+             'tax_query' => array(
+               array(
+                 'taxonomy' => 'category',
+                 'field' => 'term_id',
+                 'terms' => $scegli_categoria
+               )
              )
-           )
-         );
+           );
+         }
+         elseif ( $scegli_cosa_mostrare === 'grid-all' ) {
+           $args_topworks = array(
+             'post_type' => 'post',
+             //'posts_per_page' => 9,
+             'paged' => $paged
+           );
+         }
+
          query_posts( $args_topworks );
          $found_posts = $wp_query->found_posts;
          if (have_posts()) : while (have_posts()) : the_post();
@@ -233,18 +243,27 @@ if ( $my_news_month ) : ?>
          	$paged = 1;
 
          }
-         $args_topworks = array(
-           'post_type' => 'post',
-           //'posts_per_page' => 9,
-           'paged' => $paged,
-           'tax_query' => array(
-             array(
-               'taxonomy' => 'category',
-               'field' => 'term_id',
-               'terms' => $scegli_categoria
+         if ( $scegli_cosa_mostrare === 'grid' ) {
+           $args_topworks = array(
+             'post_type' => 'post',
+             //'posts_per_page' => 9,
+             'paged' => $paged,
+             'tax_query' => array(
+               array(
+                 'taxonomy' => 'category',
+                 'field' => 'term_id',
+                 'terms' => $scegli_categoria
+               )
              )
-           )
-         );
+           );
+         }
+         elseif ( $scegli_cosa_mostrare === 'grid-all' ) {
+           $args_topworks = array(
+             'post_type' => 'post',
+             //'posts_per_page' => 9,
+             'paged' => $paged
+           );
+         }
          query_posts( $args_topworks );
          $found_posts = $wp_query->found_posts;
          if (have_posts()) : while (have_posts()) : the_post();

@@ -38,6 +38,8 @@ function all_scripts(){
   wp_enqueue_script( 'js-swup-head' );
   wp_register_script( 'js-swup-preload', get_template_directory_uri() . '/assets/js/libs/SwupPreloadPlugin.min.js#deferload', '', $theme_version, false);
   wp_enqueue_script( 'js-swup-preload' );
+  //wp_register_script( 'js-swup-form', get_template_directory_uri() . '/assets/js/libs/SwupFormPlugin.min.js#deferload', '', $theme_version, false);
+  //wp_enqueue_script( 'js-swup-form' );
   //wp_register_script( 'js-swup-ga', get_template_directory_uri() . '/assets/js/libs/SwupGaPlugin.min.js#deferload', '', $theme_version, true);
   //wp_enqueue_script( 'js-swup-ga' );
   // Infinite Scroll

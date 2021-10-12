@@ -25,11 +25,11 @@
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignnone .wp-caption-text,
 .wp-caption.alignright .wp-caption-text {
-	padding: 10px;
+	padding: 10px 10px 0;
+	margin: 0 !important;
 	font-weight: $font-weight-1;
 	font-size: $cta1-size-desktop;
 	line-height: $cta1-lineheight-desktop;
 	word-wrap: break-word;
 	font-style: italic;
-	background-color: $color-5;
 }

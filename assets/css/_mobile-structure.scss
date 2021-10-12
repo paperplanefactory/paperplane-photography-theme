@@ -114,7 +114,11 @@
   display: block;
   width: 100%;
   text-align: center !important;
-  margin: 10px 0 0;
+  margin: 10px 0 30px;
+
+  h2 {
+    margin-bottom: 5px;
+  }
 }
 
 .flex-hold-2,
@@ -253,7 +257,7 @@
 }
 
 .gallery-slider-nav {
-  margin: 10px 0 5px;
+  margin: 20px 0;
 
   .slick-list {
     margin: 0 -10px;

@@ -221,9 +221,17 @@
   opacity: 0;
   @include define-basic-transition(all, 0.5s);
 
+  h2 {
+    margin-bottom: 5px;
+  }
+
   div {
     width: 100%;
   }
+}
+
+.thumbs-gallery {
+  top: $header-height;
 }
 
 .gallery-thumb-box {
@@ -322,7 +330,7 @@
 }
 
 .gallery-slider-nav {
-  margin: 5px 0 20px;
+  margin: 20px 0;
 
   .slick-list {
     margin: 0 -10px;

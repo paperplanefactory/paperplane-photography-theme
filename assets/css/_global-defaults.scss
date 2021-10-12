@@ -450,10 +450,19 @@ a.absl:link {
 
 .video_frame embed,
 .video_frame iframe,
-.video_frame object {
+.video_frame object,
+.video_frame video {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.masonry-grid {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
 }

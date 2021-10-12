@@ -81,6 +81,10 @@ video {
 	vertical-align: baseline;
 }
 
+html {
+	overflow-y: scroll;
+}
+
 body {
 	line-height: 1;
 	@include define-basic-transition(all, 0.3s);

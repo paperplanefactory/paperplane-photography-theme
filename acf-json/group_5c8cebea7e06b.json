@@ -17,9 +17,10 @@
             },
             "choices": {
                 "one-random": "A random photo of a random project",
-                "grid": "List of works"
+                "grid": "List of works by category",
+                "grid-all": "List of all works"
             },
-            "default_value": [],
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -102,5 +103,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1581172143
+    "modified": 1626768391
 }

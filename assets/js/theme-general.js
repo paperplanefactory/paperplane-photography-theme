@@ -11,7 +11,7 @@ if (navColorPattern == null) {
 setInitialBrightness();
 
 function masonrySetup() {
-  if (jQuery(".masonry-grid")[0]) {
+  if (jQuery('.masonry-grid')[0]) {
     var container = document.querySelector('.masonry-grid');
     var msnry = new Masonry(container, {
       // set itemSelector so .grid-sizer is not used in layout
@@ -19,11 +19,17 @@ function masonrySetup() {
       // use element for option
       columnWidth: '.grid-sizer',
       percentPosition: true,
-      transitionDuration: '0.8s'
+      transitionDuration: '0.3s',
+      stagger: 30,
+      initLayout: false
     });
+    msnry.on('layoutComplete', function(items) {
+      console.log(items.length);
+    });
+    // trigger initial layout
+    msnry.layout();
   }
 }
-//masonrySetup();
 
 var paperPlaneLazyLoad = new LazyLoad({
   elements_selector: ".lazy",
@@ -59,6 +65,10 @@ swup.on('contentReplaced', init);
 swup.on('willReplaceContent', unload);
 swup.on('animationInStart', animationIn);
 
+swup.on('contentReplaced', function() {
+  contactForm();
+});
+
 function init() {
   paperPlaneLazyLoad.update();
   refreshPrevNext();
@@ -88,13 +98,7 @@ document.addEventListener('swup:contentReplaced', event => {
     closeOverlay();
   });
   setInitialBrightness();
-  if (jQuery('div.wpcf7 > form').length) {
-    var $form = jQuery('div.wpcf7 > form');
-    wpcf7.initForm($form);
-    if (wpcf7.cached) {
-      wpcf7.refill($form);
-    }
-  }
+
 
 });
 
@@ -206,7 +210,7 @@ function setInitialBrightness() {
 
 function wrapPostMedia() {
   // Wrappo i video player in una div per dimensionarli responsive
-  jQuery('.content-styled iframe').wrap('<div class="video_frame"></div>');
+  jQuery('.content-styled iframe, .wp-video').wrap('<div class="video_frame"></div>');
   // Controllo se l'immagine ha la didascalia e se manca la wrappo per allinearla
   if (!jQuery('img.alignnone').closest('.wp-caption').length) {
     jQuery('img.alignnone').wrap('<div class="wp-caption alignnone"></div>');
@@ -453,8 +457,8 @@ function sliderSetup() {
         breakpoint: 1024,
         settings: {
           arrows: false,
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
         }
       }]
     });
@@ -533,5 +537,11 @@ function sliderSetup() {
       }]
     });
   }
+}
 
+function contactForm() {
+  var contactForm = document.querySelector(".wpcf7-form");
+  if (contactForm) {
+    wpcf7.initForm(contactForm);
+  }
 }
