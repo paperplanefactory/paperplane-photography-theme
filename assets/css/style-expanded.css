@@ -2282,7 +2282,8 @@ body.dark-theme .eye i {
     margin-bottom: 5px;
   }
   .flex-hold-title div {
-    width: 100%;
+    width: calc(100% - 20px);
+    padding: 0 10px;
   }
   .thumbs-gallery {
     top: 65px;
