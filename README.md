@@ -9,12 +9,12 @@ This theme is designed to enhance pictures. UX and UI elements are designed to h
 PaperPlane photography theme requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") to be installed.<br/>
 Required set of fields is already included through ACF-JSON folder.<br/>
 Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-type-ui "here")<br/>
+
+### :sunglasses: Features:
 * display images on all devices without cropping;
 * give photographers maximum editorial control;
 * web performance;
 * SEO friendly also if site is based mainly on images;
-
-### :sunglasses: Features:
 * clear or dark navigation mode;
 * options to set a custom colors scheme that overrides clear navigation mode;
 * toggle all unnecessary navigation information when viewing a photo;
