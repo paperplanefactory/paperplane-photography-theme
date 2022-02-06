@@ -18,7 +18,6 @@ function masonrySetup() {
       itemSelector: '.flex-hold-child',
       // use element for option
       columnWidth: '.grid-sizer',
-      percentPosition: true,
       transitionDuration: '0.3s',
       stagger: 30,
       initLayout: false
@@ -116,7 +115,7 @@ function initInfiniteScroll() {
       history: false,
       button: '.view-more-button-js',
       scrollThreshold: false,
-      checkLastPage: true
+      checkLastPage: true,
     });
 
     jQuery('.grid-infinite').on('append.infiniteScroll', function(event, response, path, items) {

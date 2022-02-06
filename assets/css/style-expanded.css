@@ -927,6 +927,10 @@ p {
   padding: 0 15px 0 0;
 }
 
+.category-list {
+  padding-top: 10px !important;
+}
+
 .blurred {
   filter: blur(5px);
   -webkit-filter: blur(5px);
