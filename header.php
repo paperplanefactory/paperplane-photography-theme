@@ -764,7 +764,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
                 <span class="play-pause delight-area pointered" title="<?php _e( 'play/pause gallery', 'paperplane-photography-theme' );?>" player-attribute="pause"><i class="play-pauser icon-fas-fa-play"></i></span>
               </li>
             <?php endif; ?>
-            <?php if ( $elenco_foto === 'si' ) : ?>
+            <?php if ( $elenco_foto === 'si' && $image_gallery_system != 'scrollpage' ) : ?>
               <li>
                 <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-list"></i></span>
               </li>

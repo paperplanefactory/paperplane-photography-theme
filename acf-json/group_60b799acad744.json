@@ -42,6 +42,13 @@
                         "operator": "==",
                         "value": "one-page-one-picture"
                     }
+                ],
+                [
+                    {
+                        "field": "field_60c32322054b9",
+                        "operator": "==",
+                        "value": "scrollpage"
+                    }
                 ]
             ],
             "wrapper": {
@@ -55,12 +62,19 @@
         },
         {
             "key": "field_60c3270620bb7",
-            "label": "Slides manager",
+            "label": "Images manager",
             "name": "slides_manager_repeater",
             "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
+                [
+                    {
+                        "field": "field_60c32322054b9",
+                        "operator": "==",
+                        "value": "scrollpage"
+                    }
+                ],
                 [
                     {
                         "field": "field_60c32322054b9",
@@ -78,7 +92,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "Add slide",
+            "button_label": "Add image",
             "sub_fields": [
                 {
                     "key": "field_60c3275a20bb9",
@@ -215,6 +229,13 @@
                     "conditional_logic": [
                         [
                             {
+                                "field": "field_60c32322054b9",
+                                "operator": "==",
+                                "value": "slider"
+                            }
+                        ],
+                        [
+                            {
                                 "field": "field_60c3272420bb8",
                                 "operator": "==",
                                 "value": "video-embed"
@@ -258,5 +279,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649246691
+    "modified": 1649432911
 }

@@ -712,7 +712,7 @@ a.absl:link {
   cursor: pointer;
 }
 
-.video_frame {
+.video-frame {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
@@ -721,10 +721,10 @@ a.absl:link {
   height: auto;
 }
 
-.video_frame embed,
-.video_frame iframe,
-.video_frame object,
-.video_frame video {
+.video-frame embed,
+.video-frame iframe,
+.video-frame object,
+.video-frame video {
   position: absolute;
   top: 0;
   left: 0;

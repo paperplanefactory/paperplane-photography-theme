@@ -209,7 +209,7 @@ function setInitialBrightness() {
 
 function wrapPostMedia() {
   // Wrappo i video player in una div per dimensionarli responsive
-  jQuery('.content-styled iframe, .wp-video').wrap('<div class="video_frame"></div>');
+  jQuery('.content-styled iframe, .wp-video').wrap('<div class="video-frame"></div>');
   // Controllo se l'immagine ha la didascalia e se manca la wrappo per allinearla
   if (!jQuery('img.alignnone').closest('.wp-caption').length) {
     jQuery('img.alignnone').wrap('<div class="wp-caption alignnone"></div>');
