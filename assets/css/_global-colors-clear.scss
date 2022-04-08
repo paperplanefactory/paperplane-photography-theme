@@ -247,4 +247,17 @@ body.clear-theme {
 			background-color: $color-4;
 		}
 	}
+
+	.pay-picture-list {
+		button {
+			color: $color-4;
+			background-color: $color-1;
+			border-color: $color-4;
+
+			&:hover {
+				color: $color-1;
+				background-color: $color-4;
+			}
+		}
+	}
 }

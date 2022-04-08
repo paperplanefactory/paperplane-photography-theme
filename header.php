@@ -129,6 +129,10 @@ p, .content-styled ul, .content-styled ol {
   font-family: <?php the_field( 'cta_font_family', 'options' ); ?>;
   font-weight: <?php the_field( 'cta_font_weight', 'options' ); ?>;
 }
+.pay-picture-list button {
+  font-family: <?php the_field( 'paragraphs_font_family', 'options' ); ?>;
+  font-weight: <?php the_field( 'titles_font_weight', 'options' ); ?>;
+}
 label,
 input[type=text],
 input[type=email],
@@ -394,6 +398,17 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
   background-color: <?php the_field( 'custom_color_1', 'options' ); ?>;
 }
+
+.pay-picture-list button {
+  color: <?php the_field( 'custom_color_1', 'options' ); ?>;
+  background-color: <?php the_field( 'custom_color_5', 'options' ); ?>;
+  border-color: <?php the_field( 'custom_color_5', 'options' ); ?>;
+}
+
+.pay-picture-list button:hover {
+  color: <?php the_field( 'custom_color_5', 'options' ); ?>;
+  background-color: <?php the_field( 'custom_color_1', 'options' ); ?>;
+}
 <?php else : ?>
 body.clear-theme {
   color: #303030;
@@ -632,6 +647,17 @@ body.clear-theme .eye i {
   color: #303030;
   background-color: #AFAFAF;
 }
+.pay-picture-list button {
+  color: #F9F9F9;
+  background-color: #303030;
+  border-color: #F9F9F9;
+}
+
+.pay-picture-list button:hover {
+  color: #303030;
+  background-color: #F9F9F9;
+}
+
 <?php endif; ?>
 </style>
 <?php

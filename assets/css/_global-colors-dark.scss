@@ -260,4 +260,17 @@ body.dark-theme {
 			background-color: $color-5-dark;
 		}
 	}
+
+	.pay-picture-list {
+		button {
+			color: $color-5-dark;
+			border-color: $color-3-dark;
+
+			&:hover {
+				color: $color-1-dark;
+				border-color: $color-1-dark;
+				background-color: $color-5-dark;
+			}
+		}
+	}
 }

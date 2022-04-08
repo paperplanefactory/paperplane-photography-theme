@@ -17,6 +17,7 @@
             },
             "choices": {
                 "one-page-one-picture": "Each image has its own dedicated URL",
+                "scrollpage": "Images in column one below the other",
                 "slider": "Slideshow"
             },
             "default_value": false,
@@ -256,5 +257,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623482879
+    "show_in_rest": 0,
+    "modified": 1649246691
 }

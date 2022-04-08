@@ -288,3 +288,32 @@
     }
   }
 }
+
+.scroll-image-hold {
+  .lined {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .scroll-image {
+    position: relative;
+    width: 100%;
+    margin: 7vh 0 0;
+    padding: 0 0 7vh;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .picture-info {
+      margin: 20px 0 0;
+      padding: 0;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -371,6 +371,23 @@ a {
   cursor: pointer;
 }
 
+.pay-picture-list {
+  margin-top: 20px;
+}
+
+.pay-picture-list button {
+  padding: 10px 20px;
+  background-color: transparent;
+  text-transform: uppercase;
+  border: solid 1px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .embed-container {
   position: absolute;
   top: 0;
@@ -1426,6 +1443,17 @@ body.dark-theme .eye i {
   background-color: #191919;
 }
 
+.dark-theme .pay-picture-list button {
+  color: #191919;
+  border-color: #AFAFAF;
+}
+
+.dark-theme .pay-picture-list button:hover {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  background-color: #191919;
+}
+
 @media screen and (min-width: 1px) and (max-width: 1023px) {
   #preheader {
     position: relative;
@@ -1835,6 +1863,26 @@ body.dark-theme .eye i {
   .gallery-slider-nav .slide-thumb img {
     width: 100%;
     height: auto;
+  }
+  .scroll-image-hold .lined:last-child {
+    border-bottom: none;
+  }
+  .scroll-image-hold .scroll-image {
+    position: relative;
+    width: 100%;
+    margin: 7vh 0 0;
+    padding: 0 0 7vh;
+  }
+  .scroll-image-hold .scroll-image img {
+    width: 100%;
+    height: auto;
+  }
+  .scroll-image-hold .scroll-image .picture-info {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .scroll-image-hold .scroll-image .picture-info p {
+    margin: 0;
   }
 }
 
@@ -2418,6 +2466,26 @@ body.dark-theme .eye i {
   .gallery-slider-nav .slide-thumb img {
     width: 100%;
     height: auto;
+  }
+  .scroll-image-hold .lined:last-child {
+    border-bottom: none;
+  }
+  .scroll-image-hold .scroll-image {
+    position: relative;
+    width: 100%;
+    margin: 7vh 0 0;
+    padding: 0 0 7vh;
+  }
+  .scroll-image-hold .scroll-image img {
+    width: 100%;
+    height: auto;
+  }
+  .scroll-image-hold .scroll-image .picture-info {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .scroll-image-hold .scroll-image .picture-info p {
+    margin: 0;
   }
 }
 

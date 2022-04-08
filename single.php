@@ -12,6 +12,9 @@ global $image_gallery_system;
 if ( $image_gallery_system === 'one-page-one-picture' ) {
   include( locate_template ( 'template-parts/gallery-one-page-one-picture.php' ) );
 }
+else if ( $image_gallery_system === 'scrollpage' ) {
+  include( locate_template ( 'template-parts/gallery-scrollpage.php' ) );
+}
 else if ( $image_gallery_system === 'slider' ) {
   include( locate_template ( 'template-parts/gallery-slider.php' ) );
 }

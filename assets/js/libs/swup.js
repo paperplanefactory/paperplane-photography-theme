@@ -438,6 +438,8 @@
           this.transition = {};
           // variable for keeping event listeners from "delegate"
           this.delegatedListeners = {};
+          // so we are able to remove the listener
+          this.boundPopStateHandler = this.popStateHandler.bind(this);
 
           // make modules accessible in instance
           this.cache = new _Cache2.default();
@@ -472,7 +474,7 @@
 
             // add event listeners
             this.delegatedListeners.click = (0, _delegate2.default)(document, this.options.linkSelector, 'click', this.linkClickHandler.bind(this));
-            window.addEventListener('popstate', this.popStateHandler.bind(this));
+            window.addEventListener('popstate', this.boundPopStateHandler);
 
             // initial save to cache
             var page = (0, _helpers.getDataFromHtml)(document.documentElement.outerHTML, this.options.containers);
@@ -512,10 +514,9 @@
 
             // remove delegated listeners
             this.delegatedListeners.click.destroy();
-            this.delegatedListeners.mouseover.destroy();
 
             // remove popstate listener
-            window.removeEventListener('popstate', this.popStateHandler.bind(this));
+            window.removeEventListener('popstate', this.boundPopStateHandler);
 
             // empty cache
             this.cache.empty();
@@ -1000,9 +1001,8 @@
       var _utils = __webpack_require__(1);
 
       var getDataFromHtml = function getDataFromHtml(html, containers) {
-        var content = html.replace('<body', '<div id="swupBody"').replace('</body>', '</div>');
-        var fakeDom = document.createElement('div');
-        fakeDom.innerHTML = content;
+        var fakeDom = document.createElement('html');
+        fakeDom.innerHTML = html;
         var blocks = [];
 
         var _loop = function _loop(i) {
@@ -1027,7 +1027,7 @@
 
         var json = {
           title: fakeDom.querySelector('title').innerText,
-          pageClass: fakeDom.querySelector('#swupBody').className,
+          pageClass: fakeDom.querySelector('body').className,
           originalContent: html,
           blocks: blocks
         };
@@ -1351,8 +1351,8 @@
         }, 10);
 
         // handle end of animation
-        var animationPromises = this.getAnimationPromises('in');
         if (!popstate || this.options.animateHistoryBrowsing) {
+          var animationPromises = this.getAnimationPromises('in');
           Promise.all(animationPromises).then(function() {
             _this.triggerEvent('animationInDone');
             _this.triggerEvent('transitionEnd', popstate);

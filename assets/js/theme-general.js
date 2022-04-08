@@ -539,8 +539,6 @@ function sliderSetup() {
 }
 
 function contactForm() {
-  var contactForm = document.querySelector(".wpcf7-form");
-  if (contactForm) {
-    wpcf7.initForm(contactForm);
-  }
+  const forms = document.querySelectorAll('.wpcf7 > form');
+  forms.forEach(form => wpcf7.init(form));
 }

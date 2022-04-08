@@ -132,6 +132,19 @@
 	}
 }
 
+.pay-picture-list {
+	margin-top: 20px;
+
+	button {
+		padding: 10px 20px;
+		background-color: transparent;
+		text-transform: uppercase;
+		border: solid 1px;
+		cursor: pointer;
+		@include define-basic-transition(all, 0.3s);
+	}
+}
+
 .embed-container {
 	position: absolute;
 	top: 0;
