@@ -377,6 +377,7 @@
 
   .slide-thumb {
     cursor: pointer;
+    position: relative;
 
     img {
       width: 100%;
@@ -412,4 +413,9 @@
       }
     }
   }
+}
+
+.scrollgallery-item-index {
+  position: absolute;
+  top: -66px;
 }

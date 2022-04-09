@@ -12,6 +12,11 @@
 	opacity: 0.5;
 }
 
+iframe.lazy {
+	opacity: 1;
+	@include define-lazy-blur(0);
+}
+
 .lazy-bg.lazy {
 	position: relative;
 	opacity: 1;

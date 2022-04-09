@@ -9,6 +9,7 @@
   "name": "<?php the_title(); ?>"
 }
 </script>
+
 <div class="wrapper">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more-840">
@@ -20,12 +21,12 @@
   </div>
 </div>
 
-
-
 <?php if ( have_rows( 'slides_manager_repeater' ) ) : ?>
   <div class="scroll-image-hold">
     <?php
+    $slide_counter = 0;
     while ( have_rows( 'slides_manager_repeater' ) ) : the_row();
+    $slide_counter ++;
     $slides_manager_repeater_content_type = get_sub_field( 'slides_manager_repeater_content_type' );
     if ( $slides_manager_repeater_content_type === 'picture' ) {
       $slide_type = 'pic';
