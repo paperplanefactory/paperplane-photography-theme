@@ -101,58 +101,33 @@ $my_topworks = get_posts( $args_topworks );
   </div>
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
-<?php
-$today = date('Y-m-d');
-$args_news_month = array(
-  'post_type' => 'news',
-  'posts_per_page' => 20,
-  'date_query' => array(
-        array(
-            'column' => 'post_date_gmt',
-            'after'  => '90 days ago',
-        )
-)
-);
-$my_news_month = get_posts( $args_news_month );
-if ( $my_news_month ) : ?>
-<div class="wrapper topline">
-  <div class="wrapper-padded">
-    <div class="wrapper-padded-more-650">
-      <h6 class="aligncenter">Latest News</h6>
-      <div class="news-grid">
-      <?php
-      foreach ( $my_news_month as $post ) {
-        setup_postdata ( $post );
-        include( locate_template ( 'template-parts/grid/news-no-infinite.php' ) );
-      }
-      ?>
-      </div>
-    </div>
-  </div>
-</div>
-<?php endif; ?>
 <?php else : ?>
   <?php
-  $today = date('Y-m-d');
-  $args_news_month = array(
+  $today = current_time('Ymd');
+  //$today = date('Y-m-d');
+  $args_latest_news = array(
     'post_type' => 'news',
-    'posts_per_page' => 20,
-    'date_query' => array(
-          array(
-              'column' => 'post_date_gmt',
-              'after'  => '90 days ago',
-          )
-  )
+    'posts_per_page' => 4,
+    'meta_query' => array(
+      array(
+        'key'  => 'homepage_news_expiration_date',
+        'compare'   => '>=',
+        'value'     => $today,
+      ),
+    ),
+    'meta_key' => 'homepage_news_expiration_date',
+    'orderby' => 'meta_value_num',
+    'order'    => 'ASC'
   );
-  $my_news_month = get_posts( $args_news_month );
-  if ( $my_news_month ) : ?>
+  $my_latest_news = get_posts( $args_latest_news );
+  if ( $my_latest_news ) : ?>
   <div class="wrapper topline">
     <div class="wrapper-padded">
       <div class="wrapper-padded-more-650">
         <h6 class="aligncenter">Latest News</h6>
         <div class="news-grid">
         <?php
-        foreach ( $my_news_month as $post ) {
+        foreach ( $my_latest_news as $post ) {
           setup_postdata ( $post );
           include( locate_template ( 'template-parts/grid/news-no-infinite.php' ) );
         }

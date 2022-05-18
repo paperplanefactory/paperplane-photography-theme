@@ -1,0 +1,42 @@
+{
+    "key": "group_6283a7a2e2b23",
+    "title": "News expiration date on the homepage",
+    "fields": [
+        {
+            "key": "field_6283a7c2b06ab",
+            "label": "Set expiration date",
+            "name": "homepage_news_expiration_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1652795409
+}
