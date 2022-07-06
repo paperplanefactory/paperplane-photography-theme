@@ -23,7 +23,7 @@ function masonrySetup() {
       initLayout: false
     });
     msnry.on('layoutComplete', function(items) {
-      console.log(items.length);
+      //console.log(items.length);
     });
     // trigger initial layout
     msnry.layout();
