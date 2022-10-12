@@ -33,3 +33,9 @@
 	word-wrap: break-word;
 	font-style: italic;
 }
+
+img {
+	&.lazy-loading {
+		aspect-ratio: 1/1;
+	}
+}

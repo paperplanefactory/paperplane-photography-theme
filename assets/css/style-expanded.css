@@ -2635,6 +2635,10 @@ body.dark-theme .eye i {
   font-style: italic;
 }
 
+img.lazy-loading {
+  aspect-ratio: 1/1;
+}
+
 .form-hold {
   position: relative;
   display: block;
