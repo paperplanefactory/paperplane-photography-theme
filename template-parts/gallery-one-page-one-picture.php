@@ -85,9 +85,9 @@ wp_reset_query();
   "@context": "http://schema.org",
   "@type": "ImageObject",
   "author": "<?php echo get_bloginfo( 'name' ); ?>",
-  "contentUrl": "<?php echo $thumb_url[0]; ?>",
+  "contentUrl": "<?php echo $thumb_url_desktop[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
-  "description": "<?php the_content(); ?>",
+  "description": "<?php echo strip_tags(get_the_content()); ?>",
   "name": "<?php the_title(); ?>"
 }
 </script>
@@ -99,7 +99,6 @@ if ( $elenco_foto === 'si' ) {
   include( locate_template ( 'template-parts/gallery-thumbs-one-page-one-picture.php' ) );
 }
 ?>
-
 
 <div id="delight-approved" class="photo-frame" data-picture-id="<?php echo $thumb_id; ?>">
   <div class="photo-hold">
