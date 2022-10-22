@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2022 by original authors @ fontello.com</metadata>
+<defs>
+<font id="paperplane-photography-theme-icons" horiz-adv-x="1000" >
+<font-face font-family="paperplane-photography-theme-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="adjust" unicode="&#xe800;" d="M429 46v608q-83 0-153-41t-110-111-41-152 41-152 110-111 153-41z m428 304q0-117-57-215t-156-156-215-58-216 58-155 156-58 215 58 215 155 156 216 58 215-58 156-156 57-215z" horiz-adv-x="857.1" />
+
+<glyph glyph-name="right-bold" unicode="&#xe801;" d="M0 170v359h401v217l536-397-536-395v216h-401z" horiz-adv-x="937.5" />
+
+<glyph glyph-name="left-bold" unicode="&#xe802;" d="M0 365l527 381v-205h410v-352h-410v-235z" horiz-adv-x="937.5" />
+
+<glyph glyph-name="th-large-outline" unicode="&#xe803;" d="M365 872q43 0 73-31t31-74l0-260q0-44-31-74t-73-30l-261 0q-44 0-74 30t-30 74l0 260q0 43 31 74t73 31l261 0z m0-365l0 260-261 0 0-260 261 0z m573 365q42 0 73-31t30-74l0-260q0-44-30-74t-73-30l-260 0q-44 0-75 30t-30 74l0 260q0 43 31 74t74 31l260 0z m0-365l0 260-260 0 0-260 260 0z m-573-209q43 0 73-30t31-74l0-260q0-44-31-74t-73-31l-261 0q-43 0-73 31t-31 74l0 260q0 44 30 74t74 30l261 0z m0-364l0 260-261 0 0-260 261 0z m573 364q42 0 73-30t30-74l0-260q0-44-30-74t-73-31l-260 0q-43 0-74 31t-31 74l0 260q0 43 30 73t75 31l260 0z m0-364l0 260-260 0 0-260 260 0z" horiz-adv-x="1041" />
+
+<glyph glyph-name="back" unicode="&#xe804;" d="M750 540q40 0 70-29t30-71l0-290q0-40-30-70t-70-30l-690 0 0 140 650 0 0 210-500 0 0-110-210 180 210 180 0-110 540 0z" horiz-adv-x="850" />
+
+<glyph glyph-name="eye" unicode="&#xe805;" d="M465 685q68 0 140-34t124-82 95-97 64-83l23-34q-9-14-24-37t-63-81-97-103-121-82-141-36-140 34-124 85-96 100-64 86l-23 34q8 14 23 36t63 79 98 101 122 79 141 35z m0-558q92 0 158 65t65 158-65 158-158 66-158-66-66-158 66-158 158-65z m-112 223q0 112 112 112t111-112-111-111-112 111z" horiz-adv-x="928" />
+
+<glyph glyph-name="play" unicode="&#xe806;" d="M18 797l670-446-670-448 0 894z" horiz-adv-x="705" />
+
+<glyph glyph-name="stop" unicode="&#xe807;" d="M18-97l0 894 893 0 0-894-893 0z" horiz-adv-x="928" />
+
+<glyph glyph-name="pause" unicode="&#xe808;" d="M18-97l0 894 223 0 0-894-223 0z m446 0l0 894 224 0 0-894-224 0z" horiz-adv-x="705" />
+
+<glyph glyph-name="facebook" unicode="&#xe809;" d="M0 313l0 191 154 0 0 96q0 104 68 177t163 73l153 0 0-191-153 0q-15 0-27-16t-12-41l0-98 192 0 0-191-192 0 0-463-192 0 0 463-154 0z" horiz-adv-x="538" />
+
+<glyph glyph-name="twitter" unicode="&#xe80a;" d="M0-37q30-3 60-3 176 0 314 108-82 1-147 50t-89 125q20-4 47-4 35 0 67 9-88 17-145 87t-58 160l0 3q53-30 115-31-52 34-82 90t-31 120q0 68 35 127 94-117 230-186t290-78q-7 33-7 58 0 104 74 178t179 74q109 0 184-80 87 18 160 62-28-91-110-140 73 9 144 40-48-75-125-131l0-33q0-101-29-202t-90-194-145-165-201-115-253-42q-209 0-387 113z" horiz-adv-x="1230" />
+
+<glyph glyph-name="mail" unicode="&#xe80b;" d="M467 366l-449 210 0 109 893 0 0-109z m0-123l444 210 0-437-893 0 0 438z" horiz-adv-x="928" />
+
+<glyph glyph-name="credit-card-alt" unicode="&#xf283;" d="M0 11v339h1286v-339q0-37-26-63t-64-27h-1107q-36 0-63 27t-26 63z m357 125v-72h214v72h-214z m-214 0v-72h143v72h-143z m1053 643q37 0 64-27t26-63v-125h-1286v125q0 37 26 63t63 27h1107z" horiz-adv-x="1285.7" />
+
+<glyph glyph-name="instagram" unicode="&#xf32d;" d="M690 350q0 26-6 50l176 0 0-344q0-56-39-96t-95-40l-592 0q-56 0-95 40t-39 96l0 344 174 0q-4-32-4-50 0-106 76-183t184-77q106 0 183 77t77 183z m36 430q56 0 95-39t39-95l0-146-218 0q-78 110-212 110-138 0-212-110l-218 0 0 146q0 56 39 95t95 39l592 0z m64-166l0 72q0 24-24 24l-72 0q-24 0-24-24l0-72q0-8 7-16t17-8l72 0q24 0 24 24z m-200-264q0-66-47-113t-113-47-113 47-47 113q0 68 47 114t113 46 113-46 47-114z" horiz-adv-x="860" />
+</font>
+</defs>
+</svg>

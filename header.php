@@ -27,12 +27,13 @@ if ( $favicons_path === 'default-path' ) {
 else {
   $favicons_folder = get_home_url().'/favicons/';
 }
-
+global $image_gallery_system;
 global $contatore_foto;
 global $show_abstract;
 global $elenco_foto;
 global $show_cats;
 global $image_gallery_system;
+global $show_navigation_between_portfolio_items;
 $show_hamburger_button_desktop = get_field( 'show_hamburger_button_desktop', 'options' );
 if ( $show_hamburger_button_desktop === 'yes' ) {
   $show_hamburger_button_desktop_class = '';
@@ -74,6 +75,8 @@ if ( !isset( $image_gallery_system ) ) {
 else {
   $image_gallery_system = get_field( 'image_gallery_system' );
 }
+
+$show_navigation_between_portfolio_items = get_field( 'show_navigation_between_portfolio_items', 'options' );
 ?>
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
@@ -114,6 +117,7 @@ p, .content-styled ul, .content-styled ol {
   font-family: <?php the_field( 'paragraphs_font_family', 'options' ); ?>;
   font-weight: <?php the_field( 'paragraphs_font_weight', 'options' ); ?>;
 }
+
 .menu-overlay,
 .menu-overlay p,
 .menu,
@@ -682,7 +686,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
 </head>
 <body class="">
   <div class="eye de-highlight only-desktop">
-    <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="icon-fas-fa-eye"></i></span>
+    <span class="highlight all-pointer-events pointered" title="highlight this picture"><i class="icon-eye"></i></span>
   </div>
 <div id="preheader"></div>
 <header id="header" class="bg-5">
@@ -736,7 +740,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
                   <input type="hidden" name="tax_rate" value="0">
                   <input type="hidden" name="shipping" value="<?php the_field( 'costi_di_spedizione', 'option' ); ?>">
                   <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                  <button type="submit" title="Buy this picture" aria-label="<?php _e( 'Buy this picture', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-credit-card"></i></button>
+                  <button type="submit" title="Buy this picture" aria-label="<?php _e( 'Buy this picture', 'paperplane-photography-theme' );?>"><i class="icon-credit-card-alt"></i></button>
                 </form>
               </li>
             <?php if ( $torna_elenco === 'si' ) : ?>
@@ -751,22 +755,22 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
                 }
                 $first_category = $category[0];
                 $first_category_url = get_category_link( $first_category ); ?>
-                <a href="<?php echo $first_category_url; ?>" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-step-backward delight-area"></i></a>
+                <a href="<?php echo $first_category_url; ?>" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-back delight-area"></i></a>
               </li>
             <?php endif; ?>
             <?php if ( $evidenziatore_foto === 'si' ) : ?>
               <li>
-                <span class="highlight all-pointer-events pointered" title="<?php _e( 'highlight this picture', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-eye"></i></span>
+                <span class="highlight all-pointer-events pointered" title="<?php _e( 'highlight this picture', 'paperplane-photography-theme' );?>"><i class="icon-eye"></i></span>
               </li>
             <?php endif; ?>
-            <?php if ( $show_play_pause_button === 'si' ) : ?>
+            <?php if ( $show_play_pause_button === 'si' && $image_gallery_system != 'scrollpage' ) : ?>
               <li>
-                <span class="play-pause delight-area pointered" title="<?php _e( 'play/pause gallery', 'paperplane-photography-theme' );?>" player-attribute="pause"><i class="play-pauser icon-fas-fa-play"></i></span>
+                <span class="play-pause delight-area pointered" title="<?php _e( 'play/pause gallery', 'paperplane-photography-theme' );?>" player-attribute="pause"><i class="play-pauser icon-play"></i></span>
               </li>
             <?php endif; ?>
             <?php if ( $elenco_foto === 'si' && $image_gallery_system != 'scrollpage' ) : ?>
               <li>
-                <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-list"></i></span>
+                <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-th-large-outline"></i></span>
               </li>
             <?php endif; ?>
           </ul>
@@ -774,14 +778,14 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
         <?php if ( is_singular( 'news' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="<?php the_field( 'news_archive', 'option' ) ?>" class="delight-area" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-step-backward"></i></a>
+              <a href="<?php the_field( 'news_archive', 'option' ) ?>" class="delight-area" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-back"></i></a>
             </li>
           </ul>
         <?php endif; ?>
         <?php if ( is_singular( 'book' ) ) : ?>
           <ul class="navi-info swupped-link">
             <li>
-              <a href="<?php the_field( 'books_archive', 'option' ) ?>" class="delight-area" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-fas-fa-step-backward"></i></a>
+              <a href="<?php the_field( 'books_archive', 'option' ) ?>" class="delight-area" title="<?php _e( 'back to list', 'paperplane-photography-theme' );?>"><i class="icon-back"></i></a>
             </li>
           </ul>
         <?php endif; ?>

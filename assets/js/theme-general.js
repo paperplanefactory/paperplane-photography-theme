@@ -135,6 +135,7 @@ initInfiniteScroll();
 
 function handleOverlay() {
   jQuery('.hambuger-element').toggleClass('open');
+  jQuery('.thumbs-gallery').removeClass('shown');
   if (jQuery('.hambuger-element').hasClass('open')) {
     jQuery('#header-overlay').focus();
     jQuery('#head-overlay').removeClass('blurred').delay(700).queue(function(next) {
@@ -259,13 +260,13 @@ function autoNaviGallery() {
   playOrPause = localStorage.getItem('playOrPause');
   clearTimeout(timerSlider);
   if (playOrPause === 'pause') {
-    jQuery('.play-pauser').removeClass('icon-fas-fa-pause').addClass('icon-fas-fa-play');
+    jQuery('.play-pauser').removeClass('icon-pause').addClass('icon-play');
   }
   if (playOrPause === 'play') {
     timerSlider = window.setTimeout(function() {
       nextNaviAction();
     }, play_pause_timer);
-    jQuery('.play-pauser').removeClass('icon-fas-fa-play').addClass('icon-fas-fa-pause');
+    jQuery('.play-pauser').removeClass('icon-play').addClass('icon-pause');
   }
 }
 
@@ -329,6 +330,7 @@ jQuery('.ham-activator').click(function() {
 
 jQuery(document).on('click', '.thumb-list:not(.initialized)', function(e) {
   showThumbsBox();
+  closeOverlay();
 });
 
 
@@ -342,7 +344,7 @@ jQuery(document).on('click', '.play-pause:not(.initialized)', function(e) {
       localStorage.setItem('playOrPause', 'play');
     }
 
-    jQuery('.play-pauser').removeClass('icon-fas-fa-play').addClass('icon-fas-fa-pause');
+    jQuery('.play-pauser').removeClass('icon-play').addClass('icon-pause');
   }
   if (playOrPause === 'play') {
     if (jQuery(".gallery-slider-js")[0]) {
@@ -352,7 +354,7 @@ jQuery(document).on('click', '.play-pause:not(.initialized)', function(e) {
       localStorage.setItem('playOrPause', 'pause');
     }
 
-    jQuery('.play-pauser').removeClass('icon-fas-fa-pause').addClass('icon-fas-fa-play');
+    jQuery('.play-pauser').removeClass('icon-pause').addClass('icon-play');
   }
   autoNaviGallery();
 });
@@ -424,7 +426,7 @@ function sliderSetup() {
     jQuery('.gallery-slider-js').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       prevArrow: '<div class="slick-prev"></div>',
       nextArrow: '<div class="slick-next"></div>',
       accessibility: true,

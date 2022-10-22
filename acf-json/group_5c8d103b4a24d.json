@@ -1,6 +1,6 @@
 {
     "key": "group_5c8d103b4a24d",
-    "title": "Gallery options",
+    "title": "Global image galleries options",
     "fields": [
         {
             "key": "field_5c8d104e4f119",
@@ -157,6 +157,32 @@
             "step": 1000
         },
         {
+            "key": "field_6352b2af4a8ad",
+            "label": "Show navigation between portfolio items on bottom?",
+            "name": "show_navigation_between_portfolio_items",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes-navi": "Yes - show navigation between portfolio items on bottom",
+                "yes-cat": "Yes - show a link to back to category listing"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5dfcbda6df694",
             "label": "Do you want to sell your photos?",
             "name": "vendere_foto",
@@ -286,5 +312,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623576605
+    "show_in_rest": 0,
+    "modified": 1666418050
 }

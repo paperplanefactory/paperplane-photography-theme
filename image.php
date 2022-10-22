@@ -4,7 +4,9 @@
  */
 
 get_header(); ?>
-<?php while ( have_posts() ) : the_post();
+<?php
+global $show_navigation_between_portfolio_items;
+ while ( have_posts() ) : the_post();
 $excerpt = get_the_excerpt();
 $parent = get_post_field( 'post_parent', $id);
 
@@ -20,6 +22,8 @@ if ( $parent != 0 ) {
   $original_title = get_the_title();
   $original_content = get_the_content();
   $current_post_url = get_permalink();
+  $prev_post = get_adjacent_post(false, '', true);
+  $next_post = get_adjacent_post(false, '', false);
   endforeach;
   wp_reset_query();
 }
@@ -224,5 +228,12 @@ if ( $elenco_foto === 'si' ) {
 </div>
 
 <?php endwhile; ?>
-
+<?php
+if ( $show_navigation_between_portfolio_items === 'yes-navi' ) {
+  include( locate_template ( 'template-parts/gallery-footer.php' ) );
+}
+if ( $show_navigation_between_portfolio_items === 'yes-cat' ) {
+  include( locate_template ( 'template-parts/gallery-footer-back.php' ) );
+}
+?>
 <?php get_footer(); ?>

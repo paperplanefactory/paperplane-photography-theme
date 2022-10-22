@@ -19,7 +19,8 @@
 #head-overlay {
   top: calc(#{$header-height} + 1px);
   right: -211px;
-  width: 210px;
+  //width: 210px;
+  width: 30vw;
   height: calc(100vh - #{$header-height});
 }
 
@@ -252,7 +253,7 @@
       border-bottom: 1px solid;
       margin-bottom: 15px;
       padding-bottom: 15px;
-      padding-right: 45px;
+      padding-right: 30px;
 
       &:last-child {
         margin-bottom: 0;

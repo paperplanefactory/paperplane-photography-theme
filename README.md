@@ -23,7 +23,7 @@ Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-ty
 * gallery navigation is managed using the native system that WordPress uses to manage the attachments to a post;
 * gallery navigation works with keyboard arrows on desktop and with swipe gestures on mobile devices;
 * every image has its own URL and a set of microdata based on [schema.org ImageObject](https://schema.org/ImageObject "schema.org ImageObject");
-* galleries can now be set up with traditional navigation or with [Slick Slider](https://kenwheeler.github.io/slick/ "Slick Slider");
+* galleries can now be set up with 3 different options: attachments navigation, [Slick Slider](https://kenwheeler.github.io/slick/ "Slick Slider") or image listing;
 * set custom logo for home button or just leave site title as text link;
 * optional custom post types for news and books;
 * archive pages grid can be setup to use [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp "https://www.w3schools.com/css/css3_flexbox.asp Flexbox") or [Masonry grid](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry grid");
@@ -44,7 +44,7 @@ Snippet for required CPT is available [here](#cpt-import-data-for-custom-post-ty
 * two menus are available: one for header and another for navigation reachable trough hamburger menu. Be sure not to add too many links in header menu because it's designed to be compact;
 * to activate clear/dark mode toggle just add a link to your menu with these settings:
   * URL: #
-  * Navigation label: `<i class="icon-fas-fa-adjust"></i>`
+  * Navigation label: `<i class="icon-adjust"></i>`
   * Title attribute: Switch clear/dark mode
   * CSS Classes: `bright-switch`
   * Description: Turn website from light background color/dark texts to dark background color/light texts and vice versa.
@@ -84,7 +84,7 @@ These plugins are suggested based on my experience and are therefore a simple ti
 * [Infinite Scroll](https://infinite-scroll.com/ "Infinite Scroll");
 * [Masonry](https://masonry.desandro.com/ "https://masonry.desandro.com/ Masonry");
 * [Slick Slider](https://github.com/kenwheeler/slick/ "Slick Slider");
-* Icons from [Font Awesome](https://fontawesome.com/ "Font Awesome") free pack;
+* Icons from [Fontello](https://fontello.com/ "Fontello");
 
 ### :zap: Lighthouse report
 Here's a [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") report. You can do even better by converting images into WebP format.

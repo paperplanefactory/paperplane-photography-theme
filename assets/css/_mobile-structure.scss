@@ -292,6 +292,11 @@
 
 .scroll-image-hold {
   .lined {
+    &:first-child {
+      margin: 3.5vh 0 7vh;
+      padding: 3.5vh 0 7vh;
+    }
+
     &:last-child {
       border-bottom: none;
     }
@@ -315,6 +320,57 @@
       p {
         margin: 0;
       }
+    }
+  }
+}
+
+.gallery-footer {
+  border-top: solid 1px;
+  margin-top: 7vh !important;
+  padding-top: 35px;
+  width: 100%;
+  //overflow: hidden;
+  h6 {
+    margin-bottom: 0;
+  }
+
+  a {
+    position: relative;
+
+    &:hover {
+      .label {
+        opacity: 1;
+      }
+    }
+
+    .label {
+      width: calc(100vw - 30px);
+      top: 22px;
+      position: absolute;
+      font-weight: lighter;
+      @include define-basic-transition(all, 0.3s);
+      text-align: center;
+      opacity: 0;
+    }
+  }
+
+  .left {
+    text-align: right;
+    width: calc(50% - 17px);
+    margin: 0 17px 0 0;
+
+    .label {
+      right: -50vw;
+    }
+  }
+
+  .right {
+    -webkit-box-flex: 1;
+    width: calc(50% - 17px);
+    margin: 0 0 0 17px;
+
+    .label {
+      left: -50vw;
     }
   }
 }
