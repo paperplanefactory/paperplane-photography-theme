@@ -5,7 +5,7 @@
   "author": "<?php echo get_bloginfo( 'name' ); ?>",
   "contentUrl": "<?php echo $thumb_url[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
-  "description": "<?php echo strip_tags(get_the_content()); ?>",
+  "description": "<?php echo wp_strip_all_tags(str_replace('"', '', get_the_content())); ?>",
   "name": "<?php the_title(); ?>"
 }
 </script>

@@ -152,7 +152,7 @@ $thumb_url_desktop = wp_get_attachment_image_src($attachment_id, 'full_desk', tr
   "author": "<?php echo get_bloginfo( 'name' ); ?>",
   "contentUrl": "<?php echo $thumb_url_desktop[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
-  "description": "<?php echo strip_tags($original_content); ?> - <?php echo $attachment_alt; ?>",
+  "description": "<?php echo wp_strip_all_tags(str_replace('"', '', $original_content)); ?> - <?php echo wp_strip_all_tags(str_replace('"', '', $attachment_alt)); ?>",
   "name": "<?php echo $original_title; ?>"
 }
 </script>

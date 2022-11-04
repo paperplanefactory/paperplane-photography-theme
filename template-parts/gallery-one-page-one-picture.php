@@ -67,7 +67,7 @@ $args_last = array(
   'order' => 'DESC',
   'numberposts' => -1,
   'post_status' => null,
-  //'title'	=> trim( strip_tags( $attachment->post_title ) )
+  //'title'	=> trim( wp_strip_all_tags( $attachment->post_title ) )
 );
 
 $attachments_last = get_posts( $args_last );
@@ -87,7 +87,7 @@ wp_reset_query();
   "author": "<?php echo get_bloginfo( 'name' ); ?>",
   "contentUrl": "<?php echo $thumb_url_desktop[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
-  "description": "<?php echo strip_tags(get_the_content()); ?>",
+  "description": "<?php echo wp_strip_all_tags(str_replace('"', '', get_the_content())); ?>",
   "name": "<?php the_title(); ?>"
 }
 </script>
