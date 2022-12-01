@@ -43,6 +43,7 @@ else {
   $show_hamburger_button_desktop_class = 'only-mobile';
   $fullwidth_menu_class = 'full-width-navi';
 }
+$show_search_form = get_field( 'show_search_form', 'options' );
 $contatore_foto = get_field( 'contatore_foto', 'options' );
 $elenco_foto = get_field( 'elenco_foto', 'options' );
 $evidenziatore_foto = get_field( 'evidenziatore_foto', 'options' );
@@ -370,7 +371,8 @@ body.clear-theme .eye i {
 .clear-theme .form-hold input[type=email],
 .clear-theme .form-hold input[type=number],
 .clear-theme .form-hold input[type=tel],
-.clear-theme .form-hold input[type=text] {
+.clear-theme .form-hold input[type=text],
+.clear-theme .form-hold button {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
 }
 
@@ -791,7 +793,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
         <?php endif; ?>
       </nav>
       <div class="hamburger delight-area <?php echo $show_hamburger_button_desktop_class; ?>">
-        <div type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="<?php _e( 'Navigation', 'paperplane-photography-theme' );?>" class="hambuger-element ham-activator">
+        <div type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="menu" class="hambuger-element ham-activator">
           <span></span>
           <span></span>
           <span></span>
@@ -817,6 +819,14 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
             wp_nav_menu( array( 'theme_location' => 'header-overlay-menu-mobile', 'container' => 'ul', 'menu_class' => 'voices' ) );
           } ?>
         </div>
+        <?php if ( $show_search_form === 'yes' ) : ?>
+          <div class="form-hold search-hold">
+            <form action="<?php echo home_url(); ?>/?" method="get" id="sbk-search">
+              <input type="text" class="search-kw" name="s" id="keyword" placeholder="Cosa stai cercando?" />
+              <button type="submit" class="submitter" aria-label="cerca sul sito"><i class="icon-search"></i></button>
+            </form>
+          </div>
+        <?php endif; ?>
       </nav>
     </div>
   </div>

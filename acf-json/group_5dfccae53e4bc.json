@@ -442,6 +442,31 @@
             "placeholder": ""
         },
         {
+            "key": "field_6388768decfb4",
+            "label": "Display search form?",
+            "name": "show_search_form",
+            "type": "select",
+            "instructions": "Search form will appear in hamburger menu.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5e4028cd10427",
             "label": "Footer texts",
             "name": "credits_and_more",
@@ -592,7 +617,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_609644b64a34b",
@@ -615,7 +642,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#F9F9F9"
+            "default_value": "#F9F9F9",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_609644c24a34c",
@@ -638,7 +667,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#AFAFAF"
+            "default_value": "#AFAFAF",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_609644ce4a34d",
@@ -661,7 +692,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#4D4D4D"
+            "default_value": "#4D4D4D",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_609644df4a34e",
@@ -684,7 +717,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#303030"
+            "default_value": "#303030",
+            "enable_opacity": false,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -704,5 +739,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623511868
+    "show_in_rest": 0,
+    "modified": 1669887785
 }

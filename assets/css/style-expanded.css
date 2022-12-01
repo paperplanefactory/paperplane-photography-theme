@@ -665,6 +665,8 @@ a.absl:link {
   z-index: 9998;
   display: block;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -793,48 +795,38 @@ a.absl:link {
   content: '\e801';
 }
 
-/* '' */
 .icon-left-bold:before {
   content: '\e802';
 }
 
-/* '' */
-/* '' */
 .icon-th-large-outline:before {
   content: '\e803';
 }
 
-/* '' */
 .icon-back:before {
   content: '\e804';
 }
 
-/* '' */
 .icon-eye:before {
   content: '\e805';
 }
 
-/* '' */
 .icon-play:before {
   content: '\e806';
 }
 
-/* '' */
 .icon-stop:before {
   content: '\e807';
 }
 
-/* '' */
 .icon-pause:before {
   content: '\e808';
 }
 
-/* '' */
 .icon-facebook:before {
   content: '\e809';
 }
 
-/* '' */
 .icon-twitter:before {
   content: '\e80a';
 }
@@ -843,8 +835,6 @@ a.absl:link {
   content: '\f283';
 }
 
-/* '' */
-/* '' */
 .icon-instagram:before {
   content: '\f32d';
 }
@@ -853,8 +843,10 @@ a.absl:link {
   content: '\e80b';
 }
 
-/* '' */
-/* '' */
+.icon-search:before {
+  content: '\e80c';
+}
+
 h1 {
   font-size: 20px;
   line-height: 28px;
@@ -1506,6 +1498,10 @@ body.dark-theme .eye i {
   background-color: #2D2D2D;
 }
 
+.dark-theme .form-hold button {
+  color: #FFFFFF;
+}
+
 .dark-theme .view-more-button {
   color: #191919;
   background-color: #AFAFAF;
@@ -1547,6 +1543,8 @@ body.dark-theme .eye i {
   .overlay-in {
     right: 0 !important;
     opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
   }
   .overlay-content {
     position: relative;
@@ -2007,6 +2005,12 @@ body.dark-theme .eye i {
   .gallery-footer .right .label {
     left: -50vw;
   }
+  .search-hold input[type=text] {
+    width: calc(100% - 98px) !important;
+  }
+  .search-hold button {
+    margin: 0 20px 0 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -2039,6 +2043,8 @@ body.dark-theme .eye i {
   .overlay-in {
     right: 0 !important;
     opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
   }
   .overlay-content {
     position: relative;
@@ -2682,6 +2688,12 @@ body.dark-theme .eye i {
     left: -30px;
     padding-left: 30px;
   }
+  .search-hold input[type=text] {
+    width: calc(100% - 93px) !important;
+  }
+  .search-hold button {
+    margin: 0 15px 0 0;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1919px) {
@@ -2823,6 +2835,32 @@ img.lazy-loading {
   position: relative;
   display: block;
   width: 100%;
+}
+
+.form-hold.search-hold {
+  padding: 0;
+  border-bottom: solid 1px;
+}
+
+.form-hold.search-hold input[type=text] {
+  margin: 0;
+  padding: 5px 10px;
+  text-align: right;
+  border-color: transparent !important;
+}
+
+.form-hold.search-hold button {
+  height: 52px;
+  width: 52px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.form-hold.search-hold button:hover {
+  opacity: 0.6;
 }
 
 .form-hold label {

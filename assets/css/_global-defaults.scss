@@ -408,6 +408,8 @@ a.absl:link {
 	z-index: 9998;
 	display: block;
 	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
 	@include define-basic-transition(all, 0.25s);
 	border-left: 1px solid;
 }

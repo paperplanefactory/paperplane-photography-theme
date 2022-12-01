@@ -13,11 +13,13 @@
 @media screen and (min-width: $break-mobile-start) and (max-width: $break-tablet-end) {
   @import 'mobile-header-footer';
   @import 'mobile-structure';
+  @import 'mobile-forms';
 }
 // imports desktop
 @media screen and (min-width: $break-desktop-start) {
   @import 'desktop-header-footer';
   @import 'desktop-structure';
+  @import 'desktop-forms';
 }
 // imports desktop
 @media screen and (min-width: $break-desktop-start) and (max-width: $break-desktop-end) {

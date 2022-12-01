@@ -7,6 +7,32 @@
 	display: block;
 	width: 100%;
 
+	&.search-hold {
+		padding: 0;
+		border-bottom: solid 1px;
+
+		input[type=text] {
+			margin: 0;
+			padding: 5px 10px;
+			text-align: right;
+			border-color: transparent !important;
+		}
+
+		button {
+			height: 52px;
+			width: 52px;
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+			-webkit-transition: 0.3s ease-in-out;
+			transition: 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+
 	label {
 		font-size: $h6-size-desktop;
 		line-height: $h6-lineheight-desktop;

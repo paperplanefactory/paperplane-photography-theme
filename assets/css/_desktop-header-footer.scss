@@ -27,6 +27,8 @@
 .overlay-in {
   right: 0 !important;
   opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
 }
 
 .overlay-content {
