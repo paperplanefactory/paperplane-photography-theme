@@ -1,5 +1,5 @@
 <div class="flex-hold-child grid-item-infinite <?php echo $zoomed_class; ?>">
-<a href="<?php the_permalink(); ?>" class="data-swup-preload"  title="View project: <?php the_title(); ?>" aria-label="View project: <?php the_title(); ?>">
+<a href="<?php the_permalink(); ?>" class="data-swup-preload"  title="<?php _e( 'View project:', 'paperplane-photography-theme' );?> <?php the_title(); ?>" aria-label="<?php _e( 'View project:', 'paperplane-photography-theme' );?> <?php the_title(); ?>">
  <div class="no-the-100">
    <?php if ( get_field( 'items_per_row', 'options' ) === 'three-items' ) : ?>
      <?php if ( get_field('image_grid', 'options') === 'no-crop-picture' ) : ?>
@@ -73,7 +73,7 @@
  </div>
 </a>
 <div class="flex-hold-title">
-  <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" title="View project: <?php the_title(); ?>" aria-label="View project: <?php the_title(); ?>"></a>
+  <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" title="<?php _e( 'View project:', 'paperplane-photography-theme' );?> <?php the_title(); ?>" aria-label="<?php _e( 'View project:', 'paperplane-photography-theme' );?> <?php the_title(); ?>"></a>
   <div>
     <h2 class="as-h4"><?php the_title(); ?></h2>
     <?php

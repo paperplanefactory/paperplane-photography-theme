@@ -61,7 +61,7 @@ $my_topworks = get_posts( $args_topworks );
             $thumb_url_desktop = wp_get_attachment_image_src($attachment->ID, 'full_desk', true);
 
             ?>
-            <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" aria-label="View project: <?php the_title(); ?>"></a>
+            <a href="<?php the_permalink(); ?>" class="absl data-swup-preload" aria-label="<?php _e( 'View project:', 'paperplane-photography-theme' );?> <?php the_title(); ?>"></a>
             <?php
             $image_data = array(
                 'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field

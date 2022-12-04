@@ -832,7 +832,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
           <div class="form-hold search-hold">
             <form action="<?php echo home_url(); ?>/?" method="get" id="sbk-search">
               <input type="text" class="search-kw" name="s" id="keyword" placeholder="Cosa stai cercando?" />
-              <button type="submit" class="submitter" aria-label="cerca sul sito"><i class="icon-search"></i></button>
+              <button type="submit" class="submitter" aria-label="<?php _e( 'Search site', 'paperplane-photography-theme' );?>"><i class="icon-search"></i></button>
             </form>
           </div>
         <?php endif; ?>
