@@ -295,6 +295,11 @@ myMutant();
 
 function showThumbsBox() {
   jQuery('.thumbs-gallery').toggleClass('shown');
+  if (jQuery('.thumbs-gallery').hasClass('shown')) {
+    jQuery('.thumb-list').find('.icon-js').addClass('icon-cancel-circled').removeClass('icon-th-large-outline');
+  } else {
+    jQuery('.thumb-list').find('.icon-js').removeClass('icon-cancel-circled').addClass('icon-th-large-outline');
+  }
   paperPlaneLazyLoad.update();
 }
 

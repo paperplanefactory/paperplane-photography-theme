@@ -6,6 +6,7 @@
             "key": "field_5e4004c4c0735",
             "label": "News archive",
             "name": "news_archive",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "",
             "required": 1,
@@ -27,6 +28,7 @@
             "key": "field_5e4004edc0736",
             "label": "Books archive",
             "name": "books_archive",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "",
             "required": 1,
@@ -48,6 +50,7 @@
             "key": "field_5e4078c370781",
             "label": "Show abstract and \"read more\" when news are listed?",
             "name": "show_abstract",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -73,6 +76,7 @@
             "key": "field_5e407d33e19f4",
             "label": "Show categories when works are listed?",
             "name": "show_cats",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -98,6 +102,7 @@
             "key": "field_5ed77060b0b73",
             "label": "Grid boxes style",
             "name": "boxes_grid",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -123,6 +128,7 @@
             "key": "field_5ecfa7cd534c4",
             "label": "Items per row",
             "name": "items_per_row",
+            "aria-label": "",
             "type": "select",
             "instructions": "Select how many items per row should be displayed. On wide screens (like 4K or retina) 4 items per row will be shown to aovid image quality issues.",
             "required": 0,
@@ -148,6 +154,7 @@
             "key": "field_5ed4d95e3fc8d",
             "label": "Grid images style",
             "name": "image_grid",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -168,6 +175,32 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_638c65f56afe6",
+            "label": "Zoom effect on hover",
+            "name": "zoom_effect_on_hover",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -185,7 +218,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591177755
+    "show_in_rest": 0,
+    "modified": 1670145679
 }

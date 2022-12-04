@@ -601,7 +601,7 @@
             "label": "Color 1",
             "name": "custom_color_1",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Used for:<br \/>\r\n- body background",
             "required": 1,
             "conditional_logic": [
                 [
@@ -618,7 +618,7 @@
                 "id": ""
             },
             "default_value": "",
-            "enable_opacity": false,
+            "enable_opacity": 0,
             "return_format": "string"
         },
         {
@@ -626,7 +626,7 @@
             "label": "Color 2",
             "name": "custom_color_2",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Used for:<br \/>\r\n- lines",
             "required": 1,
             "conditional_logic": [
                 [
@@ -643,7 +643,7 @@
                 "id": ""
             },
             "default_value": "#F9F9F9",
-            "enable_opacity": false,
+            "enable_opacity": 0,
             "return_format": "string"
         },
         {
@@ -651,7 +651,7 @@
             "label": "Color 3",
             "name": "custom_color_3",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Used for:<br \/>\r\n- input type borders<br \/>\r\n- links over status<br \/>\r\n- hamburger over status",
             "required": 1,
             "conditional_logic": [
                 [
@@ -668,7 +668,7 @@
                 "id": ""
             },
             "default_value": "#AFAFAF",
-            "enable_opacity": false,
+            "enable_opacity": 0,
             "return_format": "string"
         },
         {
@@ -676,7 +676,7 @@
             "label": "Color 4",
             "name": "custom_color_4",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Used for:<br \/>\r\n- navigation links over status",
             "required": 1,
             "conditional_logic": [
                 [
@@ -693,7 +693,7 @@
                 "id": ""
             },
             "default_value": "#4D4D4D",
-            "enable_opacity": false,
+            "enable_opacity": 0,
             "return_format": "string"
         },
         {
@@ -701,7 +701,7 @@
             "label": "Color 5",
             "name": "custom_color_5",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Used for:<br \/>\r\n- texts color",
             "required": 1,
             "conditional_logic": [
                 [
@@ -718,7 +718,7 @@
                 "id": ""
             },
             "default_value": "#303030",
-            "enable_opacity": false,
+            "enable_opacity": 0,
             "return_format": "string"
         }
     ],
@@ -740,5 +740,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669887785
+    "modified": 1670066884
 }

@@ -1,4 +1,4 @@
-<div class="flex-hold-child grid-item-infinite">
+<div class="flex-hold-child grid-item-infinite <?php echo $zoomed_class; ?>">
 <a href="<?php the_permalink(); ?>" class="data-swup-preload"  title="View project: <?php the_title(); ?>" aria-label="View project: <?php the_title(); ?>">
  <div class="no-the-100">
    <?php if ( get_field( 'items_per_row', 'options' ) === 'three-items' ) : ?>

@@ -847,6 +847,10 @@ a.absl:link {
   content: '\e80c';
 }
 
+.icon-cancel-circled:before {
+  content: '\e80e';
+}
+
 h1 {
   font-size: 20px;
   line-height: 28px;
@@ -2687,6 +2691,16 @@ body.dark-theme .eye i {
   .gallery-footer .right a .label {
     left: -30px;
     padding-left: 30px;
+  }
+  .zoomed .no-the-100 {
+    overflow: hidden;
+  }
+  .zoomed .no-the-100 img {
+    transition: transform 0.6s;
+  }
+  .zoomed:hover .no-the-100 img {
+    transform: scale(1.2);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
   .search-hold input[type=text] {
     width: calc(100% - 93px) !important;

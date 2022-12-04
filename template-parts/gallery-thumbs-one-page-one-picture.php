@@ -1,5 +1,6 @@
 <div class="thumbs-gallery">
   <div class="wrapper bg-5 lined">
+    <a href="#" class="close-thumbnail-gallery close-thumbnail-gallery-js" aria-label="Close thumbnail gallery" title="Close thumbnail gallery"><i class="icon-cancel"></i></a>
     <div class="wrapper-padded">
       <div class="wrapper-padded-more-650">
         <div class="gallery-slider-nav no-current gallery-slider-nav-single-js">

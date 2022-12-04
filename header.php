@@ -27,13 +27,14 @@ if ( $favicons_path === 'default-path' ) {
 else {
   $favicons_folder = get_home_url().'/favicons/';
 }
-global $image_gallery_system;
-global $contatore_foto;
-global $show_abstract;
-global $elenco_foto;
-global $show_cats;
-global $image_gallery_system;
-global $show_navigation_between_portfolio_items;
+global $image_gallery_system,
+$contatore_foto,
+$show_abstract,
+$elenco_foto,
+$show_cats,
+$image_gallery_system,
+$show_navigation_between_portfolio_items,
+$zoomed_class;
 $show_hamburger_button_desktop = get_field( 'show_hamburger_button_desktop', 'options' );
 if ( $show_hamburger_button_desktop === 'yes' ) {
   $show_hamburger_button_desktop_class = '';
@@ -78,6 +79,14 @@ else {
 }
 
 $show_navigation_between_portfolio_items = get_field( 'show_navigation_between_portfolio_items', 'options' );
+
+$zoom_effect_on_hover = get_field( 'zoom_effect_on_hover', 'options' );
+if ( $zoom_effect_on_hover === 'yes' ) {
+  $zoomed_class = 'zoomed';
+}
+else {
+  $zoomed_class = '';
+}
 ?>
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo $favicons_folder; ?>ms-icon-144x144.png">
@@ -772,7 +781,7 @@ var start_color_scheme = "<?php echo $start_color_scheme ?>";
             <?php endif; ?>
             <?php if ( $elenco_foto === 'si' && $image_gallery_system != 'scrollpage' ) : ?>
               <li>
-                <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-th-large-outline"></i></span>
+                <span class="list thumb-list delight-area pointered" title="<?php _e( 'view images list', 'paperplane-photography-theme' );?>"><i class="icon-js icon-th-large-outline"></i></span>
               </li>
             <?php endif; ?>
           </ul>
