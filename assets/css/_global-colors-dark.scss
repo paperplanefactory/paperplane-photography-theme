@@ -60,21 +60,6 @@ body.dark-theme {
 	::-moz-placeholder {
 		color: $color-1-dark;
 	}
-	// banner cookies
-	#paperplane-cookie-notice {
-		background-color: $color-5-dark !important;
-		color: $color-3-dark !important;
-
-		a {
-			background-color: $color-3-dark;
-			color: $color-5-dark !important;
-		}
-	}
-
-	.paperplane-gdpr-content-message {
-		background-color: $color-1-dark;
-		color: $color-5-dark;
-	}
 	// hamburger
 	.open_head .hambuger-element span {
 		background-color: $color-1-dark !important;

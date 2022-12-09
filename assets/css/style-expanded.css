@@ -452,64 +452,6 @@ a {
   cursor: pointer;
 }
 
-#paperplane-cookie-notice {
-  position: fixed;
-  z-index: 9999;
-  width: calc(100% - 6px);
-  bottom: 0;
-  left: 0;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
-  transition: opacity 1s;
-  pointer-events: none;
-  opacity: 0;
-}
-
-#paperplane-cookie-notice.shown {
-  pointer-events: all;
-  opacity: 1;
-}
-
-#paperplane-cookie-notice .paperplane-cookie-notice-container {
-  position: relative;
-  width: calc(100% - 20px);
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 10px;
-  text-align: center;
-}
-
-#paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-accepted,
-#paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-refused {
-  display: none;
-}
-
-#paperplane-cookie-notice a {
-  display: inline-block;
-  margin: 5px;
-  padding: 3px 6px;
-  text-transform: uppercase;
-}
-
-.paperplane-gdpr-content-message {
-  position: relative;
-  padding: 10px;
-  margin: 20px 0;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.paperplane-gdpr-content-message p {
-  margin: 0;
-}
-
-.cookies-list-block {
-  border-bottom: solid 1px;
-  padding-bottom: 10px;
-  margin-top: 20px;
-}
-
 .hambuger-element {
   width: 25px;
   height: 16px;
@@ -1330,21 +1272,6 @@ body.dark-theme .eye i {
 
 .dark-theme ::-moz-placeholder {
   color: #FFFFFF;
-}
-
-.dark-theme #paperplane-cookie-notice {
-  background-color: #191919 !important;
-  color: #AFAFAF !important;
-}
-
-.dark-theme #paperplane-cookie-notice a {
-  background-color: #AFAFAF;
-  color: #191919 !important;
-}
-
-.dark-theme .paperplane-gdpr-content-message {
-  background-color: #FFFFFF;
-  color: #191919;
 }
 
 .dark-theme .open_head .hambuger-element span {

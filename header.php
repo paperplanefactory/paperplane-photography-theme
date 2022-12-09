@@ -238,21 +238,6 @@ body.clear-theme .eye i {
   color: <?php the_field( 'custom_color_5', 'options' ); ?>;
 }
 
-.clear-theme #paperplane-cookie-notice {
-  background-color: <?php the_field( 'custom_color_1', 'options' ); ?> !important;
-  color: <?php the_field( 'custom_color_4', 'options' ); ?> !important;
-}
-
-.clear-theme #paperplane-cookie-notice a {
-  background-color: <?php the_field( 'custom_color_4', 'options' ); ?>;
-  color: <?php the_field( 'custom_color_1', 'options' ); ?> !important;
-}
-
-.clear-theme .paperplane-gdpr-content-message {
-  background-color: <?php the_field( 'custom_color_5', 'options' ); ?>;
-  color: <?php the_field( 'custom_color_1', 'options' ); ?>;
-}
-
 .clear-theme .open_head .hambuger-element span {
   background-color: <?php the_field( 'custom_color_5', 'options' ); ?> !important;
 }
@@ -482,21 +467,6 @@ body.clear-theme .eye i {
 
 .clear-theme ::-moz-placeholder {
   color: #303030;
-}
-
-.clear-theme #paperplane-cookie-notice {
-  background-color: #FFFFFF !important;
-  color: #4D4D4D !important;
-}
-
-.clear-theme #paperplane-cookie-notice a {
-  background-color: #4D4D4D;
-  color: #FFFFFF !important;
-}
-
-.clear-theme .paperplane-gdpr-content-message {
-  background-color: #303030;
-  color: #FFFFFF;
 }
 
 .clear-theme .open_head .hambuger-element span {

@@ -63,21 +63,6 @@ body.clear-theme {
 	::-moz-placeholder {
 		color: $color-1;
 	}
-	// banner cookies
-	#paperplane-cookie-notice {
-		background-color: $color-5 !important;
-		color: $color-2 !important;
-
-		a {
-			background-color: $color-2;
-			color: $color-5 !important;
-		}
-	}
-
-	.paperplane-gdpr-content-message {
-		background-color: $color-1;
-		color: $color-5;
-	}
 	// hamburger
 	.open_head .hambuger-element span {
 		background-color: $color-1 !important;

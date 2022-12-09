@@ -209,67 +209,7 @@
 	text-transform: uppercase;
 	cursor: pointer;
 }
-// banner cookies
-
-#paperplane-cookie-notice {
-	position: fixed;
-	z-index: 9999;
-	width: calc(100% - 6px);
-	bottom: 0;
-	left: 0;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 18px;
-	transition: opacity 1s;
-	pointer-events: none;
-	opacity: 0;
-
-	&.shown {
-		pointer-events: all;
-		opacity: 1;
-	}
-
-	.paperplane-cookie-notice-container {
-		position: relative;
-		width: calc(100% - 20px);
-		max-width: 768px;
-		margin: 0 auto;
-		padding: 10px;
-		text-align: center;
-
-		.paperplane-message-cookie-accepted,
-		.paperplane-message-cookie-refused {
-			display: none;
-		}
-	}
-
-	a {
-		display: inline-block;
-		margin: 5px;
-		padding: 3px 6px;
-		text-transform: uppercase;
-	}
-}
-
-.paperplane-gdpr-content-message {
-	position: relative;
-	padding: 10px;
-	margin: 20px 0;
-	text-transform: uppercase;
-	cursor: pointer;
-
-	p {
-		margin: 0;
-	}
-}
-
-.cookies-list-block {
-	border-bottom: solid 1px;
-	padding-bottom: 10px;
-	margin-top: 20px;
-}
 // hamburger
-
 .hambuger-element {
 	width: 25px;
 	height: 16px;
