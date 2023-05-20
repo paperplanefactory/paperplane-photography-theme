@@ -124,7 +124,7 @@ $my_topworks = get_posts( $args_topworks );
   <div class="wrapper topline">
     <div class="wrapper-padded">
       <div class="wrapper-padded-more-650">
-        <h6 class="aligncenter">Latest News</h6>
+        <h6>Latest News</h6>
         <div class="news-grid">
         <?php
         foreach ( $my_latest_news as $post ) {

@@ -2,20 +2,21 @@
 
 
 $picturecaption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
-$attachment_alt = get_post_meta($thumb_id,'_wp_attachment_image_alt', true);
+$attachment_alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
 $attachment_description = get_post(get_post_thumbnail_id())->post_content; //Long description
 $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'full_desk', true);
 $current_post_url = get_permalink();
 
 // Conto le immagini
-$attachments = get_children( array(
-   'post_type' => 'attachment',
-   'numberposts' => -1,
-   'post_status' => null,
-   'post_mime_type' => 'image',
-   'post_parent' => $post->ID
-) );
-$count = count ($attachments);
+$attachments = get_children(
+  array(
+    'post_type' => 'attachment',
+    'numberposts' => -1,
+    'post_status' => null,
+    'post_mime_type' => 'image',
+    'post_parent' => $post->ID
+  ));
+$count = count($attachments);
 
 // link alla prima immagine
 $images = get_posts(
@@ -30,8 +31,8 @@ $images = get_posts(
     'post_status' => null
   )
 );
-if ( $images ) {
-  $next_url = get_permalink( $images[0]->ID);
+if ($images) {
+  $next_url = get_permalink($images[0]->ID);
 }
 
 wp_reset_query();
@@ -48,11 +49,11 @@ $args_next = array(
   'post_status' => null
 );
 
-$attachments_next = get_posts( $args_next );
-if ( $attachments_next ) {
-  foreach ( $attachments_next as $attachment_next ) {
-    $img_link_next = wp_get_attachment_url( $attachment_next->ID, 'full_desk', true );
-    $img_link_source_next = wp_get_attachment_link( $attachment_next->ID, '', true );
+$attachments_next = get_posts($args_next);
+if ($attachments_next) {
+  foreach ($attachments_next as $attachment_next) {
+    $img_link_next = wp_get_attachment_url($attachment_next->ID, 'full_desk', true);
+    $img_link_source_next = wp_get_attachment_link($attachment_next->ID, '', true);
   }
 }
 wp_reset_query();
@@ -70,11 +71,11 @@ $args_last = array(
   //'title'	=> trim( wp_strip_all_tags( $attachment->post_title ) )
 );
 
-$attachments_last = get_posts( $args_last );
-if ( $attachments_last ) {
-  foreach ( $attachments_last as $attachment_last ) {
-    $img_link_last = wp_get_attachment_url( $attachment_last->ID, 'full_desk', true );
-    $img_link_source_last = get_permalink( $attachment_last->ID, '', true );
+$attachments_last = get_posts($args_last);
+if ($attachments_last) {
+  foreach ($attachments_last as $attachment_last) {
+    $img_link_last = wp_get_attachment_url($attachment_last->ID, 'full_desk', true);
+    $img_link_source_last = get_permalink($attachment_last->ID, '', true);
   }
 }
 wp_reset_query();
@@ -84,7 +85,7 @@ wp_reset_query();
 {
   "@context": "http://schema.org",
   "@type": "ImageObject",
-  "author": "<?php echo get_bloginfo( 'name' ); ?>",
+  "author": "<?php echo get_bloginfo('name'); ?>",
   "contentUrl": "<?php echo $thumb_url_desktop[0]; ?>",
   "datePublished": "<?php echo get_the_date('Y-m-d'); ?>",
   "description": "<?php echo wp_strip_all_tags(str_replace('"', '', get_the_content())); ?>",
@@ -95,8 +96,8 @@ wp_reset_query();
 
 <?php
 global $elenco_foto;
-if ( $elenco_foto === 'si' ) {
-  include( locate_template ( 'template-parts/gallery-thumbs-one-page-one-picture.php' ) );
+if ($elenco_foto === 'si') {
+  include(locate_template('template-parts/gallery-thumbs-one-page-one-picture.php'));
 }
 ?>
 
@@ -110,22 +111,25 @@ if ( $elenco_foto === 'si' ) {
     </div>
     <?php
     $image_data = array(
-        'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
-        'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-        'size_fallback' => 'full'
+      'image_type' => 'post_thumbnail',
+      // options: post_thumbnail, acf_field, acf_sub_field
+      'image_value' => '',
+      // se utilizzi un custom field indica qui il nome del campo
+      'size_fallback' => 'full'
     );
-    $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+    $image_sizes = array(
+      // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
       'desktop_retina' => 'single_image_retina',
       'desktop' => 'single_image',
       'mobile' => 'single_image',
       'mobile_retina' => 'single_image_retina',
       'micro' => 'micro'
     );
-    print_theme_single_image( $image_data, $image_sizes );
-    if ( $count > 1 ) {
+    print_theme_single_image($image_data, $image_sizes);
+    if ($count > 1) {
       echo '<div class="absl_swipe"></div>';
-      echo '<div class="navi-click navi-click-left delight-area data-swup-preload"><a href="'.$img_link_source_last.'" aria-label="'.__( 'Previuos image', 'paperplane-photography-theme' ).'" class="data-swup-preload"></a></div>';
-      echo '<div class="navi-click navi-click-right delight-area data-swup-preload"><a href="'.$next_url.'" aria-label="'.__( 'Next image', 'paperplane-photography-theme' ).'" class="data-swup-preload"></a></div>';
+      echo '<div class="navi-click navi-click-left delight-area data-swup-preload"><a href="' . $img_link_source_last . '" aria-label="' . __('Previuos image', 'paperplane-photography-theme') . '" class="data-swup-preload"></a></div>';
+      echo '<div class="navi-click navi-click-right delight-area data-swup-preload"><a href="' . $next_url . '" aria-label="' . __('Next image', 'paperplane-photography-theme') . '" class="data-swup-preload"></a></div>';
     }
     ?>
   </div>
@@ -133,16 +137,17 @@ if ( $elenco_foto === 'si' ) {
 
 <div class="wrapper delight-area">
   <div class="wrapper-padded">
-    <?php if ( get_field( 'video_embed' ) ) : ?>
+    <?php if (get_field('video_embed')): ?>
       <div class="photo-navi navi-text aligncenter">
 
       </div>
-    <?php else : ?>
+    <?php else: ?>
       <div class="photo-navi navi-text aligncenter">
         <?php
         global $contatore_foto;
-        if ( $contatore_foto === 'si' && $count > 1 ) {
-          if ( $count > 0 )  { echo '1 / ' .$count;
+        if ($contatore_foto === 'si' && $count > 1) {
+          if ($count > 0) {
+            echo '1 / ' . $count;
           }
         }
         ?>
@@ -150,7 +155,7 @@ if ( $elenco_foto === 'si' ) {
     <?php endif; ?>
     <div class="wrapper-padded-more-650 delight-area">
       <div class="content-styled aligncenter">
-        <?php if ( $attachment_description != '' ) : ?>
+        <?php if ($attachment_description != ''): ?>
           <div class="picture-info lined">
             <div class="content-styled">
               <p>
@@ -160,7 +165,9 @@ if ( $elenco_foto === 'si' ) {
           </div>
         <?php endif; ?>
         <div class="alignleft">
-          <h1><?php the_title(); ?></h1>
+          <h1 class="aligncenter">
+            <?php the_title(); ?>
+          </h1>
           <?php the_content(); ?>
         </div>
       </div>

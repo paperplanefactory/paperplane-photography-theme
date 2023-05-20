@@ -793,6 +793,14 @@ a.absl:link {
   content: '\e80e';
 }
 
+.icon-youtube:before {
+  content: '\e80d';
+}
+
+.icon-linkedin:before {
+  content: '\e80f';
+}
+
 h1 {
   font-size: 20px;
   line-height: 28px;
@@ -2044,6 +2052,11 @@ body.dark-theme .eye i {
   }
   #header-structure .menu.full-width-navi .navi-info {
     padding-right: 0;
+  }
+  #header-structure .menu.full-width-navi ul {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
   }
   #header-structure .menu ul {
     padding-right: 15px;

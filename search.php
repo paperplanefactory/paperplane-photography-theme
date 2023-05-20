@@ -8,7 +8,7 @@ get_header();
 <div class="wrapper">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more-650">
-      <div class="content-styled plain-page aligncenter">
+      <div class="content-styled plain-page">
         <h1 class="allupper"><?php _e( 'You searched:', 'paperplane-photography-theme' );?> <?php echo get_search_query(); ?></h1>
       </div>
     </div>
