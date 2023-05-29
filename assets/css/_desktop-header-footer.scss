@@ -21,7 +21,7 @@
   right: -211px;
   //width: 210px;
   width: 30vw;
-  height: calc(100vh - #{$header-height});
+  height: calc(100dvh - #{$header-height});
 }
 
 .overlay-in {
@@ -164,9 +164,9 @@
         margin-left: -90px;
         padding: 15px 0 !important;
         text-transform: none;
-        -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.15);
-        -moz-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.15);
-        box-shadow: 0 10px 20px 0 rgba(0,0,0,0.15);
+        -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
         opacity: 0;
         pointer-events: none;
         @include define-basic-transition(opacity, 0.15s);

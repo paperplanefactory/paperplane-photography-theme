@@ -5,6 +5,7 @@
 .only-mobile {
   display: none;
 }
+
 // wrappers and more
 
 .wrapper {
@@ -40,6 +41,7 @@
   max-width: 650px;
   margin: 0 auto;
 }
+
 // paddings- margins
 
 .plain-page {
@@ -56,13 +58,13 @@
 .photo-hold {
   position: relative;
   width: calc(100% - 60px);
-  height: calc(100vh - #{$header-height} - #{$title-fix});
+  height: calc(100dvh - #{$header-height} - #{$title-fix});
   margin: 0 0 0 30px;
   @include define-basic-transition(all, 0.3s);
 
   img {
     width: 100%;
-    height: calc(100vh - #{$header-height} - #{$title-fix});
+    height: calc(100dvh - #{$header-height} - #{$title-fix});
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: 50% 50%;
@@ -115,12 +117,12 @@
   .photo-hold {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
 
     img {
       width: 100%;
-      height: 100vh;
+      height: 100dvh;
       -o-object-fit: contain;
       object-fit: contain;
       -o-object-position: 50% 50%;
@@ -188,6 +190,7 @@
   position: relative;
   padding: 20px 0 15px;
 }
+
 // flex boxes
 
 .flex-hold {
@@ -248,7 +251,7 @@
 
 .loading-transition-effect {
   top: calc(#{$header-height} + 1px);
-  height: calc(100vh - #{$header-height});
+  height: calc(100dvh - #{$header-height});
 }
 
 .wp-caption.alignleft,
@@ -272,10 +275,10 @@
 .gallery-slider {
   position: relative;
   width: 100%;
-  //height: calc(100vh - #{$header-height} - 40px);
   margin: 20px 0 0;
 
   &.video-slide {
+
     .slick-next,
     .slick-prev {
       top: 25.5vh;
@@ -290,7 +293,7 @@
     z-index: 10;
     top: 0;
     width: 50%;
-    height: 100vh;
+    height: 100dvh;
     border: none;
   }
 
@@ -306,14 +309,15 @@
 
   .slide-picture-contaniner {
     width: 100%;
-    //height: calc(100vh - #{$header-height} - 120px);
+
     .slide-picture {
+
       embed,
       iframe,
       img,
       object {
         width: 100%;
-        height: calc(100vh - #{$header-height} - 40px);
+        height: calc(100dvh - #{$header-height} - 40px);
         -o-object-fit: contain;
         object-fit: contain;
         -o-object-position: 50% 50%;
@@ -398,7 +402,7 @@
   .scroll-image {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - #{$header-height} - #{$title-fix});
+    min-height: calc(100dvh - #{$header-height} - #{$title-fix});
     margin: 7vh 0;
     padding: 7vh 0;
 
@@ -408,7 +412,7 @@
     object,
     video {
       width: 100%;
-      height: calc(100vh - #{$header-height} - #{$title-fix});
+      height: calc(100dvh - #{$header-height} - #{$title-fix});
       -o-object-fit: contain;
       object-fit: contain;
       -o-object-position: 50% 50%;

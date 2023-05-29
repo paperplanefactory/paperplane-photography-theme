@@ -63,7 +63,8 @@ include_once "includes/theme-cpts.php";
 include_once "includes/theme-pwa.php";
 // taxonomies listing
 include_once "includes/theme-taxonomies-listing.php";
-
+// taxonomies listing
+include_once "includes/theme-updater.php";
 
 
 

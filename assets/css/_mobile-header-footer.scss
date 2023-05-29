@@ -17,7 +17,7 @@
   top: calc(#{$header-mob-height} + 1px);
   right: -100vw;
   width: 100vw;
-  height: calc(100vh - #{$header-mob-height});
+  height: calc(100dvh - #{$header-mob-height});
 }
 
 .overlay-in {
@@ -38,7 +38,7 @@
   position: relative;
   display: block;
   width: calc(100% + 18px);
-  height: calc(100vh - #{$header-mob-height});
+  height: calc(100dvh - #{$header-mob-height});
   overflow-y: scroll;
   overflow-x: visible;
 }
