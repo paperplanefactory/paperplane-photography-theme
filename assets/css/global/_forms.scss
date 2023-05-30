@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin'; // forms
+@import 'vars';
+@import 'mixin'; // forms
 
 .form-hold {
 	position: relative;

@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import 'vars';
+@import 'mixin';
 
 h1 {
   font-size: $h1-size-desktop;
@@ -134,7 +134,7 @@ p {
     counter-reset: li-counter;
   }
 
-  ol > li {
+  ol>li {
     overflow: hidden;
     position: relative;
     margin: 0;
@@ -142,7 +142,7 @@ p {
     display: table-row;
   }
 
-  ol > li:before {
+  ol>li:before {
     position: relative;
     display: table-cell;
     top: 0;

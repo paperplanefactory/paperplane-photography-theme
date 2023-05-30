@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import 'vars';
+@import 'mixin';
 
 .blurred {
 	@include define-lazy-blur(5px);
@@ -58,7 +58,7 @@ html.is-animating .loading-transition-effect {
 	text-align: center;
 }
 
-.spinner > div {
+.spinner>div {
 	width: 18px;
 	height: 18px;
 	border-radius: 100%;
@@ -76,7 +76,9 @@ html.is-animating .loading-transition-effect {
 	-webkit-animation-delay: -0.16s;
 	animation-delay: -0.16s;
 }
+
 @-webkit-keyframes sk-bouncedelay {
+
 	0%,
 	100%,
 	80% {
@@ -87,7 +89,9 @@ html.is-animating .loading-transition-effect {
 		-webkit-transform: scale(1.0);
 	}
 }
+
 @keyframes sk-bouncedelay {
+
 	0%,
 	100%,
 	80% {
@@ -167,7 +171,9 @@ html.is-animating .loading-transition-effect {
 	-webkit-animation-delay: 0.9s;
 	animation-delay: 0.9s;
 }
+
 @-webkit-keyframes sk-foldCubeAngle {
+
 	0%,
 	10% {
 		-webkit-transform: perspective(140px) rotateX(-180deg);
@@ -189,7 +195,9 @@ html.is-animating .loading-transition-effect {
 		opacity: 0;
 	}
 }
+
 @keyframes sk-foldCubeAngle {
+
 	0%,
 	10% {
 		-webkit-transform: perspective(140px) rotateX(-180deg);
@@ -218,7 +226,9 @@ html.is-animating .loading-transition-effect {
 		animation: swipe-info-move 1.4s infinite ease-in-out both;
 	}
 }
+
 @-webkit-keyframes swipe-info-move {
+
 	0%,
 	33% {
 		margin-left: -15px;
@@ -237,7 +247,9 @@ html.is-animating .loading-transition-effect {
 		//opacity: 1;
 	}
 }
+
 @keyframes swipe-info-move {
+
 	0%,
 	33% {
 		margin-left: -35px;

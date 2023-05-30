@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import 'vars';
+@import 'mixin';
 
 body.clear-theme {
 	color: $color-1;
@@ -14,6 +14,7 @@ body.clear-theme {
 }
 
 .clear-theme {
+
 	div,
 	footer,
 	header,
@@ -63,6 +64,7 @@ body.clear-theme {
 	::-moz-placeholder {
 		color: $color-1;
 	}
+
 	// hamburger
 	.open_head .hambuger-element span {
 		background-color: $color-1 !important;
@@ -75,6 +77,7 @@ body.clear-theme {
 	.hambuger-element:hover span {
 		background: $color-3;
 	}
+
 	// txt colors
 	.txt-1 {
 		color: $color-1;
@@ -108,9 +111,10 @@ body.clear-theme {
 		}
 	}
 
-	ol > li:before {
+	ol>li:before {
 		color: $color-1;
 	}
+
 	// bg colors
 	.bg-1 {
 		background-color: $color-1;
@@ -131,6 +135,7 @@ body.clear-theme {
 	.bg-5 {
 		background-color: $color-5;
 	}
+
 	// link behaviour and colors
 	a:link,
 	a:visited {
@@ -167,6 +172,7 @@ body.clear-theme {
 	}
 
 	.txt-4 {
+
 		&:link,
 		&:visited {
 			color: $color-2;
@@ -182,6 +188,7 @@ body.clear-theme {
 			color: $color-6;
 		}
 	}
+
 	// structure elements
 	.flex-hold-title {
 		background-color: rgba(255, 255, 255, 0.85);
@@ -190,6 +197,7 @@ body.clear-theme {
 	.sk-folding-cube .sk-cube:before {
 		background-color: $color-1;
 	}
+
 	// forms
 	.form-hold {
 		label {

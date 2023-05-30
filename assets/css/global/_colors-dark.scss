@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import 'vars';
+@import 'mixin';
 
 body.dark-theme {
 	color: $color-1-dark;
@@ -14,6 +14,7 @@ body.dark-theme {
 }
 
 .dark-theme {
+
 	div,
 	footer,
 	header,
@@ -60,6 +61,7 @@ body.dark-theme {
 	::-moz-placeholder {
 		color: $color-1-dark;
 	}
+
 	// hamburger
 	.open_head .hambuger-element span {
 		background-color: $color-1-dark !important;
@@ -72,6 +74,7 @@ body.dark-theme {
 	.hambuger-element:hover span {
 		background: $color-3-dark;
 	}
+
 	// txt colors
 	.txt-1,
 	.video-slide .prev-next,
@@ -101,9 +104,10 @@ body.dark-theme {
 		}
 	}
 
-	ol > li:before {
+	ol>li:before {
 		color: $color-1-dark;
 	}
+
 	// bg colors
 	.bg-1 {
 		background-color: $color-1-dark;
@@ -130,6 +134,7 @@ body.dark-theme {
 			background-color: $color-1-dark;
 		}
 	}
+
 	// link behaviour and colors
 	a:link,
 	a:visited {
@@ -180,6 +185,7 @@ body.dark-theme {
 	}
 
 	.txt-4 {
+
 		&:link,
 		&:visited {
 			color: $color-2-dark;
@@ -195,6 +201,7 @@ body.dark-theme {
 			color: $color-6;
 		}
 	}
+
 	// structure elements
 	.flex-hold-title {
 		background-color: rgba(25, 25, 25, 0.85);
@@ -203,6 +210,7 @@ body.dark-theme {
 	.sk-folding-cube .sk-cube:before {
 		background-color: $color-1-dark;
 	}
+
 	// forms
 	.form-hold {
 		label {

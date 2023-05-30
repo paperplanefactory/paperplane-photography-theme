@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import 'vars';
+@import 'mixin';
 
 a,
 abbr,
@@ -207,6 +207,7 @@ img {
 	vertical-align: middle;
 	-ms-interpolation-mode: bicubic;
 }
+
 /* Clearing floats */
 .clear:after,
 .format-status .entry-header:after,

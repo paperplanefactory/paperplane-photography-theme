@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin'; // wrappers and more
+@import '../global/vars';
+@import '../global/mixin'; // wrappers and more
 
 .only-desktop {
   display: none;

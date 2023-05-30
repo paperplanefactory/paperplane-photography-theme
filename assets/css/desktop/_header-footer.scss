@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin'; // header
+@import '../global/vars';
+@import '../global/mixin'; // header
 
 #preheader {
   position: relative;

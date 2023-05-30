@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import '../global/vars';
+@import '../global/mixin';
 
 .flex-hold-5 {
   &.margins-wide {
@@ -66,6 +66,7 @@
   margin-top: 14px;
 
   &.masonry-three {
+
     .flex-hold-child,
     .grid-sizer {
       position: relative;
@@ -76,6 +77,7 @@
   }
 
   &.masonry-two {
+
     .flex-hold-child,
     .grid-sizer {
       position: relative;

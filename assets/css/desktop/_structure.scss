@@ -1,6 +1,6 @@
 // main: style.scss
-@import 'global-vars';
-@import 'global-mixin';
+@import '../global/vars';
+@import '../global/mixin';
 
 .only-mobile {
   display: none;
