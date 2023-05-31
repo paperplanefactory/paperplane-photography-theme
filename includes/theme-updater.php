@@ -12,7 +12,7 @@ function set_theme_github_data()
         // generate manifest
         $update_data = array(
             'version' => $theme_version,
-            'details_url' => $theme_url,
+            'details_url' => $theme_url . '/archive/refs/tags/' . $theme_version . '.zip',
             'download_url' => $theme_url . '/archive/refs/tags/' . $theme_version . '.zip'
         );
         // encode manifest data
