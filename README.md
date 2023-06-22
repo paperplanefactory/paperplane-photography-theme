@@ -5,6 +5,7 @@
 This theme is designed to enhance pictures. UX and UI elements are designed to have the least possible impact on the observation of images. You can see it in action on
 * [Allegra Martin website](https://www.allegramartin.it/ "Allegra Martin website");
 * [Andrea Segliani website](https://www.80mm.it/ "Andrea Segliani website");
+* [Artestudio](https://www.artestudiobg.it/ "Artestudio");
 * [Demo website](https://photographytheme.paperplanefactory.com/ "Demo website");
 
 PaperPlane photography theme requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/ "Advanced Custom Fields Pro") to be installed.<br/>
