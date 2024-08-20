@@ -4,9 +4,9 @@
     else if (typeof define === 'function' && define.amd)
         define([], factory);
     else if (typeof exports === 'object')
-        exports["SwupGaPlugin"] = factory();
+        exports["SwupGtagPlugin"] = factory();
     else
-        root["SwupGaPlugin"] = factory();
+        root["SwupGtagPlugin"] = factory();
 })(window, function () {
     return /******/ (function (modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -19,14 +19,14 @@
 /******/ 		if (installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
                 /******/
-            }
+}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
                 /******/
-            };
+};
 /******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
@@ -37,7 +37,7 @@
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
             /******/
-        }
+}
 /******/
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
@@ -51,19 +51,19 @@
 /******/ 		if (!__webpack_require__.o(exports, name)) {
 /******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
                 /******/
-            }
+}
             /******/
-        };
+};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function (exports) {
 /******/ 		if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
                 /******/
-            }
+}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
             /******/
-        };
+};
 /******/
 /******/ 	// create a fake namespace object
 /******/ 	// mode & 1: value is a module id, require it
@@ -80,7 +80,7 @@
 /******/ 		if (mode & 2 && typeof value != 'string') for (var key in value) __webpack_require__.d(ns, key, function (key) { return value[key]; }.bind(null, key));
 /******/ 		return ns;
             /******/
-        };
+};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function (module) {
@@ -90,7 +90,7 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
             /******/
-        };
+};
 /******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function (object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
@@ -102,7 +102,7 @@
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
         /******/
-    })
+})
 /************************************************************************/
 /******/([
 /* 0 */
@@ -120,7 +120,7 @@
             module.exports = _index2.default; // this is here for webpack to expose SwupPlugin as window.SwupPlugin
 
             /***/
-        }),
+}),
 /* 1 */
 /***/ (function (module, exports, __webpack_require__) {
 
@@ -147,67 +147,57 @@
 
             function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-            var GaPlugin = function (_Plugin) {
-                _inherits(GaPlugin, _Plugin);
+            var SwupGtagPlugin = function (_Plugin) {
+                _inherits(SwupGtagPlugin, _Plugin);
 
-                function GaPlugin(options) {
-                    _classCallCheck(this, GaPlugin);
+                function SwupGtagPlugin(options) {
+                    _classCallCheck(this, SwupGtagPlugin);
 
-                    var _this = _possibleConstructorReturn(this, (GaPlugin.__proto__ || Object.getPrototypeOf(GaPlugin)).call(this));
+                    var _this = _possibleConstructorReturn(this, (SwupGtagPlugin.__proto__ || Object.getPrototypeOf(SwupGtagPlugin)).call(this));
 
-                    _this.name = 'GaPlugin';
+                    _this.name = 'SwupGtagPlugin';
 
-                    var defaultOptions = {
-                        gaMeasurementId: null
-                    };
+
+                    var defaultOptions = {};
 
                     _this.options = _extends({}, defaultOptions, options);
                     return _this;
                 }
 
-                _createClass(GaPlugin, [{
+                _createClass(SwupGtagPlugin, [{
                     key: 'mount',
                     value: function mount() {
                         var _this2 = this;
 
+                        if (this.options.gaMeasurementId == undefined) {
+                            console.warn('Gtag is not configured with a GA_MEASUREMENT_ID');
+                        }
+
                         this.swup.on('contentReplaced', function (event) {
-                            if (typeof gtag === 'function') {
+                            if (typeof window.gtag === 'function' && _this2.options.gaMeasurementId != undefined) {
                                 var title = document.title;
                                 var url = window.location.pathname + window.location.search;
-                                var gaId = _this2.options.gaMeasurementId;
 
-                                if (!gaId) {
-                                    throw new Error('gaMeasurementId option is required for gtag.');
-                                }
-
-                                window.gtag('config', gaId, {
+                                window.gtag("config", '' + _this2.options.gaMeasurementId, {
                                     page_title: title,
                                     page_path: url
                                 });
-                                _this2.swup.log('GTAG pageview (url \'' + url + '\').');
-                            } else if (typeof window.ga === 'function') {
-                                var _title = document.title;
-                                var _url = window.location.pathname + window.location.search;
 
-                                window.ga('set', 'title', _title);
-                                window.ga('set', 'page', _url);
-                                window.ga('send', 'pageview');
-
-                                _this2.swup.log('GA pageview (url \'' + _url + '\').');
+                                _this2.swup.log('Gtag pageview (url \'' + url + '\').');
                             } else {
-                                console.warn("window.gtag and window.ga don't exists.");
+                                console.warn("Gtag is not loaded.");
                             }
                         });
                     }
                 }]);
 
-                return GaPlugin;
+                return SwupGtagPlugin;
             }(_plugin2.default);
 
-            exports.default = GaPlugin;
+            exports.default = SwupGtagPlugin;
 
             /***/
-        }),
+}),
 /* 2 */
 /***/ (function (module, exports, __webpack_require__) {
 
@@ -237,9 +227,19 @@
                     }
                 }, {
                     key: "unmount",
-                    value: function unmount() { }
-                    // this is unmount method rewritten by class extending
-                    // and is executed when swup with plugin is disabled
+                    value: function unmount() {
+                        // this is unmount method rewritten by class extending
+                        // and is executed when swup with plugin is disabled
+                    }
+                }, {
+                    key: "_beforeMount",
+                    value: function _beforeMount() {
+                        // here for any future hidden auto init
+                    }
+                }, {
+                    key: "_afterUnmount",
+                    value: function _afterUnmount() { }
+                    // here for any future hidden auto-cleanup
 
 
                     // this is here so we can tell if plugin was created by extending this class
@@ -252,6 +252,6 @@
             exports.default = Plugin;
 
             /***/
-        })
+})
 /******/]);
 });

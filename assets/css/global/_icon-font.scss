@@ -5,7 +5,9 @@
   src: url("assets/fonts/paperplane-photography-theme-icons.eot?59625393#iefix") format('embedded-opentype'), url("assets/fonts/paperplane-photography-theme-icons.woff2?59625393") format('woff2'), url("assets/fonts/paperplane-photography-theme-icons.woff?59625393") format('woff'), url("assets/fonts/paperplane-photography-theme-icons.ttf?59625393") format('truetype'), url("assets/fonts/paperplane-photography-theme-icons.svg?59625393#paperplane-photography-theme-icons") format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*

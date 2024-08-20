@@ -58,9 +58,9 @@
     position: relative;
     -webkit-box-flex: 1;
     width: $logo-width;
-    font-weight: $font-weight-2;
-    font-size: $logo-size-desktop;
-    line-height: $logo-lineheight-desktop;
+    //font-weight: $font-weight-2;
+    //font-size: $logo-size-desktop;
+    //line-height: $logo-lineheight-desktop;
 
     .imaged {
       position: absolute;
@@ -151,9 +151,7 @@
       }
 
       .current-page-ancestor,
-      .current_page_item {
-        font-weight: $font-weight-2;
-      }
+      .current_page_item {}
 
       .sub-menu {
         position: absolute;
@@ -178,9 +176,9 @@
           content: "";
           position: absolute;
           left: 0;
-          top: -10px;
+          top: -20px;
           width: 100%;
-          height: 10px;
+          height: 20px;
         }
 
         li {

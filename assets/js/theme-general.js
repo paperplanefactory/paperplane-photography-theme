@@ -22,7 +22,7 @@ function masonrySetup() {
       stagger: 30,
       initLayout: false
     });
-    msnry.on('layoutComplete', function(items) {
+    msnry.on('layoutComplete', function (items) {
       //console.log(items.length);
     });
     // trigger initial layout
@@ -40,7 +40,6 @@ var paperPlaneLazyLoad = new LazyLoad({
     el.classList.add('lazy-loaded');
   },
 });
-
 
 const options = {
   containers: [".swupped"],
@@ -64,7 +63,7 @@ swup.on('contentReplaced', init);
 swup.on('willReplaceContent', unload);
 swup.on('animationInStart', animationIn);
 
-swup.on('contentReplaced', function() {
+swup.on('contentReplaced', function () {
   contactForm();
 });
 
@@ -93,12 +92,11 @@ function animationIn() {
 
 document.addEventListener('swup:contentReplaced', event => {
   initInfiniteScroll();
-  jQuery(".mouse-trap").mouseover(function() {
+  trace_GA4();
+  jQuery(".mouse-trap").mouseover(function () {
     closeOverlay();
   });
   setInitialBrightness();
-
-
 });
 
 // infinite scroll
@@ -118,11 +116,11 @@ function initInfiniteScroll() {
       checkLastPage: true,
     });
 
-    jQuery('.grid-infinite').on('append.infiniteScroll', function(event, response, path, items) {
+    jQuery('.grid-infinite').on('append.infiniteScroll', function (event, response, path, items) {
       paperPlaneLazyLoad.update();
       masonrySetup();
     });
-    window.setInterval(function() {
+    window.setInterval(function () {
       if (jQuery('.infinite-scroll-last').is(":visible")) {
         jQuery('#infscr-loading').fadeOut(300);
       }
@@ -131,6 +129,15 @@ function initInfiniteScroll() {
 }
 initInfiniteScroll();
 
+function trace_GA4() {
+  const ga_measurement_id = jQuery('body').attr("data-ga-measurement-id");
+  gtag('event', 'page_view', {
+    page_title: jQuery(document).attr('title'),
+    page_location: jQuery(location).attr('href'),
+    page_path: window.location.pathname,
+    send_to: ga_measurement_id
+  });
+}
 
 
 function handleOverlay() {
@@ -138,14 +145,14 @@ function handleOverlay() {
   jQuery('.thumbs-gallery').removeClass('shown');
   if (jQuery('.hambuger-element').hasClass('open')) {
     jQuery('#header-overlay').focus();
-    jQuery('#head-overlay').removeClass('blurred').delay(700).queue(function(next) {
+    jQuery('#head-overlay').removeClass('blurred').delay(700).queue(function (next) {
       jQuery(this).delay(1500).addClass('ok-autoclose');
       next();
     });
     jQuery(this).attr('aria-expanded', true);
   } else {
     jQuery('#header').focus();
-    jQuery('#head-overlay').addClass('blurred').delay(1).queue(function(next) {
+    jQuery('#head-overlay').addClass('blurred').delay(1).queue(function (next) {
       jQuery(this).removeClass('ok-autoclose');
       next();
     });
@@ -169,7 +176,7 @@ function hideNavi() {
 }
 
 function approveDelight() {
-  if (jQuery('#delight-approved').length) {} else {
+  if (jQuery('#delight-approved').length) { } else {
     jQuery('body').removeClass('delighted');
   }
 }
@@ -263,7 +270,7 @@ function autoNaviGallery() {
     jQuery('.play-pauser').removeClass('icon-pause').addClass('icon-play');
   }
   if (playOrPause === 'play') {
-    timerSlider = window.setTimeout(function() {
+    timerSlider = window.setTimeout(function () {
       nextNaviAction();
     }, play_pause_timer);
     jQuery('.play-pauser').removeClass('icon-play').addClass('icon-pause');
@@ -274,13 +281,13 @@ function autoNaviGallery() {
 function myMutant() {
   if (jQuery(".autoplay-loaded")[0]) {
     var $div = jQuery(".autoplay-loaded");
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
         if (mutation.attributeName === "class") {
           var attributeValue = jQuery(mutation.target).prop(mutation.attributeName);
           if (jQuery(".autoplay-loaded").hasClass('lazy-loaded')) {
             autoNaviGallery();
-          } else {}
+          } else { }
         }
       });
     });
@@ -313,33 +320,33 @@ highlightCurrentThumb();
 // clicks
 
 // close overlay on mouse leave
-jQuery(".mouse-trap").mouseover(function() {
+jQuery(".mouse-trap").mouseover(function () {
   closeOverlay();
 });
 
 // hide-navi call
-jQuery(document).on('click', '.highlight:not(.initialized)', function(e) {
+jQuery(document).on('click', '.highlight:not(.initialized)', function (e) {
   hideNavi();
   closeOverlay();
   jQuery('.thumbs-gallery').slideUp(300);
 });
 
 // theme switch
-jQuery(document).on('click', '.bright-switch a:not(.initialized)', function(e) {
+jQuery(document).on('click', '.bright-switch a:not(.initialized)', function (e) {
   setBrightness();
 });
 // hamburger
-jQuery('.ham-activator').click(function() {
+jQuery('.ham-activator').click(function () {
   handleOverlay();
 });
 
-jQuery(document).on('click', '.thumb-list:not(.initialized)', function(e) {
+jQuery(document).on('click', '.thumb-list:not(.initialized)', function (e) {
   showThumbsBox();
   closeOverlay();
 });
 
 
-jQuery(document).on('click', '.play-pause:not(.initialized)', function(e) {
+jQuery(document).on('click', '.play-pause:not(.initialized)', function (e) {
   playOrPause = localStorage.getItem('playOrPause');
   if (playOrPause === 'pause') {
     if (jQuery(".gallery-slider-js")[0]) {
@@ -364,23 +371,23 @@ jQuery(document).on('click', '.play-pause:not(.initialized)', function(e) {
   autoNaviGallery();
 });
 
-jQuery(document).on('swipeleft', '.absl_swipe:not(.initialized)', function(e) {
+jQuery(document).on('swipeleft', '.absl_swipe:not(.initialized)', function (e) {
   nextNaviAction();
 });
 
-jQuery(document).on('swiperight', '.absl_swipe:not(.initialized)', function(e) {
+jQuery(document).on('swiperight', '.absl_swipe:not(.initialized)', function (e) {
   prevNaviAction();
 });
 
-jQuery(document).on('touchstart', '.absl_swipe:not(.initialized)', function(e) {
+jQuery(document).on('touchstart', '.absl_swipe:not(.initialized)', function (e) {
   jQuery('.absl_swipe').addClass('swipe-info');
 });
 
-jQuery(document).on('touchend', '.absl_swipe:not(.initialized)', function(e) {
+jQuery(document).on('touchend', '.absl_swipe:not(.initialized)', function (e) {
   jQuery('.absl_swipe').removeClass('swipe-info');
 });
 
-jQuery(document).keydown(function(e) {
+jQuery(document).keydown(function (e) {
   switch (e.which) {
     case 37: // left
       prevNaviAction();
@@ -401,7 +408,7 @@ jQuery(document).keydown(function(e) {
 
 function sliderSetup() {
   if (jQuery(".gallery-slider-js")[0]) {
-    jQuery(".gallery-slider-js").on("init reInit afterChange", function(event, slick, currentSlide, nextSlide) {
+    jQuery(".gallery-slider-js").on("init reInit afterChange", function (event, slick, currentSlide, nextSlide) {
       var i = (currentSlide ? currentSlide : 0) + 1;
       var total_slides = slick.slideCount;
       counter_number = i;
@@ -468,12 +475,12 @@ function sliderSetup() {
         }
       }]
     });
-    jQuery('div[data-slide]').click(function(e) {
+    jQuery('div[data-slide]').click(function (e) {
       e.preventDefault();
       var slideno = jQuery(this).data('slide');
       jQuery('.gallery-slider-nav-js').slick('slickGoTo', slideno - 1);
     });
-    jQuery(document).on('keydown', function(e) {
+    jQuery(document).on('keydown', function (e) {
       if (e.keyCode == 37) {
         $('.gallery-slider-js').slick('slickPrev');
       }
@@ -490,7 +497,7 @@ function sliderSetup() {
 
 
 
-    jQuery(".gallery-slider-js").on("beforeChange", function(event, slick) {
+    jQuery(".gallery-slider-js").on("beforeChange", function (event, slick) {
       var currentSlide, slideType, player, command;
       //find the current slide element and decide which player API we need to use.
       currentSlide = $(slick.$slider).find(".slick-current");
