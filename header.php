@@ -564,6 +564,12 @@
 				;
 			}
 
+			.clear-theme .book-mosaic-item {
+				background-color:
+					<?php the_field( 'custom_color_2', 'options' ); ?>
+				;
+			}
+
 			.view-more-button {
 				color:
 					<?php the_field( 'custom_color_1', 'options' ); ?>
@@ -676,6 +682,10 @@
 
 			.clear-theme .hambuger-element:hover span {
 				background: #AFAFAF;
+			}
+
+			.clear-theme .book-mosaic-item {
+				background-color: #F9F9F9;
 			}
 
 			.menu ul li .sub-menu {

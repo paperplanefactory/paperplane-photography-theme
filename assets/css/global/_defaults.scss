@@ -386,6 +386,23 @@ a.absl:link {
 	border-bottom: 1px solid;
 }
 
+.book-mosaic-item {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+
+	img,
+	video {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		object-fit: contain;
+		object-position: 50% 50%;
+	}
+}
+
 .lined {
 	border-bottom: 1px solid;
 }
@@ -426,4 +443,29 @@ a.absl:link {
 		display: block;
 		clear: both;
 	}
+}
+
+#footer {
+	.flex-hold {
+		margin-top: 0;
+		padding: 0;
+		align-items: normal;
+
+		.flex-hold-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
 }

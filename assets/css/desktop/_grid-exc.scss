@@ -18,6 +18,7 @@
     .flex-hold-child:nth-child(5n) {
       margin-right: 0;
     }
+
   }
 }
 
@@ -36,6 +37,10 @@
 
     .flex-hold-child:nth-child(3n) {
       margin-right: 0;
+    }
+
+    &.books-listing {
+      justify-content: start;
     }
   }
 }

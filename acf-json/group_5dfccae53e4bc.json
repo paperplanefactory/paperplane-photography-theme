@@ -510,6 +510,26 @@
             "delay": 0
         },
         {
+            "key": "field_66c5b84bc694f",
+            "label": "Footer additional texts",
+            "name": "footer_additional_texts",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "If used footer will split in two columns on desktop: first columns contains \"Footer texts\", second column contains \"Footer additional texts\".",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5edcf2dea1256",
             "label": "Favicons path",
             "name": "favicons_path",
@@ -794,5 +814,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696353688
+    "modified": 1724233898
 }

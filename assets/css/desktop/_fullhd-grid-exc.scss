@@ -19,6 +19,10 @@
     .flex-hold-child:nth-child(4n) {
       margin-right: 0;
     }
+
+    &.books-listing {
+      justify-content: start;
+    }
   }
 }
 
