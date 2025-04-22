@@ -566,7 +566,7 @@
 
 			.clear-theme .book-mosaic-item {
 				background-color:
-					<?php the_field( 'custom_color_2', 'options' ); ?>
+					<?php //the_field( 'custom_color_2', 'options' ); ?>
 				;
 			}
 
@@ -685,7 +685,7 @@
 			}
 
 			.clear-theme .book-mosaic-item {
-				background-color: #F9F9F9;
+				background-color: #FFFFFF;
 			}
 
 			.menu ul li .sub-menu {

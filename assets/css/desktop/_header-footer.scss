@@ -58,9 +58,11 @@
     position: relative;
     -webkit-box-flex: 1;
     width: $logo-width;
-    //font-weight: $font-weight-2;
-    //font-size: $logo-size-desktop;
-    //line-height: $logo-lineheight-desktop;
+    container-type: inline-size;
+    font-weight: $font-weight-1;
+    font-size: 30px;
+    line-height: 30px;
+    white-space: nowrap;
 
     .imaged {
       position: absolute;
@@ -90,6 +92,7 @@
     -webkit-box-flex: 1;
     width: calc(100% - #{$logo-width} - #{$hamburger-width});
     text-align: right;
+    font-size: 18px;
 
     &.full-width-navi {
       width: calc(100% - #{$logo-width});

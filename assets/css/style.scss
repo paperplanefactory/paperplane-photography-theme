@@ -4,8 +4,8 @@
 @import 'global/mixin';
 @import 'global/reset';
 @import 'global/defaults';
-@import 'global/icon-font';
 @import 'global/typography';
+@import 'global/icon-font';
 @import 'global/effects'; //@import 'global-colors-clear';
 @import 'global/colors-dark'; // comportamento immagini in the_content(); - rimuovere il commento se le immagini non hanno differenze tra desktop e mobile
 
@@ -15,6 +15,7 @@
   @import 'mobile/header-footer';
   @import 'mobile/structure';
   @import 'mobile/forms';
+  //@import 'mobile/typography';
 }
 
 // imports desktop
@@ -22,6 +23,7 @@
   @import 'desktop/header-footer';
   @import 'desktop/structure';
   @import 'desktop/forms';
+  //@import 'desktop/typography';
 }
 
 // imports desktop

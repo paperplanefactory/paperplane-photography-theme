@@ -79,7 +79,7 @@
 			title="<?php _e( 'View project:', 'paperplane-photography-theme' ); ?> <?php the_title(); ?>"
 			aria-label="<?php _e( 'View project:', 'paperplane-photography-theme' ); ?> <?php the_title(); ?>"></a>
 		<div>
-			<h2 class="as-h4">
+			<h2 class="as-h1">
 				<?php the_title(); ?>
 			</h2>
 			<?php
